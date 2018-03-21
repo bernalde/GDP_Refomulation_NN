@@ -44,6 +44,8 @@ loop(iter,
    execute_unload "stat_total" stats;
    execute_unload "solution_total" solu;
 
+$ontext
+
    execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
    execute_load "res_prob " sol,nodes,time,LBL,first,best;
    solu(iter,'DB_BM','sol') = sol;
@@ -64,8 +66,12 @@ loop(iter,
    solu(iter,'DB_HR','best') = best;
    execute_unload "solution_total" solu;
 
+$Offtext
+
 
 );
+
+gdxdump "solution_total" format=csv;
 
 
 

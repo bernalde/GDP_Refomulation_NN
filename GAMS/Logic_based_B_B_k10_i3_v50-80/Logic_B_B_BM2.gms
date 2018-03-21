@@ -217,11 +217,11 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
    chec_int_k(k)$(sum(alive_ki(k,i),1)=0)=no;
 
    if(sum(nnode(numm,level,kk,ii),1)=0,check_opt=1;);
-   execute_unload "res_B_B_BM2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
+   execute_unload "res_B_B_BM2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
 
 );
 
-execute_unload "res_B_B_BM2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
+execute_unload "res_B_B_BM2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
 
 LBP = min(LBP,UBP);
 scalar sol,nodes,time,LBL,first,best,const,vars,bin;
@@ -232,6 +232,6 @@ LBL   = LBP;
 first = first_inter;
 best  = best_inter;
 
-execute_unload "res_prob " sol,nodes,time,LBL,first,best;
+execute_unload "res_prob" sol,nodes,time,LBL,first,best;
 
 

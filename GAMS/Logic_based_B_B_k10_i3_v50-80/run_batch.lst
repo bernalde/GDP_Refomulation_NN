@@ -1,4 +1,4 @@
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 17:39:47 Page 1
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 18:11:46 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -49,50 +49,60 @@ C o m p i l a t i o n
   44     execute_unload "stat_total" stats;
   45     execute_unload "solution_total" solu;
   46   
-  47     execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
-  48     execute_load "res_prob " sol,nodes,time,LBL,first,best;
-  49     solu(iter,'DB_BM','sol') = sol;
-  50     solu(iter,'DB_BM','time') = time;
-  51     solu(iter,'DB_BM','nodes') = nodes;
-  52     solu(iter,'DB_BM','LB') = LBL;
-  53     solu(iter,'DB_BM','first') = first;
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 17:39:47 Page 2
+       
+         execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
+         execute_load "res_prob " sol,nodes,time,LBL,first,best;
+         solu(iter,'DB_BM','sol') = sol;
+         solu(iter,'DB_BM','time') = time;
+         solu(iter,'DB_BM','nodes') = nodes;
+         solu(iter,'DB_BM','LB') = LBL;
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 18:11:46 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-  54     solu(iter,'DB_BM','best') = best;
-  55     execute_unload "solution_total" solu;
-  56   
-  57     execute 'gams Logic_B_B_HR2.gms r=0 lo=0 o=nul  '
-  58     execute_load "res_prob " sol,nodes,time,LBL,first,best;
-  59     solu(iter,'DB_HR','sol') = sol;
-  60     solu(iter,'DB_HR','time') = time;
-  61     solu(iter,'DB_HR','nodes') = nodes;
-  62     solu(iter,'DB_HR','LB') = LBL;
-  63     solu(iter,'DB_HR','first') = first;
-  64     solu(iter,'DB_HR','best') = best;
-  65     execute_unload "solution_total" solu;
-  66   
-  67   
-  68  );
-  69   
+         solu(iter,'DB_BM','first') = first;
+         solu(iter,'DB_BM','best') = best;
+         execute_unload "solution_total" solu;
+       
+         execute 'gams Logic_B_B_HR2.gms r=0 lo=0 o=nul  '
+         execute_load "res_prob " sol,nodes,time,LBL,first,best;
+         solu(iter,'DB_HR','sol') = sol;
+         solu(iter,'DB_HR','time') = time;
+         solu(iter,'DB_HR','nodes') = nodes;
+         solu(iter,'DB_HR','LB') = LBL;
+         solu(iter,'DB_HR','first') = first;
+         solu(iter,'DB_HR','best') = best;
+         execute_unload "solution_total" solu;
+       
   70   
   71   
+  72  );
+  73   
+  74  gdxdump "solution_total" format=csv;
+****        $140,36                  $409
+  75   
+  76   
+  77   
 
-
-COMPILATION TIME     =        0.001 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 17:39:47 Page 3
+**** LIST OF STRAY NAMES - CHECK DECLARATIONS FOR SPURIOUS COMMAS
+**** STRAY NAME first OF TYPE PARAM
+**** STRAY NAME best OF TYPE PARAM
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/21/18 18:11:46 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-E x e c u t i o n
+Error Messages
 
 
-**** REPORT FILE SUMMARY
+ 36  '=' or '..' or ':=' or '$=' operator expected
+     rest of statement ignored
+140  Unknown symbol
+409  Unrecognizable item - skip to find a new statement
+       looking for a ';' or a key word to get started again
 
-seed_no /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/GAMS/Logic_based_B_B_k10_i3_v50-80/seed.gms
+**** 3 ERROR(S)   0 WARNING(S)
 
 
-EXECUTION TIME       =      321.313 SECONDS      4 MB  25.0.2 r65346 LEX-LEG
+COMPILATION TIME     =        0.003 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -104,3 +114,5 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/GAMS/Logic_based_B_B_k10_i3_v50-80/run_batch.gms
 Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/GAMS/Logic_based_B_B_k10_i3_v50-80/run_batch.lst
+
+**** USER ERROR(S) ENCOUNTERED
