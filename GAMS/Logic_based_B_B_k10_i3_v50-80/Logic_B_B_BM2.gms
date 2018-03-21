@@ -33,7 +33,7 @@ x.up(var) = ub(var);
 
 *y.fx(k,'1')=1;
 
-*$include max_time_ref
+$include max_time_ref
 
 
 *code sets and parameters
