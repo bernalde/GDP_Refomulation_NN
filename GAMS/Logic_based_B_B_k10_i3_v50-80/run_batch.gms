@@ -1,4 +1,4 @@
-set iter /1/
+set iter /1*10/
     algo /BM,HR,DB_BM,DB_HR,DB_LD/
     algo2 /BM,HR/
     resu /sol,time,nodes,LB,first,best/
@@ -15,7 +15,7 @@ loop(iter,
    execute 'gams Random_gen_presolve.gms s=0 lo=0 o=nul '
 
    execute 'gams BM_ref.gms r=0 lo=0 o=nul  '
-   execute_load "res_prob " rel,sol,nodes,time,LBL,const,vars,bin;
+   execute_load "res_prob" rel,sol,nodes,time,LBL,const,vars,bin;
    solu(iter,'BM','sol') = sol;
    solu(iter,'BM','time') = time;
    solu(iter,'BM','nodes') = nodes;
@@ -30,7 +30,7 @@ loop(iter,
    execute_unload "solution_total" solu;
 
    execute 'gams HR_ref.gms r=0 lo=0 o=nul  '
-   execute_load "res_prob " rel,sol,nodes,time,LBL,const,vars,bin;
+   execute_load "res_prob" rel,sol,nodes,time,LBL,const,vars,bin;
    solu(iter,'HR','sol') = sol;
    solu(iter,'HR','time') = time;
    solu(iter,'HR','nodes') = nodes;
@@ -45,7 +45,7 @@ loop(iter,
    execute_unload "solution_total" solu;
 
    execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
-   execute_load "res_prob " sol,nodes,time,LBL,first,best;
+   execute_load "res_prob" sol,nodes,time,LBL,first,best;
    solu(iter,'DB_BM','sol') = sol;
    solu(iter,'DB_BM','time') = time;
    solu(iter,'DB_BM','nodes') = nodes;
@@ -55,7 +55,7 @@ loop(iter,
    execute_unload "solution_total" solu;
 
    execute 'gams Logic_B_B_HR2.gms r=0 lo=0 o=nul  '
-   execute_load "res_prob " sol,nodes,time,LBL,first,best;
+   execute_load "res_prob" sol,nodes,time,LBL,first,best;
    solu(iter,'DB_HR','sol') = sol;
    solu(iter,'DB_HR','time') = time;
    solu(iter,'DB_HR','nodes') = nodes;
