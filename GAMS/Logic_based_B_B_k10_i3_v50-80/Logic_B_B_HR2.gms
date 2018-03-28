@@ -233,4 +233,4 @@ LBL   = LBP;
 first = first_inter;
 best  = best_inter;
 
-execute_unload "res_prob " sol,nodes,time,LBL,first,best;
+execute_unload "res_prob" sol,nodes,time,LBL,first,best;
