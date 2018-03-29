@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+#$ -cwd
+#$ -S /bin/bash
+cd /home/wangchu/jobs/canli/ml_project/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/52
+gams run_batch.gms
