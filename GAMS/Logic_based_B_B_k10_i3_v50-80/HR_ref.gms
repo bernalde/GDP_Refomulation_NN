@@ -23,7 +23,7 @@ option optcr = 0.001
   ;
 *prob.nodlim=1000000;
 
-*prob.optfile=1;
+prob.optfile=1;
 
 x.lo(var) = lb(var);
 x.up(var) = ub(var);

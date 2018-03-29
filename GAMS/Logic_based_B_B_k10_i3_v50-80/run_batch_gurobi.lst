@@ -1,4 +1,4 @@
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/28/18 14:12:29 Page 1
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/27/18 23:21:47 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -56,7 +56,7 @@ C o m p i l a t i o n
   51     solu(iter,'DB_BM','nodes') = nodes;
   52     solu(iter,'DB_BM','LB') = LBL;
   53     solu(iter,'DB_BM','first') = first;
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/28/18 14:12:29 Page 2
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/27/18 23:21:47 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -84,7 +84,7 @@ C o m p i l a t i o n
 
 
 COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/28/18 14:12:29 Page 3
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      03/27/18 23:21:47 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -94,7 +94,7 @@ E x e c u t i o n
 seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/GAMS/Logic_based_B_B_k10_i3_v50-80/seed.gms
 
 
-EXECUTION TIME       =    12364.997 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+EXECUTION TIME       =    17166.539 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN

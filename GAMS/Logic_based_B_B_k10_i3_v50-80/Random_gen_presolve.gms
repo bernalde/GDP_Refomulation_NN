@@ -95,6 +95,7 @@ disj_ineqqq(k,i,e)$kie(k,i,e).. sum(var$A(k,i,e,var),A(k,i,e,var)*xxx(var)) =l= 
 sum_binnn(k).. sum(ki(k,i),yyy(ki)) =e= 1;
 
 model probbb /all/;
+probbb.optfile = 1;
 
 xxx.lo(var) = lb(var);
 xxx.up(var) = ub(var);
