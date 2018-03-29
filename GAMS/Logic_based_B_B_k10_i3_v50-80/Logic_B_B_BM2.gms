@@ -26,7 +26,9 @@ option optcr = 0.001
   ;
 
 model bigM /obj, disj_ineq, disj_fix, sum_bin/;
+bigM.optfile = 1;
 model chull /obj, disag, disj_ineq_hr, bound_up, bound_lo, disj_fix, sum_bin/;
+chull.optfile = 1;
 
 x.lo(var) = lb(var);
 x.up(var) = ub(var);

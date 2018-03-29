@@ -1,3 +1,4 @@
 option reslim = 36000;
-option mip = gurobi;
-option rmip = gurobi;
+option mip = cplex;
+option rmip = cplex;
+option threads = 1;
