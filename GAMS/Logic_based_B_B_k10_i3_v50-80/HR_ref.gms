@@ -33,7 +33,7 @@ ni.up(ki(k,i),var)$kv(k,var) = ub(var);
 $include max_time_ref
 *y.fx('1','1')=1;
 
-scalar rel,sol,nodes,time,LBL,const,vars,bin;
+scalar rel,sol,nodes,time,cpu,LBL,const,vars,bin;
 
 solve prob using rmip min cost;
 rel = prob.objval;
@@ -42,6 +42,7 @@ bin=sum(ki,1);
 solve prob using mip min cost;
 sol = prob.objval;
 time = prob.etsolve;
+cpu = prob.resUsd;
 nodes = prob.nodusd;
 LBL  = prob.objest;
 const = prob.numequ;
@@ -49,6 +50,6 @@ vars = prob.numvar;
 
 
 
-execute_unload "res_prob" rel,sol,nodes,time,LBL,const,vars,bin;
+execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
 
 
