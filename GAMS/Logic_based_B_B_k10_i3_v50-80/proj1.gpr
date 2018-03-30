@@ -1,12 +1,15 @@
 [PROJECT]
 
 [GDXDISP: A Par 4]
-PlaneDim=0
-RowDim=3
+PlaneDim=2
+RowDim=1
 Squeeze=1
 Order=1,2,3,4
 Decim=7
-PlaneRownr=-1
+PlaneRownr=19
+SqTrail0=0
+PlaneFilter1=9
+PlaneFilter2=1
 
 [RP:RANDOM_GEN_2]
 1=
@@ -18,6 +21,7 @@ Squeeze=1
 Order=1,2,3
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: c Par 1]
 PlaneDim=0
@@ -26,6 +30,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: cost Var 0]
 PlaneDim=0
@@ -58,6 +63,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: kiv Set 3]
 PlaneDim=0
@@ -74,6 +80,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: var Set 1]
 PlaneDim=0
@@ -82,6 +89,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: kie Set 3]
 PlaneDim=0
@@ -90,6 +98,7 @@ Squeeze=1
 Order=1,2,3
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: ki Set 2]
 PlaneDim=0
@@ -98,6 +107,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: k Set 1]
 PlaneDim=0
@@ -106,6 +116,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: i Set 1]
 PlaneDim=0
@@ -114,6 +125,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: eq_term Par 2]
 PlaneDim=0
@@ -122,6 +134,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: kv Set 2]
 PlaneDim=0
@@ -130,6 +143,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: ub Par 1]
 PlaneDim=0
@@ -138,6 +152,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [RP:GOOD INSTANCES]
 1=
@@ -149,6 +164,7 @@ Squeeze=1
 Order=1,2,3
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: AE Par 4]
 PlaneDim=0
@@ -157,6 +173,7 @@ Squeeze=1
 Order=1,2,3,4
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [RP:LAGR_DUAL]
 1=
@@ -222,6 +239,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: y_fix Par 2]
 PlaneDim=0
@@ -284,6 +302,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: chec_int_k Set 1]
 PlaneDim=0
@@ -340,6 +359,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: LBP Par 0]
 PlaneDim=0
@@ -348,6 +368,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: no_ki_param Par 2]
 PlaneDim=0
@@ -444,6 +465,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: level Alias 1]
 PlaneDim=0
@@ -533,6 +555,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: disj_fix Equ 3]
 PlaneDim=0
@@ -549,6 +572,7 @@ Squeeze=1
 Order=1,2,3,4
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: node_int2 Par 1]
 PlaneDim=0
@@ -605,6 +629,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: opt_x Par 1]
 PlaneDim=0
@@ -630,6 +655,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: tol Par 0]
 PlaneDim=0
@@ -646,6 +672,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: tot_i Par 0]
 PlaneDim=0
@@ -654,6 +681,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: parent_val Par 1]
 PlaneDim=0
@@ -686,6 +714,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: ee Set 1]
 PlaneDim=0
@@ -694,6 +723,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: max_nod Par 0]
 PlaneDim=0
@@ -726,6 +756,7 @@ Squeeze=1
 Order=1
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: bound_up Equ 3]
 PlaneDim=0
@@ -831,12 +862,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
-
-[RP:MAX_TIME_REF]
-1=
-
-[RP:MAX_TIME]
-1=
+SqTrail0=0
 
 [GDXDISP: opt_y Par 2]
 PlaneDim=0
@@ -845,6 +871,7 @@ Squeeze=1
 Order=1,2
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: max_nod Par 1]
 PlaneDim=0
@@ -862,6 +889,7 @@ Squeeze=1
 Order=
 Decim=7
 PlaneRownr=-1
+SqTrail0=0
 
 [GDXDISP: nnode Set 4]
 PlaneDim=1
@@ -936,10 +964,6 @@ PlaneFilter1=8
 6=r=0
 7=
 
-[RP:HR_REF]
-1=r=0
-2=
-
 [RP:LOGIC_B_B_LAG]
 1=r=0 o=nul
 2=
@@ -958,38 +982,25 @@ PlaneFilter1=8
 1=r=0 o=nul
 2=
 
-[RP:BM_REF]
-1=r=0 
-2=r=0 o=nul lo=0
-3=r=0 o=nul lo=2 lf=nul
-4=r=0
-5=
-
 [GDXDISP: solu Par 3]
-PlaneDim=0
-RowDim=2
+PlaneDim=1
+RowDim=1
 Squeeze=1
 SqTrail0=0
-Order=1,2,3
+Order=3,1,2
 Decim=7
-PlaneRownr=-1
+PlaneRownr=5
+PlaneFilter1=best
 
 [GDXDISP: stats Par 3]
-PlaneDim=0
-RowDim=2
+PlaneDim=1
+RowDim=1
 Squeeze=1
 SqTrail0=0
-Order=1,2,3
+Order=3,1,2
 Decim=7
-PlaneRownr=-1
-
-[RP:RANDOM_GEN_PRESOLVE]
-1=s=0 gdx=zzz
-2=s=0
-3=
-
-[RP:RUN_BATCH]
-1=
+PlaneRownr=1
+PlaneFilter1=const
 
 [RP:Z_RANDOM_GEN_PRESOLVE]
 1=
@@ -997,27 +1008,179 @@ PlaneRownr=-1
 [RP:Z_RUN_BATCH]
 1=
 
+[RP:MAX_TIME]
+1=
+
+[GDXDISP: best Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: LBL Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: time Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: sol Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: first Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: nodes Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[RP:STEIN]
+1=
+
+[RP:MAX_TIME_REF]
+1=
+
+[RP:SEED]
+1=
+
+[GDXDISP: cpu Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[RP:RUN_BATCH]
+1=
+
+[GDXDISP: tot_var Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: xxx Var 1]
+PlaneDim=0
+RowDim=1
+Squeeze=1
+SqTrail0=0
+Order=1,2
+Decim=7
+PlaneRownr=-1
+
+[GDXDISP: yyy Var 2]
+PlaneDim=0
+RowDim=2
+Squeeze=1
+SqTrail0=0
+Order=1,2,3
+Decim=7
+PlaneRownr=-1
+
+[RP:LOGIC_B_B_HR2]
+1=
+
+[RP:HR_REF]
+1=r=0
+2=
+
+[GDXDISP: bin Par 0]
+PlaneDim=0
+RowDim=0
+Squeeze=1
+SqTrail0=0
+Order=
+Decim=7
+PlaneRownr=-1
+
+[RP:LOGIC_B_B_BM2]
+1=
+
+[RP:BM_REF]
+1=r=0 
+2=r=0 o=nul lo=0
+3=r=0 o=nul lo=2 lf=nul
+4=r=0
+5=
+
+[RP:FIRST_SEED]
+1=
+
+[RP:RANDOM_GEN_PRESOLVE]
+1=s=0 gdx=zzz
+2=s=0
+3=
+
 [MRUFILES]
-1=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\z_Random_gen_presolve.gms
-2=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
-3=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\Random_gen_presolve.gms
-4=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\res_B_B_BM2 .gdx
-5=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\res_B_B_HR2 .gdx
-6=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\res_B_B_LAG_k0 .gdx
-7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\run_batch.gms
-8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\run_batch.lst
-9=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k8_i5_v40\stat_total .gdx
+1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\0.g00
+2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\max_time_ref.gms
+3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\93\solution_total.gdx
+4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\61\solution_total.gdx
+5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\solution_total.gdx
+6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\run_batch.gms
+7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\seed.gms
+8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\z_Random_gen_presolve.gms
 
 [OPENWINDOW_1]
-FILE0=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
-FILE1=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\run_batch.lst
-FILE2=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\solution_total .gdx
-FILE3=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\solution_total_2 .gdx
-FILE4=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\stat_total .gdx
-FILE5=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\stat_total_2 .gdx
-FILE6=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\z_run_batch.gms
-FILE7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\z_run_batch.lst
-FILE8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\solution_total .gdx
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\BM_ref.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\BM_ref.lst
+FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\first_seed.gms
+FILE3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\HR_ref.gms
+FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\HR_ref.lst
+FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_BM2.gms
+FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_HR2.gms
+FILE7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data.gdx
+FILE8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
+FILE9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.lst
+FILE10=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_BM2.gdx
+FILE11=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_HR2.gdx
+FILE12=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob.gdx
+FILE13=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob_gurobi.gdx
+FILE14=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
+FILE15=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.lst
+FILE16=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\seed.gms
+FILE17=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.csv
+FILE18=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.gdx
+FILE19=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total_gurobi.gdx
+FILE20=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total.gdx
+FILE21=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total_gurobi.gdx
+FILE22=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
 MAXIM=0
 TOP=16
 LEFT=6

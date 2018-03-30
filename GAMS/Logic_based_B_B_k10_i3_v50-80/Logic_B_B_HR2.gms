@@ -64,6 +64,7 @@ scalar tol /1e-4/
        aux3
        cnt_nodes /1/
        time_start
+       cpu_time /0/
        time_wall
        time_solve /0/
        cnt_calculate_LB /1/
@@ -88,6 +89,7 @@ time_start = jnow;
 
 solve chull using rmip min cost;
 time_solve = time_solve + chull.etsolve;
+cpu_time = cpu_time + chull.resUsd;
 time_wall = (jnow-time_start)*3600*24;
 
 
@@ -175,6 +177,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 **************** Option 1
          solve chull using rmip min cost;
          time_solve = time_solve + chull.etsolve;
+         cpu_time = cpu_time + chull.resUsd;
          time_wall = (jnow-time_start)*3600*24;
          loop(ki2, if((y.l(ki2)>=1-tol or y.l(ki2)<=tol),chec_int(ki2)=1););
          if(sum(ki2,chec_int(ki2))=sum(ki2,1),int_sol3=1;);
@@ -227,12 +230,13 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 execute_unload "res_B_B_HR2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
 
 LBP = min(LBP,UBP);
-scalar sol,nodes,time,LBL,first,best,const,vars,bin;
+scalar sol,nodes,time,cpu,LBL,first,best,const,vars,bin;
 sol = UBP;
 nodes = cnt_nodes-1;
 time  = time_solve;
+cpu = cpu_time;
 LBL   = LBP;
 first = first_inter;
 best  = best_inter;
 
-execute_unload "res_prob" sol,nodes,time,LBL,first,best;
+execute_unload "res_prob" sol,nodes,time,cpu,LBL,first,best;
