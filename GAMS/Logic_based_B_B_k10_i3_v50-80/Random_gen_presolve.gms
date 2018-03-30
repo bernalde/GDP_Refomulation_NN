@@ -96,6 +96,7 @@ sum_binnn(k).. sum(ki(k,i),yyy(ki)) =e= 1;
 
 model probbb /all/;
 probbb.optfile = 1;
+$include max_time_ref
 
 xxx.lo(var) = lb(var);
 xxx.up(var) = ub(var);
