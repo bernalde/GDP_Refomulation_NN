@@ -1,4 +1,4 @@
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 58
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 58
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -35,7 +35,7 @@ C o m p i l a t i o n
  165   
  166  ni.up(ki(k,i),var)$kv(k,var) = ub(var);
  167   
-INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/max_time_ref.gms
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/max_time_ref.gms
  169  option reslim = 36000;
  170  option mip = cplex;
  171  option rmip = cplex;
@@ -56,7 +56,7 @@ INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B
  186  time = prob.etsolve;
  187  cpu = prob.resUsd;
  188  nodes = prob.nodusd;
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 59
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 59
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -70,35 +70,35 @@ C o m p i l a t i o n
  195  execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
  196   
  197   
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 60
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 60
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/HR_ref.gms
-     2      168 INCLUDE        1      33  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/max_time_ref.gms
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/HR_ref.gms
+     2      168 INCLUDE        1      33  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/max_time_ref.gms
 
 
-COMPILATION TIME     =        0.000 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 61
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 61
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE prob Using RMIP From line 180
 
 
 MODEL STATISTICS
 
-BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS        2,743
-BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,092
-NON ZERO ELEMENTS         8,236     DISCRETE VARIABLES         26
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS        4,167
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,720
+NON ZERO ELEMENTS        12,987     DISCRETE VARIABLES         26
 
 
-GENERATION TIME      =        0.006 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GENERATION TIME      =        0.010 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.007 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 62
+EXECUTION TIME       =        0.010 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 62
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE prob Using RMIP From line 180
 
@@ -111,50 +111,50 @@ Solution Report     SOLVE prob Using RMIP From line 180
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE             -619.7409
+**** OBJECTIVE VALUE            -1047.5708
 
- RESOURCE USAGE, LIMIT          0.593     36000.000
- ITERATION COUNT, LIMIT      2969    2000000000
+ RESOURCE USAGE, LIMIT          1.265     36000.000
+ ITERATION COUNT, LIMIT      6215    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
 Cplex 12.7.1.0
 
-Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/cplex.opt"
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/cplex.opt"
 >>  randomseed 1;
 *** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
 *** Value Error line 1:    Option ignored
-Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/cplex.opt"
-Space for names approximately 0.08 Mb
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/cplex.opt"
+Space for names approximately 0.13 Mb
 Use option 'names no' to turn use of names off
 LP status(1): optimal
-Cplex Time: 0.59sec (det. 306.18 ticks)
+Cplex Time: 1.26sec (det. 1067.72 ticks)
 Optimal solution found.
-Objective :        -619.740866
+Objective :       -1047.570777
 
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-                            29  PROJECTED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 63
+                            95  PROJECTED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 63
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE prob Using MIP From line 184
 
 
 MODEL STATISTICS
 
-BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS        2,743
-BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,092
-NON ZERO ELEMENTS         8,236     DISCRETE VARIABLES         26
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS        4,167
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,720
+NON ZERO ELEMENTS        12,987     DISCRETE VARIABLES         26
 
 
-GENERATION TIME      =        0.012 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GENERATION TIME      =        0.009 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.014 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 64
+EXECUTION TIME       =        0.011 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 64
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE prob Using MIP From line 184
 
@@ -166,43 +166,43 @@ Solution Report     SOLVE prob Using MIP From line 184
      SOLVER  CPLEX               FROM LINE  184
 
 **** SOLVER STATUS     1 Normal Completion         
-**** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE             -301.2629
+**** MODEL STATUS      8 Integer Solution          
+**** OBJECTIVE VALUE             -902.8370
 
- RESOURCE USAGE, LIMIT         56.226     36000.000
- ITERATION COUNT, LIMIT    347688    2000000000
+ RESOURCE USAGE, LIMIT         35.531     36000.000
+ ITERATION COUNT, LIMIT    144504    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
 Cplex 12.7.1.0
 
-Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/cplex.opt"
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/cplex.opt"
 >>  randomseed 1;
 *** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
 *** Value Error line 1:    Option ignored
-Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/cplex.opt"
-Space for names approximately 0.08 Mb
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/cplex.opt"
+Space for names approximately 0.13 Mb
 Use option 'names no' to turn use of names off
-MIP status(101): integer optimal solution
-Cplex Time: 56.20sec (det. 45916.90 ticks)
+MIP status(102): integer optimal, tolerance
+Cplex Time: 35.52sec (det. 28443.04 ticks)
 Fixing integer variables, and solving final LP...
 Fixed MIP status(1): optimal
-Cplex Time: 0.00sec (det. 3.05 ticks)
-Proven optimal solution.
+Cplex Time: 0.01sec (det. 4.65 ticks)
+Solution satisfies tolerances.
 
-MIP Solution:         -301.262907    (347626 iterations, 591 nodes)
-Final Solve:          -301.262907    (62 iterations)
+MIP Solution:         -902.837004    (144398 iterations, 103 nodes)
+Final Solve:          -902.837004    (106 iterations)
 
-Best possible:        -301.262907
-Absolute gap:            0.000000
-Relative gap:            0.000000
+Best possible:        -903.317651
+Absolute gap:            0.480647
+Relative gap:            0.000532
 
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     03/31/18 03:20:42 Page 65
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 12:26:02 Page 65
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -217,6 +217,6 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/0.g00
-Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/HR_ref.gms
-Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50-80/Euler/12/HR_ref.lst
+Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/0.g00
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/HR_ref.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/12/HR_ref.lst
