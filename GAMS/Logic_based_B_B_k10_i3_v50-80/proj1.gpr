@@ -6,7 +6,7 @@ RowDim=1
 Squeeze=1
 Order=1,2,3,4
 Decim=7
-PlaneRownr=19
+PlaneRownr=-1
 SqTrail0=0
 PlaneFilter1=9
 PlaneFilter2=1
@@ -1071,9 +1071,6 @@ PlaneRownr=-1
 [RP:MAX_TIME_REF]
 1=
 
-[RP:SEED]
-1=
-
 [GDXDISP: cpu Par 0]
 PlaneDim=0
 RowDim=0
@@ -1082,9 +1079,6 @@ SqTrail0=0
 Order=
 Decim=7
 PlaneRownr=-1
-
-[RP:RUN_BATCH]
-1=
 
 [GDXDISP: tot_var Par 0]
 PlaneDim=0
@@ -1129,8 +1123,26 @@ Order=
 Decim=7
 PlaneRownr=-1
 
+[RP:RUNRANDOM]
+1=
+
+[RP:FIRST_SEED]
+1=
+
+[RP:SEED]
+1=
+
 [RP:LOGIC_B_B_BM2]
 1=
+
+[RP:RUN_BATCH]
+1=
+
+[RP:RANDOM_GEN_PRESOLVE]
+1=s=0 --seed=8
+2=s=0 gdx=zzz
+3=s=0
+4=
 
 [RP:BM_REF]
 1=r=0 
@@ -1139,48 +1151,37 @@ PlaneRownr=-1
 4=r=0
 5=
 
-[RP:FIRST_SEED]
-1=
-
-[RP:RANDOM_GEN_PRESOLVE]
-1=s=0 gdx=zzz
-2=s=0
-3=
-
 [MRUFILES]
-1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\0.g00
-2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\max_time_ref.gms
-3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\93\solution_total.gdx
-4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\61\solution_total.gdx
-5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\solution_total.gdx
-6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\run_batch.gms
-7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\seed.gms
-8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_k10_i3_v50-80\z_Random_gen_presolve.gms
+1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data_8.gdx
+2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data.gdx
+3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data_%seed%.gdx
+4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\0.g00
+5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\max_time_ref.gms
+6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\93\solution_total.gdx
+7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\61\solution_total.gdx
+8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\solution_total.gdx
+9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_k10_i3_v50-80\6\run_batch.gms
 
 [OPENWINDOW_1]
 FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\BM_ref.gms
-FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\BM_ref.lst
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt
 FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\first_seed.gms
 FILE3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\HR_ref.gms
-FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\HR_ref.lst
-FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_BM2.gms
-FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_HR2.gms
-FILE7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data.gdx
-FILE8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
-FILE9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.lst
-FILE10=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_BM2.gdx
-FILE11=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_HR2.gdx
-FILE12=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob.gdx
-FILE13=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob_gurobi.gdx
-FILE14=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
-FILE15=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.lst
-FILE16=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\seed.gms
-FILE17=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.csv
-FILE18=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.gdx
-FILE19=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total_gurobi.gdx
-FILE20=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total.gdx
-FILE21=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total_gurobi.gdx
-FILE22=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
+FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_BM2.gms
+FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_HR2.gms
+FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
+FILE7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_BM2.gdx
+FILE8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_B_B_HR2.gdx
+FILE9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob.gdx
+FILE10=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob_gurobi.gdx
+FILE11=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
+FILE12=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\seed.gms
+FILE13=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.csv
+FILE14=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total.gdx
+FILE15=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\solution_total_gurobi.gdx
+FILE16=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total.gdx
+FILE17=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\stat_total_gurobi.gdx
+FILE18=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
 MAXIM=0
 TOP=16
 LEFT=6
