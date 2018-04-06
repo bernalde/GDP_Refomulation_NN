@@ -1,0 +1,1856 @@
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/seed.gms
+   2  execseed =        90.00;
+   3  *execseed = 14;
+   4   
+   5   
+   6  set
+   7      var variables /1*80/
+   8      k   disjunctions /1*10/
+   9      i   max number of terms per disjunction /1*3/
+  10      e   max number of equations per disjunction /1*20/
+  11  *    var variables /1*15/
+  12  *    k   disjunctions /1*5/
+  13  *    i   max number of terms per disjunction /1*10/
+  14  *    e   max number of equations per disjunction /1*50/
+  15   
+  16      ee  max number of equality disjunctions     /1*10/
+  17      ki(k,i)  set that contains disjunctions and terms
+  18      kie(k,i,e) set that contains disjunctions terms and equations
+  19  *    kiee(k,i,ee) set that contains disjunctions terms and equations
+  20      kv(k,var) set that contains disjunctions and variables
+  21   ;
+  22   
+  23  parameter term(k), eq_term(k,i), A(k,i,e,var), b(k,i,e), c(var), ub(var), lb(var), AE(k,i,ee,var), bE(k,i,ee), eeq_term(k,i);
+  24  scalar disp the higher the most variables are related to disjunctions /10/
+  25         tot_k
+  26         tot_i
+  27         tot_e
+  28         tot_var
+  29  ;
+  30   
+  31  *tot_k    = UniformInt(2,card(k));
+  32  *tot_i    = UniformInt(2,card(i));
+  33  *tot_e    = UniformInt(2,card(e));
+  34  *tot_var  = UniformInt(2,card(var));
+  35  tot_k    = card(k);
+  36  tot_i    = card(i);
+  37  tot_e    = card(e);
+  38  tot_var  = card(var);
+  39   
+  40  term(k) = UniformInt(2,tot_i);
+  41  ki(k,i)=no;
+  42  loop((k,i)$(ord(i)<=term(k)), ki(k,i)=yes;);
+  43   
+  44  eq_term(ki) = UniformInt(round(tot_e/5,0),tot_e);
+  45  *eq_term(ki) = UniformInt(round(tot_e/10,0),tot_e);
+  46  kie(k,i,e)=no;
+  47  loop((ki,e)$(ord(e)<=eq_term(ki)), kie(ki,e)=yes;);
+  48   
+  49  *eeq_term(ki) = UniformInt(2,card(ee));
+  50  *kiee(k,i,ee)=no;
+  51  *loop((ki,ee)$(ord(ee)<=eq_term(ki)), kiee(ki,ee)=yes;);
+  52   
+  53  kv(k,var)=no;
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+  54   
+  55  loop(kie(k,i,e),
+  56     b(k,i,e) = UniformInt(-100,100)/100;
+  57     loop(var,
+  58  *      A(k,i,e,var) = UniformInt(-100,100)/100*round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/disp,0)*UniformInt(0,1);
+  59  *      A(k,i,e,var) = UniformInt(-100,100)/100*round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/disp,0);
+  60        A(k,i,e,var) = UniformInt(-100,100)/100*round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/disp,0)*UniformInt(0,1);
+  61  *      A(k,i,e,var) = UniformInt(-100,100)/100*UniformInt(0,1);
+  62     );
+  63  );
+  64   
+  65  *loop(kiee(k,i,ee),
+  66  *   bE(k,i,ee) = UniformInt(10,100)/10;
+  67  *   loop(var,
+  68  *      A(k,i,e,var) = UniformInt(-100,100)/100*round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/disp,0)*UniformInt(0,1)*UniformInt(0,1)*UniformInt(0,1);
+  69  *      AE(k,i,ee,var) = UniformInt(-100,100)/100*round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/20,0)*UniformInt(0,1);
+  70  *      A(k,i,e,var) = UniformInt(-100,100)/100*UniformInt(0,1);
+  71  *   );
+  72  *);
+  73   
+  74  *bE(k,i,ee)$(sum(var$AE(k,i,ee,var),1)<=1)=0;
+  75  *bE(k,i,ee) = 0;
+  76  *bE(k,i,ee) = sum(var,AE(k,i,ee,var));
+  77   
+  78  *kv(k,var)$((sum((i,e)$A(k,i,e,var),1)>=1) OR (sum((i,ee)$AE(k,i,ee,var),1)>=1))=yes;
+  79  kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
+  80   
+  81  *parameter aux(k,var);
+  82  *aux(k,var) = round(UniformInt(0,10-10*round(abs( (ord(var)-ord(k)*card(var)/card(k))/card(var)),1))/15,0);
+  83  *display aux;
+  84  *aux(k,var) = round(abs( (ord(var)-ord(k))/card(k) ),1);
+  85   
+  86  c(var) = UniformInt(-100,100)/100*UniformInt(0,1);
+  87  ub(var) = UniformInt(10,100);
+  88  lb(var) = UniformInt(-100,-10);
+  89   
+  90  variables costtt, xxx(var);
+  91  binary variable yyy(k,i);
+  92  equation objjj, disj_ineqqq(k,i,e), sum_binnn(k);
+  93   
+  94  objjj.. costtt =e= 0;
+  95  disj_ineqqq(k,i,e)$kie(k,i,e).. sum(var$A(k,i,e,var),A(k,i,e,var)*xxx(var)) =l= b(k,i,e) + (sum(var$kv(k,var),xxx.up(var))+1)*(1-yyy(k,i));
+  96  sum_binnn(k).. sum(ki(k,i),yyy(ki)) =e= 1;
+  97   
+  98  model probbb /all/;
+  99  probbb.optfile = 1;
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/max_time_ref.gms
+ 101  option reslim = 36000;
+ 102  option mip = cplex;
+ 103  option rmip = cplex;
+ 104  option threads = 1;
+ 105  option limrow = 0;
+ 106  option limcol = 0;
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+ 107  option solprint = off;
+ 108   
+ 109  xxx.lo(var) = lb(var);
+ 110  xxx.up(var) = ub(var);
+ 111   
+ 112  *presolve
+ 113   
+ 114  set kInfeas(k,i);kInfeas(k,i)=no;
+ 115   
+ 116  loop(ki,
+ 117     yyy.lo(k,i)=0;
+ 118     yyy.fx(ki)=1;
+ 119     solve probbb using rmip min costtt;
+ 120     if(probbb.modelstat<>1,kInfeas(ki)=yes;);
+ 121  );
+ 122  yyy.lo(k,i)=0;
+ 123   
+ 124  ki(kInfeas)=no;
+ 125  kie(kInfeas,e) =no;
+ 126   
+ 127  b(kInfeas,e) = 0;
+ 128  A(kInfeas,e,var) = 0;
+ 129  *start B&B
+ 130  kv(k,var)=no;
+ 131  kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
+ 132   
+ 133  *execute_unload "prob_data_%seed%" A,AE,b,bE,c,ub,lb,term,eq_term;
+ 134   
+EXIT /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/Random_gen_presolve.gms
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/Random_gen_presolve.gms
+     2        1 INCLUDE        1       1  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/seed.gms
+     3      100 INCLUDE        1      99  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/max_time_ref.gms
+     4      135 EXIT           1     127  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/Random_gen_presolve.gms
+
+
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            1
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.013 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.074 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          1
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        16    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.16 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            1
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.013 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          1
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.016     36000.000
+ ITERATION COUNT, LIMIT        32    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 1.36 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/01/18 06:51:54 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            1
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          1
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        29    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.31 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            2
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.028 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.029 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          2
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        21    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.21 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            2
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          2
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        30    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.37 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 15
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            2
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          2
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 16
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        23    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.26 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 17
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            3
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.066 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.067 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          3
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 18
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        37    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.45 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 19
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            3
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          3
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 20
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        14    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.13 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 21
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            4
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.095 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.096 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          4
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 22
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        14    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.15 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 23
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            4
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          4
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 24
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        25    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.26 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 25
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            4
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          4
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 26
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        27    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.29 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 27
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            5
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          5
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 28
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        20    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.23 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 29
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            5
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.013 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          5
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 30
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.013     36000.000
+ ITERATION COUNT, LIMIT        18    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.19 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 31
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            5
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          5
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 32
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        23    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.25 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 33
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            6
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          6
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 34
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        19    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.19 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 35
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            6
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          6
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 36
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        30    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.31 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 37
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            6
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.045 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.046 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          6
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 38
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        24    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.27 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 39
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            7
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          7
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 40
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.015     36000.000
+ ITERATION COUNT, LIMIT        15    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 1.18 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 41
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            7
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          7
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 42
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        14    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.17 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 43
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            7
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          7
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 44
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        16    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.18 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 45
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            8
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.013 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          8
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 46
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        28    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.29 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 47
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            8
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.078 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.079 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          8
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 48
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT        34    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.37 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 49
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            9
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.026 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.027 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          9
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 50
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        16    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.19 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 51
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            9
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          9
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 52
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        21    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.23 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 53
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            9
+                                *            3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.013 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          9
+                                 *          3
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 54
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.009     36000.000
+ ITERATION COUNT, LIMIT        12    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.14 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 55
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            10
+                                *            1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.014 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          10
+                                 *          1
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 56
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.009     36000.000
+ ITERATION COUNT, LIMIT        13    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.14 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 57
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE probbb Using RMIP From line 119
+
+
+LOOPS                           *            10
+                                *            2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          356
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          108
+NON ZERO ELEMENTS         4,651     DISCRETE VARIABLES         26
+
+
+GENERATION TIME      =        0.150 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.151 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+               L O O P S         *          10
+                                 *          2
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 58
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE probbb Using RMIP From line 119
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   probbb              OBJECTIVE  costtt
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  119
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT        12    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 1.12 ticks)
+Optimal solution found.
+Objective :           0.000000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/01/18 06:51:54 Page 59
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.004 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/Random_gen_presolve.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/Random_gen_presolve.lst
+Save       /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/8/0.g0?
