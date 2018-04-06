@@ -1,0 +1,206 @@
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 52
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+ 136   
+ 137  variables cost, x(var);
+ 138  binary variable y(k,i);
+ 139  equation obj, disj_ineq(k,i,e), sum_bin(k);
+ 140  *disj_eq_1(k,i,ee), disj_eq_2(k,i,ee);
+ 141   
+ 142  obj.. cost =e= sum(var,c(var)*x(var));
+ 143  disj_ineq(kie(ki(k,i),e)).. sum(var$(A(k,i,e,var)<>0),A(kie,var)*x(var)) =l= b(kie) + (sum(var$kv(k,var),x.up(var))+1)*(1-y(ki));
+ 144  *disj_eq_1(kiee(ki,ee)).. sum(var,AE(kiee,var)*x(var)) =l= bE(kiee) + (sum(var$AE(kiee,var),x.up(var))+1)*(1-y(ki));
+ 145  *disj_eq_2(kiee(ki,ee)).. sum(var,AE(kiee,var)*x(var)) =g= bE(kiee) - (sum(var$AE(kiee,var),x.up(var))+1)*(1-y(ki));
+ 146   
+ 147  sum_bin(k).. sum(ki(k,i),y(ki)) =e= 1;
+ 148   
+ 149  model prob /obj,disj_ineq,sum_bin/;
+ 150   
+ 151  option optcr = 0.001
+ 152         reslim = 72000
+ 153  *       mip=BDMLP
+ 154  *       mip=CBC
+ 155  *       mip=SCIP
+ 156  *       rmip=CBC
+ 157    ;
+ 158  *prob.nodlim=1000000;
+ 159   
+ 160  prob.optfile = 1;
+ 161   
+ 162  x.lo(var) = lb(var);
+ 163  x.up(var) = ub(var);
+ 164   
+ 165  *y.fx(k,'1')$(ord(k)<=10)=1;
+ 166  *y.fx('1','1')=1;
+ 167   
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/max_time_ref.gms
+ 169  option reslim = 36000;
+ 170  option mip = cplex;
+ 171  option rmip = cplex;
+ 172  option threads = 1;
+ 173  option limrow = 0;
+ 174  option limcol = 0;
+ 175  option solprint = off;
+ 176   
+ 177  scalar rel,sol,nodes,time,cpu,LBL,const,vars,bin;
+ 178   
+ 179  solve prob using rmip min cost;
+ 180  rel = prob.objval;
+ 181  bin=sum(ki,1);
+ 182   
+ 183  solve prob using mip min cost;
+ 184  sol = prob.objval;
+ 185  time = prob.etsolve;
+ 186  cpu = prob.resUsd;
+ 187  nodes = prob.nodusd;
+ 188  LBL  = prob.objest;
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 53
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+ 189  const = prob.numequ;
+ 190  vars = prob.numvar;
+ 191   
+ 192  execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
+ 193   
+ 194   
+ 195   
+ 196   
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 54
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/BM_ref.gms
+     2      168 INCLUDE        1      33  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/max_time_ref.gms
+
+
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 55
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE prob Using RMIP From line 179
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          435
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           64
+NON ZERO ELEMENTS         3,029     DISCRETE VARIABLES         23
+
+
+GENERATION TIME      =        0.005 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.005 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 56
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 179
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   prob                OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  179
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE             -688.8500
+
+ RESOURCE USAGE, LIMIT          0.005     36000.000
+ ITERATION COUNT, LIMIT         8    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.92 ticks)
+Optimal solution found.
+Objective :        -688.850000
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 57
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE prob Using MIP From line 183
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          435
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           64
+NON ZERO ELEMENTS         3,029     DISCRETE VARIABLES         23
+
+
+GENERATION TIME      =        0.006 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.006 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 58
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 183
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   prob                OBJECTIVE  cost
+     TYPE    MIP                 DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  183
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      10 Integer Infeasible       
+**** OBJECTIVE VALUE               NA
+
+ RESOURCE USAGE, LIMIT          0.799     36000.000
+ ITERATION COUNT, LIMIT      7655    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/cplex.opt"
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+MIP status(119): integer infeasible or unbounded
+Cplex Time: 0.80sec (det. 596.78 ticks)
+Problem is integer infeasible.
+
+No solution returned
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/02/18 10:58:25 Page 59
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/0.g00
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/BM_ref.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v40/Euler/15/BM_ref.lst
