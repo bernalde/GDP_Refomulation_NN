@@ -1,0 +1,77 @@
+
+--- Job transfer_gdx.gms Start 04/07/18 17:09:30 24.8.5 r61358 WEX-WEI x86 64bit/MS Windows
+GAMS 24.8.5   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- transfer_gdx.gms(1) 2 Mb
+--- GDXin=C:\Users\cristianal\Box\Machine Learning\Project\prob_data_1.gdx
+--- transfer_gdx.gms(5) 2 Mb
+--- GDXin=C:\Users\cristianal\Box\Machine Learning\Project\solution_total.gdx
+--- transfer_gdx.gms(9) 2 Mb
+--- GDXin=C:\Users\cristianal\Box\Machine Learning\Project\stat_total.gdx
+--- transfer_gdx.gms(11) 2 Mb
+--- Starting execution: elapsed 0:00:00.037
+--- transfer_gdx.gms(3) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.5 r61358 Released May 10, 2017 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\cristianal\Box\Machine Learning\Project
+
+   InputFile:prob_data_1.gdx
+   OutputFile:prob_data_1.db
+   Symbols:9
+   Uels:50
+   Loading Uels
+   Processing Symbols
+     A(2352 records)
+     AE(0 records)
+     b(290 records)
+     bE(0 records)
+     c(24 records)
+     ub(50 records)
+     lb(50 records)
+     term(10 records)
+     eq_term(25 records)
+   Inserts:2801
+   Elapsed:0.72 seconds
+   Inserts/second:3863.45
+   Done
+
+--- transfer_gdx.gms(7) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.5 r61358 Released May 10, 2017 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\cristianal\Box\Machine Learning\Project
+
+   InputFile:solution_total.gdx
+   OutputFile:solution_total.db
+   Symbols:1
+   Uels:11
+   Loading Uels
+   Processing Symbols
+     solu(20 records)
+   Inserts:20
+   Elapsed:0.12 seconds
+   Inserts/second:172.41
+   Done
+
+--- transfer_gdx.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.5 r61358 Released May 10, 2017 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\cristianal\Box\Machine Learning\Project
+
+   InputFile:stat_total.gdx
+   OutputFile:stat_total.db
+   Symbols:1
+   Uels:7
+   Loading Uels
+   Processing Symbols
+     stats(8 records)
+   Inserts:8
+   Elapsed:0.09 seconds
+   Inserts/second:89.89
+   Done
+
+*** Status: Normal completion
+--- Job transfer_gdx.gms Stop 04/07/18 17:09:31 elapsed 0:00:01.059
