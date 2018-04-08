@@ -1,10 +1,10 @@
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 1
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
 INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/seed.gms
-   2  execseed = 112;
+   2  execseed = 113;
    3  *execseed =         1;
    4   
    5  Set box number of boxes /1*4/
@@ -56,7 +56,7 @@ INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B
   51  ;
   52   
   53   
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 2
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -114,7 +114,7 @@ C o m p i l a t i o n
  104     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -1;
  105     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1;
  106   
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 3
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -172,7 +172,7 @@ C o m p i l a t i o n
  157           A(k,i,e,var)$(ord(e)=cnt2) = A_orig(k_orig3,i_orig,e_orig,var);
  158           b(k,i,e)$(ord(e)=cnt2) = b_orig(k_orig3,i_orig,e_orig);
  159           cnt2=cnt2+1;
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 4
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -192,7 +192,7 @@ C o m p i l a t i o n
  172  execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
  173   
 EXIT /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/Random_gen_presolve.gms
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 5
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -204,20 +204,20 @@ Include File Summary
      3      174 EXIT           1     173  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/Random_gen_presolve.gms
 
 
-COMPILATION TIME     =        0.002 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 6
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 ----     34 PARAMETER h  heigth of boxes
 
-1 5.000,    2 4.000,    3 3.000,    4 5.000
+1 4.000,    2 5.000,    3 3.000,    4 2.000
 
 
 ----     34 PARAMETER l  length of boxes
 
-1 8.000,    2 1.000,    3 1.000,    4 2.000
+1  9.000,    2 10.000,    3  4.000,    4  5.000
 
 
 ----     34 PARAMETER heigth               =        5.000  packing box height
@@ -253,7 +253,7 @@ E x e c u t i o n
 
 
 
-EXECUTION TIME       =        0.015 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+EXECUTION TIME       =        0.008 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -263,7 +263,7 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:18:54 Page 7
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:22:23 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

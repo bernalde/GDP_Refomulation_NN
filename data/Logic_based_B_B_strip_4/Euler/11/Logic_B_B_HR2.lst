@@ -26534,3 +26534,2017 @@ GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
 
 
 EXECUTION TIME       =        0.123 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 353
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 849
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 850
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   354
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.123 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 354
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 851
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 852
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   355
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.068 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 355
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 853
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 854
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   356
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.067 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 356
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 855
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.005     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 856
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   357
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.122 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 357
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 857
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.007     36000.000
+ ITERATION COUNT, LIMIT         1    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 858
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   358
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.126 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 358
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 859
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         5    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 860
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   359
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.124 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 359
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 861
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               11.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         1    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 862
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   360
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.068 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 360
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 863
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               11.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 864
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   361
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.060 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.124 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 361
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 865
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 866
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   362
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.068 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 362
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 867
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 868
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   363
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.153 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.220 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 363
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 869
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 870
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   364
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 364
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 871
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 872
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   365
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.070 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 365
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 873
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 874
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   366
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.002 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.067 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 366
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 875
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 876
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   367
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.031 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.096 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 367
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 877
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.003     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 878
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   368
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.199 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 368
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 879
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 880
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   369
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 369
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 881
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         1    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 882
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   370
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.123 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 370
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 883
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.010     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 884
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   371
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.045 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.163 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 371
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 885
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 886
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   372
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 372
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 887
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.007     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 888
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   373
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.122 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 373
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 889
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         1    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 890
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   374
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          135
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 374
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 891
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         5    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             1 INFEASIBLE (INFES)
+                    SUM          5.0000
+                    MAX          5.0000
+                    MEAN         5.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 892
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   375
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 375
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 893
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               11.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         1    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 894
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   376
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.122 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 376
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 895
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               11.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          8.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 896
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   377
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.121 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 377
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 897
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.011     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 898
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   378
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.004 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.068 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 378
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 899
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 900
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   379
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.152 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.217 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 379
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 901
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 902
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   380
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.002 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.067 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 380
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 903
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 904
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   381
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.003 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.088 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 381
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 905
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 906
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   382
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          136
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.139 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.215 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 382
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 907
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             2 INFEASIBLE (INFES)
+                    SUM          9.0000
+                    MAX          5.0000
+                    MEAN         4.5000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 908
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   383
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.002 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.068 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 383
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 909
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.004     36000.000
+ ITERATION COUNT, LIMIT         2    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 910
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 360
+
+
+LOOPS                               level2   2
+                                      numm   384
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           12
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
+NON ZERO ELEMENTS           148     DISCRETE VARIABLES        128
+
+
+GENERATION TIME      =        0.063 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+EXECUTION TIME       =        0.169 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+               L O O P S             level2 2
+                                       numm 384
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 911
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 360
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  360
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      4 Infeasible                
+**** OBJECTIVE VALUE               10.0000
+
+ RESOURCE USAGE, LIMIT          0.006     36000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+Cplex 12.7.1.0
+
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+>>  randomseed 1
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/cplex.opt"
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Model has been proven infeasible.
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             3 INFEASIBLE (INFES)
+                    SUM         12.0000
+                    MAX          5.0000
+                    MEAN         4.0000
+                             0  UNBOUNDED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                    04/08/18 01:20:34 Page 912
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.122 SECONDS     13 MB  24.8.4 r60966 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/0.g00
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/Logic_B_B_HR2.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/11/Logic_B_B_HR2.lst
