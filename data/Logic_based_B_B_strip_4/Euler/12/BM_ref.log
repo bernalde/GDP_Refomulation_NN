@@ -1,0 +1,24 @@
+
+--- Job BM_ref.gms Start 04/07/18 19:44:18 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX250-250
+--- BM_ref.gms(8) 3 Mb 1 Error
+*** Error 140 in C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
+    Unknown symbol
+--- BM_ref.gms(34) 3 Mb
+--- .max_time_ref.gms(7) 3 Mb
+--- BM_ref.gms(38) 3 Mb 2 Errors
+*** Error 257 in C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
+    Solve statement not checked because of previous errors
+--- BM_ref.gms(42) 3 Mb 3 Errors
+*** Error 257 in C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
+    Solve statement not checked because of previous errors
+--- BM_ref.gms(55) 3 Mb 3 Errors
+*** Status: Compilation error(s)
+--- Job BM_ref.gms Stop 04/07/18 19:44:18 elapsed 0:00:00.068
+Exit code = 2
