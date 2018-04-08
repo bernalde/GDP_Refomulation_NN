@@ -1,57 +1,54 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:14:29 Page 1
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:33 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
    1  * Run file to generate 10.00instances of mymodel
    2  file seed_no / 'seed.gms' /
-   3  putclose seed_no 'execseed = '        1.00';';
-   4  execute 'gams Random_gen_presolve.gms --seed=1 s=0 lo=0 '
-   5  execute 'gdx2sqlite -i prob_data_1.gdx -o prob_data_1.db';
-   6  putclose seed_no 'execseed = '        2.00';';
-   7  execute 'gams Random_gen_presolve.gms --seed=2 s=0 lo=0 '
-   8  execute 'gdx2sqlite -i prob_data_2.gdx -o prob_data_2.db';
-   9  putclose seed_no 'execseed = '        3.00';';
-  10  execute 'gams Random_gen_presolve.gms --seed=3 s=0 lo=0 '
-  11  execute 'gdx2sqlite -i prob_data_3.gdx -o prob_data_3.db';
-  12  putclose seed_no 'execseed = '        4.00';';
-  13  execute 'gams Random_gen_presolve.gms --seed=4 s=0 lo=0 '
-  14  execute 'gdx2sqlite -i prob_data_4.gdx -o prob_data_4.db';
-  15  putclose seed_no 'execseed = '        5.00';';
-  16  execute 'gams Random_gen_presolve.gms --seed=5 s=0 lo=0 '
-  17  execute 'gdx2sqlite -i prob_data_5.gdx -o prob_data_5.db';
-  18  putclose seed_no 'execseed = '        6.00';';
-  19  execute 'gams Random_gen_presolve.gms --seed=6 s=0 lo=0 '
-  20  execute 'gdx2sqlite -i prob_data_6.gdx -o prob_data_6.db';
-  21  putclose seed_no 'execseed = '        7.00';';
-  22  execute 'gams Random_gen_presolve.gms --seed=7 s=0 lo=0 '
-  23  execute 'gdx2sqlite -i prob_data_7.gdx -o prob_data_7.db';
-  24  putclose seed_no 'execseed = '        8.00';';
-  25  execute 'gams Random_gen_presolve.gms --seed=8 s=0 lo=0 '
-  26  execute 'gdx2sqlite -i prob_data_8.gdx -o prob_data_8.db';
-  27  putclose seed_no 'execseed = '        9.00';';
-  28  execute 'gams Random_gen_presolve.gms --seed=9 s=0 lo=0 '
-  29  execute 'gdx2sqlite -i prob_data_9.gdx -o prob_data_9.db';
-  30  putclose seed_no 'execseed = '       10.00';';
-  31  execute 'gams Random_gen_presolve.gms --seed=10 s=0 lo=0 '
-  32  execute 'gdx2sqlite -i prob_data_10.gdx -o prob_data_10.db';
-  33  execute 'gdx2sqlite -i solution_total.gdx -o solution_total.db';
-  34  execute 'gdx2sqlite -i stat_total.gdx -o stat_total.db';
+   3  putclose seed_no 'execseed = '      151.00';';
+   4  execute 'gams Random_gen_presolve.gms --seed=151 s=0 lo=0 '
+   5  execute 'gdx2sqlite -i prob_data_151.gdx -o prob_data_151.db';
+   6  putclose seed_no 'execseed = '      152.00';';
+   7  execute 'gams Random_gen_presolve.gms --seed=152 s=0 lo=0 '
+   8  execute 'gdx2sqlite -i prob_data_152.gdx -o prob_data_152.db';
+   9  putclose seed_no 'execseed = '      153.00';';
+  10  execute 'gams Random_gen_presolve.gms --seed=153 s=0 lo=0 '
+  11  execute 'gdx2sqlite -i prob_data_153.gdx -o prob_data_153.db';
+  12  putclose seed_no 'execseed = '      154.00';';
+  13  execute 'gams Random_gen_presolve.gms --seed=154 s=0 lo=0 '
+  14  execute 'gdx2sqlite -i prob_data_154.gdx -o prob_data_154.db';
+  15  putclose seed_no 'execseed = '      155.00';';
+  16  execute 'gams Random_gen_presolve.gms --seed=155 s=0 lo=0 '
+  17  execute 'gdx2sqlite -i prob_data_155.gdx -o prob_data_155.db';
+  18  putclose seed_no 'execseed = '      156.00';';
+  19  execute 'gams Random_gen_presolve.gms --seed=156 s=0 lo=0 '
+  20  execute 'gdx2sqlite -i prob_data_156.gdx -o prob_data_156.db';
+  21  putclose seed_no 'execseed = '      157.00';';
+  22  execute 'gams Random_gen_presolve.gms --seed=157 s=0 lo=0 '
+  23  execute 'gdx2sqlite -i prob_data_157.gdx -o prob_data_157.db';
+  24  putclose seed_no 'execseed = '      158.00';';
+  25  execute 'gams Random_gen_presolve.gms --seed=158 s=0 lo=0 '
+  26  execute 'gdx2sqlite -i prob_data_158.gdx -o prob_data_158.db';
+  27  putclose seed_no 'execseed = '      159.00';';
+  28  execute 'gams Random_gen_presolve.gms --seed=159 s=0 lo=0 '
+  29  execute 'gdx2sqlite -i prob_data_159.gdx -o prob_data_159.db';
+  30  putclose seed_no 'execseed = '      160.00';';
+  31  execute 'gams Random_gen_presolve.gms --seed=160 s=0 lo=0 '
+  32  execute 'gdx2sqlite -i prob_data_160.gdx -o prob_data_160.db';
 
 
-COMPILATION TIME     =        0.000 SECONDS      2 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:14:29 Page 2
+COMPILATION TIME     =        0.000 SECONDS      2 MB  25.0.2 r65346 LEX-LEG
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:33 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 **** REPORT FILE SUMMARY
 
-seed_no C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_b
-        ased_B_B_strip_4_5_newform\seed.gms
+seed_no /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/15/seed.gms
 
 
-EXECUTION TIME       =        4.181 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =        0.948 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -61,7 +58,5 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\instances.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\instances.lst
+Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/15/instances.gms
+Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/15/instances.lst
