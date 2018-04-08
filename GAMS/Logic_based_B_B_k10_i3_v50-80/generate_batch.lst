@@ -1,0 +1,75 @@
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/06/18 14:33:14 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  set iter /1*10/
+   2  ;
+   3  parameter i /0/;
+INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_k10_i3_v50-80\first_seed.gms
+   5  scalar first_seed /0/;
+   6  i = first_seed;
+   7  file frun / instances.gms /; put frun '* Run file to generate ' card(iter)
+      :0 'instances of mymodel';
+   8  put / "file seed_no / 'seed.gms' /";
+   9  loop(iter,
+  10           i = i + 1;
+  11           put / "putclose seed_no 'execseed = '" (ord(iter)+first_seed) "';
+      ';";
+  12           put / "execute 'gams Random_gen_presolve.gms --seed=" i:0:0 " s=0
+       lo=0 '";
+  13  );
+  14   
+  15  iter ++ first_seed;
+****     $199,93,148,36
+**** LINE     14 INPUT       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomul
+                             ation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\generat
+                             e_batch.gms
+  16   
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/06/18 14:33:14 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+ 36  '=' or '..' or ':=' or '$=' operator expected
+     rest of statement ignored
+ 93  A set has to be indexed when used on the left side
+148  Dimension different - The symbol is referenced with more/less
+        indices as declared
+199  Assigning to set used in 'ord' or lag
+        this statement changes the content of a set
+        previously used with 'ord' or lag/lead.
+
+**** 4 ERROR(S)   0 WARNING(S)
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/06/18 14:33:14 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_N
+                                          N\GDP_Refomulation_NN\GAMS\Logic_based
+                                          _B_B_k10_i3_v50-80\generate_batch.gms
+     2        4 INCLUDE        1       4  .C:\Users\debernal\Dropbox\Ubuntu\GDP_
+                                           NN\GDP_Refomulation_NN\GAMS\Logic_bas
+                                           ed_B_B_k10_i3_v50-80\first_seed.gms
+
+
+COMPILATION TIME     =        0.031 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_k10_i3_v50-80\generate_batch.gms
+Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_k10_i3_v50-80\generate_batch.lst
+
+**** USER ERROR(S) ENCOUNTERED

@@ -1,0 +1,25 @@
+
+--- Job instances.gms Start 04/06/18 14:30:02 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(22) 2 Mb
+--- Starting execution: elapsed 0:00:00.004
+--- instances.gms(4) 3 Mb
+--- instances.gms(6) 3 Mb
+--- instances.gms(8) 3 Mb
+--- instances.gms(10) 3 Mb
+--- instances.gms(12) 3 Mb
+--- instances.gms(14) 3 Mb
+--- instances.gms(16) 3 Mb
+--- instances.gms(18) 3 Mb
+Cannot delete directory: 225b
+--- instances.gms(20) 3 Mb
+Cannot delete directory: 225b
+--- instances.gms(22) 3 Mb
+--- Putfile seed_no C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/06/18 14:30:24 elapsed 0:00:22.569
