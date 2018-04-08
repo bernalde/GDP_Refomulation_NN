@@ -1,9 +1,9 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:02:43 Page 1
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:11:11 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-   1  set iter /5*6/
+   1  set iter /1*10/
    2      algo /BM,HR,DB_BM,DB_HR/
    3      algo2 /BM,HR/
    4      resu /sol,time,cpu,nodes,LB,first,best/
@@ -12,9 +12,8 @@ C o m p i l a t i o n
    7  parameter solu(iter,algo,resu), stats(iter,algo2,resu2);
    8  scalar rel,sol,nodes,time,cpu,LBL,first,best,const,vars,bin;
    9   
-INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\first_seed.gms
-  11  scalar first_seed /0/;
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/first_seed.gms
+  11  scalar first_seed /30/;
   12  file seed_no / 'seed.gms' /
   13   
   14  loop(iter,
@@ -57,6 +56,11 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   51     execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
   52     solu(iter,'DB_BM','sol') = sol;
   53     solu(iter,'DB_BM','time') = time;
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:11:11 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
   54     solu(iter,'DB_BM','cpu') = cpu;
   55     solu(iter,'DB_BM','nodes') = nodes;
   56     solu(iter,'DB_BM','LB') = LBL;
@@ -78,39 +82,32 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   72  );
   73   
   74  *To print the content of the gdx file execute the next line of code
-  75  execute 'gdxdump "solution_total" symb=solu format=csv > solution_total.cs
-      v';
+  75  execute 'gdxdump "solution_total" symb=solu format=csv > solution_total.csv';
   76  execute "gdx2sqlite -i solution_total.gdx -o solution_total.db";
   77  execute "gdx2sqlite -i stat_total.gdx -o stat_total.db";
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:02:43 Page 2
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:11:11 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_N
-                                          N\GDP_Refomulation_NN\GAMS\Logic_based
-                                          _B_B_strip_4_5_newform\run_batch.gms
-     2       10 INCLUDE        1      10  .C:\Users\debernal\Dropbox\Ubuntu\GDP_
-                                           NN\GDP_Refomulation_NN\GAMS\Logic_bas
-                                           ed_B_B_strip_4_5_newform\first_seed.g
-                                           ms
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/run_batch.gms
+     2       10 INCLUDE        1      10  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/first_seed.gms
 
 
-COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:02:43 Page 3
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:11:11 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 **** REPORT FILE SUMMARY
 
-seed_no C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_b
-        ased_B_B_strip_4_5_newform\seed.gms
+seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/seed.gms
 
 
-EXECUTION TIME       =      253.486 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =     4862.088 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -120,7 +117,5 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\run_batch.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\run_batch.lst
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/run_batch.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/3/run_batch.lst
