@@ -1,0 +1,51 @@
+B 2 C o m p i l a t i o n
+B 67 Include File Summary
+B 83 Equation Listing    SOLVE prob Using RMIP From line 154
+D 84 obj
+D 96 disag
+D 113 disj_ineq
+D 124 sum_bin
+D 138 bound_up
+D 149 bound_lo
+B 162 Column Listing      SOLVE prob Using RMIP From line 154
+E 163 cost
+E 176 x
+E 207 ni
+E 231 y
+B 271 Model Statistics    SOLVE prob Using RMIP From line 154
+B 287 Solution Report     SOLVE prob Using RMIP From line 154
+F 319 obj
+F 330 disag
+F 395 disj_ineq
+F 520 sum_bin
+F 540 bound_up
+F 785 bound_lo
+G 1025 cost
+G 1029 x
+G 1046 ni
+G 1291 y
+B 1363 Equation Listing    SOLVE prob Using MIP From line 158
+D 1364 obj
+D 1376 disag
+D 1393 disj_ineq
+D 1408 sum_bin
+D 1419 bound_up
+D 1430 bound_lo
+B 1443 Column Listing      SOLVE prob Using MIP From line 158
+E 1444 cost
+E 1457 x
+E 1488 ni
+E 1512 y
+B 1552 Model Statistics    SOLVE prob Using MIP From line 158
+B 1568 Solution Report     SOLVE prob Using MIP From line 158
+F 1609 obj
+F 1620 disag
+F 1685 disj_ineq
+F 1810 sum_bin
+F 1830 bound_up
+F 2075 bound_lo
+G 2315 cost
+G 2319 x
+G 2336 ni
+G 2581 y
+B 2653 E x e c u t i o n
