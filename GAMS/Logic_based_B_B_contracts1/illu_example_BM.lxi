@@ -1,0 +1,302 @@
+B 2 C o m p i l a t i o n
+B 475 Equation Listing    SOLVE chull Using RMIP From line 233
+D 476 obj
+D 482 disag
+D 493 disj_ineq_hr
+D 506 bound_up
+D 517 bound_lo
+D 528 sum_bin
+B 539 Column Listing      SOLVE chull Using RMIP From line 233
+E 540 x
+E 558 ni
+E 588 y
+E 619 cost
+B 628 Model Statistics    SOLVE chull Using RMIP From line 233
+B 644 Solution Report     SOLVE chull Using RMIP From line 233
+F 673 obj
+F 679 disag
+F 690 disj_ineq_hr
+F 720 bound_up
+F 741 bound_lo
+F 762 sum_bin
+G 765 x
+G 772 ni
+G 793 y
+G 806 cost
+B 817 Equation Listing    SOLVE bigM Using RMIP From line 234
+D 818 obj
+D 824 disj_ineq
+D 838 sum_bin
+B 849 Column Listing      SOLVE bigM Using RMIP From line 234
+E 850 x
+E 907 y
+E 932 cost
+B 941 Model Statistics    SOLVE bigM Using RMIP From line 234
+B 957 Solution Report     SOLVE bigM Using RMIP From line 234
+F 986 obj
+F 992 disj_ineq
+F 1022 sum_bin
+G 1025 x
+G 1032 y
+G 1045 cost
+B 1056 Equation Listing    SOLVE lagdual Using RMIP From line 237
+D 1057 obj2
+D 1076 disj_ineq_hr
+D 1089 bound_up
+D 1100 bound_lo
+D 1111 sum_bin
+B 1122 Column Listing      SOLVE lagdual Using RMIP From line 237
+E 1123 ni
+E 1154 y
+E 1185 cost
+B 1194 Model Statistics    SOLVE lagdual Using RMIP From line 237
+B 1210 Solution Report     SOLVE lagdual Using RMIP From line 237
+F 1239 obj2
+F 1245 disj_ineq_hr
+F 1275 bound_up
+F 1296 bound_lo
+F 1317 sum_bin
+G 1320 ni
+G 1341 y
+G 1354 cost
+B 1365 Equation Listing    SOLVE bigM Using RMIP From line 240
+D 1366 obj
+D 1374 disj_ineq
+D 1388 sum_bin
+B 1399 Column Listing      SOLVE bigM Using RMIP From line 240
+E 1400 x
+E 1457 y
+E 1482 cost
+B 1491 Model Statistics    SOLVE bigM Using RMIP From line 240
+B 1507 Solution Report     SOLVE bigM Using RMIP From line 240
+F 1536 obj
+F 1542 disj_ineq
+F 1572 sum_bin
+G 1575 x
+G 1582 y
+G 1595 cost
+B 1606 Equation Listing    SOLVE bigM Using RMIP From line 262
+D 1607 obj
+D 1613 disj_ineq
+D 1628 sum_bin
+B 1639 Column Listing      SOLVE bigM Using RMIP From line 262
+E 1640 x
+E 1697 y
+E 1722 cost
+B 1731 Model Statistics    SOLVE bigM Using RMIP From line 262
+B 1747 Solution Report     SOLVE bigM Using RMIP From line 262
+F 1776 obj
+F 1782 disj_ineq
+F 1812 sum_bin
+G 1815 x
+G 1822 y
+G 1835 cost
+B 1846 Equation Listing    SOLVE bigM Using RMIP From line 272
+D 1847 obj
+D 1853 disj_ineq
+D 1867 sum_bin
+B 1878 Column Listing      SOLVE bigM Using RMIP From line 272
+E 1879 x
+E 1936 y
+E 1961 cost
+B 1970 Model Statistics    SOLVE bigM Using RMIP From line 272
+B 1986 Solution Report     SOLVE bigM Using RMIP From line 272
+F 2015 obj
+F 2021 disj_ineq
+F 2051 sum_bin
+G 2054 x
+G 2061 y
+G 2074 cost
+B 2085 Equation Listing    SOLVE bigM Using RMIP From line 282
+D 2086 obj
+D 2092 disj_ineq
+D 2106 sum_bin
+B 2117 Column Listing      SOLVE bigM Using RMIP From line 282
+E 2118 x
+E 2175 y
+E 2200 cost
+B 2209 Model Statistics    SOLVE bigM Using RMIP From line 282
+B 2225 Solution Report     SOLVE bigM Using RMIP From line 282
+F 2254 obj
+F 2260 disj_ineq
+F 2290 sum_bin
+G 2293 x
+G 2300 y
+G 2313 cost
+B 2324 Equation Listing    SOLVE bigM Using RMIP From line 296
+D 2325 obj
+D 2331 disj_ineq
+D 2347 sum_bin
+B 2358 Column Listing      SOLVE bigM Using RMIP From line 296
+E 2359 x
+E 2416 y
+E 2441 cost
+B 2450 Model Statistics    SOLVE bigM Using RMIP From line 296
+B 2466 Solution Report     SOLVE bigM Using RMIP From line 296
+F 2496 obj
+F 2502 disj_ineq
+F 2532 sum_bin
+G 2535 x
+G 2542 y
+G 2555 cost
+B 2569 Equation Listing    SOLVE bigM Using RMIP From line 307
+D 2570 obj
+D 2576 disj_ineq
+D 2590 sum_bin
+B 2601 Column Listing      SOLVE bigM Using RMIP From line 307
+E 2602 x
+E 2659 y
+E 2684 cost
+B 2693 Model Statistics    SOLVE bigM Using RMIP From line 307
+B 2709 Solution Report     SOLVE bigM Using RMIP From line 307
+F 2736 obj
+F 2742 disj_ineq
+F 2772 sum_bin
+G 2775 x
+G 2782 y
+G 2795 cost
+B 2809 Equation Listing    SOLVE bigM Using RMIP From line 318
+D 2810 obj
+D 2816 disj_ineq
+D 2830 sum_bin
+B 2841 Column Listing      SOLVE bigM Using RMIP From line 318
+E 2842 x
+E 2899 y
+E 2924 cost
+B 2933 Model Statistics    SOLVE bigM Using RMIP From line 318
+B 2949 Solution Report     SOLVE bigM Using RMIP From line 318
+F 2978 obj
+F 2984 disj_ineq
+F 3014 sum_bin
+G 3017 x
+G 3024 y
+G 3037 cost
+B 3048 Equation Listing    SOLVE bigM Using RMIP From line 329
+D 3049 obj
+D 3055 disj_ineq
+D 3069 sum_bin
+B 3080 Column Listing      SOLVE bigM Using RMIP From line 329
+E 3081 x
+E 3138 y
+E 3163 cost
+B 3172 Model Statistics    SOLVE bigM Using RMIP From line 329
+B 3188 Solution Report     SOLVE bigM Using RMIP From line 329
+F 3215 obj
+F 3221 disj_ineq
+F 3251 sum_bin
+G 3254 x
+G 3261 y
+G 3274 cost
+B 3288 Equation Listing    SOLVE bigM Using RMIP From line 340
+D 3289 obj
+D 3295 disj_ineq
+D 3309 sum_bin
+B 3320 Column Listing      SOLVE bigM Using RMIP From line 340
+E 3321 x
+E 3378 y
+E 3403 cost
+B 3412 Model Statistics    SOLVE bigM Using RMIP From line 340
+B 3428 Solution Report     SOLVE bigM Using RMIP From line 340
+F 3457 obj
+F 3463 disj_ineq
+F 3493 sum_bin
+G 3496 x
+G 3503 y
+G 3516 cost
+B 3527 Equation Listing    SOLVE bigM Using RMIP From line 351
+D 3528 obj
+D 3534 disj_ineq
+D 3548 sum_bin
+B 3559 Column Listing      SOLVE bigM Using RMIP From line 351
+E 3560 x
+E 3617 y
+E 3642 cost
+B 3651 Model Statistics    SOLVE bigM Using RMIP From line 351
+B 3667 Solution Report     SOLVE bigM Using RMIP From line 351
+F 3694 obj
+F 3700 disj_ineq
+F 3730 sum_bin
+G 3733 x
+G 3740 y
+G 3753 cost
+B 3767 Equation Listing    SOLVE bigM Using RMIP From line 362
+D 3768 obj
+D 3774 disj_ineq
+D 3788 sum_bin
+B 3799 Column Listing      SOLVE bigM Using RMIP From line 362
+E 3800 x
+E 3857 y
+E 3882 cost
+B 3891 Model Statistics    SOLVE bigM Using RMIP From line 362
+B 3907 Solution Report     SOLVE bigM Using RMIP From line 362
+F 3936 obj
+F 3942 disj_ineq
+F 3972 sum_bin
+G 3975 x
+G 3982 y
+G 3995 cost
+B 4006 Equation Listing    SOLVE bigM Using RMIP From line 373
+D 4007 obj
+D 4013 disj_ineq
+D 4027 sum_bin
+B 4038 Column Listing      SOLVE bigM Using RMIP From line 373
+E 4039 x
+E 4096 y
+E 4121 cost
+B 4130 Model Statistics    SOLVE bigM Using RMIP From line 373
+B 4146 Solution Report     SOLVE bigM Using RMIP From line 373
+F 4173 obj
+F 4179 disj_ineq
+F 4209 sum_bin
+G 4212 x
+G 4219 y
+G 4232 cost
+B 4246 Equation Listing    SOLVE bigM Using RMIP From line 384
+D 4247 obj
+D 4253 disj_ineq
+D 4267 sum_bin
+B 4278 Column Listing      SOLVE bigM Using RMIP From line 384
+E 4279 x
+E 4336 y
+E 4361 cost
+B 4370 Model Statistics    SOLVE bigM Using RMIP From line 384
+B 4386 Solution Report     SOLVE bigM Using RMIP From line 384
+F 4416 obj
+F 4422 disj_ineq
+F 4452 sum_bin
+G 4455 x
+G 4462 y
+G 4475 cost
+B 4489 Equation Listing    SOLVE bigM Using RMIP From line 400
+D 4490 obj
+D 4496 disj_ineq
+D 4510 sum_bin
+B 4521 Column Listing      SOLVE bigM Using RMIP From line 400
+E 4522 x
+E 4579 y
+E 4604 cost
+B 4613 Model Statistics    SOLVE bigM Using RMIP From line 400
+B 4629 Solution Report     SOLVE bigM Using RMIP From line 400
+F 4658 obj
+F 4664 disj_ineq
+F 4694 sum_bin
+G 4697 x
+G 4704 y
+G 4717 cost
+B 4728 Equation Listing    SOLVE bigM Using RMIP From line 412
+D 4729 obj
+D 4735 disj_ineq
+D 4749 sum_bin
+B 4760 Column Listing      SOLVE bigM Using RMIP From line 412
+E 4761 x
+E 4818 y
+E 4843 cost
+B 4852 Model Statistics    SOLVE bigM Using RMIP From line 412
+B 4868 Solution Report     SOLVE bigM Using RMIP From line 412
+F 4897 obj
+F 4903 disj_ineq
+F 4933 sum_bin
+G 4936 x
+G 4943 y
+G 4956 cost
+B 4967 E x e c u t i o n

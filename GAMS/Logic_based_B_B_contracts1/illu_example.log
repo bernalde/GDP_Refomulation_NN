@@ -1,0 +1,240 @@
+
+--- Job illu_example.gms Start 08/04/15 14:56:38 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- illu_example.gms(454) 3 Mb
+--- Starting execution: elapsed 0:00:00.004
+--- illu_example.gms(227) 4 Mb
+--- Generating RMIP model chull
+--- illu_example.gms(229) 4 Mb
+---   67 rows  27 columns  151 non-zeroes
+---   8 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.016
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 18 rows and 1 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 48 rows, 25 columns, and 128 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.13 ticks)
+
+Optimal solution found.
+Objective :           5.333061
+
+--- Restarting execution
+--- illu_example.gms(229) 2 Mb
+--- Reading solution for model chull
+--- Executing after solve: elapsed 0:00:00.077
+--- Generating RMIP model bigM
+--- illu_example.gms(230) 3 Mb
+---   29 rows  11 columns  81 non-zeroes
+---   8 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.088
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 1 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 26 rows, 9 columns, and 74 nonzeros.
+Presolve time = 0.00 sec. (0.02 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.05 ticks)
+
+Optimal solution found.
+Objective :           1.648119
+
+--- Restarting execution
+--- illu_example.gms(230) 2 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.178
+--- illu_example.gms(232) 3 Mb
+--- Generating RMIP model lagdual
+--- illu_example.gms(233) 3 Mb
+---   61 rows  25 columns  143 non-zeroes
+---   8 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.187
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 18 rows and 1 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 40 rows, 21 columns, and 96 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             0.629719
+Iteration:     3   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.09 ticks)
+
+Optimal solution found.
+Objective :           5.333061
+
+--- Restarting execution
+--- illu_example.gms(233) 2 Mb
+--- Reading solution for model lagdual
+--- Executing after solve: elapsed 0:00:00.297
+--- illu_example.gms(235) 3 Mb
+--- Generating RMIP model bigM
+--- illu_example.gms(236) 3 Mb
+---   29 rows  11 columns  81 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.311
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 21 rows and 9 columns.
+Reduced LP has 8 rows, 2 columns, and 16 nonzeros.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             8.333193
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.05 ticks)
+
+Optimal solution found.
+Objective :           9.769126
+
+--- Restarting execution
+--- illu_example.gms(236) 2 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.394
+--- illu_example.gms(426) 3 Mb
+--- Generating RMIP model chull
+--- illu_example.gms(427) 3 Mb
+---   67 rows  27 columns  151 non-zeroes
+---   7 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.408
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 31 rows and 8 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 33 rows, 16 columns, and 85 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             6.000000
+Iteration:     4   Dual objective     =             0.999605
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :           5.651828
+
+--- Restarting execution
+--- illu_example.gms(427) 2 Mb
+--- Reading solution for model chull
+--- Executing after solve: elapsed 0:00:00.473
+--- illu_example.gms(436) 3 Mb
+--- Generating RMIP model chull
+--- illu_example.gms(437) 3 Mb
+---   67 rows  27 columns  151 non-zeroes
+---   7 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.550
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 31 rows and 8 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 33 rows, 16 columns, and 85 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             4.347537
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.14 ticks)
+
+Optimal solution found.
+Objective :           6.000000
+
+--- Restarting execution
+--- illu_example.gms(437) 2 Mb
+--- Reading solution for model chull
+--- Executing after solve: elapsed 0:00:00.621
+--- illu_example.gms(446) 3 Mb
+--- Generating RMIP model chull
+--- illu_example.gms(447) 3 Mb
+---   67 rows  27 columns  151 non-zeroes
+---   7 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.631
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 32 rows and 8 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 32 rows, 16 columns, and 83 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            13.999806
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.10 ticks)
+
+Optimal solution found.
+Objective :          13.999806
+
+--- Restarting execution
+--- illu_example.gms(447) 2 Mb
+--- Reading solution for model chull
+--- Executing after solve: elapsed 0:00:00.724
+--- illu_example.gms(454) 3 Mb
+--- GDX File C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\zzz.gdx
+*** Status: Normal completion
+--- Job illu_example.gms Stop 08/04/15 14:56:39 elapsed 0:00:00.773

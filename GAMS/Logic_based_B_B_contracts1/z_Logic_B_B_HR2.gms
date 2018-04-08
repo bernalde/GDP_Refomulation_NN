@@ -1,14 +1,29 @@
+positive variables it(t), f(t,r), ix(t,r);
+Variables
+     cost        objective variable
+     x(var)
+     ni(k,i,var);
+Binary variable y(k,i);
 
-variables cost, x(var), ni(k,i,var);
-binary variable y(k,i);
-equation obj, disj_ineq(k,i,e), sum_bin(k), disj_fix;
-equation disj_ineq_hr(k,i,e), disag(k,var), bound_up(k,i,var), bound_lo(k,i,var);
+
+equation obj, disj_ineq(k,i,e), sum_bin(k), disj_ineq_hr(k,i,e), disag(k,var), bound_up(k,i,var), bound_lo(k,i,var), disj_fix
+     eq2
+     eq3
+     eq4
+     eq5
+;
 
 alias (level,level2,k,kk),(i,ii,iii),(ki,ki2);
 set node(level,k,i),cur_node(k,i),alive_ki(k,i);alive_ki(ki)=yes;node(level,k,i)=no;cur_node(k,i)=no;
 alias (node,node2);
-obj.. cost =e= sum(var,c(var)*x(var));
-disj_ineq(k,i,e)$(kie(k,i,e) and alive_ki(k,i)).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(var)) =l= b(k,i,e) + (sum(var$kv(k,var),x.up(var))+1)*(1-y(k,i));
+
+obj.. cost =e= sum(t,IC(t)*it(t)) + sum(map_var_c(var,t,r),x(var));
+eq2(t).. it(t) =e= sum(r,ix(t,r));
+eq3(t,r).. - f(t,r) =l= -D(t,r);
+eq4(t,r).. ix(t,r) =e= ix(t-1,r)$(ord(t)>1) + sum(map_var_x(var,t,r),x(var)) - f(t,r);
+eq5(t,r)$(ord(t)>=2)..  sum((k,i)$logic_left(t,r,k,i),y(k,i)) =e= sum((tt,k,i)$logic_right(t,r,k,tt,i),y(k,i));
+
+disj_ineq(k,i,e)$(kie(k,i,e) and alive_ki(k,i)).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(var)) =l= b(k,i,e) + opt_bigm(k,i,e)*(1-y(k,i));
 disj_fix(k,i,e)$(kie(k,i,e) and cur_node(k,i)).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(var)) =l= b(k,i,e);
 
 disag(k,var)$(kv(k,var) and (sum(alive_ki(k,i),1)>=1) ).. x(var) =e= sum(ki(k,i),ni(ki,var));
@@ -25,21 +40,18 @@ option optcr = 0.001
 *       rmip=cbc
   ;
 
-model bigM /obj, disj_ineq, disj_fix, sum_bin/;
-bigM.optfile = 1;
-model chull /obj, disag, disj_ineq_hr, bound_up, bound_lo, disj_fix, sum_bin/;
-chull.optfile = 1;
+model bigM /obj, disj_ineq, disj_fix, sum_bin,  eq2, eq3, eq4, eq5/;
+model chull /obj, disag, disj_ineq_hr, bound_up, bound_lo, disj_fix, sum_bin,  eq2, eq3, eq4, eq5/;
 
 x.lo(var) = lb(var);
 x.up(var) = ub(var);
-
 *y.fx(k,'1')=1;
 
-$include max_time_ref
+*$include max_time_ref
 
 
 *code sets and parameters
-set numm /1*100000/,nnode(numm,k,k,i);nnode(numm,k,k,i)=no;
+set numm /1*500000/,nnode(numm,k,k,i);nnode(numm,k,k,i)=no;
 set numm_aux1(numm), numm_aux2(numm); numm_aux1(numm)=no;numm_aux2(numm)=no;
 set nnode2(numm,k,k,i);nnode2(numm,k,k,i)=no;
 alias(numm,numm2);
@@ -50,7 +62,6 @@ parameter chec_int(k,i), chec_int2(k,i), opt_y(k,i), opt_x(var), no_ki_param(k,i
 parameter node_val(numm),node_stat(numm),node_int(numm), parent_val(numm);
 
 scalar tol /1e-4/
-*Check how tolerance to 1e-6 affects
        gap /1e-3/
        int_sol
        int_sol2
@@ -65,7 +76,6 @@ scalar tol /1e-4/
        aux3
        cnt_nodes /1/
        time_start
-       cpu_time /0/
        time_wall
        time_solve /0/
        cnt_calculate_LB /1/
@@ -90,7 +100,6 @@ time_start = jnow;
 
 solve chull using rmip min cost;
 time_solve = time_solve + chull.etsolve;
-cpu_time = cpu_time + chull.resUsd;
 time_wall = (jnow-time_start)*3600*24;
 
 
@@ -172,13 +181,12 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
       if((parent_val(numm)<=(1-gap)*UBP) or (parent_val(numm)<=(1+gap)*UBP),
          chec_int(k,i)=0; int_sol=0; int_sol3=0;
          cur_node(k,i)=no;
-         loop(nnode(numm,level,kk,ii),cur_node(kk,ii)=yes;);
-         y.l(ki)$cur_node(ki)=1;
+         y.lo(k,i)=0;y.up(k,i)=1;
+         loop(nnode(numm,level,kk,ii),cur_node(kk,ii)=yes;y.fx(kk,ii)=1);
 *$ontext
 **************** Option 1
          solve chull using rmip min cost;
          time_solve = time_solve + chull.etsolve;
-         cpu_time = cpu_time + chull.resUsd;
          time_wall = (jnow-time_start)*3600*24;
          loop(ki2, if((y.l(ki2)>=1-tol or y.l(ki2)<=tol),chec_int(ki2)=1););
          if(sum(ki2,chec_int(ki2))=sum(ki2,1),int_sol3=1;);
@@ -224,20 +232,19 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
    chec_int_k(k)$(sum(alive_ki(k,i),1)=0)=no;
 
    if(sum(nnode(numm,level,kk,ii),1)=0,check_opt=1;);
-   execute_unload "res_B_B_HR2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
+   execute_unload "res_B_B_HR2_2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
 
 );
 
-execute_unload "res_B_B_HR2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
+execute_unload "res_B_B_HR2_2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
 
 LBP = min(LBP,UBP);
-scalar sol,nodes,time,cpu,LBL,first,best,const,vars,bin;
+scalar sol,nodes,time,LBL,first,best,const,vars,bin;
 sol = UBP;
 nodes = cnt_nodes-1;
 time  = time_solve;
-cpu = cpu_time;
 LBL   = LBP;
 first = first_inter;
 best  = best_inter;
 
-execute_unload "res_prob" sol,nodes,time,cpu,LBL,first,best;
+execute_unload "res_prob_2 " sol,nodes,time,LBL,first,best;
