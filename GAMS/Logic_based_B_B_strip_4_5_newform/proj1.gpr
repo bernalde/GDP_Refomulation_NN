@@ -1305,6 +1305,25 @@ Order=1,2,3
 Decim=7
 PlaneRownr=-1
 
+[RP:SEED]
+1=
+
+[RP:LOGIC_B_B_BM2]
+1=r=0
+2=
+
+[RP:RANDOM_GEN_PRESOLVE]
+1=s=0 gdx=zzz
+2=s=0
+3=
+
+[RP:LOGIC_B_B_HR2]
+1=r=0
+2=
+
+[RP:RUN_BATCH]
+1=
+
 [RP:BM_REF]
 1=r=0 
 2=r=0 o=nul lo=0
@@ -1312,57 +1331,42 @@ PlaneRownr=-1
 4=r=0
 5=
 
-[RP:SEED]
+[RP:GENERATE_BATCH]
 1=
 
-[RP:RANDOM_GEN_PRESOLVE]
-1=s=0 gdx=zzzz
-2=s=0 gdx=zzz
-3=s=0
-4=
-
-[RP:LOGIC_B_B_BM2]
-1=r=0
-2=
-
-[RP:RUN_BATCH]
+[RP:INSTANCES]
 1=
-
-[RP:LOGIC_B_B_HR2]
-1=r=0
-2=
 
 [MRUFILES]
-1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_BM2.lst
-2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
-3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_HR2.gms
-4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Logic_B_B_BM2.gms
-5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.lst
-6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.lst
-7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_HR2.lst
-8=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_strip_4_5_newform\zzz.gdx
+1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\generate_batch.gms
+2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
+3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total .gdx
+4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total_2 .gdx
+5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\zzz.gdx
+6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\zzzz.gdx
+7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_BM2.lst
+8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\Random_gen_presolve.gms
 
 [OPENWINDOW_1]
-FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\run_batch.gms
-FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
-FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\cplex.opt
-FILE3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\first_seed.gms
-FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\HR_ref.gms
-FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_BM2.gms
-FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_HR2.gms
-FILE7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\max_time_ref.gms
-FILE8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-FILE9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\res_B_B_BM2.gdx
-FILE10=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\run_batch.gms
-FILE11=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\run_batch.lst
-FILE12=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
-FILE13=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total .gdx
-FILE14=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total.gdx
-FILE15=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total_2 .gdx
-FILE16=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\stat_total.gdx
-FILE17=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\zzz.gdx
-FILE18=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\zzzz.gdx
-FILE19=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_HR2.gms
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\cplex.opt
+FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\first_seed.gms
+FILE3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\generate_batch.gms
+FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\generate_batch.lst
+FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\HR_ref.gms
+FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\instances.gms
+FILE7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\instances.lst
+FILE8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_BM2.gms
+FILE9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_HR2.gms
+FILE10=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\max_time_ref.gms
+FILE11=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
+FILE12=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\res_B_B_BM2.gdx
+FILE13=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\run_batch.gms
+FILE14=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\run_batch.lst
+FILE15=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
+FILE16=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\solution_total.gdx
+FILE17=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\stat_total.gdx
+FILE18=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
 MAXIM=0
 TOP=9
 LEFT=8

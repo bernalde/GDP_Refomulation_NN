@@ -1,4 +1,4 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:14:29 Page 1
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:27 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -35,23 +35,20 @@ C o m p i l a t i o n
   30  putclose seed_no 'execseed = '       10.00';';
   31  execute 'gams Random_gen_presolve.gms --seed=10 s=0 lo=0 '
   32  execute 'gdx2sqlite -i prob_data_10.gdx -o prob_data_10.db';
-  33  execute 'gdx2sqlite -i solution_total.gdx -o solution_total.db';
-  34  execute 'gdx2sqlite -i stat_total.gdx -o stat_total.db';
 
 
-COMPILATION TIME     =        0.000 SECONDS      2 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/07/18 20:14:29 Page 2
+COMPILATION TIME     =        0.000 SECONDS      2 MB  25.0.2 r65346 LEX-LEG
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:27 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 **** REPORT FILE SUMMARY
 
-seed_no C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_b
-        ased_B_B_strip_4_5_newform\seed.gms
+seed_no /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/0/seed.gms
 
 
-EXECUTION TIME       =        4.181 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =        0.903 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -61,7 +58,5 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\instances.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_strip_4_5_newform\instances.lst
+Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/0/instances.gms
+Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/0/instances.lst
