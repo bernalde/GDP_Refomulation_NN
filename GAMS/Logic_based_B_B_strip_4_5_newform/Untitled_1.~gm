@@ -1,0 +1,46 @@
+
+Variables
+    Y1(i,j) disjunction variable horizontal
+    Y2(i,j) disjunction variable vertical
+    x(i)     X coordinate of box
+    he(i)    Y coordinate of box
+    long     total length of box
+    obj      objective;
+Positive variables x, he;
+Binary variable y1,y2;
+
+Scalar maxLong trivial upper bound on length; maxLong = sum(i, l(i));
+
+Equations
+    defLength(i) each box has to fit in big box
+    left(i,j,k)  box i is to the left of j
+    right(i,j,k) box i is to the right of j
+    above(i,j,k) box i is above j
+    below(i,j,k) box i is below j
+    dummy        dummy to get all disjunction variables in the model
+    originalobj  to avoid objective variable inside disjunctions;
+
+defLength(i)$(ord(i)<=boxes_param)..        long =g= x(i) + l(i);
+left(ijk(i,j,'1'))..  x(i)+l(i)  =l= x(j) + (maxLong+l(i)-l(j))*(1-Y1(i,j));
+right(ijk(i,j,'2')).. x(j)+l(j)  =l= x(i) + (maxLong+l(j)-l(i))*(1-Y1(j,i));
+above(ijk(i,j,'3')).. he(i)-h(i) =g= he(j) - (heigth+h(i))*(1-Y2(i,j));
+below(ijk(i,j,'4')).. he(j)-h(j) =g= he(i) - (heigth+h(j))*(1-Y2(j,i));
+dummy(ij(i,j))$(ord(i)<=boxes_param and ord(j)<=boxes_param)..   Y1(i,j) + Y1(j,i) + Y2(i,j) + Y2(j,i) =e= 1;
+originalobj..         obj =G= long;
+
+Model strip /all/;
+
+x.up(i) = maxLong; he.up(i) = heigth; he.lo(i) = h(i);
+
+option mip = gurobi;
+option reslim = 1800;
+strip.OptCA = .001;
+strip.OptCR = .001;
+
+
+scalar time_start,time_solve,obj_val; time_start = jnow;
+solve strip using emp min obj;
+time_solve = (jnow-time_start)*3600*24;
+obj_val = strip.objval;
+
+execute_unload "tot_time " time_solve, obj_val;

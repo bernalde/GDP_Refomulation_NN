@@ -1,0 +1,61 @@
+B 2 C o m p i l a t i o n
+B 50 Equation Listing    SOLVE BL2 Using NLP From line 37
+D 51 obj2
+D 57 c11
+D 62 c12
+D 67 c13
+D 72 c2
+D 77 c3
+B 84 Column Listing      SOLVE BL2 Using NLP From line 37
+E 85 z
+E 93 v
+E 101 x1
+E 111 x2
+E 121 u
+E 129 p1
+E 137 p2
+B 147 Model Statistics    SOLVE BL2 Using NLP From line 37
+B 165 Solution Report     SOLVE BL2 Using NLP From line 37
+F 198 obj2
+F 199 c11
+F 200 c12
+F 201 c13
+F 202 c2
+F 203 c3
+G 204 z
+G 208 v
+G 209 x1
+G 210 x2
+G 211 u
+G 212 p1
+G 213 p2
+B 222 Equation Listing    SOLVE BL2 Using NLP From line 40
+D 223 obj2
+D 229 c11
+D 234 c12
+D 239 c13
+D 244 c2
+D 249 c3
+B 256 Column Listing      SOLVE BL2 Using NLP From line 40
+E 257 z
+E 265 v
+E 273 x1
+E 283 x2
+E 293 u
+E 301 p1
+E 309 p2
+B 319 Model Statistics    SOLVE BL2 Using NLP From line 40
+B 337 Solution Report     SOLVE BL2 Using NLP From line 40
+F 377 obj2
+F 378 c11
+F 379 c12
+F 380 c13
+F 381 c2
+F 382 c3
+G 383 z
+G 387 v
+G 388 x1
+G 389 x2
+G 390 u
+G 391 p1
+G 392 p2
