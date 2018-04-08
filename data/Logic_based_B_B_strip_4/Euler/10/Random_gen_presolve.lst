@@ -1,10 +1,10 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 1
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
-   2  execseed =        10.00;
+INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/seed.gms
+   2  execseed =       110.00;
    3  *execseed =         1;
    4   
    5  Set box number of boxes /1*4/
@@ -56,7 +56,7 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   51  ;
   52   
   53   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 2
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -114,7 +114,7 @@ C o m p i l a t i o n
  104     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -1;
  105     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1;
  106   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 3
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -172,7 +172,7 @@ C o m p i l a t i o n
  157           A(k,i,e,var)$(ord(e)=cnt2) = A_orig(k_orig3,i_orig,e_orig,var);
  158           b(k,i,e)$(ord(e)=cnt2) = b_orig(k_orig3,i_orig,e_orig);
  159           cnt2=cnt2+1;
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 4
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -189,35 +189,35 @@ C o m p i l a t i o n
  169   
  170  kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
  171   
- 172  execute_unload "prob_data_10" A,Aglob,bglo,b,c,ub,lb;
+ 172  execute_unload "prob_data_110" A,Aglob,bglo,b,c,ub,lb;
  173   
-EXIT C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 5
+EXIT /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/Random_gen_presolve.gms
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-     2        1 INCLUDE        1       1  .C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
-     3      174 EXIT           1     173  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
+     1        1 INPUT          0       0  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/Random_gen_presolve.gms
+     2        1 INCLUDE        1       1  ./home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/seed.gms
+     3      174 EXIT           1     173  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/Random_gen_presolve.gms
 
 
-COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 6
+COMPILATION TIME     =        0.001 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 ----     34 PARAMETER h  heigth of boxes
 
-1 3.000,    2 4.000,    3 3.000,    4 3.000
+1 2.000,    2 3.000,    3 4.000,    4 3.000
 
 
 ----     34 PARAMETER l  length of boxes
 
-1 5.000,    2 3.000,    3 7.000,    4 5.000
+1 5.000,    2 2.000,    3 3.000,    4 5.000
 
 
 ----     34 PARAMETER heigth               =        5.000  packing box height
@@ -253,7 +253,7 @@ E x e c u t i o n
 
 
 
-EXECUTION TIME       =        0.015 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =        0.004 SECONDS      4 MB  25.0.2 r65346 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -263,11 +263,11 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 7
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 22:31:29 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.lst
-Save       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\0.g0?
+Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/Random_gen_presolve.gms
+Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/Random_gen_presolve.lst
+Save       /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/0.g0?
