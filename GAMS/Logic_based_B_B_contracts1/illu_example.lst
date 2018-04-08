@@ -1,0 +1,2709 @@
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+      Matlab code to general plots and vertices:
+       
+      clear all;close all;clc;format compact;
+      x=linspace(0,10);
+       
+       
+      V=[2 10;1 4; 4 6];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x2(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      V=[3 3; 6 0; 8 7];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x3(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      V=[5 9; 9 9; 10 6];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x4(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      figure(1)
+      plot(x,x2,'k');hold
+      plot(x,x3,'b');
+      plot(x,x4,'r');hold
+      axis([0 10 0 10])
+       
+       
+      V=[0 6;4 9;3 4];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x2(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      V=[4 1;6 7; 7 2];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x3(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      V=[10 10;10 7; 7 9];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x4(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      figure(2)
+      plot(x,x2,'k');hold
+      plot(x,x3,'b');
+      plot(x,x4,'r');hold
+      axis([0 10 0 10])
+       
+       
+      V=[1 6;6 6;1 3;6 1];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:4
+          x2(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+      V=[1 8; 5 10; 10 5];
+      [A,b,Aeq,beq]=vert2lcon(V)
+      for i=1:3
+          x3(i,:)=(-A(i,1)*x+b(i))/A(i,2);
+      end
+       
+       
+      figure(3)
+      plot(x,x2,'k');hold
+      plot(x,x3,'b');hold
+      axis([0 10 0 10])
+       
+  77   
+  78  set k disunctions /1*3/
+  79      i temrs       /1*3/
+  80      e equations per term /1*4/
+  81      ki(k,i)
+  82      kie(k,i,e)
+  83      var /1*2/;
+  84   
+  85  ki(k,i)=yes;ki('3','3')=no;
+  86  kie(ki,e)$(ord(e)<=3)=yes;
+  87  kie('3','1','4')=yes;
+  88   
+  89   
+  90   
+  91  Parameter A(k,i,e,var), b(k,i,e);
+  92   
+  93   
+  94   
+  95  A('1','1','1','1') =  0.8944           ;
+  96  A('1','1','2','1') = -0.9864           ;
+  97  A('1','1','3','1') =  0.5547           ;
+  98   
+  99  A('1','1','1','2') =  0.4472           ;
+ 100  A('1','1','2','2') =  0.1644           ;
+ 101  A('1','1','3','2') = -0.8321           ;
+ 102   
+ 103  b('1','1','1') =       6.2610       ;
+ 104  b('1','1','2') =      -0.3288       ;
+ 105  b('1','1','3') =      -2.7735       ;
+ 106   
+ 107  A('1','2','1','1') =     0.9615        ;
+ 108  A('1','2','2','1') =    -0.6247        ;
+ 109  A('1','2','3','1') =    -0.7071        ;
+ 110   
+ 111  A('1','2','1','2') = -0.2747           ;
+ 112  A('1','2','2','2') =  0.7809           ;
+ 113  A('1','2','3','2') = -0.7071           ;
+ 114   
+ 115  b('1','2','1') =          5.7691    ;
+ 116  b('1','2','2') =          0.4685    ;
+ 117  b('1','2','3') =         -4.2426    ;
+ 118   
+ 119  A('1','3','1','1') =     0.9487        ;
+ 120  A('1','3','2','1') =    -0.5145        ;
+ 121  A('1','3','3','1') =     0.0000        ;
+ 122   
+ 123  A('1','3','1','2') =   0.3162          ;
+ 124  A('1','3','2','2') =  -0.8575          ;
+ 125  A('1','3','3','2') =   1.0000          ;
+ 126   
+ 127  b('1','3','1') =     11.3842        ;
+ 128  b('1','3','2') =    -10.2899        ;
+ 129  b('1','3','3') =      9.0000        ;
+ 130   
+ 131  A('2','1','1','1') =     0.9806        ;
+ 132  A('2','1','2','1') =    -0.6000        ;
+ 133  A('2','1','3','1') =    -0.5547        ;
+ 134   
+ 135  A('2','1','1','2') =  -0.1961          ;
+ 136  A('2','1','2','2') =   0.8000          ;
+ 137  A('2','1','3','2') =  -0.8321          ;
+ 138   
+ 139  b('2','1','1') =      2.1573        ;
+ 140  b('2','1','2') =      4.8000        ;
+ 141  b('2','1','3') =     -4.9923        ;
+ 142   
+ 143  A('2','2','1','1') =      0.9806       ;
+ 144  A('2','2','2','1') =     -0.9487       ;
+ 145  A('2','2','3','1') =      0.3162       ;
+ 146   
+ 147  A('2','2','1','2') =    0.1961         ;
+ 148  A('2','2','2','2') =    0.3162         ;
+ 149  A('2','2','3','2') =   -0.9487         ;
+ 150   
+ 151  b('2','2','1') =       7.2563       ;
+ 152  b('2','2','2') =      -3.4785       ;
+ 153  b('2','2','3') =       0.3162       ;
+ 154   
+ 155  A('2','3','1','1') =     1.0000        ;
+ 156  A('2','3','2','1') =    -0.3162        ;
+ 157  A('2','3','3','1') =    -0.5547        ;
+ 158   
+ 159  A('2','3','1','2') =         0         ;
+ 160  A('2','3','2','2') =    0.9487         ;
+ 161  A('2','3','3','2') =   -0.8321         ;
+ 162   
+ 163  b('2','3','1') =     10.0000        ;
+ 164  b('2','3','2') =      6.3246        ;
+ 165  b('2','3','3') =    -11.3714        ;
+ 166   
+ 167  A('3','1','1','1') =      1.0000       ;
+ 168  A('3','1','2','1') =     -0.3714       ;
+ 169  A('3','1','3','1') =     -1.0000       ;
+ 170  A('3','1','4','1') =     0             ;
+ 171   
+ 172  A('3','1','1','2') =    0.0000         ;
+ 173  A('3','1','2','2') =   -0.9285         ;
+ 174  A('3','1','3','2') =   -0.0000         ;
+ 175  A('3','1','4','2') =    1.0000         ;
+ 176   
+ 177  b('3','1','1') =  6.0000            ;
+ 178  b('3','1','2') =  -3.1568           ;
+ 179  b('3','1','3') =  -1.0000           ;
+ 180  b('3','1','4') =  6.0000            ;
+ 181   
+ 182  A('3','2','1','1') =       0.7071      ;
+ 183  A('3','2','2','1') =      -0.3162      ;
+ 184  A('3','2','3','1') =      -0.4472      ;
+ 185   
+ 186  A('3','2','1','2') =     0.7071        ;
+ 187  A('3','2','2','2') =    -0.9487        ;
+ 188  A('3','2','3','2') =     0.8944        ;
+ 189   
+ 190  b('3','2','1') =       10.6066      ;
+ 191  b('3','2','2') =       -7.9057      ;
+ 192  b('3','2','3') =        6.7082      ;
+ 193   
+ 194  parameter c(var);
+ 195  c(var)=1;
+ 196   
+ 197  parameter lambda(k,var);lambda(k,var)=0
+ 198   
+ 199  positive variable x(var),nu1(k,i),ni(k,i,var);
+ 200  binary variable y(k,i);
+ 201  variable cost;
+ 202   
+ 203  equation obj, disj_ineq(k,i,e), sum_bin(k), disj_ineq_hr(k,i,e), disag(k,v
+      ar), bound_up(k,i,var), bound_lo(k,i,var), obj2
+ 204   
+ 205  ;
+ 206   
+ 207  obj.. cost =e= sum(var,c(var)*x(var));
+ 208  obj2.. cost =e= sum(var,c(var)*x(var))
+ 209                + sum((k,var),lambda(k,var)*(x(var) - sum(ki(k,i),ni(k,i,var
+      )))) ;
+ 210   
+ 211  disj_ineq(k,i,e)$(kie(k,i,e) ).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(
+      var)) =l= b(k,i,e) + 10*(1-y(k,i));
+ 212   
+ 213  disag(k,var).. x(var) =e= sum(ki(k,i),ni(ki,var));
+ 214  disj_ineq_hr(k,i,e)$(kie(k,i,e)  ).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var
+      )*ni(k,i,var)) =l= b(k,i,e)*y(k,i);
+ 215  bound_up(ki(k,i),var).. ni(ki,var) =l= x.up(var)*y(ki);
+ 216  bound_lo(ki(k,i),var).. ni(ki,var) =g= x.lo(var)*y(ki);
+ 217   
+ 218  sum_bin(k).. sum(ki(k,i),y(ki)) =e= 1;
+ 219   
+ 220  x.up(var)=10;
+ 221  x.lo(var)=0;
+ 222   
+ 223  model bigM /obj, disj_ineq, sum_bin/;
+ 224  model chull /obj, disag, disj_ineq_hr, bound_up, bound_lo, sum_bin/;
+ 225  model lagdual /obj2, disj_ineq_hr, bound_up, bound_lo, sum_bin/;
+ 226   
+ 227  option optcr=0;
+ 228   
+ 229  solve chull min cost using rmip;
+ 230  solve bigM min cost using rmip;
+ 231   
+ 232  lambda(k,var) = -disag.m(k,var);
+ 233  solve lagdual min cost using rmip;
+ 234   
+ 235  y.fx(ki)=y.l(ki);
+ 236  solve bigM using rmip min cost;
+ 237  y.lo(ki)=0; y.up(ki)=1;
+ 238   
+ 239  set algo /BM,HR,LAG/
+ 240      level /1*3/
+ 241      node /1*18/
+ 242      resul /ub,lb,infeas/
+ 243  ;
+ 244   
+ 245  scalar cnt /1/
+ 246         cnt2 /1/
+ 247         chec_int /0/;
+ 248   
+ 249  parameter tot_res(algo,level,node,resul);
+ 250   
+      *Solve BM BB
+       
+      cnt =1;
+      cnt2 =1;
+       
+      y.fx('1','1')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','2')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','3')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+       
+       
+       
+      cnt =1;
+      cnt2 =2;
+       
+       
+      y.fx('1','1')=1;
+      y.fx('2','1')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','1')=1;
+      y.fx('2','2')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','1')=1;
+      y.fx('2','3')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','2')=1;
+      y.fx('2','1')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','2')=1;
+      y.fx('2','2')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','2')=1;
+      y.fx('2','3')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      $ontext
+       
+      no need, node is worse than best integer
+       
+      y.fx('1','3')=1;
+      y.fx('2','1')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','3')=1;
+      y.fx('2','2')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+      y.fx('1','3')=1;
+      y.fx('2','3')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+       
+      cnt =1;
+      cnt2 =3;
+       
+       
+      y.fx('1','2')=1;
+      y.fx('2','2')=1;
+      y.fx('3','1')=1;
+      solve bigM using rmip min cost;
+      y.lo(ki)=0; y.up(ki)=1;
+      tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=bigM.obj
+      val;
+      chec_int=1;
+      loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+      if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=bigM.objval;);
+      if(bigM.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and 
+      ord(level)=cnt2)=1;);
+      cnt=cnt+1;
+       
+ 417   
+ 418   
+ 419   
+ 420   
+ 421  *Solve BM HR
+ 422   
+ 423  cnt =1;
+ 424  cnt2 =1;
+ 425   
+ 426  y.fx('1','1')=1;
+ 427  solve chull using rmip min cost;
+ 428  y.lo(ki)=0; y.up(ki)=1;
+ 429  tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=chull.ob
+      jval;
+ 430  chec_int=1;
+ 431  loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+ 432  if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=chull.objval;);
+ 433  if(chull.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and
+       ord(level)=cnt2)=1;);
+ 434  cnt=cnt+1;
+ 435   
+ 436  y.fx('1','2')=1;
+ 437  solve chull using rmip min cost;
+ 438  y.lo(ki)=0; y.up(ki)=1;
+ 439  tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=chull.ob
+      jval;
+ 440  chec_int=1;
+ 441  loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+ 442  if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=chull.objval;);
+ 443  if(chull.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and
+       ord(level)=cnt2)=1;);
+ 444  cnt=cnt+1;
+ 445   
+ 446  y.fx('1','3')=1;
+ 447  solve chull using rmip min cost;
+ 448  y.lo(ki)=0; y.up(ki)=1;
+ 449  tot_res('BM',level,node,'lb')$(ord(node)=cnt and ord(level)=cnt2)=chull.ob
+      jval;
+ 450  chec_int=1;
+ 451  loop(ki,if((y.l(ki)<0.999 and y.l(ki)>0.001),chec_int=0;););
+ 452  if(chec_int=1,tot_res('BM',level,node,'ub')$(ord(node)=cnt and ord(level)=
+      cnt2)=chull.objval;);
+ 453  if(chull.modelstat<>1,tot_res('BM',level,node,'infeas')$(ord(node)=cnt and
+       ord(level)=cnt2)=1;);
+ 454  cnt=cnt+1;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE chull Using RMIP From line 229
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ; (LHS = 0)
+     
+
+---- disag  =E=  
+
+disag(1,1)..  x(1) - ni(1,1,1) - ni(1,2,1) - ni(1,3,1) =E= 0 ; (LHS = 0)
+     
+disag(1,2)..  x(2) - ni(1,1,2) - ni(1,2,2) - ni(1,3,2) =E= 0 ; (LHS = 0)
+     
+disag(2,1)..  x(1) - ni(2,1,1) - ni(2,2,1) - ni(2,3,1) =E= 0 ; (LHS = 0)
+     
+REMAINING 3 ENTRIES SKIPPED
+
+
+---- disj_ineq_hr  =L=  
+
+disj_ineq_hr(1,1,1)..  0.8944*ni(1,1,1) + 0.4472*ni(1,1,2) - 6.261*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+disj_ineq_hr(1,1,2)..  - 0.9864*ni(1,1,1) + 0.1644*ni(1,1,2) + 0.3288*y(1,1)
+      =L= 0 ; (LHS = 0)
+     
+disj_ineq_hr(1,1,3)..  0.5547*ni(1,1,1) - 0.8321*ni(1,1,2) + 2.7735*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- bound_up  =L=  
+
+bound_up(1,1,1)..  ni(1,1,1) - 10*y(1,1) =L= 0 ; (LHS = 0)
+     
+bound_up(1,1,2)..  ni(1,1,2) - 10*y(1,1) =L= 0 ; (LHS = 0)
+     
+bound_up(1,2,1)..  ni(1,2,1) - 10*y(1,2) =L= 0 ; (LHS = 0)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- bound_lo  =G=  
+
+bound_lo(1,1,1)..  ni(1,1,1) =G= 0 ; (LHS = 0)
+     
+bound_lo(1,1,2)..  ni(1,1,2) =G= 0 ; (LHS = 0)
+     
+bound_lo(1,2,1)..  ni(1,2,1) =G= 0 ; (LHS = 0)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE chull Using RMIP From line 229
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 0, 10, 0)
+       -1       obj
+        1       disag(1,1)
+        1       disag(2,1)
+        1       disag(3,1)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 0, 10, 0)
+       -1       obj
+        1       disag(1,2)
+        1       disag(2,2)
+        1       disag(3,2)
+
+
+---- ni  
+
+ni(1,1,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       disag(1,1)
+        0.8944  disj_ineq_hr(1,1,1)
+       -0.9864  disj_ineq_hr(1,1,2)
+        0.5547  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,1)
+        1       bound_lo(1,1,1)
+
+ni(1,1,2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       disag(1,2)
+        0.4472  disj_ineq_hr(1,1,1)
+        0.1644  disj_ineq_hr(1,1,2)
+       -0.8321  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,2)
+        1       bound_lo(1,1,2)
+
+ni(1,2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       disag(1,1)
+        0.9615  disj_ineq_hr(1,2,1)
+       -0.6247  disj_ineq_hr(1,2,2)
+       -0.7071  disj_ineq_hr(1,2,3)
+        1       bound_up(1,2,1)
+        1       bound_lo(1,2,1)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+       -6.261   disj_ineq_hr(1,1,1)
+        0.3288  disj_ineq_hr(1,1,2)
+        2.7735  disj_ineq_hr(1,1,3)
+      -10       bound_up(1,1,1)
+      -10       bound_up(1,1,2)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+       -5.7691  disj_ineq_hr(1,2,1)
+       -0.4685  disj_ineq_hr(1,2,2)
+        4.2426  disj_ineq_hr(1,2,3)
+      -10       bound_up(1,2,1)
+      -10       bound_up(1,2,2)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+      -11.3842  disj_ineq_hr(1,3,1)
+       10.2899  disj_ineq_hr(1,3,2)
+       -9       disj_ineq_hr(1,3,3)
+      -10       bound_up(1,3,1)
+      -10       bound_up(1,3,2)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 229
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           67
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES           27
+NON ZERO ELEMENTS           151     DISCRETE VARIABLES          8
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.016 SECONDS      4 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 229
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  229
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                5.3331
+
+ RESOURCE USAGE, LIMIT          0.000      1000.000
+ ITERATION COUNT, LIMIT        17    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.13 ticks)
+Optimal solution found.
+Objective :           5.333061
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disag  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .         .        0.444      
+1.2      .         .         .        0.555      
+2.1      .         .         .        0.556      
+2.2      .         .         .        0.445      
+3.1      .         .         .         EPS       
+3.2      .         .         .         EPS       
+
+---- EQU disj_ineq_hr  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -2.386      .         .         
+1.1.2     -INF       .         .       -0.929      
+1.1.3     -INF       .         .       -0.851      
+1.2.1     -INF  -3.333E-5      .         .         
+1.2.2     -INF     -1.405      .         .         
+1.2.3     -INF       .         .       -0.628      
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .       -0.259      
+1.3.3     -INF       .         .         .         
+2.1.1     -INF     -1.111      .         .         
+2.1.2     -INF  -9.616E-5      .         .         
+2.1.3     -INF       .         .       -0.534      
+2.2.1     -INF     -2.092      .         .         
+2.2.2     -INF       .         .       -0.835      
+2.2.3     -INF       .         .       -0.747      
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+2.3.3     -INF       .         .       -0.235      
+3.1.1     -INF     -3.334      .         .         
+3.1.2     -INF     -0.310      .         .         
+3.1.3     -INF     -1.666      .         .         
+3.1.4     -INF     -3.333      .         .         
+3.2.1     -INF       .         .         .         
+3.2.2     -INF       .         .         EPS       
+3.2.3     -INF       .         .         .         
+
+---- EQU bound_up  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -6.001      .         .         
+1.1.2     -INF     -4.001      .         .         
+1.2.1     -INF     -1.333      .         .         
+1.2.2     -INF     -3.333      .         .         
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .         .         
+2.1.1     -INF     -3.334      .         .         
+2.1.2     -INF     -1.334      .         .         
+2.2.1     -INF     -4.000      .         .         
+2.2.2     -INF     -6.000      .         .         
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+3.1.1     -INF     -7.334      .         .         
+3.1.2     -INF     -7.333      .         .         
+3.2.1     -INF       .         .         .         
+3.2.2     -INF       .         .         .         
+
+---- EQU bound_lo  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        0.667     +INF       .         
+1.1.2      .        2.667     +INF       .         
+1.2.1      .        2.000     +INF       .         
+1.2.2      .         .        +INF       .         
+1.3.1      .         .        +INF       .         
+1.3.2      .         .        +INF       .         
+2.1.1      .         .        +INF       .         
+2.1.2      .        2.000     +INF       .         
+2.2.1      .        2.666     +INF       .         
+2.2.2      .        0.667     +INF       .         
+2.3.1      .         .        +INF       .         
+2.3.2      .         .        +INF       .         
+3.1.1      .        2.666     +INF       .         
+3.1.2      .        2.667     +INF       .         
+3.2.1      .         .        +INF       .         
+3.2.2      .         .        +INF       .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000     2.666      
+2     1.000     1.000     1.000     2.667      
+3     1.000     1.000     1.000      EPS       
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .        2.666    10.000      .         
+2      .        2.667    10.000      .         
+
+---- VAR ni  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        0.667     +INF       .         
+1.1.2      .        2.667     +INF       .         
+1.2.1      .        2.000     +INF       .         
+1.2.2      .         .        +INF      0.111      
+1.3.1      .         .        +INF      0.311      
+1.3.2      .         .        +INF      0.333      
+2.1.1      .         .        +INF      0.259      
+2.1.2      .        2.000     +INF       .         
+2.2.1      .        2.666     +INF       .         
+2.2.2      .        0.667     +INF       .         
+2.3.1      .         .        +INF      0.426      
+2.3.2      .         .        +INF      0.249      
+3.1.1      .        2.666     +INF       .         
+3.1.2      .        2.667     +INF       .         
+3.2.1      .         .        +INF       EPS       
+3.2.2      .         .        +INF       EPS       
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .        0.667     1.000      .         
+1.2      .        0.333     1.000      .         
+1.3      .         .        1.000      .         
+2.1      .        0.333     1.000      .         
+2.2      .        0.667     1.000      .         
+2.3      .         .        1.000      .         
+3.1      .        1.000     1.000      .         
+3.2      .         .        1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      5.333     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE bigM Using RMIP From line 230
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ; (LHS = 0)
+     
+
+---- disj_ineq  =L=  
+
+disj_ineq(1,1,1)..  0.8944*x(1) + 0.4472*x(2) + 10*y(1,1) =L= 16.261 ;
+     
+      (LHS = 10.2446127836995)
+     
+disj_ineq(1,1,2)..  - 0.9864*x(1) + 0.1644*x(2) + 10*y(1,1) =L= 9.6712 ;
+     
+      (LHS = 4.47563316157323)
+     
+disj_ineq(1,1,3)..  0.5547*x(1) - 0.8321*x(2) + 10*y(1,1) =L= 7.2265 ;
+     
+      (LHS = 5.92730834618983)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE bigM Using RMIP From line 230
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 2.66632663897029, 10, 0)
+       -1       obj
+        0.8944  disj_ineq(1,1,1)
+       -0.9864  disj_ineq(1,1,2)
+        0.5547  disj_ineq(1,1,3)
+        0.9615  disj_ineq(1,2,1)
+       -0.6247  disj_ineq(1,2,2)
+       -0.7071  disj_ineq(1,2,3)
+        0.9487  disj_ineq(1,3,1)
+       -0.5145  disj_ineq(1,3,2)
+        0.9806  disj_ineq(2,1,1)
+       -0.6     disj_ineq(2,1,2)
+       -0.5547  disj_ineq(2,1,3)
+        0.9806  disj_ineq(2,2,1)
+       -0.9487  disj_ineq(2,2,2)
+        0.3162  disj_ineq(2,2,3)
+        1       disj_ineq(2,3,1)
+       -0.3162  disj_ineq(2,3,2)
+       -0.5547  disj_ineq(2,3,3)
+        1       disj_ineq(3,1,1)
+       -0.3714  disj_ineq(3,1,2)
+       -1       disj_ineq(3,1,3)
+        0.7071  disj_ineq(3,2,1)
+       -0.3162  disj_ineq(3,2,2)
+       -0.4472  disj_ineq(3,2,3)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 2.666734368992, 10, 0)
+       -1       obj
+        0.4472  disj_ineq(1,1,1)
+        0.1644  disj_ineq(1,1,2)
+       -0.8321  disj_ineq(1,1,3)
+       -0.2747  disj_ineq(1,2,1)
+        0.7809  disj_ineq(1,2,2)
+       -0.7071  disj_ineq(1,2,3)
+        0.3162  disj_ineq(1,3,1)
+       -0.8575  disj_ineq(1,3,2)
+        1       disj_ineq(1,3,3)
+       -0.1961  disj_ineq(2,1,1)
+        0.8     disj_ineq(2,1,2)
+       -0.8321  disj_ineq(2,1,3)
+        0.1961  disj_ineq(2,2,1)
+        0.3162  disj_ineq(2,2,2)
+       -0.9487  disj_ineq(2,2,3)
+        0.9487  disj_ineq(2,3,2)
+       -0.8321  disj_ineq(2,3,3)
+       -0.9285  disj_ineq(3,1,2)
+        1       disj_ineq(3,1,4)
+        0.7071  disj_ineq(3,2,1)
+       -0.9487  disj_ineq(3,2,2)
+        0.8944  disj_ineq(3,2,3)
+
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0.666728662799125, 1, 0)
+       10       disj_ineq(1,1,1)
+       10       disj_ineq(1,1,2)
+       10       disj_ineq(1,1,3)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0.333271337200875, 1, 0)
+       10       disj_ineq(1,2,1)
+       10       disj_ineq(1,2,2)
+       10       disj_ineq(1,2,3)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+       10       disj_ineq(1,3,1)
+       10       disj_ineq(1,3,2)
+       10       disj_ineq(1,3,3)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 5.33306100796229, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE bigM Using RMIP From line 230
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS           29
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           11
+NON ZERO ELEMENTS            81     DISCRETE VARIABLES          8
+
+
+GENERATION TIME      =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE bigM Using RMIP From line 230
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   bigM                OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  230
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                1.6481
+
+ RESOURCE USAGE, LIMIT          0.031      1000.000
+ ITERATION COUNT, LIMIT         6    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.05 ticks)
+Optimal solution found.
+Objective :           1.648119
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disj_ineq  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF      9.335    16.261      .         
+1.1.2     -INF      8.869     9.671      .         
+1.1.3     -INF      7.226     7.226      EPS       
+1.2.1     -INF     -0.174    15.769      .         
+1.2.2     -INF      1.566    10.469      .         
+1.2.3     -INF     -0.887     5.757      .         
+1.3.1     -INF      1.644    21.384      .         
+1.3.2     -INF     -0.290    -0.290      EPS       
+1.3.3     -INF      2.771    19.000      .         
+2.1.1     -INF      6.056    12.157      .         
+2.1.2     -INF      7.698    14.800      .         
+2.1.3     -INF      5.008     5.008      EPS       
+2.2.1     -INF      3.944    17.256      .         
+2.2.2     -INF      4.142     6.521      .         
+2.2.3     -INF      2.057    10.316      .         
+2.3.1     -INF       .       20.000      .         
+2.3.2     -INF      1.564    16.325      .         
+2.3.3     -INF     -1.371    -1.371    -1.202      
+3.1.1     -INF      6.342    16.000      .         
+3.1.2     -INF      4.812     6.843      .         
+3.1.3     -INF      6.342     9.000      .         
+3.1.4     -INF      7.990    16.000      .         
+3.2.1     -INF      4.823    20.607      .         
+3.2.2     -INF      2.094     2.094      EPS       
+3.2.3     -INF      5.132    16.708      .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000      EPS       
+2     1.000     1.000     1.000      EPS       
+3     1.000     1.000     1.000      EPS       
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .         .       10.000     0.333      
+2      .        1.648    10.000      .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .        0.860     1.000      .         
+1.2      .        0.028     1.000      .         
+1.3      .        0.112     1.000      .         
+2.1      .        0.638     1.000      .         
+2.2      .        0.362     1.000      .         
+2.3      .         .        1.000    12.018      
+3.1      .        0.634     1.000      .         
+3.2      .        0.366     1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      1.648     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE lagdual Using RMIP From line 233
+
+
+---- obj2  =E=  
+
+obj2..  - 0.44434892584353*ni(1,1,1) - 0.555478713707306*ni(1,1,2)
+     
+      - 0.44434892584353*ni(1,2,1) - 0.555478713707306*ni(1,2,2)
+     
+      - 0.44434892584353*ni(1,3,1) - 0.555478713707306*ni(1,3,2)
+     
+      - 0.55565107415647*ni(2,1,1) - 0.444521286292694*ni(2,1,2)
+     
+      - 0.55565107415647*ni(2,2,1) - 0.444521286292694*ni(2,2,2)
+     
+      - 0.55565107415647*ni(2,3,1) - 0.444521286292694*ni(2,3,2) + EPS*ni(3,1,1)
+     
+      + EPS*ni(3,1,2) + EPS*ni(3,2,1) + EPS*ni(3,2,2) + cost =E= 0 ;
+     
+      (LHS = -3.68494179152196, INFES = 3.68494179152196 ****)
+     
+
+---- disj_ineq_hr  =L=  
+
+disj_ineq_hr(1,1,1)..  0.8944*ni(1,1,1) + 0.4472*ni(1,1,2) - 6.261*y(1,1) =L= 0
+      ; (LHS = -3.59428633824653)
+     
+disj_ineq_hr(1,1,2)..  - 0.9864*ni(1,1,1) + 0.1644*ni(1,1,2) + 0.3288*y(1,1)
+      =L= 0 ; (LHS = 0.0634785676716479, INFES = 0.0634785676716479 ****)
+     
+disj_ineq_hr(1,1,3)..  0.5547*ni(1,1,1) - 0.8321*ni(1,1,2) + 2.7735*y(1,1) =L= 0
+      ; (LHS = 0.535455618726628, INFES = 0.535455618726628 ****)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- bound_up  =L=  
+
+bound_up(1,1,1)..  ni(1,1,1) - 10*y(1,1) =L= 0 ; (LHS = -7.93120138423496)
+     
+bound_up(1,1,2)..  ni(1,1,2) - 10*y(1,1) =L= 0 ; (LHS = -5.93116563100801)
+     
+bound_up(1,2,1)..  ni(1,2,1) - 10*y(1,2) =L= 0 ;
+     
+      (LHS = 1.72089025130284, INFES = 1.72089025130284 ****)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- bound_lo  =G=  
+
+bound_lo(1,1,1)..  ni(1,1,1) =G= 0 ; (LHS = 0.666698615765041)
+     
+bound_lo(1,1,2)..  ni(1,1,2) =G= 0 ; (LHS = 2.666734368992)
+     
+bound_lo(1,2,1)..  ni(1,2,1) =G= 0 ; (LHS = 1.99962802320525)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE lagdual Using RMIP From line 233
+
+
+---- ni  
+
+ni(1,1,1)
+                (.LO, .L, .UP, .M = 0, 0.666698615765041, +INF, 0)
+       -0.4443  obj2
+        0.8944  disj_ineq_hr(1,1,1)
+       -0.9864  disj_ineq_hr(1,1,2)
+        0.5547  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,1)
+        1       bound_lo(1,1,1)
+
+ni(1,1,2)
+                (.LO, .L, .UP, .M = 0, 2.666734368992, +INF, 0)
+       -0.5555  obj2
+        0.4472  disj_ineq_hr(1,1,1)
+        0.1644  disj_ineq_hr(1,1,2)
+       -0.8321  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,2)
+        1       bound_lo(1,1,2)
+
+ni(1,2,1)
+                (.LO, .L, .UP, .M = 0, 1.99962802320525, +INF, 0)
+       -0.4443  obj2
+        0.9615  disj_ineq_hr(1,2,1)
+       -0.6247  disj_ineq_hr(1,2,2)
+       -0.7071  disj_ineq_hr(1,2,3)
+        1       bound_up(1,2,1)
+        1       bound_lo(1,2,1)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0.85979, 1, 0)
+       -6.261   disj_ineq_hr(1,1,1)
+        0.3288  disj_ineq_hr(1,1,2)
+        2.7735  disj_ineq_hr(1,1,3)
+      -10       bound_up(1,1,1)
+      -10       bound_up(1,1,2)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0.0278737771902414, 1, 0)
+       -5.7691  disj_ineq_hr(1,2,1)
+       -0.4685  disj_ineq_hr(1,2,2)
+        4.2426  disj_ineq_hr(1,2,3)
+      -10       bound_up(1,2,1)
+      -10       bound_up(1,2,2)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0.112336222809759, 1, 0)
+      -11.3842  disj_ineq_hr(1,3,1)
+       10.2899  disj_ineq_hr(1,3,2)
+       -9       disj_ineq_hr(1,3,3)
+      -10       bound_up(1,3,1)
+      -10       bound_up(1,3,2)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 1.64811921644033, +INF, 0)
+        1       obj2
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE lagdual Using RMIP From line 233
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           5     SINGLE EQUATIONS           61
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           25
+NON ZERO ELEMENTS           143     DISCRETE VARIABLES          8
+
+
+GENERATION TIME      =        0.015 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE lagdual Using RMIP From line 233
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   lagdual             OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  233
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                5.3331
+
+ RESOURCE USAGE, LIMIT          0.047      1000.000
+ ITERATION COUNT, LIMIT         8    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.09 ticks)
+Optimal solution found.
+Objective :           5.333061
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj2            .         .         .        1.000      
+
+---- EQU disj_ineq_hr  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -3.578      .         .         
+1.1.2     -INF       .         .       -0.929      
+1.1.3     -INF       .         .       -0.851      
+1.2.1     -INF       .         .         .         
+1.2.2     -INF       .         .         .         
+1.2.3     -INF       .         .       -0.628      
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .       -0.648      
+1.3.3     -INF       .         .         .         
+2.1.1     -INF     -3.334      .         .         
+2.1.2     -INF  -2.884E-4      .         .         
+2.1.3     -INF       .         .       -0.534      
+2.2.1     -INF       .         .         .         
+2.2.2     -INF       .         .       -0.835      
+2.2.3     -INF       .         .       -0.747      
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+2.3.3     -INF       .         .       -0.235      
+3.1.1     -INF       .         .         .         
+3.1.2     -INF       .         .         .         
+3.1.3     -INF       .         .         .         
+3.1.4     -INF       .         .         .         
+3.2.1     -INF     -4.243      .         .         
+3.2.2     -INF       .         .         EPS       
+3.2.3     -INF       .         .         EPS       
+
+---- EQU bound_up  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -9.000      .         .         
+1.1.2     -INF     -6.000      .         .         
+1.2.1     -INF       .         .         .         
+1.2.2     -INF       .         .         .         
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .         .         
+2.1.1     -INF    -10.000      .         .         
+2.1.2     -INF     -4.000      .         .         
+2.2.1     -INF       .         .         .         
+2.2.2     -INF       .         .         .         
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+3.1.1     -INF       .         .         .         
+3.1.2     -INF       .         .         .         
+3.2.1     -INF     -9.000      .         .         
+3.2.2     -INF     -2.000      .         .         
+
+---- EQU bound_lo  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        1.000     +INF       .         
+1.1.2      .        4.000     +INF       .         
+1.2.1      .         .        +INF       .         
+1.2.2      .         .        +INF       .         
+1.3.1      .         .        +INF       .         
+1.3.2      .         .        +INF       .         
+2.1.1      .         .        +INF       .         
+2.1.2      .        6.000     +INF       .         
+2.2.1      .         .        +INF       .         
+2.2.2      .         .        +INF       .         
+2.3.1      .         .        +INF       .         
+2.3.2      .         .        +INF       .         
+3.1.1      .         .        +INF       .         
+3.1.2      .         .        +INF       .         
+3.2.1      .        1.000     +INF       .         
+3.2.2      .        8.000     +INF       .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000     2.666      
+2     1.000     1.000     1.000     2.667      
+3     1.000     1.000     1.000      EPS       
+
+---- VAR ni  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        1.000     +INF       .         
+1.1.2      .        4.000     +INF       .         
+1.2.1      .         .        +INF  1.665E-16      
+1.2.2      .         .        +INF      0.111      
+1.3.1      .         .        +INF      0.111      
+1.3.2      .         .        +INF       .         
+2.1.1      .         .        +INF      0.259      
+2.1.2      .        6.000     +INF       .         
+2.2.1      .         .        +INF       .         
+2.2.2      .         .        +INF       .         
+2.3.1      .         .        +INF      0.426      
+2.3.2      .         .        +INF      0.249      
+3.1.1      .         .        +INF       EPS       
+3.1.2      .         .        +INF       EPS       
+3.2.1      .        1.000     +INF       .         
+3.2.2      .        8.000     +INF       .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .        1.000     1.000      .         
+1.2      .         .        1.000      .         
+1.3      .         .        1.000     4.000      
+2.1      .        1.000     1.000 -4.44E-16      
+2.2      .         .        1.000      .         
+2.3      .         .        1.000      .         
+3.1      .         .        1.000      EPS       
+3.2      .        1.000     1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      5.333     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE bigM Using RMIP From line 236
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ;
+     
+      (LHS = 3.68494179152196, INFES = 3.68494179152196 ****)
+     
+
+---- disj_ineq  =L=  
+
+disj_ineq(1,1,1)..  0.8944*x(1) + 0.4472*x(2) + 10*y(1,1) =L= 16.261 ;
+     
+      (LHS = 10.7370389135921)
+     
+disj_ineq(1,1,2)..  - 0.9864*x(1) + 0.1644*x(2) + 10*y(1,1) =L= 9.6712 ;
+     
+      (LHS = 10.2709507991828, INFES = 0.59975079918279 ****)
+     
+disj_ineq(1,1,3)..  0.5547*x(1) - 0.8321*x(2) + 10*y(1,1) =L= 7.2265 ;
+     
+      (LHS = 8.6286, INFES = 1.4021 ****)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 15
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE bigM Using RMIP From line 236
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 0, 10, 0.333373392621079)
+       -1       obj
+        0.8944  disj_ineq(1,1,1)
+       -0.9864  disj_ineq(1,1,2)
+        0.5547  disj_ineq(1,1,3)
+        0.9615  disj_ineq(1,2,1)
+       -0.6247  disj_ineq(1,2,2)
+       -0.7071  disj_ineq(1,2,3)
+        0.9487  disj_ineq(1,3,1)
+       -0.5145  disj_ineq(1,3,2)
+        0.9806  disj_ineq(2,1,1)
+       -0.6     disj_ineq(2,1,2)
+       -0.5547  disj_ineq(2,1,3)
+        0.9806  disj_ineq(2,2,1)
+       -0.9487  disj_ineq(2,2,2)
+        0.3162  disj_ineq(2,2,3)
+        1       disj_ineq(2,3,1)
+       -0.3162  disj_ineq(2,3,2)
+       -0.5547  disj_ineq(2,3,3)
+        1       disj_ineq(3,1,1)
+       -0.3714  disj_ineq(3,1,2)
+       -1       disj_ineq(3,1,3)
+        0.7071  disj_ineq(3,2,1)
+       -0.3162  disj_ineq(3,2,2)
+       -0.4472  disj_ineq(3,2,3)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 1.64811921644033, 10, 0)
+       -1       obj
+        0.4472  disj_ineq(1,1,1)
+        0.1644  disj_ineq(1,1,2)
+       -0.8321  disj_ineq(1,1,3)
+       -0.2747  disj_ineq(1,2,1)
+        0.7809  disj_ineq(1,2,2)
+       -0.7071  disj_ineq(1,2,3)
+        0.3162  disj_ineq(1,3,1)
+       -0.8575  disj_ineq(1,3,2)
+        1       disj_ineq(1,3,3)
+       -0.1961  disj_ineq(2,1,1)
+        0.8     disj_ineq(2,1,2)
+       -0.8321  disj_ineq(2,1,3)
+        0.1961  disj_ineq(2,2,1)
+        0.3162  disj_ineq(2,2,2)
+       -0.9487  disj_ineq(2,2,3)
+        0.9487  disj_ineq(2,3,2)
+       -0.8321  disj_ineq(2,3,3)
+       -0.9285  disj_ineq(3,1,2)
+        1       disj_ineq(3,1,4)
+        0.7071  disj_ineq(3,2,1)
+       -0.9487  disj_ineq(3,2,2)
+        0.8944  disj_ineq(3,2,3)
+
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 1, 1, 1, 0)
+       10       disj_ineq(1,1,1)
+       10       disj_ineq(1,1,2)
+       10       disj_ineq(1,1,3)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0, 0, 0)
+       10       disj_ineq(1,2,1)
+       10       disj_ineq(1,2,2)
+       10       disj_ineq(1,2,3)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 0, 3.99958623056775)
+       10       disj_ineq(1,3,1)
+       10       disj_ineq(1,3,2)
+       10       disj_ineq(1,3,3)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 5.33306100796229, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 16
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE bigM Using RMIP From line 236
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS           29
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           11
+NON ZERO ELEMENTS            81
+
+
+GENERATION TIME      =        0.016 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.016 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 17
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE bigM Using RMIP From line 236
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   bigM                OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  236
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                9.7691
+
+ RESOURCE USAGE, LIMIT          0.016      1000.000
+ ITERATION COUNT, LIMIT         3    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.05 ticks)
+Optimal solution found.
+Objective :           9.769126
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disj_ineq  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     15.332    16.261      .         
+1.1.2     -INF      9.127     9.671      .         
+1.1.3     -INF      4.858     7.226      .         
+1.2.1     -INF     -0.021    15.769      .         
+1.2.2     -INF      4.601    10.469      .         
+1.2.3     -INF     -6.908     5.757      .         
+1.3.1     -INF      4.451    21.384      .         
+1.3.2     -INF     -7.638    -0.290      .         
+1.3.3     -INF      7.615    19.000      .         
+2.1.1     -INF     10.619    12.157      .         
+2.1.2     -INF     14.800    14.800    -0.769      
+2.1.3     -INF      2.469     5.008      .         
+2.2.1     -INF      3.605    17.256      .         
+2.2.2     -INF      0.365     6.521      .         
+2.2.3     -INF     -6.544    10.316      .         
+2.3.1     -INF      2.154    20.000      .         
+2.3.2     -INF      6.544    16.325      .         
+2.3.3     -INF     -7.531    -1.371      .         
+3.1.1     -INF      2.154    16.000      .         
+3.1.2     -INF     -7.871     6.843      .         
+3.1.3     -INF     -2.154     9.000      .         
+3.1.4     -INF      7.615    16.000      .         
+3.2.1     -INF     16.908    20.607      .         
+3.2.2     -INF      2.094     2.094    -1.703      
+3.2.3     -INF     15.848    16.708      .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000      .         
+2     1.000     1.000     1.000      .         
+3     1.000     1.000     1.000      .         
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .        2.154    10.000      .         
+2      .        7.615    10.000      .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1     1.000     1.000     1.000      EPS       
+1.2      .         .         .         EPS       
+1.3      .         .         .         EPS       
+2.1     1.000     1.000     1.000     7.693      
+2.2      .         .         .         EPS       
+2.3      .         .         .         EPS       
+3.1      .         .         .         EPS       
+3.2     1.000     1.000     1.000    17.028      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      9.769     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 18
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE chull Using RMIP From line 427
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ; (LHS = 0)
+     
+
+---- disag  =E=  
+
+disag(1,1)..  x(1) - ni(1,1,1) - ni(1,2,1) - ni(1,3,1) =E= 0 ;
+     
+      (LHS = 1.15383134187166, INFES = 1.15383134187166 ****)
+     
+disag(1,2)..  x(2) - ni(1,1,2) - ni(1,2,2) - ni(1,3,2) =E= 0 ;
+     
+      (LHS = 3.61561010479488, INFES = 3.61561010479488 ****)
+     
+disag(2,1)..  x(1) - ni(2,1,1) - ni(2,2,1) - ni(2,3,1) =E= 0 ;
+     
+      (LHS = 2.15378627551145, INFES = 2.15378627551145 ****)
+     
+REMAINING 3 ENTRIES SKIPPED
+
+
+---- disj_ineq_hr  =L=  
+
+disj_ineq_hr(1,1,1)..  0.8944*ni(1,1,1) + 0.4472*ni(1,1,2) - 6.261*y(1,1) =L= 0
+      ; (LHS = -3.57796122941031)
+     
+disj_ineq_hr(1,1,2)..  - 0.9864*ni(1,1,1) + 0.1644*ni(1,1,2) + 0.3288*y(1,1)
+      =L= 0 ; (LHS = 0)
+     
+disj_ineq_hr(1,1,3)..  0.5547*ni(1,1,1) - 0.8321*ni(1,1,2) + 2.7735*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- bound_up  =L=  
+
+bound_up(1,1,1)..  ni(1,1,1) - 10*y(1,1) =L= 0 ; (LHS = -9.00004506636022)
+     
+bound_up(1,1,2)..  ni(1,1,2) - 10*y(1,1) =L= 0 ; (LHS = -6.00027039816129)
+     
+bound_up(1,2,1)..  ni(1,2,1) - 10*y(1,2) =L= 0 ; (LHS = 0)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- bound_lo  =G=  
+
+bound_lo(1,1,1)..  ni(1,1,1) =G= 0 ; (LHS = 0.999954933639784)
+     
+bound_lo(1,1,2)..  ni(1,1,2) =G= 0 ; (LHS = 3.99972960183871)
+     
+bound_lo(1,2,1)..  ni(1,2,1) =G= 0 ; (LHS = 0)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 19
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE chull Using RMIP From line 427
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 2.15378627551145, 10, 0)
+       -1       obj
+        1       disag(1,1)
+        1       disag(2,1)
+        1       disag(3,1)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 7.61533970663358, 10, 0)
+       -1       obj
+        1       disag(1,2)
+        1       disag(2,2)
+        1       disag(3,2)
+
+
+---- ni  
+
+ni(1,1,1)
+                (.LO, .L, .UP, .M = 0, 0.999954933639784, +INF, 0)
+       -1       disag(1,1)
+        0.8944  disj_ineq_hr(1,1,1)
+       -0.9864  disj_ineq_hr(1,1,2)
+        0.5547  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,1)
+        1       bound_lo(1,1,1)
+
+ni(1,1,2)
+                (.LO, .L, .UP, .M = 0, 3.99972960183871, +INF, 0)
+       -1       disag(1,2)
+        0.4472  disj_ineq_hr(1,1,1)
+        0.1644  disj_ineq_hr(1,1,2)
+       -0.8321  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,2)
+        1       bound_lo(1,1,2)
+
+ni(1,2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 1.66533453693773E-16)
+       -1       disag(1,1)
+        0.9615  disj_ineq_hr(1,2,1)
+       -0.6247  disj_ineq_hr(1,2,2)
+       -0.7071  disj_ineq_hr(1,2,3)
+        1       bound_up(1,2,1)
+        1       bound_lo(1,2,1)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 1, 1, 1, EPS)
+       -6.261   disj_ineq_hr(1,1,1)
+        0.3288  disj_ineq_hr(1,1,2)
+        2.7735  disj_ineq_hr(1,1,3)
+      -10       bound_up(1,1,1)
+      -10       bound_up(1,1,2)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0, 1, EPS)
+       -5.7691  disj_ineq_hr(1,2,1)
+       -0.4685  disj_ineq_hr(1,2,2)
+        4.2426  disj_ineq_hr(1,2,3)
+      -10       bound_up(1,2,1)
+      -10       bound_up(1,2,2)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, EPS)
+      -11.3842  disj_ineq_hr(1,3,1)
+       10.2899  disj_ineq_hr(1,3,2)
+       -9       disj_ineq_hr(1,3,3)
+      -10       bound_up(1,3,1)
+      -10       bound_up(1,3,2)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 9.76912598214503, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 20
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 427
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           67
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES           27
+NON ZERO ELEMENTS           151     DISCRETE VARIABLES          7
+
+
+GENERATION TIME      =        0.016 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.032 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 21
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 427
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  427
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                5.6518
+
+ RESOURCE USAGE, LIMIT          0.000      1000.000
+ ITERATION COUNT, LIMIT        16    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+Optimal solution found.
+Objective :           5.651828
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disag  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .         .       -0.087      
+1.2      .         .         .        0.130      
+2.1      .         .         .        1.087      
+2.2      .         .         .        0.870      
+3.1      .         .         .         EPS       
+3.2      .         .         .         EPS       
+
+---- EQU disj_ineq_hr  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -3.111      .         .         
+1.1.2     -INF     -0.343      .         .         
+1.1.3     -INF       .         .       -0.157      
+1.2.1     -INF       .         .         .         
+1.2.2     -INF       .         .         .         
+1.2.3     -INF       .         .         .         
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .         .         
+1.3.3     -INF       .         .         .         
+2.1.1     -INF     -2.174      .         .         
+2.1.2     -INF  -1.881E-4      .         .         
+2.1.3     -INF       .         .       -1.045      
+2.2.1     -INF     -1.091      .         .         
+2.2.2     -INF       .         .       -1.633      
+2.2.3     -INF       .         .       -1.461      
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+2.3.3     -INF       .         .       -0.459      
+3.1.1     -INF     -3.609      .         .         
+3.1.2     -INF       .         .         EPS       
+3.1.3     -INF       .         .         EPS       
+3.1.4     -INF     -2.165      .         .         
+3.2.1     -INF     -0.996      .         .         
+3.2.2     -INF       .         .         EPS       
+3.2.3     -INF     -0.292      .         .         
+
+---- EQU bound_up  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF     -8.609      .         .         
+1.1.2     -INF     -5.739      .         .         
+1.2.1     -INF       .         .       -0.087      
+1.2.2     -INF       .         .         .         
+1.3.1     -INF       .         .       -0.087      
+1.3.2     -INF       .         .         .         
+2.1.1     -INF     -6.522      .         .         
+2.1.2     -INF     -2.609      .         .         
+2.2.1     -INF     -2.087      .         .         
+2.2.2     -INF     -3.130      .         .         
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+3.1.1     -INF     -6.496      .         .         
+3.1.2     -INF     -5.053      .         .         
+3.2.1     -INF     -2.113      .         .         
+3.2.2     -INF     -0.687      .         .         
+
+---- EQU bound_lo  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        1.391     +INF       .         
+1.1.2      .        4.261     +INF       .         
+1.2.1      .         .        +INF       .         
+1.2.2      .         .        +INF       .         
+1.3.1      .         .        +INF       .         
+1.3.2      .         .        +INF       .         
+2.1.1      .         .        +INF       .         
+2.1.2      .        3.913     +INF       .         
+2.2.1      .        1.391     +INF       .         
+2.2.2      .        0.348     +INF       .         
+2.3.1      .         .        +INF       .         
+2.3.2      .         .        +INF       .         
+3.1.1      .        0.722     +INF       .         
+3.1.2      .        2.165     +INF       .         
+3.2.1      .        0.669     +INF       .         
+3.2.2      .        2.095     +INF       .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000    -0.870      
+2     1.000     1.000     1.000     5.217      
+3     1.000     1.000     1.000      EPS       
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .        1.391    10.000      .         
+2      .        4.261    10.000      .         
+
+---- VAR ni  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .        1.391     +INF       .         
+1.1.2      .        4.261     +INF       .         
+1.2.1      .         .        +INF       .         
+1.2.2      .         .        +INF      0.130      
+1.3.1      .         .        +INF       .         
+1.3.2      .         .        +INF      0.130      
+2.1.1      .         .        +INF      0.507      
+2.1.2      .        3.913     +INF       .         
+2.2.1      .        1.391     +INF       .         
+2.2.2      .        0.348     +INF       .         
+2.3.1      .         .        +INF      0.832      
+2.3.2      .         .        +INF      0.488      
+3.1.1      .        0.722     +INF       .         
+3.1.2      .        2.165     +INF       .         
+3.2.1      .        0.669     +INF       .         
+3.2.2      .        2.095     +INF       .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1     1.000     1.000     1.000     1.304      
+1.2      .         .        1.000      .         
+1.3      .         .        1.000      EPS       
+2.1      .        0.652     1.000      .         
+2.2      .        0.348     1.000      .         
+2.3      .         .        1.000      .         
+3.1      .        0.722     1.000      .         
+3.2      .        0.278     1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      5.652     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 22
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE chull Using RMIP From line 437
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ; (LHS = 0)
+     
+
+---- disag  =E=  
+
+disag(1,1)..  x(1) - ni(1,1,1) - ni(1,2,1) - ni(1,3,1) =E= 0 ; (LHS = 0)
+     
+disag(1,2)..  x(2) - ni(1,1,2) - ni(1,2,2) - ni(1,3,2) =E= 0 ; (LHS = 0)
+     
+disag(2,1)..  x(1) - ni(2,1,1) - ni(2,2,1) - ni(2,3,1) =E= 0 ; (LHS = 0)
+     
+REMAINING 3 ENTRIES SKIPPED
+
+
+---- disj_ineq_hr  =L=  
+
+disj_ineq_hr(1,1,1)..  0.8944*ni(1,1,1) + 0.4472*ni(1,1,2) - 6.261*y(1,1) =L= 0
+      ; (LHS = -3.11133500046189)
+     
+disj_ineq_hr(1,1,2)..  - 0.9864*ni(1,1,1) + 0.1644*ni(1,1,2) + 0.3288*y(1,1)
+      =L= 0 ; (LHS = -0.343090700688053)
+     
+disj_ineq_hr(1,1,3)..  0.5547*ni(1,1,1) - 0.8321*ni(1,1,2) + 2.7735*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- bound_up  =L=  
+
+bound_up(1,1,1)..  ni(1,1,1) - 10*y(1,1) =L= 0 ; (LHS = -8.608749304826)
+     
+bound_up(1,1,2)..  ni(1,1,2) - 10*y(1,1) =L= 0 ; (LHS = -5.73942223216798)
+     
+bound_up(1,2,1)..  ni(1,2,1) - 10*y(1,2) =L= 0 ; (LHS = -10)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- bound_lo  =G=  
+
+bound_lo(1,1,1)..  ni(1,1,1) =G= 0 ; (LHS = 1.391250695174)
+     
+bound_lo(1,1,2)..  ni(1,1,2) =G= 0 ; (LHS = 4.26057776783202)
+     
+bound_lo(1,2,1)..  ni(1,2,1) =G= 0 ; (LHS = 0)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 2, INFES = 1 ****)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 23
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE chull Using RMIP From line 437
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 1.391250695174, 10, 0)
+       -1       obj
+        1       disag(1,1)
+        1       disag(2,1)
+        1       disag(3,1)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 4.26057776783202, 10, 0)
+       -1       obj
+        1       disag(1,2)
+        1       disag(2,2)
+        1       disag(3,2)
+
+
+---- ni  
+
+ni(1,1,1)
+                (.LO, .L, .UP, .M = 0, 1.391250695174, +INF, 0)
+       -1       disag(1,1)
+        0.8944  disj_ineq_hr(1,1,1)
+       -0.9864  disj_ineq_hr(1,1,2)
+        0.5547  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,1)
+        1       bound_lo(1,1,1)
+
+ni(1,1,2)
+                (.LO, .L, .UP, .M = 0, 4.26057776783202, +INF, 0)
+       -1       disag(1,2)
+        0.4472  disj_ineq_hr(1,1,1)
+        0.1644  disj_ineq_hr(1,1,2)
+       -0.8321  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,2)
+        1       bound_lo(1,1,2)
+
+ni(1,2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       disag(1,1)
+        0.9615  disj_ineq_hr(1,2,1)
+       -0.6247  disj_ineq_hr(1,2,2)
+       -0.7071  disj_ineq_hr(1,2,3)
+        1       bound_up(1,2,1)
+        1       bound_lo(1,2,1)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 1, 1, 1.30429126276601)
+       -6.261   disj_ineq_hr(1,1,1)
+        0.3288  disj_ineq_hr(1,1,2)
+        2.7735  disj_ineq_hr(1,1,3)
+      -10       bound_up(1,1,1)
+      -10       bound_up(1,1,2)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 1, 1, 1, 0)
+       -5.7691  disj_ineq_hr(1,2,1)
+       -0.4685  disj_ineq_hr(1,2,2)
+        4.2426  disj_ineq_hr(1,2,3)
+      -10       bound_up(1,2,1)
+      -10       bound_up(1,2,2)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, EPS)
+      -11.3842  disj_ineq_hr(1,3,1)
+       10.2899  disj_ineq_hr(1,3,2)
+       -9       disj_ineq_hr(1,3,3)
+      -10       bound_up(1,3,1)
+      -10       bound_up(1,3,2)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 5.65182846300602, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 24
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 437
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           67
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES           27
+NON ZERO ELEMENTS           151     DISCRETE VARIABLES          7
+
+
+GENERATION TIME      =        0.078 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.078 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 25
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 437
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  437
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                6.0000
+
+ RESOURCE USAGE, LIMIT          0.000      1000.000
+ ITERATION COUNT, LIMIT         7    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.14 ticks)
+Optimal solution found.
+Objective :           6.000000
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disag  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .         .        1.000      
+1.2      .         .         .        1.000      
+2.1      .         .         .         EPS       
+2.2      .         .         .         EPS       
+3.1      .         .         .         EPS       
+3.2      .         .         .         EPS       
+
+---- EQU disj_ineq_hr  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF       .         .         .         
+1.1.2     -INF       .         .         .         
+1.1.3     -INF       .         .         .         
+1.2.1     -INF     -2.060      .         .         
+1.2.2     -INF     -1.874      .         .         
+1.2.3     -INF       .         .       -1.414      
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .         .         
+1.3.3     -INF       .         .         .         
+2.1.1     -INF     -0.292      .         .         
+2.1.2     -INF  -2.530E-5      .         .         
+2.1.3     -INF       .         .         EPS       
+2.2.1     -INF     -2.147      .         .         
+2.2.2     -INF     -0.577      .         .         
+2.2.3     -INF       .         .         EPS       
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+2.3.3     -INF       .         .         EPS       
+3.1.1     -INF     -1.666      .         .         
+3.1.2     -INF       .         .         EPS       
+3.1.3     -INF     -3.334      .         .         
+3.1.4     -INF     -4.334      .         .         
+3.2.1     -INF       .         .         .         
+3.2.2     -INF       .         .         EPS       
+3.2.3     -INF       .         .         .         
+
+---- EQU bound_up  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF       .         .         .         
+1.1.2     -INF       .         .         .         
+1.2.1     -INF     -5.666      .         .         
+1.2.2     -INF     -8.334      .         .         
+1.3.1     -INF       .         .         .         
+1.3.2     -INF       .         .         .         
+2.1.1     -INF     -0.877      .         .         
+2.1.2     -INF     -0.351      .         .         
+2.2.1     -INF     -4.789      .         .         
+2.2.2     -INF     -7.983      .         .         
+2.3.1     -INF       .         .         .         
+2.3.2     -INF       .         .         .         
+3.1.1     -INF     -5.666      .         .         
+3.1.2     -INF     -8.334      .         .         
+3.2.1     -INF       .         .         .         
+3.2.2     -INF       .         .         .         
+
+---- EQU bound_lo  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .         .        +INF       .         
+1.1.2      .         .        +INF       .         
+1.2.1      .        4.334     +INF       .         
+1.2.2      .        1.666     +INF       .         
+1.3.1      .         .        +INF       .         
+1.3.2      .         .        +INF       .         
+2.1.1      .         .        +INF       .         
+2.1.2      .        0.526     +INF       .         
+2.2.1      .        4.334     +INF       .         
+2.2.2      .        1.140     +INF       .         
+2.3.1      .         .        +INF       .         
+2.3.2      .         .        +INF       .         
+3.1.1      .        4.334     +INF       .         
+3.1.2      .        1.666     +INF       .         
+3.2.1      .         .        +INF       .         
+3.2.2      .         .        +INF       .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000      .         
+2     1.000     1.000     1.000      EPS       
+3     1.000     1.000     1.000      EPS       
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .        4.334    10.000      .         
+2      .        1.666    10.000      .         
+
+---- VAR ni  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .         .        +INF      1.000      
+1.1.2      .         .        +INF      1.000      
+1.2.1      .        4.334     +INF       .         
+1.2.2      .        1.666     +INF       .         
+1.3.1      .         .        +INF      1.000      
+1.3.2      .         .        +INF      1.000      
+2.1.1      .         .        +INF       EPS       
+2.1.2      .        0.526     +INF       .         
+2.2.1      .        4.334     +INF       .         
+2.2.2      .        1.140     +INF       .         
+2.3.1      .         .        +INF       EPS       
+2.3.2      .         .        +INF       EPS       
+3.1.1      .        4.334     +INF       .         
+3.1.2      .        1.666     +INF       .         
+3.2.1      .         .        +INF       EPS       
+3.2.2      .         .        +INF       EPS       
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .        1.000      EPS       
+1.2     1.000     1.000     1.000     6.000      
+1.3      .         .        1.000      EPS       
+2.1      .        0.088     1.000      .         
+2.2      .        0.912     1.000      .         
+2.3      .         .        1.000      .         
+3.1      .        1.000     1.000      .         
+3.2      .         .        1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF      6.000     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 26
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE chull Using RMIP From line 447
+
+
+---- obj  =E=  
+
+obj..  - x(1) - x(2) + cost =E= 0 ; (LHS = 0)
+     
+
+---- disag  =E=  
+
+disag(1,1)..  x(1) - ni(1,1,1) - ni(1,2,1) - ni(1,3,1) =E= 0 ; (LHS = 0)
+     
+disag(1,2)..  x(2) - ni(1,1,2) - ni(1,2,2) - ni(1,3,2) =E= 0 ; (LHS = 0)
+     
+disag(2,1)..  x(1) - ni(2,1,1) - ni(2,2,1) - ni(2,3,1) =E= 0 ; (LHS = 0)
+     
+REMAINING 3 ENTRIES SKIPPED
+
+
+---- disj_ineq_hr  =L=  
+
+disj_ineq_hr(1,1,1)..  0.8944*ni(1,1,1) + 0.4472*ni(1,1,2) - 6.261*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+disj_ineq_hr(1,1,2)..  - 0.9864*ni(1,1,1) + 0.1644*ni(1,1,2) + 0.3288*y(1,1)
+      =L= 0 ; (LHS = 0)
+     
+disj_ineq_hr(1,1,3)..  0.5547*ni(1,1,1) - 0.8321*ni(1,1,2) + 2.7735*y(1,1) =L= 0
+      ; (LHS = 0)
+     
+REMAINING 22 ENTRIES SKIPPED
+
+
+---- bound_up  =L=  
+
+bound_up(1,1,1)..  ni(1,1,1) - 10*y(1,1) =L= 0 ; (LHS = 0)
+     
+bound_up(1,1,2)..  ni(1,1,2) - 10*y(1,1) =L= 0 ; (LHS = 0)
+     
+bound_up(1,2,1)..  ni(1,2,1) - 10*y(1,2) =L= 0 ; (LHS = -5.66648716567941)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- bound_lo  =G=  
+
+bound_lo(1,1,1)..  ni(1,1,1) =G= 0 ; (LHS = 0)
+     
+bound_lo(1,1,2)..  ni(1,1,2) =G= 0 ; (LHS = 0)
+     
+bound_lo(1,2,1)..  ni(1,2,1) =G= 0 ; (LHS = 4.33351283432059)
+     
+REMAINING 13 ENTRIES SKIPPED
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) =E= 1 ; (LHS = 2, INFES = 1 ****)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) =E= 1 ; (LHS = 1)
+     
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 27
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE chull Using RMIP From line 447
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 4.33351283432059, 10, 0)
+       -1       obj
+        1       disag(1,1)
+        1       disag(2,1)
+        1       disag(3,1)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 1.66648716567941, 10, 0)
+       -1       obj
+        1       disag(1,2)
+        1       disag(2,2)
+        1       disag(3,2)
+
+
+---- ni  
+
+ni(1,1,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 1)
+       -1       disag(1,1)
+        0.8944  disj_ineq_hr(1,1,1)
+       -0.9864  disj_ineq_hr(1,1,2)
+        0.5547  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,1)
+        1       bound_lo(1,1,1)
+
+ni(1,1,2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 1)
+       -1       disag(1,2)
+        0.4472  disj_ineq_hr(1,1,1)
+        0.1644  disj_ineq_hr(1,1,2)
+       -0.8321  disj_ineq_hr(1,1,3)
+        1       bound_up(1,1,2)
+        1       bound_lo(1,1,2)
+
+ni(1,2,1)
+                (.LO, .L, .UP, .M = 0, 4.33351283432059, +INF, 0)
+       -1       disag(1,1)
+        0.9615  disj_ineq_hr(1,2,1)
+       -0.6247  disj_ineq_hr(1,2,2)
+       -0.7071  disj_ineq_hr(1,2,3)
+        1       bound_up(1,2,1)
+        1       bound_lo(1,2,1)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0, 1, EPS)
+       -6.261   disj_ineq_hr(1,1,1)
+        0.3288  disj_ineq_hr(1,1,2)
+        2.7735  disj_ineq_hr(1,1,3)
+      -10       bound_up(1,1,1)
+      -10       bound_up(1,1,2)
+        1       sum_bin(1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 1, 1, 6)
+       -5.7691  disj_ineq_hr(1,2,1)
+       -0.4685  disj_ineq_hr(1,2,2)
+        4.2426  disj_ineq_hr(1,2,3)
+      -10       bound_up(1,2,1)
+      -10       bound_up(1,2,2)
+        1       sum_bin(1)
+
+y(1,3)
+                (.LO, .L, .UP, .M = 1, 1, 1, EPS)
+      -11.3842  disj_ineq_hr(1,3,1)
+       10.2899  disj_ineq_hr(1,3,2)
+       -9       disj_ineq_hr(1,3,3)
+      -10       bound_up(1,3,1)
+      -10       bound_up(1,3,2)
+        1       sum_bin(1)
+
+REMAINING 5 ENTRIES SKIPPED
+
+---- cost  
+
+cost
+                (.LO, .L, .UP, .M = -INF, 6, +INF, 0)
+        1       obj
+
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 28
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE chull Using RMIP From line 447
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           67
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES           27
+NON ZERO ELEMENTS           151     DISCRETE VARIABLES          7
+
+
+GENERATION TIME      =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+EXECUTION TIME       =        0.047 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 29
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE chull Using RMIP From line 447
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chull               OBJECTIVE  cost
+     TYPE    RMIP                DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  447
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE               13.9998
+
+ RESOURCE USAGE, LIMIT          0.016      1000.000
+ ITERATION COUNT, LIMIT        11    2000000000
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.10 ticks)
+Optimal solution found.
+Objective :          13.999806
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU obj             .         .         .        1.000      
+
+---- EQU disag  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .         .        1.000      
+1.2      .         .         .        1.000      
+2.1      .         .         .         EPS       
+2.2      .         .         .         EPS       
+3.1      .         .         .         EPS       
+3.2      .         .         .         EPS       
+
+---- EQU disj_ineq_hr  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF       .         .         .         
+1.1.2     -INF       .         .         .         
+1.1.3     -INF       .         .         .         
+1.2.1     -INF       .         .         .         
+1.2.2     -INF       .         .         .         
+1.2.3     -INF       .         .         .         
+1.3.1     -INF     -3.795      .         .         
+1.3.2     -INF       .         .       -1.944      
+1.3.3     -INF       .         .       -0.667      
+2.1.1     -INF       .         .         EPS       
+2.1.2     -INF       .         .         EPS       
+2.1.3     -INF     -3.145      .         .         
+2.2.1     -INF       .         .         .         
+2.2.2     -INF       .         .         EPS       
+2.2.3     -INF       .         .         .         
+2.3.1     -INF     -0.999      .         .         
+2.3.2     -INF       .         .         EPS       
+2.3.3     -INF  -6.081E-4      .         .         
+3.1.1     -INF       .         .         EPS       
+3.1.2     -INF     -1.032      .         .         
+3.1.3     -INF     -1.111      .         .         
+3.1.4     -INF       .         .         EPS       
+3.2.1     -INF     -0.236      .         .         
+3.2.2     -INF     -2.284      .         .         
+3.2.3     -INF       .         .         EPS       
+
+---- EQU bound_up  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1     -INF       .         .         .         
+1.1.2     -INF       .         .         .         
+1.2.1     -INF       .         .         .         
+1.2.2     -INF       .         .         .         
+1.3.1     -INF     -5.000      .         .         
+1.3.2     -INF     -1.000      .         .         
+2.1.1     -INF     -4.002      .         .         
+2.1.2     -INF     -0.667      .         .         
+2.2.1     -INF       .         .         .         
+2.2.2     -INF       .         .         EPS       
+2.3.1     -INF     -0.999      .         .         
+2.3.2     -INF     -0.333      .         .         
+3.1.1     -INF     -0.889      .         .         
+3.1.2     -INF     -0.889      .         .         
+3.2.1     -INF     -4.111      .         .         
+3.2.2     -INF     -0.111      .         .         
+
+---- EQU bound_lo  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .         .        +INF       .         
+1.1.2      .         .        +INF       .         
+1.2.1      .         .        +INF       .         
+1.2.2      .         .        +INF       .         
+1.3.1      .        5.000     +INF       .         
+1.3.2      .        9.000     +INF       .         
+2.1.1      .        2.667     +INF       .         
+2.1.2      .        6.002     +INF       .         
+2.2.1      .         .        +INF       .         
+2.2.2      .         .        +INF       .         
+2.3.1      .        2.332     +INF       .         
+2.3.2      .        2.998     +INF       .         
+3.1.1      .        1.333     +INF       .         
+3.1.2      .        1.333     +INF       .         
+3.2.1      .        3.666     +INF       .         
+3.2.2      .        7.667     +INF       .         
+
+---- EQU sum_bin  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1     1.000     1.000     1.000      .         
+2     1.000     1.000     1.000      EPS       
+3     1.000     1.000     1.000      EPS       
+
+---- VAR x  
+
+     LOWER     LEVEL     UPPER    MARGINAL
+
+1      .        5.000    10.000      .         
+2      .        9.000    10.000      .         
+
+---- VAR ni  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+1.1.1      .         .        +INF      1.000      
+1.1.2      .         .        +INF      1.000      
+1.2.1      .         .        +INF      1.000      
+1.2.2      .         .        +INF      1.000      
+1.3.1      .        5.000     +INF       .         
+1.3.2      .        9.000     +INF       .         
+2.1.1      .        2.667     +INF       .         
+2.1.2      .        6.002     +INF       .         
+2.2.1      .         .        +INF       EPS       
+2.2.2      .         .        +INF       .         
+2.3.1      .        2.332     +INF       .         
+2.3.2      .        2.998     +INF       .         
+3.1.1      .        1.333     +INF       .         
+3.1.2      .        1.333     +INF       .         
+3.2.1      .        3.666     +INF       .         
+3.2.2      .        7.667     +INF       .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+1.1      .         .        1.000      EPS       
+1.2      .         .        1.000      EPS       
+1.3     1.000     1.000     1.000    14.000      
+2.1      .        0.667     1.000      .         
+2.2      .         .        1.000      .         
+2.3      .        0.333     1.000      .         
+3.1      .        0.222     1.000      .         
+3.2      .        0.778     1.000      .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR cost           -INF     14.000     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 14:56:38 Page 30
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+
+
+USER: Ignacio E. Grossmann                           G150105/0001AO-GEN
+      Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_bas
+           ed_B_B_contracts1\illu_example.gms
+Output     C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_bas
+           ed_B_B_contracts1\illu_example.lst

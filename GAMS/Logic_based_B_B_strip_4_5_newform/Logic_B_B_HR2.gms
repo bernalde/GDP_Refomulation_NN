@@ -7,7 +7,8 @@ equation disj_ineq_hr(k,i,e), disag(k,var), bound_up(k,i,var), bound_lo(k,i,var)
 alias (level,level2,k,kk),(i,ii,iii),(ki,ki2);
 set node(level,k,i),cur_node(k,i),alive_ki(k,i);alive_ki(ki)=yes;node(level,k,i)=no;cur_node(k,i)=no;
 alias (node,node2);
-obj.. cost =e= sum(var,c(var)*x(var));
+
+obj(ge)$(ord(ge)<=boxes_param).. cost =g= sum(var,Aglob(ge,var)*x(var))+bglo(ge);
 disj_ineq(k,i,e)$(kie(k,i,e) and alive_ki(k,i)).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(var)) =l= b(k,i,e) + (sum(var$kv(k,var),x.up(var))+1)*(1-y(k,i));
 disj_fix(k,i,e)$(kie(k,i,e) and cur_node(k,i)).. sum(var$(A(k,i,e,var)<>0),A(k,i,e,var)*x(var)) =l= b(k,i,e);
 
@@ -18,7 +19,7 @@ bound_lo(ki(k,i),var)$(kv(k,var) and alive_ki(ki) ).. ni(ki,var) =g= x.lo(var)*y
 
 
 
-sum_bin(k).. sum(ki(k,i),y(ki)) =e= 1;
+sum_bin(k)$(sum(ki(k,i),1)>=1).. sum(ki(k,i),y(ki)) =e= 1;
 
 option optcr = 0.001
        reslim = 7200
@@ -49,8 +50,7 @@ parameter chec_int(k,i), chec_int2(k,i), opt_y(k,i), opt_x(var), no_ki_param(k,i
 *node_val(k,k,i),node_stat(k,k,i),node_int(k,k,i);
 parameter node_val(numm),node_stat(numm),node_int(numm), parent_val(numm);
 
-scalar tol /1e-4/
-*Check how tolerance to 1e-6 affects
+scalar tol /1e-6/
        gap /1e-3/
        int_sol
        int_sol2
@@ -169,7 +169,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 
    loop(numm$(sum(nnode(numm,level,kk,ii),1)>=1 and time_solve<time_limit),
 
-      if((parent_val(numm)<=(1-gap)*UBP) or (parent_val(numm)<=(1+gap)*UBP),
+      if((parent_val(numm)<=(1-gap)*UBP) and (parent_val(numm)<=(1+gap)*UBP),
          chec_int(k,i)=0; int_sol=0; int_sol3=0;
          cur_node(k,i)=no;
          loop(nnode(numm,level,kk,ii),cur_node(kk,ii)=yes;);
@@ -235,7 +235,7 @@ scalar sol,nodes,time,cpu,LBL,first,best,const,vars,bin;
 sol = UBP;
 nodes = cnt_nodes-1;
 time  = time_solve;
-cpu = cpu_time;
+cpu   = cpu_time;
 LBL   = LBP;
 first = first_inter;
 best  = best_inter;

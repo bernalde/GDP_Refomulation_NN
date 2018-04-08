@@ -1,0 +1,96 @@
+
+--- Job Untitled_1.gms Start 08/04/15 13:39:53 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- Untitled_1.gms(40) 2 Mb
+--- Starting execution: elapsed 0:00:00.003
+--- Untitled_1.gms(34) 3 Mb
+--- Generating NLP model BL2
+--- Untitled_1.gms(37) 5 Mb
+---   6 rows  7 columns  17 non-zeroes
+---   14 nl-code  3 nl-non-zeroes
+--- Untitled_1.gms(37) 3 Mb
+--- Executing MINOS: elapsed 0:00:00.016
+
+GAMS/MINOS       24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windo
+M I N O S  5.6      (Nov 2014)
+
+    GAMS/MINOS 5.6, Large Scale Nonlinear Solver
+    B. A. Murtagh, University of New South Wales
+    P. E. Gill, University of California at San Diego,
+    W. Murray, M. A. Saunders, and M. H. Wright,
+    Systems Optimization Laboratory, Stanford University
+
+ Work space allocated           --     0.77 Mb
+
+  Reading Rows...
+  Reading Columns...
+  Reading Instructions...
+
+ Major minor  step     objective  Feasible Optimal  nsb   ncon penalty BSswp
+     1     0T 0.0E+00  0.00000E+00 4.0E+00 9.9E+01    0      1 1.0E+00     0
+     2     4  1.0E+00  3.99446E+02 7.8E-02 3.2E+01    2     14 1.0E+00     0
+     3     2  1.0E+00  3.03288E+02 2.4E+00 1.8E+02    1     19 1.0E+00     1
+     4     1  1.0E+00 -4.01831E+00 3.7E-02 2.2E+01    0     21 1.0E+00     1
+     5     0  1.0E+00 -4.00004E+00 9.6E-05 2.0E-01    0     22 1.0E+00     0
+     6     0  1.0E+00 -4.00000E+00 1.2E-05 4.2E-02    0     23 1.0E+00     0
+     7     0  1.0E+00 -4.00000E+00 3.1E-06 1.0E-02    0     24 1.0E+00     0
+     8     0  1.0E+00 -4.00000E+00 7.8E-07 2.6E-03    0     25 1.0E+00     0
+     9     0  1.0E+00 -4.00000E+00 1.9E-07 6.5E-04    0     26 1.0E+00     0
+    10     0  1.0E+00 -4.00000E+00 4.9E-08 1.6E-04    0     27 1.0E+00     0
+ Major minor  step     objective  Feasible Optimal  nsb   ncon penalty BSswp
+    11     0  1.0E+00 -4.00000E+00 1.2E-08 4.1E-05    0     28 1.0E+00     0
+    12     1  1.0E+00 -4.00000E+00 3.5E-03 1.3E-02    1     38 1.0E+00     0
+    13     2  1.0E+00 -4.00305E+00 3.1E-02 5.5E-02    1     48 1.0E-01     0
+    14     2  1.0E+00 -4.04089E+00 3.3E-01 1.9E-01    1     56 1.0E-02     0
+    15     2  1.0E+00 -4.22180E+00 4.9E-01 3.2E-01    1     66 1.0E-02     0
+    16     2  1.0E+00 -4.55413E+00 6.1E-01 4.4E-01    1     75 1.0E-02     0
+    17     1  1.0E+00 -4.97751E+00 5.4E-01 3.3E-01    0     79 1.0E-02     0
+    18     0  1.0E+00 -5.00000E+00 5.1E-04 2.0E-03    0     80 1.0E-02     0
+    19     0  1.0E+00 -5.00000E+00 1.8E-15 0.0E+00    0     81 1.0E-03     0
+
+ EXIT - Optimal Solution found, objective:       -5.000000
+
+--- Restarting execution
+--- Untitled_1.gms(37) 2 Mb
+--- Reading solution for model BL2
+--- Executing after solve: elapsed 0:00:00.099
+--- Untitled_1.gms(39) 2 Mb
+--- Generating NLP model BL2
+--- Untitled_1.gms(40) 4 Mb
+---   6 rows  7 columns  17 non-zeroes
+---   14 nl-code  3 nl-non-zeroes
+--- Untitled_1.gms(40) 2 Mb
+--- Executing CONOPT: elapsed 0:00:00.109
+CONOPT 3         24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.16D
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        2.6645352591E-15 (Input point)
+                                Pre-triangular equations:        0
+                                Post-triangular equations:       1
+                                Definitional equations:          1
+      1   0        2.6645352591E-15 (After pre-processing)
+      2   0        1.6653345369E-16 (After scaling)
+ 
+ ** Feasible solution. Value of objective =   -5.00000000000
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      4   3       -5.0000000000E+00 0.0E+00     0
+ 
+ ** Optimal solution. There are no superbasic variables.
+ 
+--- Restarting execution
+--- Untitled_1.gms(40) 2 Mb
+--- Reading solution for model BL2
+*** Status: Normal completion
+--- Job Untitled_1.gms Stop 08/04/15 13:39:53 elapsed 0:00:00.218
