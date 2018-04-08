@@ -1,0 +1,64 @@
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 21:36:45 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * Run file to generate 10.00instances of mymodel
+   2  file seed_no / 'seed.gms' /
+   3  putclose seed_no 'execseed = '       41.00';';
+   4  execute 'gams Random_gen_presolve.gms --seed=41 s=0 lo=0 '
+   5  execute 'gdx2sqlite -i prob_data_41.gdx -o prob_data_41.db';
+   6  putclose seed_no 'execseed = '       42.00';';
+   7  execute 'gams Random_gen_presolve.gms --seed=42 s=0 lo=0 '
+   8  execute 'gdx2sqlite -i prob_data_42.gdx -o prob_data_42.db';
+   9  putclose seed_no 'execseed = '       43.00';';
+  10  execute 'gams Random_gen_presolve.gms --seed=43 s=0 lo=0 '
+  11  execute 'gdx2sqlite -i prob_data_43.gdx -o prob_data_43.db';
+  12  putclose seed_no 'execseed = '       44.00';';
+  13  execute 'gams Random_gen_presolve.gms --seed=44 s=0 lo=0 '
+  14  execute 'gdx2sqlite -i prob_data_44.gdx -o prob_data_44.db';
+  15  putclose seed_no 'execseed = '       45.00';';
+  16  execute 'gams Random_gen_presolve.gms --seed=45 s=0 lo=0 '
+  17  execute 'gdx2sqlite -i prob_data_45.gdx -o prob_data_45.db';
+  18  putclose seed_no 'execseed = '       46.00';';
+  19  execute 'gams Random_gen_presolve.gms --seed=46 s=0 lo=0 '
+  20  execute 'gdx2sqlite -i prob_data_46.gdx -o prob_data_46.db';
+  21  putclose seed_no 'execseed = '       47.00';';
+  22  execute 'gams Random_gen_presolve.gms --seed=47 s=0 lo=0 '
+  23  execute 'gdx2sqlite -i prob_data_47.gdx -o prob_data_47.db';
+  24  putclose seed_no 'execseed = '       48.00';';
+  25  execute 'gams Random_gen_presolve.gms --seed=48 s=0 lo=0 '
+  26  execute 'gdx2sqlite -i prob_data_48.gdx -o prob_data_48.db';
+  27  putclose seed_no 'execseed = '       49.00';';
+  28  execute 'gams Random_gen_presolve.gms --seed=49 s=0 lo=0 '
+  29  execute 'gdx2sqlite -i prob_data_49.gdx -o prob_data_49.db';
+  30  putclose seed_no 'execseed = '       50.00';';
+  31  execute 'gams Random_gen_presolve.gms --seed=50 s=0 lo=0 '
+  32  execute 'gdx2sqlite -i prob_data_50.gdx -o prob_data_50.db';
+  33  execute 'gdx2sqlite -i solution_total.gdx -o solution_total.db';
+  34  execute 'gdx2sqlite -i stat_total.gdx -o stat_total.db';
+
+
+COMPILATION TIME     =        0.000 SECONDS      2 MB  25.0.2 r65346 LEX-LEG
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 21:36:45 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+**** REPORT FILE SUMMARY
+
+seed_no /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/4/seed.gms
+
+
+EXECUTION TIME       =        7.572 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/4/instances.gms
+Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler/4/instances.lst

@@ -1,0 +1,56 @@
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 21:46:49 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  set iter /1*10/
+   2  ;
+   3  parameter i /0/;
+INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/first_seed.gms
+   5  scalar first_seed /80/;
+   6  i = first_seed;
+   7  file frun / instances.gms /; put frun '* Run file to generate ' card(iter):0 'instances of mymodel';
+   8  put / "file seed_no / 'seed.gms' /";
+   9  loop(iter,
+  10           i = i + 1;
+  11           put / "putclose seed_no 'execseed = '" (ord(iter)+first_seed) "';';";
+  12           put / "execute 'gams Random_gen_presolve.gms --seed=" i:0:0 " s=0 lo=0 '";
+  13           put / "execute 'gdx2sqlite -i prob_data_"(ord(iter)+first_seed):0:0 ".gdx -o prob_data_"(ord(iter)+first_seed):0:0 ".db';";
+  14  );
+  15  put / "execute 'gdx2sqlite -i solution_total.gdx -o solution_total.db';";
+  16  put / "execute 'gdx2sqlite -i stat_total.gdx -o stat_total.db';";
+  17   
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 21:46:49 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/generate_batch.gms
+     2        4 INCLUDE        1       4  ./home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/first_seed.gms
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
+GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/07/18 21:46:49 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+**** REPORT FILE SUMMARY
+
+frun /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/instances.gms
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  25.0.2 r65346 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+      Dept. of Chemical Engineering                              DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/generate_batch.gms
+Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_k8_i5_v50/Euler/8/generate_batch.lst
