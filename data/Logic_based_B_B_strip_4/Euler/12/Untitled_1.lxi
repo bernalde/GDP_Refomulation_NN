@@ -1,0 +1,36 @@
+B 2 C o m p i l a t i o n
+B 96 E x e c u t i o n
+I 97 h
+I 104 l
+I 111 heigth
+B 114 Equation Listing    SOLVE strip Using EMP From line 78
+D 115 defLength
+D 127 left
+D 138 right
+D 149 above
+D 160 below
+D 171 dummy
+D 188 originalobj
+B 195 Column Listing      SOLVE strip Using EMP From line 78
+E 196 Y1
+E 216 Y2
+E 235 x
+E 311 he
+E 387 long
+E 405 obj
+B 414 Model Statistics    SOLVE strip Using EMP From line 78
+B 432 Solution Report     SOLVE strip Using EMP From line 78
+F 484 defLength
+F 500 left
+F 560 right
+F 620 above
+F 680 below
+F 740 dummy
+F 798 originalobj
+G 801 Y1
+G 916 Y2
+G 1031 x
+G 1047 he
+G 1063 long
+G 1067 obj
+B 1079 E x e c u t i o n
