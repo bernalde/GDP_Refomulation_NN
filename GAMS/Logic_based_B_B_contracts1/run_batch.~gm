@@ -5,7 +5,7 @@ set iter /1*17/
     resu2 /rel,const,vars,bin/;
 
 parameter solu(iter,algo,resu), stats(iter,algo2,resu2);
-scalar rel,sol,nodes,time,LBL,first,best,const,vars,bin,cnt_int_lag;
+scalar rel,sol,nodes,time,LBL,first,best,const,vars,bin;
 
 
 file seed_no / 'seed.gms' /
@@ -45,7 +45,7 @@ loop(iter,
    execute_unload "solution_total " solu;
 
    execute 'gams Logic_B_B_LAG_k0.gms r=0 lo=0 o=nul  '
-   execute_load "res_prob " sol,nodes,time,LBL,first,best,cnt_int_lag;
+   execute_load "res_prob " sol,nodes,time,LBL,first,best;
    solu(iter,'DB_LD','sol') = sol;
    solu(iter,'DB_LD','time') = time;
    solu(iter,'DB_LD','nodes') = nodes;
@@ -53,7 +53,6 @@ loop(iter,
    solu(iter,'DB_LD','first') = first;
    solu(iter,'DB_LD','best') = best;
    execute_unload "solution_total " solu;
-   execute_unload "stat_total " stats,cnt_int_lag;
 
    execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
    execute_load "res_prob " sol,nodes,time,LBL,first,best;
