@@ -57,12 +57,12 @@ betab(t,r)=UniformInt(50,500)/1000;
 loop(ti(t,i)$(ord(t)=1 and ord(i)>=3),
 *   betal(t,r,i)$(ord(i)=3)=UniformInt(10,500)/1000;
 *   betal(t,r,i)$(ord(i)>3)=UniformInt(betal(t,r,i-1)*1000,999)/1000;
-   betal(t,r,i)=UniformInt(10,1000)/1000;
+   betal(t,r,i)=UniformInt(10,999)/1000;
 );
 loop(ti(t,i)$(ord(t)>1 and ord(i)>3),
 *   betal(t,r,i)$(ord(i)=4)=UniformInt(10,500)/1000;
 *   betal(t,r,i)$(ord(i)>4)=UniformInt(betal(t,r,i-1)*1000,999)/1000;
-   betal(t,r,i)=UniformInt(10,1000)/1000;
+   betal(t,r,i)=UniformInt(10,999)/1000;
 );
 
 minb(t,r)=UniformInt(50,100);
@@ -187,7 +187,8 @@ loop((t,r,k,tt)$(ord(t)>=2 and map_ki_tr(tt,r,k) and ord(tt)<ord(t) ),
 );
 
 
+*execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
 
-*opt_bigm(k,i,e)=5000;
+*$exit
 
 
