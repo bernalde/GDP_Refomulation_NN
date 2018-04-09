@@ -41,12 +41,14 @@ option optcr = 0.001
   ;
 
 model bigM /obj, disj_ineq, disj_fix, sum_bin,  eq2, eq3, eq4, eq5/;
+bigM.optfile = 1;
 model chull /obj, disag, disj_ineq_hr, bound_up, bound_lo, disj_fix, sum_bin,  eq2, eq3, eq4, eq5/;
+chull.optfile = 1;
 
 x.lo(var) = lb(var);
 x.up(var) = ub(var);
 
-*$include max_time_ref
+$include max_time_ref
 
 
 *code sets and parameters
@@ -75,6 +77,7 @@ scalar tol /1e-3/
        aux3
        cnt_nodes /1/
        time_start
+       cpu_time /0/
        time_wall
        time_solve /0/
        cnt_calculate_LB /1/
@@ -99,6 +102,7 @@ time_start = jnow;
 
 solve bigM using rmip min cost;
 time_solve = time_solve + bigM.etsolve;
+cpu_time = cpu_time + bigM.resUsd;
 time_wall = (jnow-time_start)*3600*24;
 
 
@@ -177,7 +181,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 
    loop(numm$(sum(nnode(numm,level,kk,ii),1)>=1 and time_solve<time_limit),
 
-      if((parent_val(numm)<=(1-gap)*UBP) or (parent_val(numm)<=(1+gap)*UBP),
+      if((parent_val(numm)<=(1-gap)*UBP) and (parent_val(numm)<=(1+gap)*UBP),
          chec_int(k,i)=0; int_sol=0; int_sol3=0;
          cur_node(k,i)=no;
          y.lo(k,i)=0;y.up(k,i)=1;
@@ -188,6 +192,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
          solve BigM using rmip min cost;
          time_solve = time_solve + bigM.etsolve;
          time_wall = (jnow-time_start)*3600*24;
+         cpu_time = cpu_time + bigM.resUsd;
          loop(ki2, if((y.l(ki2)>=1-tol or y.l(ki2)<=tol),chec_int(ki2)=1););
          if(sum(ki2,chec_int(ki2))=sum(ki2,1),int_sol3=1;);
          if(BigM.modelstat<>1,int_sol3=0;);
@@ -232,21 +237,22 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
    chec_int_k(k)$(sum(alive_ki(k,i),1)=0)=no;
 
    if(sum(nnode(numm,level,kk,ii),1)=0,check_opt=1;);
-   execute_unload "res_B_B_BM2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
+   execute_unload "res_B_B_BM2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod;
 
 );
 
-execute_unload "res_B_B_BM2 " tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
+execute_unload "res_B_B_BM2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
 
 LBP = min(LBP,UBP);
 scalar sol,nodes,time,LBL,first,best,const,vars,bin;
 sol = UBP;
 nodes = cnt_nodes-1;
 time  = time_solve;
+cpu   = cpu_time;
 LBL   = LBP;
 first = first_inter;
 best  = best_inter;
 
-execute_unload "res_prob " sol,nodes,time,LBL,first,best;
+execute_unload "res_prob" sol,nodes,time,cpu,LBL,first,best;
 
 
