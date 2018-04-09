@@ -1,0 +1,116 @@
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 11:15:29 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  set iter /1*17/
+   2      algo /BM,HR,DB_BM,DB_HR,DB_LD/
+   3      algo2 /BM,HR,DB_LD/
+   4      resu /sol,time,nodes,LB,first,best/
+   5      resu2 /rel,const,vars,bin,lag_non_int/;
+   6   
+   7  parameter solu(iter,algo,resu), stats(iter,algo2,resu2);
+   8  scalar rel,sol,nodes,time,LBL,first,best,const,vars,bin,cnt_int_lag;
+   9   
+  10   
+  11  file seed_no / 'seed.gms' /
+  12   
+  13  loop(iter,
+  14     putclose seed_no 'execseed = ' ord(iter) ';';
+  15     execute 'gams Random_gen_presolve.gms s=0 lo=0 o=nul '
+  16   
+  17     execute 'gams BM_ref.gms r=0 lo=0 o=nul  '
+  18     execute_load "res_prob " rel,sol,nodes,time,LBL,const,vars,bin;
+  19     solu(iter,'BM','sol') = sol;
+  20     solu(iter,'BM','time') = time;
+  21     solu(iter,'BM','nodes') = nodes;
+  22     solu(iter,'BM','LB') = LBL;
+  23     solu(iter,'BM','first') = 0;
+  24     solu(iter,'BM','best') = 0;
+  25     stats(iter,'BM','rel') = rel;
+  26     stats(iter,'BM','const') = const;
+  27     stats(iter,'BM','vars') = vars;
+  28     stats(iter,'BM','bin') = bin;
+  29     execute_unload "stat_total " stats;
+  30     execute_unload "solution_total " solu;
+  31   
+  32     execute 'gams HR_ref.gms r=0 lo=0 o=nul  '
+  33     execute_load "res_prob " rel,sol,nodes,time,LBL,const,vars,bin;
+  34     solu(iter,'HR','sol') = sol;
+  35     solu(iter,'HR','time') = time;
+  36     solu(iter,'HR','nodes') = nodes;
+  37     solu(iter,'HR','LB') = LBL;
+  38     solu(iter,'HR','first') = 0;
+  39     solu(iter,'HR','best') = 0;
+  40     stats(iter,'HR','rel') = rel;
+  41     stats(iter,'HR','const') = const;
+  42     stats(iter,'HR','vars') = vars;
+  43     stats(iter,'HR','bin') = bin;
+  44     execute_unload "stat_total " stats;
+  45     execute_unload "solution_total " solu;
+  46   
+  47     execute 'gams Logic_B_B_LAG_k0.gms r=0 lo=0 o=nul  '
+  48     execute_load "res_prob " sol,nodes,time,LBL,first,best,cnt_int_lag;
+  49     solu(iter,'DB_LD','sol') = sol;
+  50     solu(iter,'DB_LD','time') = time;
+  51     solu(iter,'DB_LD','nodes') = nodes;
+  52     solu(iter,'DB_LD','LB') = LBL;
+  53     solu(iter,'DB_LD','first') = first;
+  54     solu(iter,'DB_LD','best') = best;
+  55     execute_unload "solution_total " solu;
+  56     stats(iter,'DB_LD','lag_non_int')=cnt_int_lag;
+  57     execute_unload "stat_total " stats;
+  58   
+  59     execute 'gams Logic_B_B_BM2.gms r=0 lo=0 o=nul  '
+  60     execute_load "res_prob " sol,nodes,time,LBL,first,best;
+  61     solu(iter,'DB_BM','sol') = sol;
+  62     solu(iter,'DB_BM','time') = time;
+  63     solu(iter,'DB_BM','nodes') = nodes;
+  64     solu(iter,'DB_BM','LB') = LBL;
+  65     solu(iter,'DB_BM','first') = first;
+  66     solu(iter,'DB_BM','best') = best;
+  67     execute_unload "solution_total " solu;
+  68   
+  69     execute 'gams Logic_B_B_HR2.gms r=0 lo=0 o=nul  '
+  70     execute_load "res_prob " sol,nodes,time,LBL,first,best;
+  71     solu(iter,'DB_HR','sol') = sol;
+  72     solu(iter,'DB_HR','time') = time;
+  73     solu(iter,'DB_HR','nodes') = nodes;
+  74     solu(iter,'DB_HR','LB') = LBL;
+  75     solu(iter,'DB_HR','first') = first;
+  76     solu(iter,'DB_HR','best') = best;
+  77     execute_unload "solution_total " solu;
+  78   
+  79   
+  80  );
+  81   
+  82   
+  83   
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  24.4.5 r52258 WEX-VS8
+GAMS 24.4.5  r52258 Released May 26, 2015 WEX-VS8 x86 32bit/MS Windows 08/04/15 11:15:29 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+**** REPORT FILE SUMMARY
+
+seed_no C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_
+        B_B_contracts1\seed.gms
+
+
+EXECUTION TIME       =   151881.731 SECONDS      4 MB  24.4.5 r52258 WEX-VS8
+
+
+USER: Ignacio E. Grossmann                           G150105/0001AO-GEN
+      Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_bas
+           ed_B_B_contracts1\run_batch.gms
+Output     C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_bas
+           ed_B_B_contracts1\run_batch.lst

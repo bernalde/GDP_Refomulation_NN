@@ -1,0 +1,287 @@
+
+--- Job instances.gms Start 04/07/18 20:14:29 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(34) 2 Mb
+--- Starting execution: elapsed 0:00:00.004
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_1.gdx
+   OutputFile:prob_data_1.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.32 seconds
+   Inserts/second:3617.28
+   Done
+
+--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_2.gdx
+   OutputFile:prob_data_2.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.33 seconds
+   Inserts/second:3606.15
+   Done
+
+--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_3.gdx
+   OutputFile:prob_data_3.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.30 seconds
+   Inserts/second:3946.13
+   Done
+
+--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_4.gdx
+   OutputFile:prob_data_4.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.30 seconds
+   Inserts/second:3932.89
+   Done
+
+--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_5.gdx
+   OutputFile:prob_data_5.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.30 seconds
+   Inserts/second:3855.26
+   Done
+
+--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_6.gdx
+   OutputFile:prob_data_6.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.30 seconds
+   Inserts/second:3880.79
+   Done
+
+--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_7.gdx
+   OutputFile:prob_data_7.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.33 seconds
+   Inserts/second:3595.09
+   Done
+
+--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_8.gdx
+   OutputFile:prob_data_8.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.28 seconds
+   Inserts/second:4261.82
+   Done
+
+--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_9.gdx
+   OutputFile:prob_data_9.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.29 seconds
+   Inserts/second:4000.00
+   Done
+
+--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:prob_data_10.gdx
+   OutputFile:prob_data_10.db
+   Symbols:7
+   Uels:64
+   Loading Uels
+   Processing Symbols
+     A(768 records)
+     Aglob(4 records)
+     bglo(4 records)
+     b(384 records)
+     c(0 records)
+     ub(8 records)
+     lb(4 records)
+   Inserts:1172
+   Elapsed:0.29 seconds
+   Inserts/second:4097.90
+   Done
+
+--- instances.gms(33) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:solution_total.gdx
+   OutputFile:solution_total.db
+   Symbols:1
+   Uels:13
+   Loading Uels
+   Processing Symbols
+     solu(44 records)
+   Inserts:44
+   Elapsed:0.06 seconds
+   Inserts/second:771.93
+   Done
+
+--- instances.gms(34) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+Current directory:C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform
+
+   InputFile:stat_total.gdx
+   OutputFile:stat_total.db
+   Symbols:1
+   Uels:8
+   Loading Uels
+   Processing Symbols
+     stats(16 records)
+   Inserts:16
+   Elapsed:0.05 seconds
+   Inserts/second:326.53
+   Done
+
+--- Putfile seed_no C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/07/18 20:14:33 elapsed 0:00:04.179
