@@ -168,7 +168,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 
    loop(numm$(sum(nnode(numm,level,kk,ii),1)>=1 and time_solve<time_limit),
 
-      if((parent_val(numm)<=(1-gap)*UBP) or (parent_val(numm)<=(1+gap)*UBP),
+      if((parent_val(numm)<=(1-gap)*UBP) and (parent_val(numm)<=(1+gap)*UBP),
          chec_int(k,i)=0; int_sol=0; int_sol3=0;
          cur_node(k,i)=no;
          loop(nnode(numm,level,kk,ii),cur_node(kk,ii)=yes;);
