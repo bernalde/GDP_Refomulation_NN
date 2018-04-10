@@ -10,10 +10,10 @@
 #PBS -l mem=2gb
 
 # Set name of job
-#PBS -N k7_i15_v50_19
+#PBS -N k5_i10_v15_19
 
 # Use submission environment
 #PBS -V
-cd /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/19
+cd /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k5_i10_v15/Euler/19
 gams run_batch.gms
 
