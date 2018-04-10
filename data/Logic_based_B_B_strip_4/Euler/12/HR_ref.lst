@@ -1,4 +1,4 @@
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:42:50 Page 8
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 02:31:10 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -56,7 +56,7 @@ INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B
  225  time = prob.etsolve;
  226  cpu = prob.resUsd;
  227  nodes = prob.nodusd;
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:42:50 Page 9
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 02:31:10 Page 9
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -70,7 +70,7 @@ C o m p i l a t i o n
  234  execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
  235   
  236   
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 10
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 10
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -82,7 +82,7 @@ Include File Summary
 
 
 COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 11
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 11
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE prob Using RMIP From line 219
 
@@ -94,11 +94,11 @@ BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,033  4 projected
 NON ZERO ELEMENTS         5,334     DISCRETE VARIABLES        128
 
 
-GENERATION TIME      =        0.014 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GENERATION TIME      =        0.009 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.015 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 12
+EXECUTION TIME       =        0.010 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 12
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE prob Using RMIP From line 219
 
@@ -111,10 +111,10 @@ Solution Report     SOLVE prob Using RMIP From line 219
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE               13.8000
+**** OBJECTIVE VALUE               10.2000
 
- RESOURCE USAGE, LIMIT          0.118     36000.000
- ITERATION COUNT, LIMIT      1351    2000000000
+ RESOURCE USAGE, LIMIT          0.098     36000.000
+ ITERATION COUNT, LIMIT      1201    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -126,17 +126,17 @@ Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Log
 Space for names approximately 0.07 Mb
 Use option 'names no' to turn use of names off
 LP status(1): optimal
-Cplex Time: 0.11sec (det. 49.81 ticks)
+Cplex Time: 0.09sec (det. 41.82 ticks)
 Optimal solution found.
-Objective :          13.800000
+Objective :          10.200000
 
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-                             2  PROJECTED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 13
+                             3  PROJECTED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 13
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE prob Using MIP From line 223
 
@@ -148,11 +148,11 @@ BLOCKS OF VARIABLES           4     SINGLE VARIABLES        1,033
 NON ZERO ELEMENTS         5,334     DISCRETE VARIABLES        128
 
 
-GENERATION TIME      =        0.010 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GENERATION TIME      =        0.006 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.011 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 14
+EXECUTION TIME       =        0.007 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 14
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE prob Using MIP From line 223
 
@@ -165,10 +165,10 @@ Solution Report     SOLVE prob Using MIP From line 223
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE               23.0000
+**** OBJECTIVE VALUE               15.0000
 
- RESOURCE USAGE, LIMIT          0.054     36000.000
- ITERATION COUNT, LIMIT       709    2000000000
+ RESOURCE USAGE, LIMIT          0.020     36000.000
+ ITERATION COUNT, LIMIT        41    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -180,16 +180,16 @@ Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Log
 Space for names approximately 0.07 Mb
 Use option 'names no' to turn use of names off
 MIP status(101): integer optimal solution
-Cplex Time: 0.04sec (det. 12.13 ticks)
+Cplex Time: 0.01sec (det. 6.24 ticks)
 Fixing integer variables, and solving final LP...
 Fixed MIP status(1): optimal
-Cplex Time: 0.00sec (det. 1.51 ticks)
+Cplex Time: 0.00sec (det. 1.47 ticks)
 Proven optimal solution.
 
-MIP Solution:           23.000000    (707 iterations, 41 nodes)
-Final Solve:            23.000000    (2 iterations)
+MIP Solution:           15.000000    (41 iterations, 0 nodes)
+Final Solve:            15.000000    (0 iterations)
 
-Best possible:          23.000000
+Best possible:          15.000000
 Absolute gap:            0.000000
 Relative gap:            0.000000
 
@@ -198,8 +198,7 @@ Relative gap:            0.000000
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-                            11  PROJECTED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:42:50 Page 15
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 02:31:10 Page 15
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

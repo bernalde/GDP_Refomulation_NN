@@ -1,208 +1,2582 @@
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:21:40 Page 8
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 21:53:56 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
- 175   
- 176  variables cost, x(var);
- 177  binary variable y(k,i);
- 178  equation obj, disj_ineq(k,i,e), sum_bin(k);
- 179  *disj_eq_1(k,i,ee), disj_eq_2(k,i,ee);
- 180   
- 181  *obj.. cost =e= sum(var,c(var)*x(var));
- 182  obj(ge)$(ord(ge)<=boxes_param).. cost =g= sum(var,Aglob(ge,var)*x(var))+bglo(ge);
- 183  disj_ineq(kie(ki(k,i),e)).. sum(var$(A(k,i,e,var)<>0),A(kie,var)*x(var)) =l= b(kie) + (sum(var$kv(k,var),x.up(var))+1)*(1-y(ki));
- 184  *disj_eq_1(kiee(ki,ee)).. sum(var,AE(kiee,var)*x(var)) =l= bE(kiee) + (sum(var$AE(kiee,var),x.up(var))+1)*(1-y(ki));
- 185  *disj_eq_2(kiee(ki,ee)).. sum(var,AE(kiee,var)*x(var)) =g= bE(kiee) - (sum(var$AE(kiee,var),x.up(var))+1)*(1-y(ki));
- 186   
- 187  sum_bin(k)$(sum(ki(k,i),1)>=1).. sum(ki(k,i),y(ki)) =e= 1;
- 188   
- 189  model prob /obj,disj_ineq,sum_bin/;
- 190   
- 191  option optcr = 0.001
- 192         reslim = 72000
- 193  *       mip=BDMLP
- 194  *       mip=CBC
- 195  *       mip=SCIP
- 196  *       rmip=CBC
- 197    ;
- 198  *prob.nodlim=1000000;
+ 194  positive variables it(t), f(t,r), ix(t,r);
+ 195  Variables
+ 196       cost        objective variable
+ 197       x(var);
+ 198  Binary variable y(k,i);
  199   
- 200  prob.optfile = 1;
- 201   
- 202  x.lo(var) = lb(var);
- 203  x.up(var) = ub(var);
- 204   
- 205  *y.fx(k,'1')$(ord(k)<=10)=1;
- 206  *y.fx('1','1')=1;
- 207   
-INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/max_time_ref.gms
- 209  option reslim = 36000;
- 210  option mip = cplex;
- 211  option rmip = cplex;
- 212  option threads = 1;
- 213  option limrow = 0;
- 214  option limcol = 0;
- 215  option solprint = off;
+ 200  Equations
+ 201       obj
+ 202       eq2
+ 203       eq3
+ 204       eq4
+ 205       eq5
+ 206       sum_bin
+ 207       disj_ineq
+ 208   
+ 209  ;
+ 210   
+ 211  obj.. cost =e= sum(t,IC(t)*it(t)) + sum(map_var_c(var,t,r),x(var));
+ 212  eq2(t).. it(t) =e= sum(r,ix(t,r));
+ 213  eq3(t,r).. - f(t,r) =l= -D(t,r);
+ 214  eq4(t,r).. ix(t,r) =e= ix(t-1,r)$(ord(t)>1) + sum(map_var_x(var,t,r),x(var)) - f(t,r);
+ 215  eq5(t,r)$(ord(t)>=2)..  sum((k,i)$logic_left(t,r,k,i),y(k,i)) =e= sum((tt,k,i)$logic_right(t,r,k,tt,i),y(k,i));
  216   
- 217  scalar rel,sol,nodes,time,cpu,LBL,const,vars,bin;
- 218   
- 219  solve prob using rmip min cost;
- 220  rel = prob.objval;
- 221  bin=sum(ki,1);
+ 217   
+ 218  disj_ineq(kie(ki(k,i),e)).. sum(var$(A(k,i,e,var)<>0),A(kie,var)*x(var)) =l= b(kie) + opt_bigm(k,i,e)*(1-y(ki));
+ 219  sum_bin(k).. sum(ki(k,i),y(ki)) =e= 1;
+ 220   
+ 221  model prob / obj, eq2, eq3, eq4, eq5, sum_bin,disj_ineq /;
  222   
- 223  solve prob using mip min cost;
- 224  sol = prob.objval;
- 225  time = prob.etsolve;
- 226  cpu = prob.resUsd;
- 227  nodes = prob.nodusd;
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 01:21:40 Page 9
+ 223  x.up(var) = ub(var);
+ 224  x.lo(var) = lb(var);
+ 225  *y.fx(k,'11')=1;
+ 226   
+ 227  option optcr = 0.001
+ 228         reslim = 72000
+ 229  *       mip=BDMLP
+ 230  *       mip=CBC
+ 231  *       mip=SCIP
+ 232  *       rmip=CBC
+ 233    ;
+ 234  *prob.nodlim=1000000;
+ 235   
+ 236  prob.optfile = 1;
+ 237   
+ 238  x.lo(var) = lb(var);
+ 239  x.up(var) = ub(var);
+ 240   
+ 241  *y.fx(k,'1')$(ord(k)<=10)=1;
+ 242  *y.fx(k,'14')=1;
+ 243   
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/max_time_ref.gms
+ 245  option reslim = 7200;
+ 246   
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 21:53:56 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
- 228  LBL  = prob.objest;
- 229  const = prob.numequ;
- 230  vars = prob.numvar;
- 231   
- 232  execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
- 233   
- 234   
- 235   
- 236   
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 10
+ 247  scalar rel,sol,nodes,time,cpu,LBL,const,vars,bin;
+ 248   
+ 249  solve prob using rmip min cost;
+ 250  rel = prob.objval;
+ 251  bin=sum(ki,1);
+ 252   
+ 253  solve prob using mip min cost;
+ 254  sol = prob.objval;
+ 255  time = prob.etsolve;
+ 256  cpu = prob.resUsd;
+ 257  nodes = prob.nodusd;
+ 258  LBL  = prob.objest;
+ 259  const = prob.numequ;
+ 260  vars = prob.numvar;
+ 261   
+ 262  execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
+ 263   
+ 264   
+ 265   
+ 266   
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 21:53:56 Page 9
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/BM_ref.gms
-     2      208 INCLUDE        1      34  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/max_time_ref.gms
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/BM_ref.gms
+     2      244 INCLUDE        1      51  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/max_time_ref.gms
 
 
-COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 11
+COMPILATION TIME     =        0.000 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 10
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Model Statistics    SOLVE prob Using RMIP From line 219
+Equation Listing    SOLVE prob Using RMIP From line 249
+
+
+---- obj  =E=  
+
+obj..  - 10*it(1) - 10*it(2) - 8*it(3) - 9*it(4) - 13*it(5) - 18*it(6) - 5*it(7) - 16*it(8) - 8*it(9) - 14*it(10) + cost - x(11) - x(12) - x(13) - x(14) - x(15) - x(16) - x(17) - x(18) - x(19) - x(20) =E= 0 ; (LHS = 0)
+     
+
+---- eq2  =E=  
+
+eq2(1)..  it(1) - ix(1,1) =E= 0 ; (LHS = 0)
+     
+eq2(2)..  it(2) - ix(2,1) =E= 0 ; (LHS = 0)
+     
+eq2(3)..  it(3) - ix(3,1) =E= 0 ; (LHS = 0)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq3  =L=  
+
+eq3(1,1)..  - f(1,1) =L= -60 ; (LHS = 0, INFES = 60 ****)
+     
+eq3(2,1)..  - f(2,1) =L= -51 ; (LHS = 0, INFES = 51 ****)
+     
+eq3(3,1)..  - f(3,1) =L= -75 ; (LHS = 0, INFES = 75 ****)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq4  =E=  
+
+eq4(1,1)..  f(1,1) + ix(1,1) - x(1) =E= 0 ; (LHS = 0)
+     
+eq4(2,1)..  f(2,1) - ix(1,1) + ix(2,1) - x(2) =E= 0 ; (LHS = 0)
+     
+eq4(3,1)..  f(3,1) - ix(2,1) + ix(3,1) - x(3) =E= 0 ; (LHS = 0)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq5  =E=  
+
+eq5(2,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(1,10) - y(1,11) + y(2,3) =E= 0 ; (LHS = 0)
+     
+eq5(3,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(1,10) - y(2,4) - y(2,5) - y(2,6) - y(2,7) - y(2,8) - y(2,9) - y(2,10) - y(2,11) + y(3,3) =E= 0 ; (LHS = 0)
+     
+eq5(4,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(2,4) - y(2,5) - y(2,6) - y(2,7) - y(2,8) - y(2,9) - y(2,10) - y(3,4) - y(3,5) - y(3,6) - y(3,7) - y(3,8) - y(3,9) - y(3,10) + y(4,3) =E= 0 ; (LHS = 0)
+     
+REMAINING 6 ENTRIES SKIPPED
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE prob Using RMIP From line 249
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) + y(1,4) + y(1,5) + y(1,6) + y(1,7) + y(1,8) + y(1,9) + y(1,10) + y(1,11) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) + y(2,4) + y(2,5) + y(2,6) + y(2,7) + y(2,8) + y(2,9) + y(2,10) + y(2,11) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+sum_bin(3)..  y(3,1) + y(3,2) + y(3,3) + y(3,4) + y(3,5) + y(3,6) + y(3,7) + y(3,8) + y(3,9) + y(3,10) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- disj_ineq  =L=  
+
+disj_ineq(1,1,1)..  28*x(1) - x(11) + 2520*y(1,1) =L= 2520 ; (LHS = 0)
+     
+disj_ineq(1,2,1)..  19.544*x(1) - x(11) + 1758.96*y(1,2) =L= 1758.96 ; (LHS = 0)
+     
+disj_ineq(1,2,2)..  - x(1) + 50*y(1,2) =L= 0 ; (LHS = 0)
+     
+REMAINING 465 ENTRIES SKIPPED
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using RMIP From line 249
+
+
+---- it  
+
+it(1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -10       obj
+        1       eq2(1)
+
+it(2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -10       obj
+        1       eq2(2)
+
+it(3)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -8       obj
+        1       eq2(3)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- f  
+
+f(1,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq3(1,1)
+        1       eq4(1,1)
+
+f(2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq3(2,1)
+        1       eq4(2,1)
+
+f(3,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq3(3,1)
+        1       eq4(3,1)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- ix  
+
+ix(1,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq2(1)
+        1       eq4(1,1)
+       -1       eq4(2,1)
+
+ix(2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq2(2)
+        1       eq4(2,1)
+       -1       eq4(3,1)
+
+ix(3,1)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using RMIP From line 249
+
+
+     ix  
+
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -1       eq2(3)
+        1       eq4(3,1)
+       -1       eq4(4,1)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- cost  objective variable
+
+cost
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       obj
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 0, 90, 0)
+       -1       eq4(1,1)
+       28       disj_ineq(1,1,1)
+       19.544   disj_ineq(1,2,1)
+       -1       disj_ineq(1,2,2)
+        0.448   disj_ineq(1,3,3)
+       -1       disj_ineq(1,3,13)
+       12.992   disj_ineq(1,4,3)
+       -1       disj_ineq(1,4,13)
+        9.856   disj_ineq(1,5,3)
+       -1       disj_ineq(1,5,13)
+       22.204   disj_ineq(1,6,3)
+       -1       disj_ineq(1,6,13)
+        6.804   disj_ineq(1,7,3)
+       -1       disj_ineq(1,7,13)
+       12.74    disj_ineq(1,8,3)
+       -1       disj_ineq(1,8,13)
+       13.272   disj_ineq(1,9,3)
+       -1       disj_ineq(1,9,13)
+       25.9     disj_ineq(1,10,3)
+       -1       disj_ineq(1,10,13)
+       25.34    disj_ineq(1,11,3)
+       -1       disj_ineq(1,11,13)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 0, 76.5, 0)
+       -1       eq4(2,1)
+        0.448   disj_ineq(1,3,4)
+       -1       disj_ineq(1,3,14)
+       12.992   disj_ineq(1,4,4)
+       -1       disj_ineq(1,4,14)
+        9.856   disj_ineq(1,5,4)
+       -1       disj_ineq(1,5,14)
+       22.204   disj_ineq(1,6,4)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using RMIP From line 249
+
+
+     x  
+
+       -1       disj_ineq(1,6,14)
+        6.804   disj_ineq(1,7,4)
+       -1       disj_ineq(1,7,14)
+       12.74    disj_ineq(1,8,4)
+       -1       disj_ineq(1,8,14)
+       13.272   disj_ineq(1,9,4)
+       -1       disj_ineq(1,9,14)
+       25.9     disj_ineq(1,10,4)
+       -1       disj_ineq(1,10,14)
+       25.34    disj_ineq(1,11,4)
+       -1       disj_ineq(1,11,14)
+       12       disj_ineq(2,1,1)
+        8.712   disj_ineq(2,2,1)
+       -1       disj_ineq(2,2,2)
+        8.712   disj_ineq(2,3,1)
+       -1       disj_ineq(2,3,2)
+        4.656   disj_ineq(2,4,3)
+       -1       disj_ineq(2,4,13)
+       11.544   disj_ineq(2,5,3)
+       -1       disj_ineq(2,5,13)
+        5.124   disj_ineq(2,6,3)
+       -1       disj_ineq(2,6,13)
+        3.408   disj_ineq(2,7,3)
+       -1       disj_ineq(2,7,13)
+        8.436   disj_ineq(2,8,3)
+       -1       disj_ineq(2,8,13)
+        8.232   disj_ineq(2,9,3)
+       -1       disj_ineq(2,9,13)
+        3.54    disj_ineq(2,10,3)
+       -1       disj_ineq(2,10,13)
+        9.6     disj_ineq(2,11,3)
+       -1       disj_ineq(2,11,13)
+
+x(3)
+                (.LO, .L, .UP, .M = 0, 0, 112.5, 0)
+       -1       eq4(3,1)
+        0.448   disj_ineq(1,3,5)
+       -1       disj_ineq(1,3,15)
+       12.992   disj_ineq(1,4,5)
+       -1       disj_ineq(1,4,15)
+        9.856   disj_ineq(1,5,5)
+       -1       disj_ineq(1,5,15)
+       22.204   disj_ineq(1,6,5)
+       -1       disj_ineq(1,6,15)
+        6.804   disj_ineq(1,7,5)
+       -1       disj_ineq(1,7,15)
+       12.74    disj_ineq(1,8,5)
+       -1       disj_ineq(1,8,15)
+       13.272   disj_ineq(1,9,5)
+       -1       disj_ineq(1,9,15)
+       25.9     disj_ineq(1,10,5)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 15
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using RMIP From line 249
+
+
+     x  
+
+       -1       disj_ineq(1,10,15)
+        4.656   disj_ineq(2,4,4)
+       -1       disj_ineq(2,4,14)
+       11.544   disj_ineq(2,5,4)
+       -1       disj_ineq(2,5,14)
+        5.124   disj_ineq(2,6,4)
+       -1       disj_ineq(2,6,14)
+        3.408   disj_ineq(2,7,4)
+       -1       disj_ineq(2,7,14)
+        8.436   disj_ineq(2,8,4)
+       -1       disj_ineq(2,8,14)
+        8.232   disj_ineq(2,9,4)
+       -1       disj_ineq(2,9,14)
+        3.54    disj_ineq(2,10,4)
+       -1       disj_ineq(2,10,14)
+        9.6     disj_ineq(2,11,4)
+       -1       disj_ineq(2,11,14)
+       23       disj_ineq(3,1,1)
+       12.949   disj_ineq(3,2,1)
+       -1       disj_ineq(3,2,2)
+        8.712   disj_ineq(3,3,1)
+       -1       disj_ineq(3,3,2)
+       14.674   disj_ineq(3,4,3)
+       -1       disj_ineq(3,4,13)
+       21.482   disj_ineq(3,5,3)
+       -1       disj_ineq(3,5,13)
+       17.917   disj_ineq(3,6,3)
+       -1       disj_ineq(3,6,13)
+        3.91    disj_ineq(3,7,3)
+       -1       disj_ineq(3,7,13)
+       17.02    disj_ineq(3,8,3)
+       -1       disj_ineq(3,8,13)
+        0.299   disj_ineq(3,9,3)
+       -1       disj_ineq(3,9,13)
+        8.556   disj_ineq(3,10,3)
+       -1       disj_ineq(3,10,13)
+
+REMAINING 17 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+        1       sum_bin(1)
+     2520       disj_ineq(1,1,1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+        1       sum_bin(1)
+     1758.96    disj_ineq(1,2,1)
+       50       disj_ineq(1,2,2)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 16
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using RMIP From line 249
+
+
+     y  
+
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+       -1       eq5(2,1)
+       -1       eq5(3,1)
+       -1       eq5(4,1)
+       -1       eq5(5,1)
+       -1       eq5(6,1)
+       -1       eq5(7,1)
+       -1       eq5(8,1)
+       -1       eq5(9,1)
+       -1       eq5(10,1)
+        1       sum_bin(1)
+       40.32    disj_ineq(1,3,3)
+       34.272   disj_ineq(1,3,4)
+       50.4     disj_ineq(1,3,5)
+       43.008   disj_ineq(1,3,6)
+       37.632   disj_ineq(1,3,7)
+       57.792   disj_ineq(1,3,8)
+       42.336   disj_ineq(1,3,9)
+       42.336   disj_ineq(1,3,10)
+       49.056   disj_ineq(1,3,11)
+       67.2     disj_ineq(1,3,12)
+       64       disj_ineq(1,3,13)
+       64       disj_ineq(1,3,14)
+       64       disj_ineq(1,3,15)
+       64       disj_ineq(1,3,16)
+       64       disj_ineq(1,3,17)
+       64       disj_ineq(1,3,18)
+       64       disj_ineq(1,3,19)
+       64       disj_ineq(1,3,20)
+       64       disj_ineq(1,3,21)
+       64       disj_ineq(1,3,22)
+
+REMAINING 71 ENTRIES SKIPPED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 17
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE prob Using RMIP From line 249
 
 
 MODEL STATISTICS
 
-BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          518
-BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137  4 projected
-NON ZERO ELEMENTS         1,416     DISCRETE VARIABLES        128
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS          518
+BLOCKS OF VARIABLES           6     SINGLE VARIABLES          125
+NON ZERO ELEMENTS         1,513     DISCRETE VARIABLES         74
 
 
 GENERATION TIME      =        0.006 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.006 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 12
+EXECUTION TIME       =        0.007 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 18
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Solution Report     SOLVE prob Using RMIP From line 219
+Solution Report     SOLVE prob Using RMIP From line 249
 
 
                S O L V E      S U M M A R Y
 
      MODEL   prob                OBJECTIVE  cost
      TYPE    RMIP                DIRECTION  MINIMIZE
-     SOLVER  CPLEX               FROM LINE  219
+     SOLVER  CPLEX               FROM LINE  249
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE                9.0000
+**** OBJECTIVE VALUE                0.0000
 
- RESOURCE USAGE, LIMIT          0.005     36000.000
- ITERATION COUNT, LIMIT         3    2000000000
+ RESOURCE USAGE, LIMIT          0.008      7200.000
+ ITERATION COUNT, LIMIT        26    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
 Cplex 12.7.1.0
 
-Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/cplex.opt"
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/cplex.opt"
 >>  randomseed 1
-Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/cplex.opt"
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/cplex.opt"
 Space for names approximately 0.01 Mb
 Use option 'names no' to turn use of names off
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.67 ticks)
+Cplex Time: 0.00sec (det. 0.83 ticks)
 Optimal solution found.
-Objective :           9.000000
+Objective :           0.000000
 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU obj                 .              .              .             1.0000      
+
+---- EQU eq2  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .              .              .            10.0000      
+2           .              .              .            10.0000      
+3           .              .              .             8.0000      
+4           .              .              .             9.0000      
+5           .              .              .            13.0000      
+6           .              .              .            18.0000      
+7           .              .              .             5.0000      
+8           .              .              .            16.0000      
+9           .              .              .             8.0000      
+10          .              .              .            14.0000      
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 19
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+---- EQU eq3  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1        -INF          -60.0000       -60.0000         EPS         
+2 .1        -INF          -51.0000       -51.0000         EPS         
+3 .1        -INF          -75.0000       -75.0000         EPS         
+4 .1        -INF          -64.0000       -64.0000         EPS         
+5 .1        -INF          -56.0000       -56.0000         EPS         
+6 .1        -INF          -86.0000       -86.0000         EPS         
+7 .1        -INF          -63.0000       -63.0000         EPS         
+8 .1        -INF          -63.0000       -63.0000         EPS         
+9 .1        -INF          -73.0000       -73.0000         EPS         
+10.1        -INF         -100.0000      -100.0000         EPS         
+
+---- EQU eq4  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .              .              .             EPS         
+2 .1          .              .              .             EPS         
+3 .1          .              .              .             EPS         
+4 .1          .              .              .             EPS         
+5 .1          .              .              .             EPS         
+6 .1          .              .              .             EPS         
+7 .1          .              .              .             EPS         
+8 .1          .              .              .             EPS         
+9 .1          .              .              .             EPS         
+10.1          .              .              .             EPS         
+
+---- EQU eq5  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+2 .1          .              .              .             EPS         
+3 .1          .              .              .             EPS         
+4 .1          .              .              .             EPS         
+5 .1          .              .              .             EPS         
+6 .1          .              .              .             EPS         
+7 .1          .              .              .             EPS         
+8 .1          .              .              .             EPS         
+9 .1          .              .              .             EPS         
+10.1          .              .              .             EPS         
+
+---- EQU sum_bin  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1          1.0000         1.0000         1.0000         EPS         
+2          1.0000         1.0000         1.0000         EPS         
+3          1.0000         1.0000         1.0000         EPS         
+4          1.0000         1.0000         1.0000         EPS         
+5          1.0000         1.0000         1.0000         EPS         
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 20
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU sum_bin  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+6          1.0000         1.0000         1.0000         EPS         
+7          1.0000         1.0000         1.0000         EPS         
+8          1.0000         1.0000         1.0000         EPS         
+9          1.0000         1.0000         1.0000         EPS         
+10         1.0000         1.0000         1.0000         EPS         
+
+---- EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1 .1         -INF         2520.0000      2520.0000         EPS         
+1 .2 .1         -INF         1758.9600      1758.9600         EPS         
+1 .2 .2         -INF          -43.3333          .              .          
+1 .3 .3         -INF           26.8800        40.3200          .          
+1 .3 .4         -INF           22.8480        34.2720          .          
+1 .3 .5         -INF           33.6000        50.4000          .          
+1 .3 .6         -INF           28.6720        43.0080          .          
+1 .3 .7         -INF           25.0880        37.6320          .          
+1 .3 .8         -INF           38.5280        57.7920          .          
+1 .3 .9         -INF           28.2240        42.3360          .          
+1 .3 .10        -INF           28.2240        42.3360          .          
+1 .3 .11        -INF           32.7040        49.0560          .          
+1 .3 .12        -INF           44.8000        67.2000          .          
+1 .3 .13        -INF          -60.0000          .              .          
+1 .3 .14        -INF          -51.0000          .              .          
+1 .3 .15        -INF          -75.0000          .              .          
+1 .3 .16        -INF          -64.0000          .              .          
+1 .3 .17        -INF          -56.0000          .              .          
+1 .3 .18        -INF          -86.0000          .              .          
+1 .3 .19        -INF          -63.0000          .              .          
+1 .3 .20        -INF          -63.0000          .              .          
+1 .3 .21        -INF          -73.0000          .              .          
+1 .3 .22        -INF         -100.0000          .              .          
+1 .4 .3         -INF          779.5200      1169.2800          .          
+1 .4 .4         -INF          662.5920       993.8880          .          
+1 .4 .5         -INF          974.4000      1461.6000          .          
+1 .4 .6         -INF          831.4880      1247.2320          .          
+1 .4 .7         -INF          727.5520      1091.3280          .          
+1 .4 .8         -INF         1117.3120      1675.9680          .          
+1 .4 .9         -INF          818.4960      1227.7440          .          
+1 .4 .10        -INF          818.4960      1227.7440          .          
+1 .4 .11        -INF          948.4160      1422.6240          .          
+1 .4 .13        -INF          -60.0000          .              .          
+1 .4 .14        -INF          -51.0000          .              .          
+1 .4 .15        -INF          -75.0000          .              .          
+1 .4 .16        -INF          -64.0000          .              .          
+1 .4 .17        -INF          -56.0000          .              .          
+1 .4 .18        -INF          -86.0000          .              .          
+1 .4 .19        -INF          -63.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 21
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .4 .20        -INF          -63.0000          .              .          
+1 .4 .21        -INF          -73.0000          .              .          
+1 .5 .3         -INF          591.3600       887.0400          .          
+1 .5 .4         -INF          502.6560       753.9840          .          
+1 .5 .5         -INF          739.2000      1108.8000          .          
+1 .5 .6         -INF          630.7840       946.1760          .          
+1 .5 .7         -INF          551.9360       827.9040          .          
+1 .5 .8         -INF          847.6160      1271.4240          .          
+1 .5 .9         -INF          620.9280       931.3920          .          
+1 .5 .10        -INF          620.9280       931.3920          .          
+1 .5 .13        -INF          -60.0000          .              .          
+1 .5 .14        -INF          -51.0000          .              .          
+1 .5 .15        -INF          -75.0000          .              .          
+1 .5 .16        -INF          -64.0000          .              .          
+1 .5 .17        -INF          -56.0000          .              .          
+1 .5 .18        -INF          -86.0000          .              .          
+1 .5 .19        -INF          -63.0000          .              .          
+1 .5 .20        -INF          -63.0000          .              .          
+1 .6 .3         -INF         1332.2400      1998.3600          .          
+1 .6 .4         -INF         1132.4040      1698.6060          .          
+1 .6 .5         -INF         1665.3000      2497.9500          .          
+1 .6 .6         -INF         1421.0560      2131.5840          .          
+1 .6 .7         -INF         1243.4240      1865.1360          .          
+1 .6 .8         -INF         1909.5440      2864.3160          .          
+1 .6 .9         -INF         1398.8520      2098.2780          .          
+1 .6 .13        -INF          -60.0000          .              .          
+1 .6 .14        -INF          -51.0000          .              .          
+1 .6 .15        -INF          -75.0000          .              .          
+1 .6 .16        -INF          -64.0000          .              .          
+1 .6 .17        -INF          -56.0000          .              .          
+1 .6 .18        -INF          -86.0000          .              .          
+1 .6 .19        -INF          -63.0000          .              .          
+1 .7 .3         -INF          408.2400       612.3600          .          
+1 .7 .4         -INF          347.0040       520.5060          .          
+1 .7 .5         -INF          510.3000       765.4500          .          
+1 .7 .6         -INF          435.4560       653.1840          .          
+1 .7 .7         -INF          381.0240       571.5360          .          
+1 .7 .8         -INF          585.1440       877.7160          .          
+1 .7 .13        -INF          -60.0000          .              .          
+1 .7 .14        -INF          -51.0000          .              .          
+1 .7 .15        -INF          -75.0000          .              .          
+1 .7 .16        -INF          -64.0000          .              .          
+1 .7 .17        -INF          -56.0000          .              .          
+1 .7 .18        -INF          -86.0000          .              .          
+1 .8 .3         -INF          764.4000      1146.6000          .          
+1 .8 .4         -INF          649.7400       974.6100          .          
+1 .8 .5         -INF          955.5000      1433.2500          .          
+1 .8 .6         -INF          815.3600      1223.0400          .          
+1 .8 .7         -INF          713.4400      1070.1600          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 22
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .8 .13        -INF          -60.0000          .              .          
+1 .8 .14        -INF          -51.0000          .              .          
+1 .8 .15        -INF          -75.0000          .              .          
+1 .8 .16        -INF          -64.0000          .              .          
+1 .8 .17        -INF          -56.0000          .              .          
+1 .9 .3         -INF          796.3200      1194.4800          .          
+1 .9 .4         -INF          676.8720      1015.3080          .          
+1 .9 .5         -INF          995.4000      1493.1000          .          
+1 .9 .6         -INF          849.4080      1274.1120          .          
+1 .9 .13        -INF          -60.0000          .              .          
+1 .9 .14        -INF          -51.0000          .              .          
+1 .9 .15        -INF          -75.0000          .              .          
+1 .9 .16        -INF          -64.0000          .              .          
+1 .10.3         -INF         1554.0000      2331.0000          .          
+1 .10.4         -INF         1320.9000      1981.3500          .          
+1 .10.5         -INF         1942.5000      2913.7500          .          
+1 .10.13        -INF          -60.0000          .              .          
+1 .10.14        -INF          -51.0000          .              .          
+1 .10.15        -INF          -75.0000          .              .          
+1 .11.3         -INF         2280.6000      2280.6000          .          
+1 .11.4         -INF         1938.5100      1938.5100          .          
+1 .11.13        -INF          -35.6667          .              .          
+1 .11.14        -INF          -26.6667          .              .          
+2 .1 .1         -INF          918.0000       918.0000         EPS         
+2 .2 .1         -INF          666.4680       666.4680          .          
+2 .2 .2         -INF          -29.6667          .              .          
+2 .3 .1         -INF          942.6840      1495.1160          .          
+2 .3 .2         -INF          -34.3333          .              .          
+2 .4 .3         -INF          237.4560       356.1840          .          
+2 .4 .4         -INF          349.2000       523.8000          .          
+2 .4 .5         -INF          297.9840       446.9760          .          
+2 .4 .6         -INF          260.7360       391.1040          .          
+2 .4 .7         -INF          400.4160       600.6240          .          
+2 .4 .8         -INF          293.3280       439.9920          .          
+2 .4 .9         -INF          293.3280       439.9920          .          
+2 .4 .10        -INF          339.8880       509.8320          .          
+2 .4 .11        -INF          465.6000       698.4000          .          
+2 .4 .13        -INF          -51.0000          .              .          
+2 .4 .14        -INF          -75.0000          .              .          
+2 .4 .15        -INF          -64.0000          .              .          
+2 .4 .16        -INF          -56.0000          .              .          
+2 .4 .17        -INF          -86.0000          .              .          
+2 .4 .18        -INF          -63.0000          .              .          
+2 .4 .19        -INF          -63.0000          .              .          
+2 .4 .20        -INF          -73.0000          .              .          
+2 .4 .21        -INF         -100.0000          .              .          
+2 .5 .3         -INF          588.7440       883.1160          .          
+2 .5 .4         -INF          865.8000      1298.7000          .          
+2 .5 .5         -INF          738.8160      1108.2240          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 23
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+2 .5 .6         -INF          646.4640       969.6960          .          
+2 .5 .7         -INF          992.7840      1489.1760          .          
+2 .5 .8         -INF          727.2720      1090.9080          .          
+2 .5 .9         -INF          727.2720      1090.9080          .          
+2 .5 .10        -INF          842.7120      1264.0680          .          
+2 .5 .13        -INF          -51.0000          .              .          
+2 .5 .14        -INF          -75.0000          .              .          
+2 .5 .15        -INF          -64.0000          .              .          
+2 .5 .16        -INF          -56.0000          .              .          
+2 .5 .17        -INF          -86.0000          .              .          
+2 .5 .18        -INF          -63.0000          .              .          
+2 .5 .19        -INF          -63.0000          .              .          
+2 .5 .20        -INF          -73.0000          .              .          
+2 .6 .3         -INF          261.3240       391.9860          .          
+2 .6 .4         -INF          384.3000       576.4500          .          
+2 .6 .5         -INF          327.9360       491.9040          .          
+2 .6 .6         -INF          286.9440       430.4160          .          
+2 .6 .7         -INF          440.6640       660.9960          .          
+2 .6 .8         -INF          322.8120       484.2180          .          
+2 .6 .9         -INF          322.8120       484.2180          .          
+2 .6 .13        -INF          -51.0000          .              .          
+2 .6 .14        -INF          -75.0000          .              .          
+2 .6 .15        -INF          -64.0000          .              .          
+2 .6 .16        -INF          -56.0000          .              .          
+2 .6 .17        -INF          -86.0000          .              .          
+2 .6 .18        -INF          -63.0000          .              .          
+2 .6 .19        -INF          -63.0000          .              .          
+2 .7 .3         -INF          173.8080       260.7120          .          
+2 .7 .4         -INF          255.6000       383.4000          .          
+2 .7 .5         -INF          218.1120       327.1680          .          
+2 .7 .6         -INF          190.8480       286.2720          .          
+2 .7 .7         -INF          293.0880       439.6320          .          
+2 .7 .8         -INF          214.7040       322.0560          .          
+2 .7 .13        -INF          -51.0000          .              .          
+2 .7 .14        -INF          -75.0000          .              .          
+2 .7 .15        -INF          -64.0000          .              .          
+2 .7 .16        -INF          -56.0000          .              .          
+2 .7 .17        -INF          -86.0000          .              .          
+2 .7 .18        -INF          -63.0000          .              .          
+2 .8 .3         -INF          430.2360       645.3540          .          
+2 .8 .4         -INF          632.7000       949.0500          .          
+2 .8 .5         -INF          539.9040       809.8560          .          
+2 .8 .6         -INF          472.4160       708.6240          .          
+2 .8 .7         -INF          725.4960      1088.2440          .          
+2 .8 .13        -INF          -51.0000          .              .          
+2 .8 .14        -INF          -75.0000          .              .          
+2 .8 .15        -INF          -64.0000          .              .          
+2 .8 .16        -INF          -56.0000          .              .          
+2 .8 .17        -INF          -86.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 24
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+2 .9 .3         -INF          419.8320       629.7480          .          
+2 .9 .4         -INF          617.4000       926.1000          .          
+2 .9 .5         -INF          526.8480       790.2720          .          
+2 .9 .6         -INF          460.9920       691.4880          .          
+2 .9 .13        -INF          -51.0000          .              .          
+2 .9 .14        -INF          -75.0000          .              .          
+2 .9 .15        -INF          -64.0000          .              .          
+2 .9 .16        -INF          -56.0000          .              .          
+2 .10.3         -INF          180.5400       270.8100          .          
+2 .10.4         -INF          265.5000       398.2500          .          
+2 .10.5         -INF          226.5600       339.8400          .          
+2 .10.13        -INF          -51.0000          .              .          
+2 .10.14        -INF          -75.0000          .              .          
+2 .10.15        -INF          -64.0000          .              .          
+2 .11.3         -INF          489.6000       734.4000          .          
+2 .11.4         -INF          720.0000      1080.0000          .          
+2 .11.13        -INF          -51.0000          .              .          
+2 .11.14        -INF          -75.0000          .              .          
+3 .1 .1         -INF         2587.5000      2587.5000         EPS         
+3 .2 .1         -INF         1456.7625      1456.7625         EPS         
+3 .2 .2         -INF          -44.3333          .              .          
+3 .3 .1         -INF          653.4000      2198.7000          .          
+3 .3 .2         -INF          -75.0000          .              .          
+3 .4 .3         -INF         1100.5500      1650.8250          .          
+3 .4 .4         -INF          939.1360      1408.7040          .          
+3 .4 .5         -INF          821.7440      1232.6160          .          
+3 .4 .6         -INF         1261.9640      1892.9460          .          
+3 .4 .7         -INF          924.4620      1386.6930          .          
+3 .4 .8         -INF          924.4620      1386.6930          .          
+3 .4 .9         -INF         1071.2020      1606.8030          .          
+3 .4 .10        -INF         1467.4000      2201.1000          .          
+3 .4 .13        -INF          -75.0000          .              .          
+3 .4 .14        -INF          -64.0000          .              .          
+3 .4 .15        -INF          -56.0000          .              .          
+3 .4 .16        -INF          -86.0000          .              .          
+3 .4 .17        -INF          -63.0000          .              .          
+3 .4 .18        -INF          -63.0000          .              .          
+3 .4 .19        -INF          -73.0000          .              .          
+3 .4 .20        -INF         -100.0000          .              .          
+3 .5 .3         -INF         1611.1500      2416.7250          .          
+3 .5 .4         -INF         1374.8480      2062.2720          .          
+3 .5 .5         -INF         1202.9920      1804.4880          .          
+3 .5 .6         -INF         1847.4520      2771.1780          .          
+3 .5 .7         -INF         1353.3660      2030.0490          .          
+3 .5 .8         -INF         1353.3660      2030.0490          .          
+3 .5 .9         -INF         1568.1860      2352.2790          .          
+3 .5 .13        -INF          -75.0000          .              .          
+3 .5 .14        -INF          -64.0000          .              .          
+3 .5 .15        -INF          -56.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 25
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+3 .5 .16        -INF          -86.0000          .              .          
+3 .5 .17        -INF          -63.0000          .              .          
+3 .5 .18        -INF          -63.0000          .              .          
+3 .5 .19        -INF          -73.0000          .              .          
+3 .6 .3         -INF         1343.7750      2015.6625          .          
+3 .6 .4         -INF         1146.6880      1720.0320          .          
+3 .6 .5         -INF         1003.3520      1505.0280          .          
+3 .6 .6         -INF         1540.8620      2311.2930          .          
+3 .6 .7         -INF         1128.7710      1693.1565          .          
+3 .6 .8         -INF         1128.7710      1693.1565          .          
+3 .6 .13        -INF          -75.0000          .              .          
+3 .6 .14        -INF          -64.0000          .              .          
+3 .6 .15        -INF          -56.0000          .              .          
+3 .6 .16        -INF          -86.0000          .              .          
+3 .6 .17        -INF          -63.0000          .              .          
+3 .6 .18        -INF          -63.0000          .              .          
+3 .7 .3         -INF          293.2500       439.8750          .          
+3 .7 .4         -INF          250.2400       375.3600          .          
+3 .7 .5         -INF          218.9600       328.4400          .          
+3 .7 .6         -INF          336.2600       504.3900          .          
+3 .7 .7         -INF          246.3300       369.4950          .          
+3 .7 .13        -INF          -75.0000          .              .          
+3 .7 .14        -INF          -64.0000          .              .          
+3 .7 .15        -INF          -56.0000          .              .          
+3 .7 .16        -INF          -86.0000          .              .          
+3 .7 .17        -INF          -63.0000          .              .          
+3 .8 .3         -INF         1276.5000      1914.7500          .          
+3 .8 .4         -INF         1089.2800      1633.9200          .          
+3 .8 .5         -INF          953.1200      1429.6800          .          
+3 .8 .6         -INF         1463.7200      2195.5800          .          
+3 .8 .13        -INF          -75.0000          .              .          
+3 .8 .14        -INF          -64.0000          .              .          
+3 .8 .15        -INF          -56.0000          .              .          
+3 .8 .16        -INF          -86.0000          .              .          
+3 .9 .3         -INF           22.4250        33.6375          .          
+3 .9 .4         -INF           19.1360        28.7040          .          
+3 .9 .5         -INF           16.7440        25.1160          .          
+3 .9 .13        -INF          -75.0000          .              .          
+3 .9 .14        -INF          -64.0000          .              .          
+3 .9 .15        -INF          -56.0000          .              .          
+3 .10.3         -INF          962.5500       962.5500          .          
+3 .10.4         -INF          821.3760       821.3760          .          
+3 .10.13        -INF          -49.6667          .              .          
+3 .10.14        -INF          -38.6667          .              .          
+4 .1 .1         -INF         2496.0000      2496.0000         EPS         
+4 .2 .1         -INF         1257.9840      1257.9840          .          
+4 .2 .2         -INF          -39.0000          .              .          
+4 .3 .1         -INF         1182.9760      1876.2240          .          
+4 .3 .2         -INF          -47.3333          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 26
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+4 .4 .3         -INF          832.0000      1248.0000          .          
+4 .4 .4         -INF          728.0000      1092.0000          .          
+4 .4 .5         -INF         1118.0000      1677.0000          .          
+4 .4 .6         -INF          819.0000      1228.5000          .          
+4 .4 .7         -INF          819.0000      1228.5000          .          
+4 .4 .8         -INF          949.0000      1423.5000          .          
+4 .4 .9         -INF         1300.0000      1950.0000          .          
+4 .4 .13        -INF          -64.0000          .              .          
+4 .4 .14        -INF          -56.0000          .              .          
+4 .4 .15        -INF          -86.0000          .              .          
+4 .4 .16        -INF          -63.0000          .              .          
+4 .4 .17        -INF          -63.0000          .              .          
+4 .4 .18        -INF          -73.0000          .              .          
+4 .4 .19        -INF         -100.0000          .              .          
+4 .5 .3         -INF          472.5760       708.8640          .          
+4 .5 .4         -INF          413.5040       620.2560          .          
+4 .5 .5         -INF          635.0240       952.5360          .          
+4 .5 .6         -INF          465.1920       697.7880          .          
+4 .5 .7         -INF          465.1920       697.7880          .          
+4 .5 .8         -INF          539.0320       808.5480          .          
+4 .5 .13        -INF          -64.0000          .              .          
+4 .5 .14        -INF          -56.0000          .              .          
+4 .5 .15        -INF          -86.0000          .              .          
+4 .5 .16        -INF          -63.0000          .              .          
+4 .5 .17        -INF          -63.0000          .              .          
+4 .5 .18        -INF          -73.0000          .              .          
+4 .6 .3         -INF         1412.7360      2119.1040          .          
+4 .6 .4         -INF         1236.1440      1854.2160          .          
+4 .6 .5         -INF         1898.3640      2847.5460          .          
+4 .6 .6         -INF         1390.6620      2085.9930          .          
+4 .6 .7         -INF         1390.6620      2085.9930          .          
+4 .6 .13        -INF          -64.0000          .              .          
+4 .6 .14        -INF          -56.0000          .              .          
+4 .6 .15        -INF          -86.0000          .              .          
+4 .6 .16        -INF          -63.0000          .              .          
+4 .6 .17        -INF          -63.0000          .              .          
+4 .7 .3         -INF          845.3120      1267.9680          .          
+4 .7 .4         -INF          739.6480      1109.4720          .          
+4 .7 .5         -INF         1135.8880      1703.8320          .          
+4 .7 .6         -INF          832.1040      1248.1560          .          
+4 .7 .13        -INF          -64.0000          .              .          
+4 .7 .14        -INF          -56.0000          .              .          
+4 .7 .15        -INF          -86.0000          .              .          
+4 .7 .16        -INF          -63.0000          .              .          
+4 .8 .3         -INF          743.8080      1115.7120          .          
+4 .8 .4         -INF          650.8320       976.2480          .          
+4 .8 .5         -INF          999.4920      1499.2380          .          
+4 .8 .13        -INF          -64.0000          .              .          
+4 .8 .14        -INF          -56.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 27
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+4 .8 .15        -INF          -86.0000          .              .          
+4 .9 .3         -INF           83.2000       124.8000          .          
+4 .9 .4         -INF           72.8000       109.2000          .          
+4 .9 .13        -INF          -64.0000          .              .          
+4 .9 .14        -INF          -56.0000          .              .          
+5 .1 .1         -INF         2352.0000      2352.0000         EPS         
+5 .2 .1         -INF         1291.2480      1291.2480         EPS         
+5 .2 .2         -INF          -29.0000          .              .          
+5 .3 .1         -INF          487.8720      1641.6960          .          
+5 .3 .2         -INF          -56.0000          .              .          
+5 .4 .3         -INF          247.7440       371.6160          .          
+5 .4 .4         -INF          380.4640       570.6960          .          
+5 .4 .5         -INF          278.7120       418.0680          .          
+5 .4 .6         -INF          278.7120       418.0680          .          
+5 .4 .7         -INF          322.9520       484.4280          .          
+5 .4 .8         -INF          442.4000       663.6000          .          
+5 .4 .13        -INF          -56.0000          .              .          
+5 .4 .14        -INF          -86.0000          .              .          
+5 .4 .15        -INF          -63.0000          .              .          
+5 .4 .16        -INF          -63.0000          .              .          
+5 .4 .17        -INF          -73.0000          .              .          
+5 .4 .18        -INF         -100.0000          .              .          
+5 .5 .3         -INF         1514.6880      2272.0320          .          
+5 .5 .4         -INF         2326.1280      3489.1920          .          
+5 .5 .5         -INF         1704.0240      2556.0360          .          
+5 .5 .6         -INF         1704.0240      2556.0360          .          
+5 .5 .7         -INF         1974.5040      2961.7560          .          
+5 .5 .13        -INF          -56.0000          .              .          
+5 .5 .14        -INF          -86.0000          .              .          
+5 .5 .15        -INF          -63.0000          .              .          
+5 .5 .16        -INF          -63.0000          .              .          
+5 .5 .17        -INF          -73.0000          .              .          
+5 .6 .3         -INF          757.3440      1136.0160          .          
+5 .6 .4         -INF         1163.0640      1744.5960          .          
+5 .6 .5         -INF          852.0120      1278.0180          .          
+5 .6 .6         -INF          852.0120      1278.0180          .          
+5 .6 .13        -INF          -56.0000          .              .          
+5 .6 .14        -INF          -86.0000          .              .          
+5 .6 .15        -INF          -63.0000          .              .          
+5 .6 .16        -INF          -63.0000          .              .          
+5 .7 .3         -INF           92.5120       138.7680          .          
+5 .7 .4         -INF          142.0720       213.1080          .          
+5 .7 .5         -INF          104.0760       156.1140          .          
+5 .7 .13        -INF          -56.0000          .              .          
+5 .7 .14        -INF          -86.0000          .              .          
+5 .7 .15        -INF          -63.0000          .              .          
+5 .8 .3         -INF          980.7840       980.7840          .          
+5 .8 .4         -INF         1506.2040      1506.2040          .          
+5 .8 .13        -INF          -24.3333          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 28
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+5 .8 .14        -INF          -54.3333          .              .          
+6 .1 .1         -INF         1806.0000      1806.0000         EPS         
+6 .2 .1         -INF         1432.1580      1432.1580          .          
+6 .2 .2         -INF          -65.6667          .              .          
+6 .3 .1         -INF         1589.6240      2521.1760          .          
+6 .3 .2         -INF          -69.3333          .              .          
+6 .4 .3         -INF          658.5880       987.8820          .          
+6 .4 .4         -INF          482.4540       723.6810          .          
+6 .4 .5         -INF          482.4540       723.6810          .          
+6 .4 .6         -INF          559.0340       838.5510          .          
+6 .4 .7         -INF          765.8000      1148.7000          .          
+6 .4 .13        -INF          -86.0000          .              .          
+6 .4 .14        -INF          -63.0000          .              .          
+6 .4 .15        -INF          -63.0000          .              .          
+6 .4 .16        -INF          -73.0000          .              .          
+6 .4 .17        -INF         -100.0000          .              .          
+6 .5 .3         -INF         1079.9880      1619.9820          .          
+6 .5 .4         -INF          791.1540      1186.7310          .          
+6 .5 .5         -INF          791.1540      1186.7310          .          
+6 .5 .6         -INF          916.7340      1375.1010          .          
+6 .5 .13        -INF          -86.0000          .              .          
+6 .5 .14        -INF          -63.0000          .              .          
+6 .5 .15        -INF          -63.0000          .              .          
+6 .5 .16        -INF          -73.0000          .              .          
+6 .6 .3         -INF           55.3840        83.0760          .          
+6 .6 .4         -INF           40.5720        60.8580          .          
+6 .6 .5         -INF           40.5720        60.8580          .          
+6 .6 .13        -INF          -86.0000          .              .          
+6 .6 .14        -INF          -63.0000          .              .          
+6 .6 .15        -INF          -63.0000          .              .          
+6 .7 .3         -INF          329.8960       494.8440          .          
+6 .7 .4         -INF          241.6680       362.5020          .          
+6 .7 .13        -INF          -86.0000          .              .          
+6 .7 .14        -INF          -63.0000          .              .          
+7 .1 .1         -INF         2079.0000      2079.0000         EPS         
+7 .2 .1         -INF         1569.6450      1569.6450         EPS         
+7 .2 .2         -INF          -34.3333          .              .          
+7 .3 .1         -INF          548.8560      1846.9080          .          
+7 .3 .2         -INF          -63.0000          .              .          
+7 .4 .3         -INF          670.8240      1006.2360          .          
+7 .4 .4         -INF          670.8240      1006.2360          .          
+7 .4 .5         -INF          777.3040      1165.9560          .          
+7 .4 .6         -INF         1064.8000      1597.2000          .          
+7 .4 .13        -INF          -63.0000          .              .          
+7 .4 .14        -INF          -63.0000          .              .          
+7 .4 .15        -INF          -73.0000          .              .          
+7 .4 .16        -INF         -100.0000          .              .          
+7 .5 .3         -INF          230.0760       345.1140          .          
+7 .5 .4         -INF          230.0760       345.1140          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 29
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+7 .5 .5         -INF          266.5960       399.8940          .          
+7 .5 .13        -INF          -63.0000          .              .          
+7 .5 .14        -INF          -63.0000          .              .          
+7 .5 .15        -INF          -73.0000          .              .          
+7 .6 .3         -INF         1765.0710      1765.0710          .          
+7 .6 .4         -INF         1765.0710      1765.0710          .          
+7 .6 .13        -INF          -45.3333          .              .          
+7 .6 .14        -INF          -45.3333          .              .          
+8 .1 .1         -INF         2646.0000      2646.0000         EPS         
+8 .2 .1         -INF         2487.2400      2487.2400         EPS         
+8 .2 .2         -INF          -33.6667          .              .          
+8 .3 .1         -INF         1377.9360      2487.2400          .          
+8 .3 .2         -INF          -46.3333          .              .          
+8 .4 .3         -INF         1354.7520      2032.1280          .          
+8 .4 .4         -INF         1569.7920      2354.6880          .          
+8 .4 .5         -INF         2150.4000      3225.6000          .          
+8 .4 .13        -INF          -63.0000          .              .          
+8 .4 .14        -INF          -73.0000          .              .          
+8 .4 .15        -INF         -100.0000          .              .          
+8 .5 .3         -INF          158.7600       238.1400          .          
+8 .5 .4         -INF          183.9600       275.9400          .          
+8 .5 .13        -INF          -63.0000          .              .          
+8 .5 .14        -INF          -73.0000          .              .          
+9 .1 .1         -INF         2299.5000      2299.5000         EPS         
+9 .2 .1         -INF         1294.6185      1294.6185          .          
+9 .2 .2         -INF          -46.3333          .              .          
+9 .3 .1         -INF          635.9760      2882.0400          .          
+9 .3 .2         -INF          -73.0000          .              .          
+9 .4 .3         -INF          275.9400       275.9400          .          
+9 .4 .4         -INF          378.0000       378.0000          .          
+9 .4 .13        -INF          -50.6667          .              .          
+9 .4 .14        -INF          -77.6667          .              .          
+10.1 .1         -INF         3000.0000      3000.0000         EPS         
+10.2 .1         -INF         2256.0000      2256.0000         EPS         
+10.2 .2         -INF          -66.6667          .              .          
+10.3 .1         -INF         2187.2000      3948.0000          .          
+10.3 .2         -INF          -83.3333          .              .          
+
+---- VAR it  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .              .            +INF             .          
+2           .              .            +INF             .          
+3           .              .            +INF             .          
+4           .              .            +INF             .          
+5           .              .            +INF             .          
+6           .              .            +INF             .          
+7           .              .            +INF             .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 30
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     VAR it  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+8           .              .            +INF             .          
+9           .              .            +INF             .          
+10          .              .            +INF             .          
+
+---- VAR f  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .            60.0000        +INF             .          
+2 .1          .            51.0000        +INF             .          
+3 .1          .            75.0000        +INF             .          
+4 .1          .            64.0000        +INF             .          
+5 .1          .            56.0000        +INF             .          
+6 .1          .            86.0000        +INF             .          
+7 .1          .            63.0000        +INF             .          
+8 .1          .            63.0000        +INF             .          
+9 .1          .            73.0000        +INF             .          
+10.1          .           100.0000        +INF             .          
+
+---- VAR ix  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .              .            +INF           10.0000      
+2 .1          .              .            +INF           10.0000      
+3 .1          .              .            +INF            8.0000      
+4 .1          .              .            +INF            9.0000      
+5 .1          .              .            +INF           13.0000      
+6 .1          .              .            +INF           18.0000      
+7 .1          .              .            +INF            5.0000      
+8 .1          .              .            +INF           16.0000      
+9 .1          .              .            +INF            8.0000      
+10.1          .              .            +INF           14.0000      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR cost              -INF             .            +INF             .          
+
+  cost  objective variable
+
+---- VAR x  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .            60.0000        90.0000          .          
+2           .            51.0000        76.5000          .          
+3           .            75.0000       112.5000          .          
+4           .            64.0000        96.0000          .          
+5           .            56.0000        84.0000          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 31
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     VAR x  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+6           .            86.0000       129.0000          .          
+7           .            63.0000        94.5000          .          
+8           .            63.0000        94.5000          .          
+9           .            73.0000       109.5000          .          
+10          .           100.0000       150.0000          .          
+11          .              .          2520.0000         1.0000      
+12          .              .           918.0000         1.0000      
+13          .              .          2587.5000         1.0000      
+14          .              .          2496.0000         1.0000      
+15          .              .          2352.0000         1.0000      
+16          .              .          1806.0000         1.0000      
+17          .              .          2079.0000         1.0000      
+18          .              .          2646.0000         1.0000      
+19          .              .          2299.5000         1.0000      
+20          .              .          3000.0000         1.0000      
+
+---- VAR y  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1           .             0.3333         1.0000          .          
+1 .2           .             0.3333         1.0000          .          
+1 .3           .              .             1.0000         EPS         
+1 .4           .              .             1.0000         EPS         
+1 .5           .              .             1.0000         EPS         
+1 .6           .              .             1.0000         EPS         
+1 .7           .              .             1.0000         EPS         
+1 .8           .              .             1.0000         EPS         
+1 .9           .              .             1.0000         EPS         
+1 .10          .              .             1.0000         EPS         
+1 .11          .             0.3333         1.0000          .          
+2 .1           .             0.3333         1.0000          .          
+2 .2           .             0.3333         1.0000          .          
+2 .3           .             0.3333         1.0000          .          
+2 .4           .              .             1.0000         EPS         
+2 .5           .              .             1.0000         EPS         
+2 .6           .              .             1.0000         EPS         
+2 .7           .              .             1.0000         EPS         
+2 .8           .              .             1.0000         EPS         
+2 .9           .              .             1.0000         EPS         
+2 .10          .              .             1.0000         EPS         
+2 .11          .              .             1.0000         EPS         
+3 .1           .             0.3333         1.0000          .          
+3 .2           .             0.3333         1.0000          .          
+3 .3           .              .             1.0000          .          
+3 .4           .              .             1.0000         EPS         
+3 .5           .              .             1.0000         EPS         
+3 .6           .              .             1.0000         EPS         
+3 .7           .              .             1.0000         EPS         
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 32
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
+
+
+     VAR y  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+3 .8           .              .             1.0000         EPS         
+3 .9           .              .             1.0000         EPS         
+3 .10          .             0.3333         1.0000          .          
+4 .1           .             0.3333         1.0000          .          
+4 .2           .             0.3333         1.0000          .          
+4 .3           .             0.3333         1.0000          .          
+4 .4           .              .             1.0000         EPS         
+4 .5           .              .             1.0000         EPS         
+4 .6           .              .             1.0000         EPS         
+4 .7           .              .             1.0000         EPS         
+4 .8           .              .             1.0000         EPS         
+4 .9           .              .             1.0000         EPS         
+5 .1           .             0.3333         1.0000          .          
+5 .2           .             0.3333         1.0000          .          
+5 .3           .              .             1.0000          .          
+5 .4           .              .             1.0000         EPS         
+5 .5           .              .             1.0000         EPS         
+5 .6           .              .             1.0000         EPS         
+5 .7           .              .             1.0000         EPS         
+5 .8           .             0.3333         1.0000          .          
+6 .1           .             0.3333         1.0000          .          
+6 .2           .             0.3333         1.0000          .          
+6 .3           .             0.3333         1.0000          .          
+6 .4           .              .             1.0000         EPS         
+6 .5           .              .             1.0000         EPS         
+6 .6           .              .             1.0000         EPS         
+6 .7           .              .             1.0000         EPS         
+7 .1           .             0.3333         1.0000          .          
+7 .2           .             0.3333         1.0000          .          
+7 .3           .              .             1.0000          .          
+7 .4           .              .             1.0000         EPS         
+7 .5           .              .             1.0000         EPS         
+7 .6           .             0.3333         1.0000          .          
+8 .1           .             0.3333         1.0000          .          
+8 .2           .             0.3333         1.0000          .          
+8 .3           .             0.3333         1.0000          .          
+8 .4           .              .             1.0000         EPS         
+8 .5           .              .             1.0000          .          
+9 .1           .             0.3333         1.0000          .          
+9 .2           .             0.3333         1.0000          .          
+9 .3           .              .             1.0000          .          
+9 .4           .             0.3333         1.0000          .          
+10.1           .             0.3333         1.0000          .          
+10.2           .             0.3333         1.0000          .          
+10.3           .             0.3333         1.0000          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 33
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using RMIP From line 249
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 13
+                             7  PROJECTED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 34
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Model Statistics    SOLVE prob Using MIP From line 223
+Equation Listing    SOLVE prob Using MIP From line 253
+
+
+---- obj  =E=  
+
+obj..  - 10*it(1) - 10*it(2) - 8*it(3) - 9*it(4) - 13*it(5) - 18*it(6) - 5*it(7) - 16*it(8) - 8*it(9) - 14*it(10) + cost - x(11) - x(12) - x(13) - x(14) - x(15) - x(16) - x(17) - x(18) - x(19) - x(20) =E= 0 ; (LHS = 0)
+     
+
+---- eq2  =E=  
+
+eq2(1)..  it(1) - ix(1,1) =E= 0 ; (LHS = 0)
+     
+eq2(2)..  it(2) - ix(2,1) =E= 0 ; (LHS = 0)
+     
+eq2(3)..  it(3) - ix(3,1) =E= 0 ; (LHS = 0)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq3  =L=  
+
+eq3(1,1)..  - f(1,1) =L= -60 ; (LHS = -60)
+     
+eq3(2,1)..  - f(2,1) =L= -51 ; (LHS = -51)
+     
+eq3(3,1)..  - f(3,1) =L= -75 ; (LHS = -75)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq4  =E=  
+
+eq4(1,1)..  f(1,1) + ix(1,1) - x(1) =E= 0 ; (LHS = 0)
+     
+eq4(2,1)..  f(2,1) - ix(1,1) + ix(2,1) - x(2) =E= 0 ; (LHS = 0)
+     
+eq4(3,1)..  f(3,1) - ix(2,1) + ix(3,1) - x(3) =E= 0 ; (LHS = 0)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- eq5  =E=  
+
+eq5(2,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(1,10) - y(1,11) + y(2,3) =E= 0 ; (LHS = 0)
+     
+eq5(3,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(1,10) - y(2,4) - y(2,5) - y(2,6) - y(2,7) - y(2,8) - y(2,9) - y(2,10) - y(2,11) + y(3,3) =E= 0 ; (LHS = 0)
+     
+eq5(4,1)..  - y(1,3) - y(1,4) - y(1,5) - y(1,6) - y(1,7) - y(1,8) - y(1,9) - y(2,4) - y(2,5) - y(2,6) - y(2,7) - y(2,8) - y(2,9) - y(2,10) - y(3,4) - y(3,5) - y(3,6) - y(3,7) - y(3,8) - y(3,9) - y(3,10) + y(4,3) =E= 0 ; (LHS = 0)
+     
+REMAINING 6 ENTRIES SKIPPED
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 35
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE prob Using MIP From line 253
+
+
+---- sum_bin  =E=  
+
+sum_bin(1)..  y(1,1) + y(1,2) + y(1,3) + y(1,4) + y(1,5) + y(1,6) + y(1,7) + y(1,8) + y(1,9) + y(1,10) + y(1,11) =E= 1 ; (LHS = 1)
+     
+sum_bin(2)..  y(2,1) + y(2,2) + y(2,3) + y(2,4) + y(2,5) + y(2,6) + y(2,7) + y(2,8) + y(2,9) + y(2,10) + y(2,11) =E= 1 ; (LHS = 1)
+     
+sum_bin(3)..  y(3,1) + y(3,2) + y(3,3) + y(3,4) + y(3,5) + y(3,6) + y(3,7) + y(3,8) + y(3,9) + y(3,10) =E= 1 ; (LHS = 1)
+     
+REMAINING 7 ENTRIES SKIPPED
+
+
+---- disj_ineq  =L=  
+
+disj_ineq(1,1,1)..  28*x(1) - x(11) + 2520*y(1,1) =L= 2520 ; (LHS = 2520)
+     
+disj_ineq(1,2,1)..  19.544*x(1) - x(11) + 1758.96*y(1,2) =L= 1758.96 ; (LHS = 1758.96)
+     
+disj_ineq(1,2,2)..  - x(1) + 50*y(1,2) =L= 0 ; (LHS = -43.3333333333333)
+     
+REMAINING 465 ENTRIES SKIPPED
+
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 36
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using MIP From line 253
+
+
+---- it  
+
+it(1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -10       obj
+        1       eq2(1)
+
+it(2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -10       obj
+        1       eq2(2)
+
+it(3)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -8       obj
+        1       eq2(3)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- f  
+
+f(1,1)
+                (.LO, .L, .UP, .M = 0, 60, +INF, 0)
+       -1       eq3(1,1)
+        1       eq4(1,1)
+
+f(2,1)
+                (.LO, .L, .UP, .M = 0, 51, +INF, 0)
+       -1       eq3(2,1)
+        1       eq4(2,1)
+
+f(3,1)
+                (.LO, .L, .UP, .M = 0, 75, +INF, 0)
+       -1       eq3(3,1)
+        1       eq4(3,1)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- ix  
+
+ix(1,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 10)
+       -1       eq2(1)
+        1       eq4(1,1)
+       -1       eq4(2,1)
+
+ix(2,1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 10)
+       -1       eq2(2)
+        1       eq4(2,1)
+       -1       eq4(3,1)
+
+ix(3,1)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 37
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using MIP From line 253
+
+
+     ix  
+
+                (.LO, .L, .UP, .M = 0, 0, +INF, 8)
+       -1       eq2(3)
+        1       eq4(3,1)
+       -1       eq4(4,1)
+
+REMAINING 7 ENTRIES SKIPPED
+
+---- cost  objective variable
+
+cost
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       obj
+
+
+---- x  
+
+x(1)
+                (.LO, .L, .UP, .M = 0, 60, 90, 0)
+       -1       eq4(1,1)
+       28       disj_ineq(1,1,1)
+       19.544   disj_ineq(1,2,1)
+       -1       disj_ineq(1,2,2)
+        0.448   disj_ineq(1,3,3)
+       -1       disj_ineq(1,3,13)
+       12.992   disj_ineq(1,4,3)
+       -1       disj_ineq(1,4,13)
+        9.856   disj_ineq(1,5,3)
+       -1       disj_ineq(1,5,13)
+       22.204   disj_ineq(1,6,3)
+       -1       disj_ineq(1,6,13)
+        6.804   disj_ineq(1,7,3)
+       -1       disj_ineq(1,7,13)
+       12.74    disj_ineq(1,8,3)
+       -1       disj_ineq(1,8,13)
+       13.272   disj_ineq(1,9,3)
+       -1       disj_ineq(1,9,13)
+       25.9     disj_ineq(1,10,3)
+       -1       disj_ineq(1,10,13)
+       25.34    disj_ineq(1,11,3)
+       -1       disj_ineq(1,11,13)
+
+x(2)
+                (.LO, .L, .UP, .M = 0, 51, 76.5, 0)
+       -1       eq4(2,1)
+        0.448   disj_ineq(1,3,4)
+       -1       disj_ineq(1,3,14)
+       12.992   disj_ineq(1,4,4)
+       -1       disj_ineq(1,4,14)
+        9.856   disj_ineq(1,5,4)
+       -1       disj_ineq(1,5,14)
+       22.204   disj_ineq(1,6,4)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 38
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using MIP From line 253
+
+
+     x  
+
+       -1       disj_ineq(1,6,14)
+        6.804   disj_ineq(1,7,4)
+       -1       disj_ineq(1,7,14)
+       12.74    disj_ineq(1,8,4)
+       -1       disj_ineq(1,8,14)
+       13.272   disj_ineq(1,9,4)
+       -1       disj_ineq(1,9,14)
+       25.9     disj_ineq(1,10,4)
+       -1       disj_ineq(1,10,14)
+       25.34    disj_ineq(1,11,4)
+       -1       disj_ineq(1,11,14)
+       12       disj_ineq(2,1,1)
+        8.712   disj_ineq(2,2,1)
+       -1       disj_ineq(2,2,2)
+        8.712   disj_ineq(2,3,1)
+       -1       disj_ineq(2,3,2)
+        4.656   disj_ineq(2,4,3)
+       -1       disj_ineq(2,4,13)
+       11.544   disj_ineq(2,5,3)
+       -1       disj_ineq(2,5,13)
+        5.124   disj_ineq(2,6,3)
+       -1       disj_ineq(2,6,13)
+        3.408   disj_ineq(2,7,3)
+       -1       disj_ineq(2,7,13)
+        8.436   disj_ineq(2,8,3)
+       -1       disj_ineq(2,8,13)
+        8.232   disj_ineq(2,9,3)
+       -1       disj_ineq(2,9,13)
+        3.54    disj_ineq(2,10,3)
+       -1       disj_ineq(2,10,13)
+        9.6     disj_ineq(2,11,3)
+       -1       disj_ineq(2,11,13)
+
+x(3)
+                (.LO, .L, .UP, .M = 0, 75, 112.5, 0)
+       -1       eq4(3,1)
+        0.448   disj_ineq(1,3,5)
+       -1       disj_ineq(1,3,15)
+       12.992   disj_ineq(1,4,5)
+       -1       disj_ineq(1,4,15)
+        9.856   disj_ineq(1,5,5)
+       -1       disj_ineq(1,5,15)
+       22.204   disj_ineq(1,6,5)
+       -1       disj_ineq(1,6,15)
+        6.804   disj_ineq(1,7,5)
+       -1       disj_ineq(1,7,15)
+       12.74    disj_ineq(1,8,5)
+       -1       disj_ineq(1,8,15)
+       13.272   disj_ineq(1,9,5)
+       -1       disj_ineq(1,9,15)
+       25.9     disj_ineq(1,10,5)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 39
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using MIP From line 253
+
+
+     x  
+
+       -1       disj_ineq(1,10,15)
+        4.656   disj_ineq(2,4,4)
+       -1       disj_ineq(2,4,14)
+       11.544   disj_ineq(2,5,4)
+       -1       disj_ineq(2,5,14)
+        5.124   disj_ineq(2,6,4)
+       -1       disj_ineq(2,6,14)
+        3.408   disj_ineq(2,7,4)
+       -1       disj_ineq(2,7,14)
+        8.436   disj_ineq(2,8,4)
+       -1       disj_ineq(2,8,14)
+        8.232   disj_ineq(2,9,4)
+       -1       disj_ineq(2,9,14)
+        3.54    disj_ineq(2,10,4)
+       -1       disj_ineq(2,10,14)
+        9.6     disj_ineq(2,11,4)
+       -1       disj_ineq(2,11,14)
+       23       disj_ineq(3,1,1)
+       12.949   disj_ineq(3,2,1)
+       -1       disj_ineq(3,2,2)
+        8.712   disj_ineq(3,3,1)
+       -1       disj_ineq(3,3,2)
+       14.674   disj_ineq(3,4,3)
+       -1       disj_ineq(3,4,13)
+       21.482   disj_ineq(3,5,3)
+       -1       disj_ineq(3,5,13)
+       17.917   disj_ineq(3,6,3)
+       -1       disj_ineq(3,6,13)
+        3.91    disj_ineq(3,7,3)
+       -1       disj_ineq(3,7,13)
+       17.02    disj_ineq(3,8,3)
+       -1       disj_ineq(3,8,13)
+        0.299   disj_ineq(3,9,3)
+       -1       disj_ineq(3,9,13)
+        8.556   disj_ineq(3,10,3)
+       -1       disj_ineq(3,10,13)
+
+REMAINING 17 ENTRIES SKIPPED
+
+---- y  
+
+y(1,1)
+                (.LO, .L, .UP, .M = 0, 0.333333333333333, 1, 0)
+        1       sum_bin(1)
+     2520       disj_ineq(1,1,1)
+
+y(1,2)
+                (.LO, .L, .UP, .M = 0, 0.333333333333333, 1, 0)
+        1       sum_bin(1)
+     1758.96    disj_ineq(1,2,1)
+       50       disj_ineq(1,2,2)
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 40
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE prob Using MIP From line 253
+
+
+     y  
+
+
+y(1,3)
+                (.LO, .L, .UP, .M = 0, 0, 1, EPS)
+       -1       eq5(2,1)
+       -1       eq5(3,1)
+       -1       eq5(4,1)
+       -1       eq5(5,1)
+       -1       eq5(6,1)
+       -1       eq5(7,1)
+       -1       eq5(8,1)
+       -1       eq5(9,1)
+       -1       eq5(10,1)
+        1       sum_bin(1)
+       40.32    disj_ineq(1,3,3)
+       34.272   disj_ineq(1,3,4)
+       50.4     disj_ineq(1,3,5)
+       43.008   disj_ineq(1,3,6)
+       37.632   disj_ineq(1,3,7)
+       57.792   disj_ineq(1,3,8)
+       42.336   disj_ineq(1,3,9)
+       42.336   disj_ineq(1,3,10)
+       49.056   disj_ineq(1,3,11)
+       67.2     disj_ineq(1,3,12)
+       64       disj_ineq(1,3,13)
+       64       disj_ineq(1,3,14)
+       64       disj_ineq(1,3,15)
+       64       disj_ineq(1,3,16)
+       64       disj_ineq(1,3,17)
+       64       disj_ineq(1,3,18)
+       64       disj_ineq(1,3,19)
+       64       disj_ineq(1,3,20)
+       64       disj_ineq(1,3,21)
+       64       disj_ineq(1,3,22)
+
+REMAINING 71 ENTRIES SKIPPED
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 41
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE prob Using MIP From line 253
 
 
 MODEL STATISTICS
 
-BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS          518
-BLOCKS OF VARIABLES           3     SINGLE VARIABLES          137
-NON ZERO ELEMENTS         1,416     DISCRETE VARIABLES        128
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS          518
+BLOCKS OF VARIABLES           6     SINGLE VARIABLES          125
+NON ZERO ELEMENTS         1,513     DISCRETE VARIABLES         74
 
 
-GENERATION TIME      =        0.017 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GENERATION TIME      =        0.500 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
 
 
-EXECUTION TIME       =        0.018 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 14
+EXECUTION TIME       =        0.505 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 42
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Solution Report     SOLVE prob Using MIP From line 223
+Solution Report     SOLVE prob Using MIP From line 253
 
 
                S O L V E      S U M M A R Y
 
      MODEL   prob                OBJECTIVE  cost
      TYPE    MIP                 DIRECTION  MINIMIZE
-     SOLVER  CPLEX               FROM LINE  223
+     SOLVER  CPLEX               FROM LINE  253
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
-**** OBJECTIVE VALUE               19.0000
+**** OBJECTIVE VALUE             5232.1520
 
- RESOURCE USAGE, LIMIT          0.029     36000.000
- ITERATION COUNT, LIMIT       289    2000000000
+ RESOURCE USAGE, LIMIT          0.219      7200.000
+ ITERATION COUNT, LIMIT      1558    2000000000
 
 IBM ILOG CPLEX   24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
 --- GAMS/Cplex licensed for continuous and discrete problems.
 Cplex 12.7.1.0
 
-Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/cplex.opt"
+Reading parameter(s) from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/cplex.opt"
 >>  randomseed 1
-Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/cplex.opt"
+Finished reading from "/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/cplex.opt"
 Space for names approximately 0.01 Mb
 Use option 'names no' to turn use of names off
 MIP status(101): integer optimal solution
-Cplex Time: 0.02sec (det. 4.09 ticks)
+Cplex Time: 0.21sec (det. 78.65 ticks)
 Fixing integer variables, and solving final LP...
 Fixed MIP status(1): optimal
-Cplex Time: 0.00sec (det. 0.32 ticks)
+Cplex Time: 0.00sec (det. 0.38 ticks)
 Proven optimal solution.
 
-MIP Solution:           19.000000    (289 iterations, 47 nodes)
-Final Solve:            19.000000    (0 iterations)
+MIP Solution:         5232.152000    (1549 iterations, 191 nodes)
+Final Solve:          5232.152000    (9 iterations)
 
-Best possible:          19.000000
+Best possible:        5232.152000
 Absolute gap:            0.000000
 Relative gap:            0.000000
 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU obj                 .              .              .             1.0000      
+
+---- EQU eq2  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .              .              .            10.0000      
+2           .              .              .            10.0000      
+3           .              .              .             8.0000      
+4           .              .              .             9.0000      
+5           .              .              .            13.0000      
+6           .              .              .            18.0000      
+7           .              .              .             5.0000      
+8           .              .              .            16.0000      
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 43
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU eq2  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+9           .              .              .             8.0000      
+10          .              .              .            14.0000      
+
+---- EQU eq3  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1        -INF          -60.0000       -60.0000       -19.5440      
+2 .1        -INF          -52.0000       -51.0000          .          
+3 .1        -INF          -75.0000       -75.0000        -9.6000      
+4 .1        -INF          -64.0000       -64.0000        -1.3000      
+5 .1        -INF          -63.0000       -56.0000          .          
+6 .1        -INF          -86.0000       -86.0000        -0.6440      
+7 .1        -INF          -63.0000       -63.0000        -8.7120      
+8 .1        -INF          -63.0000       -63.0000        -8.7120      
+9 .1        -INF          -73.0000       -73.0000        -2.5200      
+10.1        -INF         -100.0000      -100.0000        -8.7120      
+
+---- EQU eq4  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .              .              .           -19.5440      
+2 .1          .              .              .             EPS         
+3 .1          .              .              .            -9.6000      
+4 .1          .              .              .            -1.3000      
+5 .1          .              .              .             EPS         
+6 .1          .              .              .            -0.6440      
+7 .1          .              .              .            -8.7120      
+8 .1          .              .              .            -8.7120      
+9 .1          .              .              .            -2.5200      
+10.1          .              .              .            -8.7120      
+
+---- EQU eq5  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+2 .1          .              .              .              .          
+3 .1          .              .              .              .          
+4 .1          .              .              .              .          
+5 .1          .              .              .              .          
+6 .1          .              .              .              .          
+7 .1          .              .              .              .          
+8 .1          .              .              .              .          
+9 .1          .              .              .              .          
+10.1          .              .              .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 44
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+---- EQU sum_bin  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1          1.0000         1.0000         1.0000          .          
+2          1.0000         1.0000         1.0000          .          
+3          1.0000         1.0000         1.0000          .          
+4          1.0000         1.0000         1.0000          .          
+5          1.0000         1.0000         1.0000          .          
+6          1.0000         1.0000         1.0000          .          
+7          1.0000         1.0000         1.0000          .          
+8          1.0000         1.0000         1.0000          .          
+9          1.0000         1.0000         1.0000          .          
+10         1.0000         1.0000         1.0000          .          
+
+---- EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1 .1         -INF          507.3600      2520.0000          .          
+1 .2 .1         -INF         1758.9600      1758.9600        -1.0000      
+1 .2 .2         -INF          -10.0000          .              .          
+1 .3 .3         -INF        -1145.7600        40.3200          .          
+1 .3 .4         -INF         -475.9040        34.2720          .          
+1 .3 .5         -INF         -686.4000        50.4000          .          
+1 .3 .6         -INF          -54.5280        43.0080          .          
+1 .3 .7         -INF         -520.6320        37.6320          .          
+1 .3 .8         -INF          -16.8560        57.7920          .          
+1 .3 .9         -INF         -520.6320        42.3360          .          
+1 .3 .10        -INF         -520.6320        42.3360          .          
+1 .3 .11        -INF         -151.2560        49.0560          .          
+1 .3 .12        -INF         -826.4000        67.2000          .          
+1 .3 .13        -INF          -60.0000          .              .          
+1 .3 .14        -INF          -52.0000          .              .          
+1 .3 .15        -INF          -75.0000          .              .          
+1 .3 .16        -INF          -64.0000          .              .          
+1 .3 .17        -INF          -63.0000          .              .          
+1 .3 .18        -INF          -86.0000          .              .          
+1 .3 .19        -INF          -63.0000          .              .          
+1 .3 .20        -INF          -63.0000          .              .          
+1 .3 .21        -INF          -73.0000          .              .          
+1 .3 .22        -INF         -100.0000          .              .          
+1 .4 .3         -INF         -393.1200      1169.2800          .          
+1 .4 .4         -INF          176.3840       993.8880          .          
+1 .4 .5         -INF          254.4000      1461.6000          .          
+1 .4 .6         -INF          748.2880      1247.2320          .          
+1 .4 .7         -INF          269.6400      1091.3280          .          
+1 .4 .8         -INF         1061.9280      1675.9680          .          
+1 .4 .9         -INF          269.6400      1227.7440          .          
+1 .4 .10        -INF          269.6400      1227.7440          .          
+1 .4 .11        -INF          764.4560      1422.6240          .          
+1 .4 .13        -INF          -60.0000          .              .          
+1 .4 .14        -INF          -52.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 45
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .4 .15        -INF          -75.0000          .              .          
+1 .4 .16        -INF          -64.0000          .              .          
+1 .4 .17        -INF          -63.0000          .              .          
+1 .4 .18        -INF          -86.0000          .              .          
+1 .4 .19        -INF          -63.0000          .              .          
+1 .4 .20        -INF          -63.0000          .              .          
+1 .4 .21        -INF          -73.0000          .              .          
+1 .5 .3         -INF         -581.2800       887.0400          .          
+1 .5 .4         -INF           13.3120       753.9840          .          
+1 .5 .5         -INF           19.2000      1108.8000          .          
+1 .5 .6         -INF          547.5840       946.1760          .          
+1 .5 .7         -INF           72.0720       827.9040          .          
+1 .5 .8         -INF          792.2320      1271.4240          .          
+1 .5 .9         -INF           72.0720       931.3920          .          
+1 .5 .10        -INF           72.0720       931.3920          .          
+1 .5 .13        -INF          -60.0000          .              .          
+1 .5 .14        -INF          -52.0000          .              .          
+1 .5 .15        -INF          -75.0000          .              .          
+1 .5 .16        -INF          -64.0000          .              .          
+1 .5 .17        -INF          -63.0000          .              .          
+1 .5 .18        -INF          -86.0000          .              .          
+1 .5 .19        -INF          -63.0000          .              .          
+1 .5 .20        -INF          -63.0000          .              .          
+1 .6 .3         -INF          159.6000      1998.3600          .          
+1 .6 .4         -INF          655.4080      1698.6060          .          
+1 .6 .5         -INF          945.3000      2497.9500          .          
+1 .6 .6         -INF         1337.8560      2131.5840          .          
+1 .6 .7         -INF          849.9960      1865.1360          .          
+1 .6 .8         -INF         1854.1600      2864.3160          .          
+1 .6 .9         -INF          849.9960      2098.2780          .          
+1 .6 .13        -INF          -60.0000          .              .          
+1 .6 .14        -INF          -52.0000          .              .          
+1 .6 .15        -INF          -75.0000          .              .          
+1 .6 .16        -INF          -64.0000          .              .          
+1 .6 .17        -INF          -63.0000          .              .          
+1 .6 .18        -INF          -86.0000          .              .          
+1 .6 .19        -INF          -63.0000          .              .          
+1 .7 .3         -INF         -764.4000       612.3600          .          
+1 .7 .4         -INF         -145.3920       520.5060          .          
+1 .7 .5         -INF         -209.7000       765.4500          .          
+1 .7 .6         -INF          352.2560       653.1840          .          
+1 .7 .7         -INF         -120.2040       571.5360          .          
+1 .7 .8         -INF          529.7600       877.7160          .          
+1 .7 .13        -INF          -60.0000          .              .          
+1 .7 .14        -INF          -52.0000          .              .          
+1 .7 .15        -INF          -75.0000          .              .          
+1 .7 .16        -INF          -64.0000          .              .          
+1 .7 .17        -INF          -63.0000          .              .          
+1 .7 .18        -INF          -86.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 46
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+1 .8 .3         -INF         -408.2400      1146.6000          .          
+1 .8 .4         -INF          163.2800       974.6100          .          
+1 .8 .5         -INF          235.5000      1433.2500          .          
+1 .8 .6         -INF          732.1600      1223.0400          .          
+1 .8 .7         -INF          253.7640      1070.1600          .          
+1 .8 .13        -INF          -60.0000          .              .          
+1 .8 .14        -INF          -52.0000          .              .          
+1 .8 .15        -INF          -75.0000          .              .          
+1 .8 .16        -INF          -64.0000          .              .          
+1 .8 .17        -INF          -63.0000          .              .          
+1 .9 .3         -INF         -376.3200      1194.4800          .          
+1 .9 .4         -INF          190.9440      1015.3080          .          
+1 .9 .5         -INF          275.4000      1493.1000          .          
+1 .9 .6         -INF          766.2080      1274.1120          .          
+1 .9 .13        -INF          -60.0000          .              .          
+1 .9 .14        -INF          -52.0000          .              .          
+1 .9 .15        -INF          -75.0000          .              .          
+1 .9 .16        -INF          -64.0000          .              .          
+1 .10.3         -INF          381.3600      2331.0000          .          
+1 .10.4         -INF          847.6000      1981.3500          .          
+1 .10.5         -INF         1222.5000      2913.7500          .          
+1 .10.13        -INF          -60.0000          .              .          
+1 .10.14        -INF          -52.0000          .              .          
+1 .10.15        -INF          -75.0000          .              .          
+1 .11.3         -INF          347.7600      2280.6000          .          
+1 .11.4         -INF          818.4800      1938.5100          .          
+1 .11.13        -INF          -60.0000          .              .          
+1 .11.14        -INF          -52.0000          .              .          
+2 .1 .1         -INF          124.8000       918.0000          .          
+2 .2 .1         -INF          -46.1760       666.4680          .          
+2 .2 .2         -INF          -52.0000          .              .          
+2 .3 .1         -INF          -46.1760      1495.1160          .          
+2 .3 .2         -INF          -52.0000          .              .          
+2 .4 .3         -INF         -257.0880       356.1840          .          
+2 .4 .4         -INF         -370.8000       523.8000          .          
+2 .4 .5         -INF          214.7840       446.9760          .          
+2 .4 .6         -INF         -255.5280       391.1040          .          
+2 .4 .7         -INF          345.0320       600.6240          .          
+2 .4 .8         -INF         -255.5280       439.9920          .          
+2 .4 .9         -INF         -255.5280       439.9920          .          
+2 .4 .10        -INF          155.9280       509.8320          .          
+2 .4 .11        -INF         -405.6000       698.4000          .          
+2 .4 .13        -INF          -52.0000          .              .          
+2 .4 .14        -INF          -75.0000          .              .          
+2 .4 .15        -INF          -64.0000          .              .          
+2 .4 .16        -INF          -63.0000          .              .          
+2 .4 .17        -INF          -86.0000          .              .          
+2 .4 .18        -INF          -63.0000          .              .          
+2 .4 .19        -INF          -63.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 47
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+2 .4 .20        -INF          -73.0000          .              .          
+2 .4 .21        -INF         -100.0000          .              .          
+2 .5 .3         -INF          101.0880       883.1160          .          
+2 .5 .4         -INF          145.8000      1298.7000          .          
+2 .5 .5         -INF          655.6160      1108.2240          .          
+2 .5 .6         -INF          178.4160       969.6960          .          
+2 .5 .7         -INF          937.4000      1489.1760          .          
+2 .5 .8         -INF          178.4160      1090.9080          .          
+2 .5 .9         -INF          178.4160      1090.9080          .          
+2 .5 .10        -INF          658.7520      1264.0680          .          
+2 .5 .13        -INF          -52.0000          .              .          
+2 .5 .14        -INF          -75.0000          .              .          
+2 .5 .15        -INF          -64.0000          .              .          
+2 .5 .16        -INF          -63.0000          .              .          
+2 .5 .17        -INF          -86.0000          .              .          
+2 .5 .18        -INF          -63.0000          .              .          
+2 .5 .19        -INF          -63.0000          .              .          
+2 .5 .20        -INF          -73.0000          .              .          
+2 .6 .3         -INF         -232.7520       391.9860          .          
+2 .6 .4         -INF         -335.7000       576.4500          .          
+2 .6 .5         -INF          244.7360       491.9040          .          
+2 .6 .6         -INF         -226.0440       430.4160          .          
+2 .6 .7         -INF          385.2800       660.9960          .          
+2 .6 .8         -INF         -226.0440       484.2180          .          
+2 .6 .9         -INF         -226.0440       484.2180          .          
+2 .6 .13        -INF          -52.0000          .              .          
+2 .6 .14        -INF          -75.0000          .              .          
+2 .6 .15        -INF          -64.0000          .              .          
+2 .6 .16        -INF          -63.0000          .              .          
+2 .6 .17        -INF          -86.0000          .              .          
+2 .6 .18        -INF          -63.0000          .              .          
+2 .6 .19        -INF          -63.0000          .              .          
+2 .7 .3         -INF         -321.9840       260.7120          .          
+2 .7 .4         -INF         -464.4000       383.4000          .          
+2 .7 .5         -INF          134.9120       327.1680          .          
+2 .7 .6         -INF         -334.1520       286.2720          .          
+2 .7 .7         -INF          237.7040       439.6320          .          
+2 .7 .8         -INF         -334.1520       322.0560          .          
+2 .7 .13        -INF          -52.0000          .              .          
+2 .7 .14        -INF          -75.0000          .              .          
+2 .7 .15        -INF          -64.0000          .              .          
+2 .7 .16        -INF          -63.0000          .              .          
+2 .7 .17        -INF          -86.0000          .              .          
+2 .7 .18        -INF          -63.0000          .              .          
+2 .8 .3         -INF          -60.5280       645.3540          .          
+2 .8 .4         -INF          -87.3000       949.0500          .          
+2 .8 .5         -INF          456.7040       809.8560          .          
+2 .8 .6         -INF          -17.3880       708.6240          .          
+2 .8 .7         -INF          670.1120      1088.2440          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 48
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+2 .8 .13        -INF          -52.0000          .              .          
+2 .8 .14        -INF          -75.0000          .              .          
+2 .8 .15        -INF          -64.0000          .              .          
+2 .8 .16        -INF          -63.0000          .              .          
+2 .8 .17        -INF          -86.0000          .              .          
+2 .9 .3         -INF          -71.1360       629.7480          .          
+2 .9 .4         -INF         -102.6000       926.1000          .          
+2 .9 .5         -INF          443.6480       790.2720          .          
+2 .9 .6         -INF          -30.2400       691.4880          .          
+2 .9 .13        -INF          -52.0000          .              .          
+2 .9 .14        -INF          -75.0000          .              .          
+2 .9 .15        -INF          -64.0000          .              .          
+2 .9 .16        -INF          -63.0000          .              .          
+2 .10.3         -INF         -315.1200       270.8100          .          
+2 .10.4         -INF         -454.5000       398.2500          .          
+2 .10.5         -INF          143.3600       339.8400          .          
+2 .10.13        -INF          -52.0000          .              .          
+2 .10.14        -INF          -75.0000          .              .          
+2 .10.15        -INF          -64.0000          .              .          
+2 .11.3         -INF          734.4000       734.4000        -1.0000      
+2 .11.4         -INF         1080.0000      1080.0000        -1.0000      
+2 .11.13        -INF             .              .            -9.6000      
+2 .11.14        -INF          -23.0000          .              .          
+3 .1 .1         -INF         1005.0000      2587.5000          .          
+3 .2 .1         -INF          251.1750      1456.7625          .          
+3 .2 .2         -INF          -75.0000          .              .          
+3 .3 .1         -INF         2132.1000      2198.7000          .          
+3 .3 .2         -INF          -25.0000          .              .          
+3 .4 .3         -INF          380.5500      1650.8250          .          
+3 .4 .4         -INF          855.9360      1408.7040          .          
+3 .4 .5         -INF          375.6060      1232.6160          .          
+3 .4 .6         -INF         1206.5800      1892.9460          .          
+3 .4 .7         -INF          375.6060      1386.6930          .          
+3 .4 .8         -INF          375.6060      1386.6930          .          
+3 .4 .9         -INF          887.2420      1606.8030          .          
+3 .4 .10        -INF          596.2000      2201.1000          .          
+3 .4 .13        -INF          -75.0000          .              .          
+3 .4 .14        -INF          -64.0000          .              .          
+3 .4 .15        -INF          -63.0000          .              .          
+3 .4 .16        -INF          -86.0000          .              .          
+3 .4 .17        -INF          -63.0000          .              .          
+3 .4 .18        -INF          -63.0000          .              .          
+3 .4 .19        -INF          -73.0000          .              .          
+3 .4 .20        -INF         -100.0000          .              .          
+3 .5 .3         -INF          891.1500      2416.7250          .          
+3 .5 .4         -INF         1291.6480      2062.2720          .          
+3 .5 .5         -INF          804.5100      1804.4880          .          
+3 .5 .6         -INF         1792.0680      2771.1780          .          
+3 .5 .7         -INF          804.5100      2030.0490          .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 49
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+3 .5 .8         -INF          804.5100      2030.0490          .          
+3 .5 .9         -INF         1384.2260      2352.2790          .          
+3 .5 .13        -INF          -75.0000          .              .          
+3 .5 .14        -INF          -64.0000          .              .          
+3 .5 .15        -INF          -63.0000          .              .          
+3 .5 .16        -INF          -86.0000          .              .          
+3 .5 .17        -INF          -63.0000          .              .          
+3 .5 .18        -INF          -63.0000          .              .          
+3 .5 .19        -INF          -73.0000          .              .          
+3 .6 .3         -INF          623.7750      2015.6625          .          
+3 .6 .4         -INF         1063.4880      1720.0320          .          
+3 .6 .5         -INF          579.9150      1505.0280          .          
+3 .6 .6         -INF         1485.4780      2311.2930          .          
+3 .6 .7         -INF          579.9150      1693.1565          .          
+3 .6 .8         -INF          579.9150      1693.1565          .          
+3 .6 .13        -INF          -75.0000          .              .          
+3 .6 .14        -INF          -64.0000          .              .          
+3 .6 .15        -INF          -63.0000          .              .          
+3 .6 .16        -INF          -86.0000          .              .          
+3 .6 .17        -INF          -63.0000          .              .          
+3 .6 .18        -INF          -63.0000          .              .          
+3 .7 .3         -INF         -426.7500       439.8750          .          
+3 .7 .4         -INF          167.0400       375.3600          .          
+3 .7 .5         -INF         -302.5260       328.4400          .          
+3 .7 .6         -INF          280.8760       504.3900          .          
+3 .7 .7         -INF         -302.5260       369.4950          .          
+3 .7 .13        -INF          -75.0000          .              .          
+3 .7 .14        -INF          -64.0000          .              .          
+3 .7 .15        -INF          -63.0000          .              .          
+3 .7 .16        -INF          -86.0000          .              .          
+3 .7 .17        -INF          -63.0000          .              .          
+3 .8 .3         -INF          556.5000      1914.7500          .          
+3 .8 .4         -INF         1006.0800      1633.9200          .          
+3 .8 .5         -INF          523.4040      1429.6800          .          
+3 .8 .6         -INF         1408.3360      2195.5800          .          
+3 .8 .13        -INF          -75.0000          .              .          
+3 .8 .14        -INF          -64.0000          .              .          
+3 .8 .15        -INF          -63.0000          .              .          
+3 .8 .16        -INF          -86.0000          .              .          
+3 .9 .3         -INF         -697.5750        33.6375          .          
+3 .9 .4         -INF          -64.0640        28.7040          .          
+3 .9 .5         -INF         -530.0190        25.1160          .          
+3 .9 .13        -INF          -75.0000          .              .          
+3 .9 .14        -INF          -64.0000          .              .          
+3 .9 .15        -INF          -63.0000          .              .          
+3 .10.3         -INF          -78.3000       962.5500          .          
+3 .10.4         -INF          464.3840       821.3760          .          
+3 .10.13        -INF          -75.0000          .              .          
+3 .10.14        -INF          -64.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 50
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+4 .1 .1         -INF         1580.8000      2496.0000          .          
+4 .2 .1         -INF          755.4560      1257.9840          .          
+4 .2 .2         -INF          -64.0000          .              .          
+4 .3 .1         -INF          474.3680      1876.2240          .          
+4 .3 .2         -INF          -64.0000          .              .          
+4 .4 .3         -INF          748.8000      1248.0000          .          
+4 .4 .4         -INF          270.1440      1092.0000          .          
+4 .4 .5         -INF         1062.6160      1677.0000          .          
+4 .4 .6         -INF          270.1440      1228.5000          .          
+4 .4 .7         -INF          270.1440      1228.5000          .          
+4 .4 .8         -INF          765.0400      1423.5000          .          
+4 .4 .9         -INF          428.8000      1950.0000          .          
+4 .4 .13        -INF          -64.0000          .              .          
+4 .4 .14        -INF          -63.0000          .              .          
+4 .4 .15        -INF          -86.0000          .              .          
+4 .4 .16        -INF          -63.0000          .              .          
+4 .4 .17        -INF          -63.0000          .              .          
+4 .4 .18        -INF          -73.0000          .              .          
+4 .4 .19        -INF         -100.0000          .              .          
+4 .5 .3         -INF          389.3760       708.8640          .          
+4 .5 .4         -INF          -83.6640       620.2560          .          
+4 .5 .5         -INF          579.6400       952.5360          .          
+4 .5 .6         -INF          -83.6640       697.7880          .          
+4 .5 .7         -INF          -83.6640       697.7880          .          
+4 .5 .8         -INF          355.0720       808.5480          .          
+4 .5 .13        -INF          -64.0000          .              .          
+4 .5 .14        -INF          -63.0000          .              .          
+4 .5 .15        -INF          -86.0000          .              .          
+4 .5 .16        -INF          -63.0000          .              .          
+4 .5 .17        -INF          -63.0000          .              .          
+4 .5 .18        -INF          -73.0000          .              .          
+4 .6 .3         -INF         1329.5360      2119.1040          .          
+4 .6 .4         -INF          841.8060      1854.2160          .          
+4 .6 .5         -INF         1842.9800      2847.5460          .          
+4 .6 .6         -INF          841.8060      2085.9930          .          
+4 .6 .7         -INF          841.8060      2085.9930          .          
+4 .6 .13        -INF          -64.0000          .              .          
+4 .6 .14        -INF          -63.0000          .              .          
+4 .6 .15        -INF          -86.0000          .              .          
+4 .6 .16        -INF          -63.0000          .              .          
+4 .6 .17        -INF          -63.0000          .              .          
+4 .7 .3         -INF          762.1120      1267.9680          .          
+4 .7 .4         -INF          283.2480      1109.4720          .          
+4 .7 .5         -INF         1080.5040      1703.8320          .          
+4 .7 .6         -INF          283.2480      1248.1560          .          
+4 .7 .13        -INF          -64.0000          .              .          
+4 .7 .14        -INF          -63.0000          .              .          
+4 .7 .15        -INF          -86.0000          .              .          
+4 .7 .16        -INF          -63.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 51
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+4 .8 .3         -INF          660.6080      1115.7120          .          
+4 .8 .4         -INF          183.3300       976.2480          .          
+4 .8 .5         -INF          944.1080      1499.2380          .          
+4 .8 .13        -INF          -64.0000          .              .          
+4 .8 .14        -INF          -63.0000          .              .          
+4 .8 .15        -INF          -86.0000          .              .          
+4 .9 .3         -INF          124.8000       124.8000        -1.0000      
+4 .9 .4         -INF         -357.7560       109.2000          .          
+4 .9 .13        -INF           -1.0000          .              .          
+4 .9 .14        -INF             .              .            -8.7120      
+5 .1 .1         -INF         1215.1440      2352.0000          .          
+5 .2 .1         -INF          419.5800      1291.2480          .          
+5 .2 .2         -INF          -63.0000          .              .          
+5 .3 .1         -INF         1641.6960      1641.6960        -1.0000      
+5 .3 .2         -INF          -13.0000          .              .          
+5 .4 .3         -INF         -270.1440       371.6160          .          
+5 .4 .4         -INF          325.0800       570.6960          .          
+5 .4 .5         -INF         -270.1440       418.0680          .          
+5 .4 .6         -INF         -270.1440       418.0680          .          
+5 .4 .7         -INF          138.9920       484.4280          .          
+5 .4 .8         -INF         -428.8000       663.6000          .          
+5 .4 .13        -INF          -63.0000          .              .          
+5 .4 .14        -INF          -86.0000          .              .          
+5 .4 .15        -INF          -63.0000          .              .          
+5 .4 .16        -INF          -63.0000          .              .          
+5 .4 .17        -INF          -73.0000          .              .          
+5 .4 .18        -INF         -100.0000          .              .          
+5 .5 .3         -INF         1155.1680      2272.0320          .          
+5 .5 .4         -INF         2270.7440      3489.1920          .          
+5 .5 .5         -INF         1155.1680      2556.0360          .          
+5 .5 .6         -INF         1155.1680      2556.0360          .          
+5 .5 .7         -INF         1790.5440      2961.7560          .          
+5 .5 .13        -INF          -63.0000          .              .          
+5 .5 .14        -INF          -86.0000          .              .          
+5 .5 .15        -INF          -63.0000          .              .          
+5 .5 .16        -INF          -63.0000          .              .          
+5 .5 .17        -INF          -73.0000          .              .          
+5 .6 .3         -INF          303.1560      1136.0160          .          
+5 .6 .4         -INF         1107.6800      1744.5960          .          
+5 .6 .5         -INF          303.1560      1278.0180          .          
+5 .6 .6         -INF          303.1560      1278.0180          .          
+5 .6 .13        -INF          -63.0000          .              .          
+5 .6 .14        -INF          -86.0000          .              .          
+5 .6 .15        -INF          -63.0000          .              .          
+5 .6 .16        -INF          -63.0000          .              .          
+5 .7 .3         -INF         -444.7800       138.7680          .          
+5 .7 .4         -INF           86.6880       213.1080          .          
+5 .7 .5         -INF         -444.7800       156.1140          .          
+5 .7 .13        -INF          -63.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 52
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+5 .7 .14        -INF          -86.0000          .              .          
+5 .7 .15        -INF          -63.0000          .              .          
+5 .8 .3         -INF          186.7320       980.7840          .          
+5 .8 .4         -INF          948.7520      1506.2040          .          
+5 .8 .13        -INF          -63.0000          .              .          
+5 .8 .14        -INF          -86.0000          .              .          
+6 .1 .1         -INF         1148.6160      1806.0000          .          
+6 .2 .1         -INF          899.3880      1432.1580          .          
+6 .2 .2         -INF          -86.0000          .              .          
+6 .3 .1         -INF          693.8480      2521.1760          .          
+6 .3 .2         -INF          -86.0000          .              .          
+6 .4 .3         -INF          603.2040       987.8820          .          
+6 .4 .4         -INF          -66.4020       723.6810          .          
+6 .4 .5         -INF          -66.4020       723.6810          .          
+6 .4 .6         -INF          375.0740       838.5510          .          
+6 .4 .7         -INF         -105.4000      1148.7000          .          
+6 .4 .13        -INF          -86.0000          .              .          
+6 .4 .14        -INF          -63.0000          .              .          
+6 .4 .15        -INF          -63.0000          .              .          
+6 .4 .16        -INF          -73.0000          .              .          
+6 .4 .17        -INF         -100.0000          .              .          
+6 .5 .3         -INF         1024.6040      1619.9820          .          
+6 .5 .4         -INF          242.2980      1186.7310          .          
+6 .5 .5         -INF          242.2980      1186.7310          .          
+6 .5 .6         -INF          732.7740      1375.1010          .          
+6 .5 .13        -INF          -86.0000          .              .          
+6 .5 .14        -INF          -63.0000          .              .          
+6 .5 .15        -INF          -63.0000          .              .          
+6 .5 .16        -INF          -73.0000          .              .          
+6 .6 .3         -INF           83.0760        83.0760        -1.0000      
+6 .6 .4         -INF         -447.4260        60.8580          .          
+6 .6 .5         -INF         -447.4260        60.8580          .          
+6 .6 .13        -INF          -34.0000          .              .          
+6 .6 .14        -INF          -11.0000          .              .          
+6 .6 .15        -INF          -11.0000          .              .          
+6 .7 .3         -INF          274.5120       494.8440          .          
+6 .7 .4         -INF         -307.1880       362.5020          .          
+6 .7 .13        -INF          -86.0000          .              .          
+6 .7 .14        -INF          -63.0000          .              .          
+7 .1 .1         -INF          837.1440      2079.0000          .          
+7 .2 .1         -INF          497.5740      1569.6450          .          
+7 .2 .2         -INF          -63.0000          .              .          
+7 .3 .1         -INF         1846.9080      1846.9080        -1.0000      
+7 .3 .2         -INF          -13.0000          .              .          
+7 .4 .3         -INF          121.9680      1006.2360          .          
+7 .4 .4         -INF          121.9680      1006.2360          .          
+7 .4 .5         -INF          593.3440      1165.9560          .          
+7 .4 .6         -INF          193.6000      1597.2000          .          
+7 .4 .13        -INF          -63.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 53
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     EQU disj_ineq  
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+7 .4 .14        -INF          -63.0000          .              .          
+7 .4 .15        -INF          -73.0000          .              .          
+7 .4 .16        -INF         -100.0000          .              .          
+7 .5 .3         -INF         -318.7800       345.1140          .          
+7 .5 .4         -INF         -318.7800       345.1140          .          
+7 .5 .5         -INF           82.6360       399.8940          .          
+7 .5 .13        -INF          -63.0000          .              .          
+7 .5 .14        -INF          -63.0000          .              .          
+7 .5 .15        -INF          -73.0000          .              .          
+7 .6 .3         -INF          627.8580      1765.0710          .          
+7 .6 .4         -INF          627.8580      1765.0710          .          
+7 .6 .13        -INF          -63.0000          .              .          
+7 .6 .14        -INF          -63.0000          .              .          
+8 .1 .1         -INF         1215.1440      2646.0000          .          
+8 .2 .1         -INF         1109.3040      2487.2400          .          
+8 .2 .2         -INF          -63.0000          .              .          
+8 .3 .1         -INF         2487.2400      2487.2400        -1.0000      
+8 .3 .2         -INF          -13.0000          .              .          
+8 .4 .3         -INF          805.8960      2032.1280          .          
+8 .4 .4         -INF         1385.8320      2354.6880          .          
+8 .4 .5         -INF         1279.2000      3225.6000          .          
+8 .4 .13        -INF          -63.0000          .              .          
+8 .4 .14        -INF          -73.0000          .              .          
+8 .4 .15        -INF         -100.0000          .              .          
+8 .5 .3         -INF         -390.0960       238.1400          .          
+8 .5 .4         -INF      -5.68434E-14       275.9400          .          
+8 .5 .13        -INF          -63.0000          .              .          
+8 .5 .14        -INF          -73.0000          .              .          
+9 .1 .1         -INF         1349.0400      2299.5000          .          
+9 .2 .1         -INF          679.1190      1294.6185          .          
+9 .2 .2         -INF          -73.0000          .              .          
+9 .3 .1         -INF          452.0160      2882.0400          .          
+9 .3 .2         -INF          -73.0000          .              .          
+9 .4 .3         -INF          275.9400       275.9400        -1.0000      
+9 .4 .4         -INF         -241.2000       378.0000          .          
+9 .4 .13        -INF           -6.0000          .              .          
+9 .4 .14        -INF          -33.0000          .              .          
+10.1 .1         -INF         1128.8000      3000.0000          .          
+10.2 .1         -INF          632.8000      2256.0000          .          
+10.2 .2         -INF         -100.0000          .              .          
+10.3 .1         -INF         3948.0000      3948.0000        -1.0000      
+10.3 .2         -INF          -50.0000          .              .          
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 54
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+---- VAR it  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .              .            +INF             .          
+2           .              .            +INF             .          
+3           .              .            +INF             .          
+4           .              .            +INF             .          
+5           .              .            +INF             .          
+6           .              .            +INF             .          
+7           .              .            +INF             .          
+8           .              .            +INF             .          
+9           .              .            +INF             .          
+10          .              .            +INF             .          
+
+---- VAR f  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .            60.0000        +INF             .          
+2 .1          .            52.0000        +INF             .          
+3 .1          .            75.0000        +INF             .          
+4 .1          .            64.0000        +INF             .          
+5 .1          .            63.0000        +INF             .          
+6 .1          .            86.0000        +INF             .          
+7 .1          .            63.0000        +INF             .          
+8 .1          .            63.0000        +INF             .          
+9 .1          .            73.0000        +INF             .          
+10.1          .           100.0000        +INF             .          
+
+---- VAR ix  
+
+            LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1          .              .            +INF           29.5440      
+2 .1          .              .            +INF            0.4000      
+3 .1          .              .            +INF           16.3000      
+4 .1          .              .            +INF           10.3000      
+5 .1          .              .            +INF           12.3560      
+6 .1          .              .            +INF            9.9320      
+7 .1          .              .            +INF            5.0000      
+8 .1          .              .            +INF           22.1920      
+9 .1          .              .            +INF            1.8080      
+10.1          .              .            +INF           22.7120      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR cost              -INF         5232.1520        +INF             .          
+
+  cost  objective variable
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 55
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+---- VAR x  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+1           .            60.0000        90.0000          .          
+2           .            52.0000        76.5000          .          
+3           .            75.0000       112.5000          .          
+4           .            64.0000        96.0000          .          
+5           .            63.0000        84.0000          .          
+6           .            86.0000       129.0000          .          
+7           .            63.0000        94.5000          .          
+8           .            63.0000        94.5000          .          
+9           .            73.0000       109.5000          .          
+10          .           100.0000       150.0000          .          
+11          .          1172.6400      2520.0000          .          
+12          .           499.2000       918.0000          .          
+13          .           720.0000      2587.5000          .          
+14          .            83.2000      2496.0000          .          
+15          .           548.8560      2352.0000          .          
+16          .            55.3840      1806.0000          .          
+17          .           548.8560      2079.0000          .          
+18          .           548.8560      2646.0000          .          
+19          .           183.9600      2299.5000          .          
+20          .           871.2000      3000.0000          .          
+
+---- VAR y  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+1 .1           .              .             1.0000         EPS         
+1 .2           .             1.0000         1.0000      1758.9600      
+1 .3           .              .             1.0000         EPS         
+1 .4           .              .             1.0000         EPS         
+1 .5           .              .             1.0000         EPS         
+1 .6           .              .             1.0000         EPS         
+1 .7           .              .             1.0000         EPS         
+1 .8           .              .             1.0000         EPS         
+1 .9           .              .             1.0000         EPS         
+1 .10          .              .             1.0000         EPS         
+1 .11          .              .             1.0000         EPS         
+2 .1           .              .             1.0000         EPS         
+2 .2           .              .             1.0000         EPS         
+2 .3           .              .             1.0000         EPS         
+2 .4           .              .             1.0000         EPS         
+2 .5           .              .             1.0000         EPS         
+2 .6           .              .             1.0000         EPS         
+2 .7           .              .             1.0000         EPS         
+2 .8           .              .             1.0000         EPS         
+2 .9           .              .             1.0000         EPS         
+2 .10          .              .             1.0000         EPS         
+2 .11          .             1.0000         1.0000      2313.6000      
+3 .1           .              .             1.0000         EPS         
+3 .2           .              .             1.0000         EPS         
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 56
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     VAR y  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+3 .3           .             1.0000         1.0000         EPS         
+3 .4           .              .             1.0000         EPS         
+3 .5           .              .             1.0000         EPS         
+3 .6           .              .             1.0000         EPS         
+3 .7           .              .             1.0000         EPS         
+3 .8           .              .             1.0000         EPS         
+3 .9           .              .             1.0000         EPS         
+3 .10          .              .             1.0000         EPS         
+4 .1           .              .             1.0000         EPS         
+4 .2           .              .             1.0000         EPS         
+4 .3           .              .             1.0000         EPS         
+4 .4           .              .             1.0000         EPS         
+4 .5           .              .             1.0000         EPS         
+4 .6           .              .             1.0000         EPS         
+4 .7           .              .             1.0000         EPS         
+4 .8           .              .             1.0000         EPS         
+4 .9           .             1.0000         1.0000       673.6560      
+5 .1           .              .             1.0000         EPS         
+5 .2           .              .             1.0000         EPS         
+5 .3           .             1.0000         1.0000      1641.6960      
+5 .4           .              .             1.0000         EPS         
+5 .5           .              .             1.0000         EPS         
+5 .6           .              .             1.0000         EPS         
+5 .7           .              .             1.0000         EPS         
+5 .8           .              .             1.0000         EPS         
+6 .1           .              .             1.0000         EPS         
+6 .2           .              .             1.0000         EPS         
+6 .3           .              .             1.0000         EPS         
+6 .4           .              .             1.0000         EPS         
+6 .5           .              .             1.0000         EPS         
+6 .6           .             1.0000         1.0000        83.0760      
+6 .7           .              .             1.0000         EPS         
+7 .1           .              .             1.0000         EPS         
+7 .2           .              .             1.0000         EPS         
+7 .3           .             1.0000         1.0000      1846.9080      
+7 .4           .              .             1.0000         EPS         
+7 .5           .              .             1.0000         EPS         
+7 .6           .              .             1.0000         EPS         
+8 .1           .              .             1.0000         EPS         
+8 .2           .              .             1.0000         EPS         
+8 .3           .             1.0000         1.0000      2487.2400      
+8 .4           .              .             1.0000         EPS         
+8 .5           .              .             1.0000         EPS         
+9 .1           .              .             1.0000         EPS         
+9 .2           .              .             1.0000         EPS         
+9 .3           .              .             1.0000         EPS         
+9 .4           .             1.0000         1.0000       275.9400      
+10.1           .              .             1.0000         EPS         
+10.2           .              .             1.0000         EPS         
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 57
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE prob Using MIP From line 253
+
+
+     VAR y  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+10.3           .             1.0000         1.0000      3948.0000      
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
-GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/08/18 01:21:40 Page 15
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                     04/09/18 21:53:56 Page 58
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-EXECUTION TIME       =        0.002 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+EXECUTION TIME       =        0.007 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -212,6 +2586,6 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/0.g00
-Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/BM_ref.gms
-Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_4/Euler/10/BM_ref.lst
+Restart    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/0.g00
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/BM_ref.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/10/BM_ref.lst

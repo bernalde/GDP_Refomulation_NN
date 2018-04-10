@@ -1,0 +1,162 @@
+Disk usage:  25G .
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job run_batch.gms Start 04/09/18 08:55:09 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- run_batch.gms(10) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- run_batch.gms(76) 3 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- run_batch.gms(14) 4 Mb
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 1 Error--- run_batch.gms(14) 4 Mb 2 Errors
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 3 Errors--- run_batch.gms(14) 4 Mb 4 Errors
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 5 Errors--- run_batch.gms(14) 4 Mb 6 Errors
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 7 Errors--- run_batch.gms(14) 4 Mb 8 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 9 Errors  7010 secs--- run_batch.gms(14) 4 Mb 10 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 11 Errors  7010 secs--- run_batch.gms(14) 4 Mb 12 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 13 Errors  7010 secs--- run_batch.gms(14) 4 Mb 14 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 15 Errors  7010 secs--- run_batch.gms(14) 4 Mb 16 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 17 Errors  7010 secs--- run_batch.gms(14) 4 Mb 18 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 19 Errors  7010 secs--- run_batch.gms(14) 4 Mb 20 Errors  7010 secs
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/solution_total.gdx
+--- run_batch.gms(75) 4 Mb
+--- run_batch.gms(76) 4 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:solution_total.gdx
+   OutputFile:solution_total.db
+   Symbols:1
+   Uels:21
+   Loading Uels
+   Processing Symbols
+     solu(220 records)
+   Inserts:220
+   Elapsed:3.37 seconds
+   Inserts/second:65.34
+   Done
+
+--- run_batch.gms(77) 4 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:stat_total.gdx
+   OutputFile:stat_total.db
+   Symbols:1
+   Uels:16
+   Loading Uels
+   Processing Symbols
+     stats(70 records)
+   Inserts:70
+   Elapsed:2.19 seconds
+   Inserts/second:31.92
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/8/seed.gms
+--- run_batch.gms(77) 4 Mb 20 Errors
+*** Status: Execution error(s)
+--- Job run_batch.gms Stop 04/09/18 17:24:27 elapsed 8:29:18.342
