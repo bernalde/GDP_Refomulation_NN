@@ -187,7 +187,7 @@ loop((t,r,k,tt)$(ord(t)>=2 and map_ki_tr(tt,r,k) and ord(tt)<ord(t) ),
 );
 
 
-execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right;
+execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right,term;
 
 $exit
 

@@ -116,7 +116,7 @@ kie(k,i,e)$(ord(e)>1)=no;
 
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
 
-execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
+execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb,term;
 
 $exit
 
