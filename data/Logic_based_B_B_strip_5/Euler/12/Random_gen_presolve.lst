@@ -1,10 +1,10 @@
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 1
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/seed.gms
-   2  execseed =       130.00;
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/seed.gms
+   2  execseed = 130;
    3  *execseed =         14;
    4   
    5  Set box number of boxes /1*5/
@@ -56,7 +56,7 @@ INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logi
   51  ki(k,i)=no;
   52  loop(ij, ki(k,i)$(ord(k)=cnt1)=yes;cnt1=cnt1+1;);
   53  cnt1=1;
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 2
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -114,7 +114,7 @@ C o m p i l a t i o n
  104     cnt1=cnt1+1;
  105  );
  106   
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 3
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -132,23 +132,23 @@ C o m p i l a t i o n
  117   
  118  kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
  119   
- 120  execute_unload "prob_data_130" A,Aglob,bglo,b,c,ub,lb;
+ 120  execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
  121   
-EXIT /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 4
+EXIT /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
-     2        1 INCLUDE        1       1  ./home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/seed.gms
-     3      122 EXIT           1     121  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
+     2        1 INCLUDE        1       1  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/seed.gms
+     3      122 EXIT           1     121  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
 
 
-COMPILATION TIME     =        0.001 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 5
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -206,7 +206,7 @@ E x e c u t i o n
 9 .3         YES         YES         YES
 9 .4         YES         YES         YES
 10.1         YES
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 00:55:02 Page 6
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 17:20:31 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -221,7 +221,7 @@ E x e c u t i o n
 
 
 
-EXECUTION TIME       =        0.005 SECONDS      4 MB  25.0.2 r65346 LEX-LEG
+EXECUTION TIME       =        0.021 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -231,6 +231,6 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
-Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.lst
-Save       /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/0.g0?
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/Random_gen_presolve.lst
+Save       /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler/12/0.g0?

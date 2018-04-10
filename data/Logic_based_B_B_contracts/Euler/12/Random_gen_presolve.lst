@@ -1,10 +1,10 @@
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 1
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/seed.gms
-   2  execseed =       130.00;
+INCLUDE    /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/seed.gms
+   2  execseed = 124;
    3  *execseed = 14;
    4   
    5  set t time period /1*10/
@@ -56,7 +56,7 @@ INCLUDE    /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logi
   51            minl(t,r,i)  minimum purchase for discount
   52  ;
   53   
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 2
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -114,7 +114,7 @@ C o m p i l a t i o n
  104     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r);
  105     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_c(var,t,r)) = -1;
  106     b(k,i,e)    $(ord(i)=1 and ord(e)=1 ) = 0;
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 3
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -172,7 +172,7 @@ C o m p i l a t i o n
  157           kie(k,i,e)$(ord(e)=cnt1) = yes;
  158           opt_bigm(k,i,e)  $(ord(e)=cnt1) = minl(t,r,i);
  159           cnt1=cnt1+1;
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 4
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -208,28 +208,28 @@ C o m p i l a t i o n
  188  );
  189   
  190   
- 191  execute_unload "prob_data_130" A,b,c,ub,lb,D,IC,logic_left,logic_right;
+ 191  execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right;
  192   
-EXIT /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 5
+EXIT /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
-     2        1 INCLUDE        1       1  ./home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/seed.gms
-     3      193 EXIT           1     192  /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
+     1        1 INPUT          0       0  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
+     2        1 INCLUDE        1       1  ./home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/seed.gms
+     3      193 EXIT           1     192  /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
 
 
-COMPILATION TIME     =        0.001 SECONDS      3 MB  25.0.2 r65346 LEX-LEG
-GAMS 25.0.2  r65346 Released Jan 31, 2018 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/08/18 23:42:19 Page 6
+COMPILATION TIME     =        0.001 SECONDS      3 MB  24.8.4 r60966 LEX-LEG
+GAMS 24.8.4  r60966 Released Apr 10, 2017 LEX-LEG x86 64bit/Linux                                                                                                                                                                      04/09/18 20:31:57 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-EXECUTION TIME       =        0.014 SECONDS      4 MB  25.0.2 r65346 LEX-LEG
+EXECUTION TIME       =        0.022 SECONDS      4 MB  24.8.4 r60966 LEX-LEG
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -239,6 +239,6 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
-Output     /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.lst
-Save       /home/davidbernal/Dropbox/Ubuntu/GDP_NN/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/0.g0?
+Input      /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.gms
+Output     /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/Random_gen_presolve.lst
+Save       /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/12/0.g0?
