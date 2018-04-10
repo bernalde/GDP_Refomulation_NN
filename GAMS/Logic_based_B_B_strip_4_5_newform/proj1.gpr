@@ -1321,9 +1321,6 @@ PlaneRownr=-1
 1=r=0
 2=
 
-[RP:RUN_BATCH]
-1=
-
 [RP:BM_REF]
 1=r=0 
 2=r=0 o=nul lo=0
@@ -1335,6 +1332,9 @@ PlaneRownr=-1
 1=
 
 [RP:INSTANCES]
+1=
+
+[RP:RUN_BATCH]
 1=
 
 [MRUFILES]
