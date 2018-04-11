@@ -3,9 +3,9 @@ $include seed.gms
 
 
 set
-    var variables /1*15/
+    var variables /1*30/
     k   disjunctions /1*5/
-    i   max number of terms per disjunction /1*10/
+    i   max number of terms per disjunction /1*30/
     e   max number of equations per disjunction /1*50/
 *    var variables /1*15/
 *    k   disjunctions /1*5/
@@ -40,7 +40,7 @@ term(k) = UniformInt(2,tot_i);
 ki(k,i)=no;
 loop((k,i)$(ord(i)<=term(k)), ki(k,i)=yes;);
 
-eq_term(ki) = UniformInt(2,tot_e);
+eq_term(ki) = UniformInt(round(tot_e/5,0),tot_e);
 *eq_term(ki) = UniformInt(round(tot_e/10,0),tot_e);
 kie(k,i,e)=no;
 loop((ki,e)$(ord(e)<=eq_term(ki)), kie(ki,e)=yes;);
@@ -115,6 +115,8 @@ yyy.lo(k,i)=0;
 
 ki(kInfeas)=no;
 kie(kInfeas,e) =no;
+
+term(k) = sum(i,ki(k,i)*1);
 
 b(kInfeas,e) = 0;
 A(kInfeas,e,var) = 0;
