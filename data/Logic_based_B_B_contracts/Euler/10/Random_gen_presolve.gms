@@ -162,7 +162,6 @@ loop((t,r,k)$map_ki_tr(t,r,k),
 
 term(k) = sum(i,ki(k,i)*1);
 
-eq_term(kInfeas) = no;
 kv(k,var)=no;
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
 
@@ -189,7 +188,7 @@ loop((t,r,k,tt)$(ord(t)>=2 and map_ki_tr(tt,r,k) and ord(tt)<ord(t) ),
 );
 
 
-execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right,term;
+execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right,term,eq_term;
 
 $exit
 
