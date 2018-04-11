@@ -30,5 +30,3 @@ execute 'gdx2sqlite -i prob_data_89.gdx -o prob_data_89.db';
 putclose seed_no 'execseed = '       90.00';';
 execute 'gams Random_gen_presolve.gms --seed=90 s=0 lo=0 '
 execute 'gdx2sqlite -i prob_data_90.gdx -o prob_data_90.db';
-execute 'gdx2sqlite -i solution_total.gdx -o solution_total.db';
-execute 'gdx2sqlite -i stat_total.gdx -o stat_total.db';

@@ -118,6 +118,9 @@ kie(kInfeas,e) =no;
 
 b(kInfeas,e) = 0;
 A(kInfeas,e,var) = 0;
+
+term(k) = sum(i,ki(k,i)*1);
+
 *start B&B
 kv(k,var)=no;
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;

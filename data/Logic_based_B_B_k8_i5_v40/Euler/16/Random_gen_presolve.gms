@@ -122,6 +122,8 @@ A(kInfeas,e,var) = 0;
 kv(k,var)=no;
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
 
+term(k) = sum(i,ki(k,i)*1);
+
 execute_unload "prob_data_%seed%" A,AE,b,bE,c,ub,lb,term,eq_term;
 
 $exit

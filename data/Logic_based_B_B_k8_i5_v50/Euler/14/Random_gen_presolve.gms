@@ -116,6 +116,8 @@ yyy.lo(k,i)=0;
 ki(kInfeas)=no;
 kie(kInfeas,e) =no;
 
+term(k) = sum(i,ki(k,i)*1);
+
 b(kInfeas,e) = 0;
 A(kInfeas,e,var) = 0;
 *start B&B

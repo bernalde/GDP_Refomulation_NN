@@ -6,6 +6,7 @@ for D in ./*; do
         gams generate_batch.gms
         gams instances.gms
 	rm prob_data*.gdx
+	rm *.lst
         cd ..
     fi
 done

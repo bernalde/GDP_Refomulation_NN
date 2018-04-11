@@ -160,6 +160,7 @@ loop((t,r,k)$map_ki_tr(t,r,k),
    );
 );
 
+term(k) = sum(i,ki(k,i)*1);
 
 kv(k,var)=no;
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
