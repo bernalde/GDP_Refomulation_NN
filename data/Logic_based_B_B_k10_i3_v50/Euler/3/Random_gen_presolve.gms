@@ -113,6 +113,7 @@ loop(ki,
 );
 yyy.lo(k,i)=0;
 
+eq_term(kInfeas) = no;
 ki(kInfeas)=no;
 kie(kInfeas,e) =no;
 

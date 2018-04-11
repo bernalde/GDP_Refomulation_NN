@@ -1,5 +1,5 @@
 
---- Job Random_gen_presolve.gms Start 04/06/18 14:25:10 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+--- Job Random_gen_presolve.gms Start 04/11/18 15:37:06 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
 GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
 Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
           Dept. of Chemical Engineering                              DC9476
@@ -10,15 +10,15 @@ Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 --- Random_gen_presolve.gms(99) 3 Mb
 --- .max_time_ref.gms(7) 3 Mb
 --- Random_gen_presolve.gms(127) 3 Mb
---- Starting execution: elapsed 0:00:00.005
+--- Starting execution: elapsed 0:00:00.006
 --- Random_gen_presolve.gms(116) 4 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 4 Mb
 --- LOOPS* = 1
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.037
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.038
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -40,16 +40,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 29 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 283 rows, 69 columns, and 2575 nonzeros.
-Presolve time = 0.08 sec. (0.39 ticks)
+LP Presolve eliminated 21 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 248 rows, 65 columns, and 2166 nonzeros.
+Presolve time = 0.08 sec. (0.32 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.08sec (det. 0.95 ticks)
+Cplex Time: 0.08sec (det. 0.71 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -57,15 +57,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.215
+--- Executing after solve: elapsed 0:00:00.188
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 1
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.230
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.202
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -87,16 +87,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 16 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 296 rows, 69 columns, and 2661 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 11 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 258 rows, 65 columns, and 2241 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.05 ticks)
+Cplex Time: 0.00sec (det. 0.94 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -104,62 +104,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.324
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 1
----      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.338
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 22 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 290 rows, 69 columns, and 2618 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.97 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.448
+--- Executing after solve: elapsed 0:00:00.303
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 2
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.462
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.317
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -181,16 +134,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 26 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 286 rows, 69 columns, and 2557 nonzeros.
-Presolve time = 0.02 sec. (0.39 ticks)
+LP Presolve eliminated 21 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 248 rows, 65 columns, and 2144 nonzeros.
+Presolve time = 0.00 sec. (0.32 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.02sec (det. 0.95 ticks)
+Cplex Time: 0.01sec (det. 0.69 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -198,15 +151,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.624
+--- Executing after solve: elapsed 0:00:00.419
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 2
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.642
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.433
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -228,16 +181,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 16 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 296 rows, 69 columns, and 2641 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 7 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 262 rows, 65 columns, and 2257 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.11 ticks)
+Cplex Time: 0.00sec (det. 0.91 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -245,62 +198,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.748
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 2
----      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.762
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 29 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 283 rows, 69 columns, and 2546 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.95 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:00.872
+--- Executing after solve: elapsed 0:00:00.533
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 3
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.885
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.548
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -322,16 +228,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 23 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 290 rows, 71 columns, and 2561 nonzeros.
-Presolve time = 0.00 sec. (0.37 ticks)
+LP Presolve eliminated 7 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 262 rows, 65 columns, and 2269 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.02sec (det. 0.96 ticks)
+Cplex Time: 0.00sec (det. 0.85 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -339,15 +245,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.012
+--- Executing after solve: elapsed 0:00:00.650
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 3
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.030
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.664
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -369,16 +275,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 10 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 303 rows, 71 columns, and 2664 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+LP Presolve eliminated 7 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 262 rows, 65 columns, and 2266 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.15 ticks)
+Cplex Time: 0.02sec (det. 0.81 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -386,15 +292,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.121
+--- Executing after solve: elapsed 0:00:00.761
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 4
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.135
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.774
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -416,16 +322,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 10 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 303 rows, 71 columns, and 2671 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+LP Presolve eliminated 7 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 262 rows, 65 columns, and 2252 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.08 ticks)
+Cplex Time: 0.00sec (det. 0.93 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -433,15 +339,109 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.255
+--- Executing after solve: elapsed 0:00:00.876
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 4
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.270
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.890
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 21 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 248 rows, 65 columns, and 2122 nonzeros.
+Presolve time = 0.00 sec. (0.32 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.69 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:00.989
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 5
+---      * = 1
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.002
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 18 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 251 rows, 65 columns, and 2147 nonzeros.
+Presolve time = 0.00 sec. (0.32 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.78 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:01.105
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 5
+---      * = 2
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.121
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -464,15 +464,15 @@ CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
 LP Presolve eliminated 17 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 296 rows, 71 columns, and 2597 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+Aggregator did 6 substitutions.
+Reduced LP has 252 rows, 65 columns, and 2170 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.95 ticks)
+Cplex Time: 0.00sec (det. 0.78 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -480,109 +480,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.365
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 5
----      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.378
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 13 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 300 rows, 71 columns, and 2639 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.01sec (det. 1.01 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.517
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 5
----      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.535
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 20 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 293 rows, 71 columns, and 2551 nonzeros.
-Presolve time = 0.00 sec. (0.37 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.93 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.620
+--- Executing after solve: elapsed 0:00:01.238
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 6
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.633
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.255
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -604,16 +510,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 16 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 296 rows, 69 columns, and 2600 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 21 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 248 rows, 65 columns, and 2122 nonzeros.
+Presolve time = 0.00 sec. (0.32 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.04 ticks)
+Cplex Time: 0.00sec (det. 0.73 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -621,15 +527,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.763
+--- Executing after solve: elapsed 0:00:01.341
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 6
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.780
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.356
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -651,16 +557,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 27 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 285 rows, 69 columns, and 2505 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 14 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 255 rows, 65 columns, and 2176 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.01 ticks)
+Cplex Time: 0.00sec (det. 0.80 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -668,62 +574,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:01.875
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 6
----      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.890
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 28 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 284 rows, 69 columns, and 2493 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.94 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.005
+--- Executing after solve: elapsed 0:00:01.455
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 7
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.022
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.469
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -746,15 +605,15 @@ CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
 LP Presolve eliminated 33 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 279 rows, 69 columns, and 2432 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+Aggregator did 7 substitutions.
+Reduced LP has 235 rows, 63 columns, and 2000 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.10 ticks)
+Cplex Time: 0.00sec (det. 0.76 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -762,15 +621,109 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.127
+--- Executing after solve: elapsed 0:00:01.569
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 7
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.143
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.583
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 22 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 246 rows, 63 columns, and 2102 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.88 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:01.683
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 7
+---      * = 3
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.699
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 30 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 238 rows, 63 columns, and 2042 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.74 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:01.799
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 8
+---      * = 1
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.814
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -793,15 +746,15 @@ CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
 LP Presolve eliminated 34 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 278 rows, 69 columns, and 2429 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+Aggregator did 7 substitutions.
+Reduced LP has 234 rows, 63 columns, and 2026 nonzeros.
+Presolve time = 0.02 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.02 ticks)
+Cplex Time: 0.02sec (det. 0.78 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -809,15 +762,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.247
+--- Executing after solve: elapsed 0:00:01.919
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 7
----      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.261
+--- LOOPS* = 8
+---      * = 2
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.934
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -839,16 +792,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 32 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 280 rows, 69 columns, and 2429 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
+LP Presolve eliminated 36 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 232 rows, 63 columns, and 1997 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.08 ticks)
+Cplex Time: 0.00sec (det. 0.75 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -856,15 +809,161 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.383
+--- Executing after solve: elapsed 0:00:02.051
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 8
+---      * = 3
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.069
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 27 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 241 rows, 63 columns, and 2067 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.84 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:02.157
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 9
 ---      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.396
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.174
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Infeasibility row 'disj_ineqqq(9.1.3)':  0 <= -0.46.
+Presolve time = 0.00 sec. (0.06 ticks)
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.06 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+
+Iteration log . . .
+Iteration:     1    Scaled infeas =             1.435354
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.28 ticks)
+
+Model has been proven infeasible.
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:02.276
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 9
+---      * = 2
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.293
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1;
+*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
+*** Value Error line 1:    Option ignored
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+Tried aggregator 1 time.
+LP Presolve eliminated 9 rows and 3 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 260 rows, 65 columns, and 2252 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.86 ticks)
+
+Optimal solution found.
+Objective :           0.000000
+
+--- Restarting execution
+--- Random_gen_presolve.gms(119) 2 Mb
+--- Reading solution for model probbb
+--- Executing after solve: elapsed 0:00:02.387
+--- Random_gen_presolve.gms(116) 3 Mb
+--- Generating RMIP model probbb
+--- Random_gen_presolve.gms(119) 3 Mb
+--- LOOPS* = 10
+---      * = 1
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.400
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -887,15 +986,15 @@ CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
 LP Presolve eliminated 28 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 284 rows, 69 columns, and 2508 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+Aggregator did 7 substitutions.
+Reduced LP has 240 rows, 63 columns, and 2146 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.07 ticks)
+Cplex Time: 0.00sec (det. 0.80 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -903,250 +1002,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.498
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 8
----      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.512
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 40 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 272 rows, 69 columns, and 2423 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.93 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.640
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 8
----      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.654
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 31 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 281 rows, 69 columns, and 2503 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.99 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.752
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 9
----      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.767
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 22 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 291 rows, 71 columns, and 2604 nonzeros.
-Presolve time = 0.00 sec. (0.37 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.99 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.874
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 9
----      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:02.888
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 16 rows and 3 columns.
-Aggregator did 3 substitutions.
-Reduced LP has 297 rows, 71 columns, and 2647 nonzeros.
-Presolve time = 0.00 sec. (0.38 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 1.03 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:02.999
---- Random_gen_presolve.gms(116) 3 Mb
---- Generating RMIP model probbb
---- Random_gen_presolve.gms(119) 3 Mb
---- LOOPS* = 10
----      * = 1
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:03.013
-
-IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
---- GAMS/Cplex licensed for continuous and discrete problems.
-Cplex 12.8.0.0
-
-Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
->>  randomseed 1;
-*** Value Error line 1: Integer expected, for option "randomseed" saw "1;"
-*** Value Error line 1:    Option ignored
-Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
-Reading data...
-Starting Cplex...
-Space for names approximately 0.01 Mb
-Use option 'names no' to turn use of names off
-CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Limits_Iterations               2000000000
-CPXPARAM_TimeLimit                               36000
-CPXPARAM_Threads                                 1
-CPXPARAM_Parallel                                1
-CPXPARAM_Tune_TimeLimit                          7200
-Tried aggregator 1 time.
-LP Presolve eliminated 15 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 297 rows, 69 columns, and 2673 nonzeros.
-Presolve time = 0.00 sec. (0.40 ticks)
-Initializing dual steep norms . . .
-
-Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.96 ticks)
-
-Optimal solution found.
-Objective :           0.000000
-
---- Restarting execution
---- Random_gen_presolve.gms(119) 2 Mb
---- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:03.129
+--- Executing after solve: elapsed 0:00:02.501
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 10
 ---      * = 2
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:03.142
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.514
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -1168,16 +1032,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 13 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 299 rows, 69 columns, and 2684 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 27 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 241 rows, 63 columns, and 2155 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.01sec (det. 0.97 ticks)
+Cplex Time: 0.00sec (det. 0.75 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -1185,15 +1049,15 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:03.247
+--- Executing after solve: elapsed 0:00:02.615
 --- Random_gen_presolve.gms(116) 3 Mb
 --- Generating RMIP model probbb
 --- Random_gen_presolve.gms(119) 3 Mb
 --- LOOPS* = 10
 ---      * = 3
----   316 rows  77 columns  2,768 non-zeroes
----   25 discrete-columns
---- Executing CPLEX: elapsed 0:00:03.261
+---   275 rows  74 columns  2,325 non-zeroes
+---   22 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.628
 
 IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
 --- GAMS/Cplex licensed for continuous and discrete problems.
@@ -1215,16 +1079,16 @@ CPXPARAM_Threads                                 1
 CPXPARAM_Parallel                                1
 CPXPARAM_Tune_TimeLimit                          7200
 Tried aggregator 1 time.
-LP Presolve eliminated 13 rows and 4 columns.
-Aggregator did 4 substitutions.
-Reduced LP has 299 rows, 69 columns, and 2682 nonzeros.
-Presolve time = 0.00 sec. (0.39 ticks)
+LP Presolve eliminated 24 rows and 4 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 244 rows, 63 columns, and 2158 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
 Initializing dual steep norms . . .
 
 Iteration log . . .
 Iteration:     1   Dual objective     =             0.000000
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.96 ticks)
+Cplex Time: 0.00sec (det. 0.77 ticks)
 
 Optimal solution found.
 Objective :           0.000000
@@ -1232,8 +1096,9 @@ Objective :           0.000000
 --- Restarting execution
 --- Random_gen_presolve.gms(119) 2 Mb
 --- Reading solution for model probbb
---- Executing after solve: elapsed 0:00:03.365
+--- Executing after solve: elapsed 0:00:02.730
 --- Random_gen_presolve.gms(133) 3 Mb
---- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data_test.gdx
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\prob_data_%seed%.gdx
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\zzz.gdx
 *** Status: Normal completion
---- Job Random_gen_presolve.gms Stop 04/06/18 14:25:14 elapsed 0:00:03.376
+--- Job Random_gen_presolve.gms Stop 04/11/18 15:37:09 elapsed 0:00:02.743
