@@ -1,0 +1,1 @@
+1:num_vars 2:average_num_disjuncts_per_disjunction 3:total_num_disjuncts 4:num_disjunctions 5:average_sparsity_A 6:average_num_vars_per_disjunct 7:HR_bin 8:HR_const 9:HR_vars 10:HR_rel 11:BM_bin 12:BM_const 13:BM_vars 14:BM_rel 15:1_norm_c 16:average_nuclear_norm_over_nconstr_b 

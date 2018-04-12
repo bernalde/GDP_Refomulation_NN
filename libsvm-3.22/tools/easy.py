@@ -28,7 +28,7 @@ else:
 assert os.path.exists(svmscale_exe),"svm-scale executable not found"
 assert os.path.exists(svmtrain_exe),"svm-train executable not found"
 assert os.path.exists(svmpredict_exe),"svm-predict executable not found"
-assert os.path.exists(gnuplot_exe),"gnuplot executable not found"
+#assert os.path.exists(gnuplot_exe),"gnuplot executable not found"
 assert os.path.exists(grid_py),"grid.py not found"
 
 train_pathname = sys.argv[1]

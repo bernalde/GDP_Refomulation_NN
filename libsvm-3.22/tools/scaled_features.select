@@ -1,12 +1,13 @@
-start: 2018-04-11 15:54:16.918600
+start: 2018-04-12 00:12:49.499510
 
-try feature sizes: [14, 7, 3]
+try feature sizes: [16, 8, 4, 2]
 
 %#Feat	est. acc.
-14:	89.65520
-7:	93.10340
-3:	96.55170
-max validation accuarcy: 96.551700
+16:	96.19470
+8:	96.19470
+4:	96.19470
+2:	96.19470
+max validation accuarcy: 96.194700
 
-select features: [10, 6, 14]
-3 features
+select features: [6, 1, 8, 9, 15, 16, 12, 5, 4, 13, 14, 2, 3, 11, 10, 7]
+16 features

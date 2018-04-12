@@ -132,8 +132,6 @@ class GDP:
 			if int(row['iter']) == problem_index:
 				self.solution[str(row['algo'])][str(row['resu'])] = row['value']
 
-		self.get_features()
-		self.write_features_to_libsvm()
 
 
 
@@ -200,6 +198,14 @@ class GDP:
 		output.write("\n")
 		output.close()
 		
+
+	def write_features(self):
+		f = open("/home/canl1/work/GDP_Refomulation_NN/features/features", "w")
+		i = 1
+		for key in self.features:
+			f.write(str(i)+":" + key + " ")
+			i += 1
+
 		
 
 
