@@ -1,0 +1,197 @@
+
+--- Job BM_ref.gms Start 04/11/18 22:45:09 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX250-250
+--- BM_ref.gms(33) 3 Mb
+--- .max_time_ref.gms(7) 3 Mb
+--- BM_ref.gms(56) 3 Mb
+--- Starting execution: elapsed 0:00:00.005
+--- BM_ref.gms(172) 3 Mb
+--- Generating RMIP model prob
+--- BM_ref.gms(179) 3 Mb
+---   287 rows  76 columns  2,504 non-zeroes
+---   25 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.025
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+CPXPARAM_RandomSeed                              1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 1 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 280 rows, 70 columns, and 2469 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =          -620.260000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.85 ticks)
+
+Optimal solution found.
+Objective :        -620.260000
+
+--- Restarting execution
+--- BM_ref.gms(179) 2 Mb
+--- Reading solution for model prob
+--- Executing after solve: elapsed 0:00:00.094
+--- BM_ref.gms(181) 3 Mb
+--- Generating MIP model prob
+--- BM_ref.gms(183) 3 Mb
+---   287 rows  76 columns  2,504 non-zeroes
+---   25 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.107
+
+IBM ILOG CPLEX   25.0.1 r65189 Released Jan 17, 2018 WEI x86 64bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.8.0.0
+
+Reading parameter(s) from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+>>  randomseed 1
+Finished reading from "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_WorkDir                                 "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+CPXPARAM_RandomSeed                              1
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_MIP_Display                             4
+Tried aggregator 2 times.
+MIP Presolve eliminated 2 rows and 1 columns.
+MIP Presolve modified 553 coefficients.
+Aggregator did 5 substitutions.
+Reduced MIP has 280 rows, 70 columns, and 2469 nonzeros.
+Reduced MIP has 20 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (1.46 ticks)
+Found incumbent of value 44.145132 after 0.02 sec. (2.50 ticks)
+Probing time = 0.00 sec. (0.06 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 280 rows, 70 columns, and 2469 nonzeros.
+Reduced MIP has 20 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (1.06 ticks)
+Probing time = 0.00 sec. (0.06 ticks)
+Clique table members: 5.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.20 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =          -620.260000
+Perturbation started.
+Iteration:    51   Dual objective     =          -620.260000
+Removing perturbation.
+Root relaxation solution time = 0.00 sec. (1.30 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           44.1451     -620.2600              --- 
+Found incumbent of value 44.145132 after 0.02 sec. (5.67 ticks)
+      0     0     -620.2600    17       44.1451     -620.2600       64     --- 
+      0     0     -612.8366    16       44.1451      Cuts: 36      157     --- 
+*     0+    0                         -299.4744     -612.8366           104.64%
+Found incumbent of value -299.474373 after 0.05 sec. (20.83 ticks)
+      0     0     -605.4037    17     -299.4744     Cuts: 137      207  102.16%
+      0     0     -601.0440    17     -299.4744  MIRcuts: 105      239  100.70%
+      0     0     -597.7746    16     -299.4744   MIRcuts: 51      284   99.61%
+      0     0     -595.6459    17     -299.4744     Cuts: 112      322   98.90%
+      0     0     -595.2728    16     -299.4744   MIRcuts: 68      343   98.77%
+      0     0     -594.9310    16     -299.4744   MIRcuts: 35      360   98.66%
+      0     0     -592.0774    16     -299.4744   MIRcuts: 40      418   97.71%
+      0     0     -591.7568    17     -299.4744   MIRcuts: 65      443   97.60%
+      0     0     -591.4158    17     -299.4744   MIRcuts: 25      454   97.48%
+      0     0     -591.2413    17     -299.4744   MIRcuts: 11      468   97.43%
+      0     0     -591.2273    17     -299.4744    MIRcuts: 5      472   97.42%
+      0     0     -591.2273    17     -299.4744   MIRcuts: 19      473   97.42%
+*     0+    0                         -343.0543     -591.2273            72.34%
+Found incumbent of value -343.054300 after 0.25 sec. (153.66 ticks)
+      0     2     -591.2273    17     -343.0543     -591.2236      473   72.34%
+Elapsed time = 0.26 sec. (162.38 ticks, tree = 0.01 MB, solutions = 3)
+*    20+   16                         -376.8184     -553.9877            47.02%
+Found incumbent of value -376.818442 after 0.30 sec. (181.36 ticks)
+
+Implied bound cuts applied:  1
+Mixed integer rounding cuts applied:  41
+
+Root node processing (before b&c):
+  Real time             =    0.26 sec. (162.39 ticks)
+Sequential b&c:
+  Real time             =    0.27 sec. (192.01 ticks)
+                          ------------
+Total (root+branch&cut) =    0.53 sec. (354.40 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.58sec (det. 354.40 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               36000
+CPXPARAM_WorkDir                                 "C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          7200
+CPXPARAM_RandomSeed                              1
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+LP Presolve eliminated 207 rows and 26 columns.
+Reduced LP has 80 rows, 50 columns, and 663 nonzeros.
+Presolve time = 0.00 sec. (0.20 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =          -620.260000
+Iteration:    62   Dual objective     =          -382.858019
+Fixed MIP status(1): optimal
+Cplex Time: 0.05sec (det. 1.21 ticks)
+
+Proven optimal solution.
+
+MIP Solution:         -376.818442    (5113 iterations, 255 nodes)
+Final Solve:          -376.818442    (72 iterations)
+
+Best possible:        -376.818442
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- BM_ref.gms(183) 2 Mb
+--- Reading solution for model prob
+--- Executing after solve: elapsed 0:00:00.801
+--- BM_ref.gms(192) 3 Mb
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\res_prob.gdx
+--- BM_ref.gms(194) 3 Mb
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_k10_i3_v50-80\BigM.gdx
+*** Status: Normal completion
+--- Job BM_ref.gms Stop 04/11/18 22:45:09 elapsed 0:00:00.815

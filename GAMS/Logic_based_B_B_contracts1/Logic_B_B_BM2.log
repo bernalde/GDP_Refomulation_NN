@@ -1,0 +1,18 @@
+
+--- Job Logic_B_B_BM2.gms Start 04/12/18 17:26:02 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX250-250
+--- Logic_B_B_BM2.gms(51) 3 Mb
+--- .max_time_ref.gms(7) 3 Mb
+--- Logic_B_B_BM2.gms(251) 51 Mb 1 Error
+*** Error 140 in C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Logic_B_B_BM2.gms
+    Unknown symbol
+--- Logic_B_B_BM2.gms(258) 51 Mb 1 Error
+*** Status: Compilation error(s)
+--- Job Logic_B_B_BM2.gms Stop 04/12/18 17:26:02 elapsed 0:00:00.180
+Exit code = 2

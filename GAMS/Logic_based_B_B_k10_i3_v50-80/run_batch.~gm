@@ -11,6 +11,7 @@ $include first_seed
 file seed_no / 'seed.gms' /
 
 loop(iter,
+   putclose seed_no 'execseed = ' (ord(iter)+first_seed) ';';
    execute 'gams Random_gen_presolve.gms s=0 lo=0 ';
 
    execute 'gams BM_ref.gms r=0 lo=0 '

@@ -1,5 +1,5 @@
-set iter /1*10/
-    algo /BM,HR,DB_BM,DB_HR/
+set iter /1/
+    algo /BM,HR,DB_BM,DB_HR,DB_BM2,DB_HR2/
     algo2 /BM,HR/
     resu /sol,time,cpu,nodes,LB,first,best/
     resu2 /rel,const,vars,bin/;
@@ -46,7 +46,7 @@ loop(iter,
    execute_unload "stat_total" stats;
    execute_unload "solution_total" solu;
 
-   execute 'gams Logic_B_B_BM2.gms r=0 lo=0 '
+   execute 'gams Logic_B_B_BM.gms r=0 lo=0 '
    execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
    solu(iter,'DB_BM','sol') = sol;
    solu(iter,'DB_BM','time') = time;
@@ -57,7 +57,9 @@ loop(iter,
    solu(iter,'DB_BM','best') = best;
    execute_unload "solution_total" solu;
 
-   execute 'gams Logic_B_B_HR2.gms r=0 lo=0 '
+$Ontext
+
+   execute 'gams Logic_B_B_HR.gms r=0 lo=0 '
    execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
    solu(iter,'DB_HR','sol') = sol;
    solu(iter,'DB_HR','time') = time;
@@ -68,9 +70,29 @@ loop(iter,
    solu(iter,'DB_HR','best') = best;
    execute_unload "solution_total" solu;
 
+   execute 'gams Logic_B_B_BM2.gms r=0 lo=0 '
+   execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
+   solu(iter,'DB_BM2','sol') = sol;
+   solu(iter,'DB_BM2','time') = time;
+   solu(iter,'DB_BM2','cpu') = cpu;
+   solu(iter,'DB_BM2','nodes') = nodes;
+   solu(iter,'DB_BM2','LB') = LBL;
+   solu(iter,'DB_BM2','first') = first;
+   solu(iter,'DB_BM2','best') = best;
+   execute_unload "solution_total" solu;
+
+   execute 'gams Logic_B_B_HR2.gms r=0 lo=0 '
+   execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
+   solu(iter,'DB_HR2','sol') = sol;
+   solu(iter,'DB_HR2','time') = time;
+   solu(iter,'DB_HR2','cpu') = cpu;
+   solu(iter,'DB_HR2','nodes') = nodes;
+   solu(iter,'DB_HR2','LB') = LBL;
+   solu(iter,'DB_HR2','first') = first;
+   solu(iter,'DB_HR2','best') = best;
+   execute_unload "solution_total" solu;
+$Offtext
 );
 
 *To print the content of the gdx file execute the next line of code
 execute 'gdxdump "solution_total" symb=solu format=csv > solution_total.csv';
-execute "gdx2sqlite -i solution_total.gdx -o solution_total.db";
-execute "gdx2sqlite -i stat_total.gdx -o stat_total.db";

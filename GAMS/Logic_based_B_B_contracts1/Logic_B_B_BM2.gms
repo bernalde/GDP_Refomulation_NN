@@ -181,7 +181,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 
    loop(numm$(sum(nnode(numm,level,kk,ii),1)>=1 and time_solve<time_limit),
 
-      if((parent_val(numm)<=(1-gap)*UBP) and (parent_val(numm)<=(1+gap)*UBP),
+      if((parent_val(numm)<=(1-gap)*UBP) or (parent_val(numm)<=(1+gap)*UBP),
          chec_int(k,i)=0; int_sol=0; int_sol3=0;
          cur_node(k,i)=no;
          y.lo(k,i)=0;y.up(k,i)=1;
@@ -244,7 +244,7 @@ loop(level2$(ord(level2)<=card(k) and check_opt=0 and time_solve<time_limit),
 execute_unload "res_B_B_BM2" tot_results_w_time,tot_results_s_time,first_inter,first_inter_val,best_inter,opt_y,opt_x,max_nod,check_opt,UBP,LBP;
 
 LBP = min(LBP,UBP);
-scalar sol,nodes,time,LBL,first,best,const,vars,bin;
+scalar sol,nodes,time,cpu,LBL,first,best,const,vars,bin;
 sol = UBP;
 nodes = cnt_nodes-1;
 time  = time_solve;

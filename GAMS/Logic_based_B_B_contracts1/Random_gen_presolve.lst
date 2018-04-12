@@ -1,11 +1,10 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/08/18 17:12:42 Page 1
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_contracts1\seed.gms
-   2  execseed =        17.00;
+INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\seed.gms
+   2  execseed = 5;
    3  *execseed = 14;
    4   
    5  set t time period /1*10/
@@ -57,6 +56,11 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   51            minl(t,r,i)  minimum purchase for discount
   52  ;
   53   
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
   54  D(t,r)=UniformInt(50,100);
   55  IC(t)=UniformInt(5,20);
   56  gamma(t,r)=UniformInt(10,30);
@@ -81,8 +85,7 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   75      kv(k,var) set that contains disjunctions and variables
   76   ;
   77   
-  78  parameter term(k), eq_term(k,i), A(k,i,e,var), b(k,i,e), c(var), ub(var), 
-      lb(var);
+  78  parameter term(k), eq_term(k,i), A(k,i,e,var), b(k,i,e), c(var), ub(var), lb(var);
   79  scalar cnt1 /1/
   80         tot_k;
   81   
@@ -108,21 +111,23 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  101  parameter opt_bigm(k,i,e);
  102   
  103  loop((t,r,k)$map_ki_tr(t,r,k),
- 104     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r
-      );
+ 104     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r);
  105     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_c(var,t,r)) = -1;
  106     b(k,i,e)    $(ord(i)=1 and ord(e)=1 ) = 0;
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
  107     kie(k,i,e)  $(ord(i)=1 and ord(e)=1 ) = yes;
  108     opt_bigm(k,i,e)    $(ord(i)=1 and ord(e)=1 ) = gamma(t,r)*1.5*D(t,r);
  109  *   opt_bigm(k,i,e)    $(ord(i)=1 and ord(e)=1 ) = 5000;
  110   
- 111     A(k,i,e,var)$(ord(i)=2 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r
-      )*(1-betab(t,r));
+ 111     A(k,i,e,var)$(ord(i)=2 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r)*(1-betab(t,r));
  112     A(k,i,e,var)$(ord(i)=2 and ord(e)=1 and map_var_c(var,t,r)) = -1;
  113     b(k,i,e)    $(ord(i)=2 and ord(e)=1 ) = 0;
  114     kie(k,i,e)  $(ord(i)=2 and ord(e)=1 ) = yes;
- 115     opt_bigm(k,i,e)    $(ord(i)=2 and ord(e)=1 ) = gamma(t,r)*(1-betab(t,r)
-      )*1.5*D(t,r);
+ 115     opt_bigm(k,i,e)    $(ord(i)=2 and ord(e)=1 ) = gamma(t,r)*(1-betab(t,r))*1.5*D(t,r);
  116  *   opt_bigm(k,i,e)    $(ord(i)=2 and ord(e)=1 ) = 5000;
  117   
  118     A(k,i,e,var)$(ord(i)=2 and ord(e)=2 and map_var_x(var,t,r)) = -1;
@@ -131,23 +136,17 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  121     opt_bigm(k,i,e)    $(ord(i)=2 and ord(e)=2 ) = minb(t,r);
  122  *   opt_bigm(k,i,e)    $(ord(i)=2 and ord(e)=2 ) = 5000;
  123   
- 124     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=1 and map_var_x(var,t,r)
-      ) = smin(tt$(ord(tt)<=ord(t)),gamma(tt,r)*(1-betab(tt,r)));
- 125     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=1 and map_var_c(var,t,r)
-      ) = -1;
+ 124     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=1 and map_var_x(var,t,r)) = smin(tt$(ord(tt)<=ord(t)),gamma(tt,r)*(1-betab(tt,r)));
+ 125     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=1 and map_var_c(var,t,r)) = -1;
  126     b(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=1 ) = 0;
  127     kie(k,i,e)  $(ord(t)>1 and ord(i)=3 and ord(e)=1 ) = yes;
- 128     opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=1 ) = smax(tt$(or
-      d(tt)<=ord(t)),gamma(tt,r)*(1-betab(tt,r)))*1.5*D(t,r);
+ 128     opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=1 ) = smax(tt$(ord(tt)<=ord(t)),gamma(tt,r)*(1-betab(tt,r)))*1.5*D(t,r);
  129  *   opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=1 ) = 5000;
  130   
- 131     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=2 and map_var_x(var,t,r)
-      ) = -1;
- 132     b(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = -smin(tt$(ord(tt)<
-      =ord(t)),minb(tt,r));
+ 131     A(k,i,e,var)$(ord(t)>1 and ord(i)=3 and ord(e)=2 and map_var_x(var,t,r)) = -1;
+ 132     b(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = -smin(tt$(ord(tt)<=ord(t)),minb(tt,r));
  133     kie(k,i,e)  $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = yes;
- 134     opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = smin(tt$(or
-      d(tt)<=ord(t)),minb(tt,r));
+ 134     opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = smin(tt$(ord(tt)<=ord(t)),minb(tt,r));
  135  *   opt_bigm(k,i,e)    $(ord(t)>1 and ord(i)=3 and ord(e)=2 ) = 5000;
  136   
  137   
@@ -155,13 +154,11 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  139     loop(i$(ord(i)>=3),
  140        cnt1=3;
  141        loop(tt$(sum(tii(t,i,ii22)$(ord(tt)=ord(ii22)),1)>=1),
- 142           A(k,i,e,var)$(ord(e)=cnt1 and map_var_x(var,tt,r)) = gamma(t,r)*(
-      1-betal(t,r,i));
+ 142           A(k,i,e,var)$(ord(e)=cnt1 and map_var_x(var,tt,r)) = gamma(t,r)*(1-betal(t,r,i));
  143           A(k,i,e,var)$(ord(e)=cnt1 and map_var_c(var,tt,r)) = -1;
  144           b(k,i,e)  $(ord(e)=cnt1) = 0;
  145           kie(k,i,e)$(ord(e)=cnt1) = yes;
- 146           opt_bigm(k,i,e)$(ord(e)=cnt1) = gamma(t,r)*(1-betal(t,r,i))*1.5*D
-      (tt,r);
+ 146           opt_bigm(k,i,e)$(ord(e)=cnt1) = gamma(t,r)*(1-betal(t,r,i))*1.5*D(tt,r);
  147  *         opt_bigm(k,i,e)$(ord(e)=cnt1) = 50000;
  148           cnt1=cnt1+1;
  149        );
@@ -175,6 +172,11 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  157           kie(k,i,e)$(ord(e)=cnt1) = yes;
  158           opt_bigm(k,i,e)  $(ord(e)=cnt1) = minl(t,r,i);
  159           cnt1=cnt1+1;
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
  160        );
  161     );
  162  );
@@ -185,8 +187,7 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  167   
  168  lb(var)=0;
  169  ub(var)$(ord(var)<=card(t)*card(r))=1.5*sum(map_var_x(var,t,r),D(t,r));
- 170  ub(var)$(ord(var)>card(t)*card(r))=1.5*sum(map_var_x(var-(card(t)*card(r))
-      ,t,r),D(t,r))*sum(map_var_c(var,t,r),gamma(t,r));
+ 170  ub(var)$(ord(var)>card(t)*card(r))=1.5*sum(map_var_x(var-(card(t)*card(r)),t,r),D(t,r))*sum(map_var_c(var,t,r),gamma(t,r));
  171   
  172   
  173  parameter logic_left(t,r,k,i),logic_right(t,r,k,tt,i);
@@ -207,34 +208,28 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
  188  );
  189   
  190   
- 191  *execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
+ 191  execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right;
  192   
- 193  *$exit
- 194   
- 195   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/08/18 17:12:42 Page 2
+EXIT C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.gms
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_N
-                                          N\GDP_Refomulation_NN\GAMS\Logic_based
-                                          _B_B_contracts1\Random_gen_presolve.gm
-                                          s
-     2        1 INCLUDE        1       1  .C:\Users\debernal\Dropbox\Ubuntu\GDP_
-                                           NN\GDP_Refomulation_NN\GAMS\Logic_bas
-                                           ed_B_B_contracts1\seed.gms
+     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.gms
+     2        1 INCLUDE        1       1  .C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\seed.gms
+     3      193 EXIT           1     192  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.gms
 
 
-COMPILATION TIME     =        0.015 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/08/18 17:12:42 Page 3
+COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-EXECUTION TIME       =        0.032 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =        0.031 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -244,9 +239,6 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_contracts1\Random_gen_presolve.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_contracts1\Random_gen_presolve.lst
-Save       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
-           c_based_B_B_contracts1\0.g0?
+Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.gms
+Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.lst
+Save       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\0.g0?

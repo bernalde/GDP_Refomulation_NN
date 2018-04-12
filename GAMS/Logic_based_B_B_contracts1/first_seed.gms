@@ -1,1 +1,1 @@
-scalar first_seed /0/;
+scalar first_seed /4/;
