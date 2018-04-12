@@ -1,1 +1,1 @@
-scalar first_seed /20/;
+scalar first_seed /10/;
