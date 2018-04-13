@@ -1,20 +1,21 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 1
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/12/18 18:27:11 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
-   2  execseed =        10.00;
+INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_strip_4_5_newform\seed.gms
+   2  execseed =        4.00;
    3  *execseed =         1;
    4   
-   5  Set box number of boxes /1*4/
-   6      k_orig   disjunctions /1*6/
+   5  Set box number of boxes /1*5/
+   6      k_orig   disjunctions /1*10/
    7  ;
    8  parameter boxes_param;
    9  boxes_param=card(box);
   10  Scalar heigth packing box height;
-  11  *heigth=UniformInt(10,20);
-  12  heigth=UniformInt(5,7);
+  11  heigth=UniformInt(10,20);
+  12  *heigth=UniformInt(5,7);
   13   
   14  Parameter
   15      h(box) heigth of boxes
@@ -31,7 +32,8 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   26  Set i_orig disjuctive term /1*4/
   27      ij(box,j), ijk(box,j,i_orig);
   28   
-  29  ij(box,j) = ord(box)<ord(j); ij(box,j)$(ord(box)>boxes_param or ord(j)>boxes_param)=no; ijk(ij,i_orig) = yes;
+  29  ij(box,j) = ord(box)<ord(j); ij(box,j)$(ord(box)>boxes_param or ord(j)>box
+      es_param)=no; ijk(ij,i_orig) = yes;
   30   
   31  Set ijX(box,j);
   32  option ijX<ij;
@@ -43,11 +45,13 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   38      e_orig   max number of equations per disjunction /1*3/
   39      ge  global constraints /1*20/
   40      ki_orig(k_orig,i_orig)  set that contains disjunctions and terms
-  41      kie_orig(k_orig,i_orig,e_orig) set that contains disjunctions terms and equations
+  41      kie_orig(k_orig,i_orig,e_orig) set that contains disjunctions terms an
+      d equations
   42      kv_orig(k_orig,var) set that contains disjunctions and variables
   43   ;
   44   
-  45  parameter A_orig(k_orig,i_orig,e_orig,var), b_orig(k_orig,i_orig,e_orig), c(var), ub(var), lb(var), Aglob(ge,var), bglo(ge);
+  45  parameter A_orig(k_orig,i_orig,e_orig,var), b_orig(k_orig,i_orig,e_orig), 
+      c(var), ub(var), lb(var), Aglob(ge,var), bglo(ge);
   46  scalar cnt1 /1/
   47         cnt2 /1/
   48         cnt3 /1/
@@ -56,11 +60,6 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   51  ;
   52   
   53   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 2
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-C o m p i l a t i o n
-
-
   54  ki_orig(k_orig,i_orig)=no;
   55  loop(ij, ki_orig(k_orig,i_orig)$(ord(k_orig)=cnt1)=yes;cnt1=cnt1+1;);
   56  cnt1=1;
@@ -68,7 +67,8 @@ C o m p i l a t i o n
   58  kie_orig(k_orig,i_orig,e_orig)=no;
   59  loop((k_orig,i_orig,e_orig)$ki_orig(k_orig,i_orig),
   60     if(ord(i_orig)=1 or ord(i_orig)=2, kie_orig(k_orig,i_orig,'1')=yes;);
-  61     if(ord(i_orig)=3 or ord(i_orig)=4, kie_orig(k_orig,i_orig,e_orig)=yes;);
+  61     if(ord(i_orig)=3 or ord(i_orig)=4, kie_orig(k_orig,i_orig,e_orig)=yes;)
+      ;
   62  );
   63   
   64  display kie_orig;
@@ -83,46 +83,58 @@ C o m p i l a t i o n
   73   
   74  loop(ij(box,j),
   75     b_orig(k_orig,'1','1')$(ord(k_orig)=cnt1) = -l(box);
-  76     A_orig(k_orig,'1','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1;
-  77     A_orig(k_orig,'1','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -1;
+  76     A_orig(k_orig,'1','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1
+      ;
+  77     A_orig(k_orig,'1','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -
+      1;
   78   
   79     b_orig(k_orig,'2','1')$(ord(k_orig)=cnt1) = -l(j);
-  80     A_orig(k_orig,'2','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -1;
-  81     A_orig(k_orig,'2','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1;
+  80     A_orig(k_orig,'2','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -
+      1;
+  81     A_orig(k_orig,'2','1',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1
+      ;
   82   
   83     b_orig(k_orig,'3','1')$(ord(k_orig)=cnt1) = -h(box);
-  84     A_orig(k_orig,'3','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(box)+boxes_param)) = -1;
-  85     A_orig(k_orig,'3','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(j)+boxes_param))   = 1;
+  84     A_orig(k_orig,'3','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(box)+box
+      es_param)) = -1;
+  85     A_orig(k_orig,'3','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(j)+boxes
+      _param))   = 1;
   86   
   87     b_orig(k_orig,'3','2')$(ord(k_orig)=cnt1) = l(j)-1;
-  88     A_orig(k_orig,'3','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1;
-  89     A_orig(k_orig,'3','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -1;
+  88     A_orig(k_orig,'3','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1
+      ;
+  89     A_orig(k_orig,'3','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -
+      1;
   90   
   91     b_orig(k_orig,'3','3')$(ord(k_orig)=cnt1) = l(box)-1;
-  92     A_orig(k_orig,'3','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -1;
-  93     A_orig(k_orig,'3','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1;
+  92     A_orig(k_orig,'3','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -
+      1;
+  93     A_orig(k_orig,'3','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1
+      ;
   94   
   95     b_orig(k_orig,'4','1')$(ord(k_orig)=cnt1) = -h(j);
-  96     A_orig(k_orig,'4','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(box)+boxes_param)) = 1;
-  97     A_orig(k_orig,'4','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(j)+boxes_param))   = -1;
+  96     A_orig(k_orig,'4','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(box)+box
+      es_param)) = 1;
+  97     A_orig(k_orig,'4','1',var)$(ord(k_orig)=cnt1 and ord(var)=(ord(j)+boxes
+      _param))   = -1;
   98   
   99     b_orig(k_orig,'4','2')$(ord(k_orig)=cnt1) = l(j)-1;
- 100     A_orig(k_orig,'4','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1;
- 101     A_orig(k_orig,'4','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -1;
+ 100     A_orig(k_orig,'4','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = 1
+      ;
+ 101     A_orig(k_orig,'4','2',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = -
+      1;
  102   
  103     b_orig(k_orig,'4','3')$(ord(k_orig)=cnt1) = l(box)-1;
- 104     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -1;
- 105     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1;
+ 104     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(box)) = -
+      1;
+ 105     A_orig(k_orig,'4','3',var)$(ord(k_orig)=cnt1 and ord(var)=ord(j))   = 1
+      ;
  106   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 3
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-C o m p i l a t i o n
-
-
  107     cnt1=cnt1+1;
  108  );
  109   
- 110  kv_orig(k_orig,var)$( sum((i_orig,e_orig)$(A_orig(k_orig,i_orig,e_orig,var)<>0),1)>=1 )=yes;
+ 110  kv_orig(k_orig,var)$( sum((i_orig,e_orig)$(A_orig(k_orig,i_orig,e_orig,var
+      )<>0),1)>=1 )=yes;
  111   
  112  loop(box$(ord(box)<=boxes_param),
  113     ub(var)$(ord(var)=ord(box)) = sum(j, l(j));
@@ -172,11 +184,6 @@ C o m p i l a t i o n
  157           A(k,i,e,var)$(ord(e)=cnt2) = A_orig(k_orig3,i_orig,e_orig,var);
  158           b(k,i,e)$(ord(e)=cnt2) = b_orig(k_orig3,i_orig,e_orig);
  159           cnt2=cnt2+1;
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 4
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-C o m p i l a t i o n
-
-
  160        );
  161        kie(k,i,e)$(ord(e)<=cnt2)=yes;
  162        cnt2=1;
@@ -189,71 +196,96 @@ C o m p i l a t i o n
  169   
  170  kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
  171   
- 172  execute_unload "prob_data_10" A,Aglob,bglo,b,c,ub,lb;
+ 172  execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
  173   
-EXIT C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 5
+EXIT C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_base
+     d_B_B_strip_4_5_newform\Random_gen_presolve.gms
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/12/18 18:27:11 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
 
    SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
 
-     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-     2        1 INCLUDE        1       1  .C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\seed.gms
-     3      174 EXIT           1     173  C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
+     1        1 INPUT          0       0  C:\Users\debernal\Dropbox\Ubuntu\GDP_N
+                                          N\GDP_Refomulation_NN\GAMS\Logic_based
+                                          _B_B_strip_4_5_newform\Random_gen_pres
+                                          olve.gms
+     2        1 INCLUDE        1       1  .C:\Users\debernal\Dropbox\Ubuntu\GDP_
+                                           NN\GDP_Refomulation_NN\GAMS\Logic_bas
+                                           ed_B_B_strip_4_5_newform\seed.gms
+     3      174 EXIT           1     173  C:\Users\debernal\Dropbox\Ubuntu\GDP_N
+                                          N\GDP_Refomulation_NN\GAMS\Logic_based
+                                          _B_B_strip_4_5_newform\Random_gen_pres
+                                          olve.gms
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 6
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows 04/12/18 18:27:11 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
 ----     34 PARAMETER h  heigth of boxes
 
-1 3.000,    2 4.000,    3 3.000,    4 3.000
+1 5.000,    2 4.000,    3 3.000,    4 5.000,    5 2.000
 
 
 ----     34 PARAMETER l  length of boxes
 
-1 5.000,    2 3.000,    3 7.000,    4 5.000
+1 9.000,    2 6.000,    3 5.000,    4 5.000,    5 9.000
 
 
-----     34 PARAMETER heigth               =        5.000  packing box height
+----     34 PARAMETER heigth               =       19.000  packing box height
 
 ----     64 SET kie_orig  set that contains disjunctions terms and equations
 
-              1           2           3
+               1           2           3
 
-1.1         YES
-1.2         YES
-1.3         YES         YES         YES
-1.4         YES         YES         YES
-2.1         YES
-2.2         YES
-2.3         YES         YES         YES
-2.4         YES         YES         YES
-3.1         YES
-3.2         YES
-3.3         YES         YES         YES
-3.4         YES         YES         YES
-4.1         YES
-4.2         YES
-4.3         YES         YES         YES
-4.4         YES         YES         YES
-5.1         YES
-5.2         YES
-5.3         YES         YES         YES
-5.4         YES         YES         YES
-6.1         YES
-6.2         YES
-6.3         YES         YES         YES
-6.4         YES         YES         YES
+1 .1         YES
+1 .2         YES
+1 .3         YES         YES         YES
+1 .4         YES         YES         YES
+2 .1         YES
+2 .2         YES
+2 .3         YES         YES         YES
+2 .4         YES         YES         YES
+3 .1         YES
+3 .2         YES
+3 .3         YES         YES         YES
+3 .4         YES         YES         YES
+4 .1         YES
+4 .2         YES
+4 .3         YES         YES         YES
+4 .4         YES         YES         YES
+5 .1         YES
+5 .2         YES
+5 .3         YES         YES         YES
+5 .4         YES         YES         YES
+6 .1         YES
+6 .2         YES
+6 .3         YES         YES         YES
+6 .4         YES         YES         YES
+7 .1         YES
+7 .2         YES
+7 .3         YES         YES         YES
+7 .4         YES         YES         YES
+8 .1         YES
+8 .2         YES
+8 .3         YES         YES         YES
+8 .4         YES         YES         YES
+9 .1         YES
+9 .2         YES
+9 .3         YES         YES         YES
+9 .4         YES         YES         YES
+10.1         YES
+10.2         YES
+10.3         YES         YES         YES
+10.4         YES         YES         YES
 
 
 
-EXECUTION TIME       =        0.015 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
+EXECUTION TIME       =        0.031 SECONDS      4 MB  25.0.1 r65189 WEX-WEI
 
 
 USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
@@ -263,11 +295,9 @@ USER: Eval License Carnegie Mellon University        G180112/0001AS-GEN
 
 **** FILE SUMMARY
 
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/07/18 20:14:32 Page 7
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-E x e c u t i o n
-
-
-Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
-Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.lst
-Save       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\0.g0?
+Input      C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
+Output     C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_strip_4_5_newform\Random_gen_presolve.lst
+Save       C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
+           c_based_B_B_strip_4_5_newform\0.g0?

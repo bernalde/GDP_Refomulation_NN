@@ -1,4 +1,4 @@
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 1
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -56,7 +56,7 @@ INCLUDE    C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logi
   51            minl(t,r,i)  minimum purchase for discount
   52  ;
   53   
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 2
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -114,7 +114,7 @@ C o m p i l a t i o n
  104     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_x(var,t,r)) = gamma(t,r);
  105     A(k,i,e,var)$(ord(i)=1 and ord(e)=1 and map_var_c(var,t,r)) = -1;
  106     b(k,i,e)    $(ord(i)=1 and ord(e)=1 ) = 0;
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 3
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -172,7 +172,7 @@ C o m p i l a t i o n
  157           kie(k,i,e)$(ord(e)=cnt1) = yes;
  158           opt_bigm(k,i,e)  $(ord(e)=cnt1) = minl(t,r,i);
  159           cnt1=cnt1+1;
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 4
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -211,7 +211,7 @@ C o m p i l a t i o n
  191  execute_unload "prob_data_%seed%" A,b,c,ub,lb,D,IC,logic_left,logic_right;
  192   
 EXIT C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\Random_gen_presolve.gms
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 5
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -224,7 +224,7 @@ Include File Summary
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  25.0.1 r65189 WEX-WEI
-GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 17:28:37 Page 6
+GAMS 25.0.1  r65189 Released Jan 17, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 04/12/18 18:14:22 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

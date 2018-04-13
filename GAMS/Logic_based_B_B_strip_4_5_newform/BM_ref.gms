@@ -50,6 +50,6 @@ vars = prob.numvar;
 
 execute_unload "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
 
-
+execute_unload "BigM"
 
 

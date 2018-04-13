@@ -1,14 +1,14 @@
 $include seed.gms
 *execseed =         1;
 
-Set box number of boxes /1*4/
-    k_orig   disjunctions /1*6/
+Set box number of boxes /1*5/
+    k_orig   disjunctions /1*10/
 ;
 parameter boxes_param;
 boxes_param=card(box);
 Scalar heigth packing box height;
-*heigth=UniformInt(10,20);
-heigth=UniformInt(5,7);
+heigth=UniformInt(10,20);
+*heigth=UniformInt(5,7);
 
 Parameter
     h(box) heigth of boxes

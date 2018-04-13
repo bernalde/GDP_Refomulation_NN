@@ -13,7 +13,7 @@ file seed_no / 'seed.gms' /
 loop(iter,
    putclose seed_no 'execseed = ' (ord(iter)+first_seed):0:0 ';';
    execute 'gams Random_gen_presolve.gms s=0 lo=0 ';
-
+$Ontext
    execute 'gams BM_ref.gms r=0 lo=0 '
    execute_load "res_prob" rel,sol,nodes,time,cpu,LBL,const,vars,bin;
    solu(iter,'BM','sol') = sol;
@@ -57,7 +57,7 @@ loop(iter,
    solu(iter,'DB_BM','best') = best;
    execute_unload "solution_total" solu;
 
-$Ontext
+$Offtext
 
    execute 'gams Logic_B_B_HR.gms r=0 lo=0 '
    execute_load "res_prob" sol,nodes,time,cpu,LBL,first,best;
@@ -90,8 +90,7 @@ $Ontext
    solu(iter,'DB_HR2','LB') = LBL;
    solu(iter,'DB_HR2','first') = first;
    solu(iter,'DB_HR2','best') = best;
-   execute_unload "solution_total" solu;
-$Offtext
+   execute_unload "solution_total" solu;    
 );
 
 *To print the content of the gdx file execute the next line of code

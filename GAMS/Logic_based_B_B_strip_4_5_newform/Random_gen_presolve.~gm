@@ -1,8 +1,8 @@
 $include seed.gms
 *execseed =         1;
 
-Set box number of boxes /1*4/
-    k_orig   disjunctions /1*6/
+Set box number of boxes /1*5/
+    k_orig   disjunctions /1*10/
 ;
 parameter boxes_param;
 boxes_param=card(box);
@@ -169,5 +169,7 @@ loop(bs(k,k_orig,k_orig2,k_orig3),
 kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
 
 execute_unload "prob_data_%seed%" A,Aglob,bglo,b,c,ub,lb;
+
+$exit
 
 
