@@ -1,5 +1,5 @@
 
---- Job Random_gen_presolve.gms Start 04/07/18 19:45:58 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+--- Job Random_gen_presolve.gms Start 04/13/18 11:24:36 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
 GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
 Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
           Dept. of Chemical Engineering                              DC9476
@@ -7,10 +7,10 @@ Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
           License Admin: Ignacio E. Grossmann                              
 --- Starting compilation
 --- Random_gen_presolve.gms(1) 2 Mb
---- Random_gen_presolve.gms(173) 3 Mb
---- Starting execution: elapsed 0:00:00.005
---- Random_gen_presolve.gms(172) 4 Mb
---- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\prob_data_%seed%.gdx
---- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\zzzz.gdx
+--- Random_gen_presolve.gms(121) 3 Mb
+--- Starting execution: elapsed 0:00:00.006
+--- Random_gen_presolve.gms(120) 4 Mb
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\4\prob_data_%seed%.gdx
+--- GDX File C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\4\zzzz.gdx
 *** Status: Normal completion
---- Job Random_gen_presolve.gms Stop 04/07/18 19:45:58 elapsed 0:00:00.069
+--- Job Random_gen_presolve.gms Stop 04/13/18 11:24:36 elapsed 0:00:00.056
