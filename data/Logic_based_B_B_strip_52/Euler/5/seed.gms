@@ -1,1 +1,1 @@
-execseed =        60.00;
+execseed = 60;

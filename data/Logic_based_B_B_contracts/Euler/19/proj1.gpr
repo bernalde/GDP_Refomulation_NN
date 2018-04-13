@@ -1554,9 +1554,6 @@ PlaneRownr=-1
 1=
 2=s=1
 
-[RP:RUN_BATCH]
-1=
-
 [RP:HR_REF]
 1=r=0
 2=
@@ -1573,22 +1570,23 @@ PlaneRownr=-1
 [RP:MAX_TIME]
 1=
 
+[RP:RUN_BATCH]
+1=
+
 [MRUFILES]
-1=C:\Users\debernal\AppData\Local\Temp\Rar$DIa25808.9285\MPEC_Diseño_definitivo.gms
-2=C:\Users\debernal\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Outlook\KS0C1ZAK\ramos.gms
-3=C:\Users\debernal\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Outlook\KS0C1ZAK\stein.gms
-4=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\res_B_B_LAG_k0_2 .gdx
-5=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\res_B_B_HR2 .gdx
-6=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\BM_ref.gms
-7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\Logic_B_B_LAG_k0.gms
-8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\illu_example_HR.lst
-9=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\illu_example_HR.gms
+1=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\solution_total .gdx
+2=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\run_batch.gms
+3=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\max_time.gms
+4=C:\Users\debernal\AppData\Local\Temp\Rar$DIa25808.9285\MPEC_Diseño_definitivo.gms
+5=C:\Users\debernal\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Outlook\KS0C1ZAK\ramos.gms
+6=C:\Users\debernal\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.Outlook\KS0C1ZAK\stein.gms
+7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\res_B_B_LAG_k0_2 .gdx
+8=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\res_B_B_HR2 .gdx
+9=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\BM_ref.gms
 
 [OPENWINDOW_1]
-FILE0=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\max_time.gms
-FILE1=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\run_batch.gms
-FILE2=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\solution_total .gdx
-FILE3=C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_contracts1\run_batch.gms
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_contracts\Euler\19\Logic_B_B_BM2.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_contracts\Euler\19\Logic_B_B_BM2.gms
 MAXIM=0
 TOP=40
 LEFT=13

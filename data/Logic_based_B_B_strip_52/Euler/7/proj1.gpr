@@ -1332,9 +1332,9 @@ PlaneRownr=-1
 1=r=0
 2=
 
-[MRUFILES]
-
 [OPENWINDOW_1]
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\7\run_batch.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\7\run_batch.gms
 MAXIM=0
 TOP=9
 LEFT=8

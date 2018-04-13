@@ -1325,16 +1325,20 @@ PlaneRownr=-1
 1=r=0
 2=
 
-[RP:RUN_BATCH]
-1=
-
 [RP:LOGIC_B_B_HR2]
 1=r=0
 2=
 
+[RP:RUN_BATCH]
+1=
+
 [MRUFILES]
+1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\0\run_batch.lst
 
 [OPENWINDOW_1]
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\0\run_batch.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_contracts1\run_batch.lst
+FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\data\Logic_based_B_B_strip_52\Euler\0\run_batch.gms
 MAXIM=0
 TOP=9
 LEFT=8
