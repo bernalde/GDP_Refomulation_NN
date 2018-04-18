@@ -1,0 +1,15 @@
+
+--- Job Random_gen_presolve.gms Start 04/18/18 16:44:07 25.0.1 r65189 WEX-WEI x86 64bit/MS Windows
+GAMS 25.0.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- Random_gen_presolve.gms(1) 2 Mb
+--- Random_gen_presolve.gms(511) 3 Mb
+--- Starting execution: elapsed 0:00:00.009
+--- Random_gen_presolve.gms(509) 4 Mb
+--- GDX File C:\Users\debernal\Dropbox\CMU\Research\Lagrangean_GDP\Logic_based_B_B_food_1\zzz.gdx
+*** Status: Normal completion
+--- Job Random_gen_presolve.gms Stop 04/18/18 16:44:07 elapsed 0:00:00.041

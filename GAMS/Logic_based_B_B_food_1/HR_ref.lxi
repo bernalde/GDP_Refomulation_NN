@@ -1,0 +1,91 @@
+B 2 C o m p i l a t i o n
+B 94 Include File Summary
+B 110 Equation Listing    SOLVE prob Using RMIP From line 574
+D 111 obj
+D 141 disag
+D 164 disj_ineq
+D 175 sum_bin
+D 195 bound_up
+D 206 bound_lo
+D 217 defusepv
+D 228 defusepnv
+D 239 defproduce
+D 256 defhmin
+D 271 defhmax
+D 286 stockbal
+D 303 final_stock
+B 316 Column Listing      SOLVE prob Using RMIP From line 574
+E 317 cost
+E 325 x
+E 356 ni
+E 382 produce
+E 407 buy
+E 426 store
+E 448 y
+B 487 Model Statistics    SOLVE prob Using RMIP From line 574
+B 503 Solution Report     SOLVE prob Using RMIP From line 574
+F 533 obj
+F 539 disag
+F 569 disj_ineq
+F 1079 sum_bin
+F 1089 bound_up
+F 1444 bound_lo
+F 1799 defusepv
+F 1809 defusepnv
+F 1819 defproduce
+F 1829 defhmin
+F 1839 defhmax
+F 1849 stockbal
+F 1879 final_stock
+G 1884 cost
+G 1888 x
+G 1918 ni
+G 2273 produce
+G 2283 buy
+G 2313 store
+G 2343 y
+B 2425 Equation Listing    SOLVE prob Using MIP From line 578
+D 2426 obj
+D 2456 disag
+D 2479 disj_ineq
+D 2490 sum_bin
+D 2510 bound_up
+D 2521 bound_lo
+D 2532 defusepv
+D 2543 defusepnv
+D 2554 defproduce
+D 2571 defhmin
+D 2586 defhmax
+D 2601 stockbal
+D 2618 final_stock
+B 2631 Column Listing      SOLVE prob Using MIP From line 578
+E 2632 cost
+E 2640 x
+E 2671 ni
+E 2697 produce
+E 2722 buy
+E 2741 store
+E 2763 y
+B 2802 Model Statistics    SOLVE prob Using MIP From line 578
+B 2818 Solution Report     SOLVE prob Using MIP From line 578
+F 2857 obj
+F 2863 disag
+F 2893 disj_ineq
+F 3403 sum_bin
+F 3413 bound_up
+F 3768 bound_lo
+F 4123 defusepv
+F 4133 defusepnv
+F 4143 defproduce
+F 4153 defhmin
+F 4163 defhmax
+F 4173 stockbal
+F 4203 final_stock
+G 4208 cost
+G 4212 x
+G 4242 ni
+G 4597 produce
+G 4607 buy
+G 4637 store
+G 4667 y
+B 4749 E x e c u t i o n

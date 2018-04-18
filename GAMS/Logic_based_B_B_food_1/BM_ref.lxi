@@ -1,0 +1,75 @@
+B 2 C o m p i l a t i o n
+B 105 Include File Summary
+B 121 Equation Listing    SOLVE prob Using RMIP From line 585
+D 122 defobj
+D 147 defusepv
+D 158 defusepnv
+D 169 defproduce
+D 184 defhmin
+D 201 defhmax
+D 218 stockbal
+D 229 sum_bin
+D 249 disj_ineq
+D 260 final_stock
+B 273 Column Listing      SOLVE prob Using RMIP From line 585
+E 274 produce
+E 300 buy
+E 319 store
+E 341 cost
+E 348 x
+E 432 y
+B 465 Model Statistics    SOLVE prob Using RMIP From line 585
+B 481 Solution Report     SOLVE prob Using RMIP From line 585
+F 511 defobj
+F 519 defusepv
+F 528 defusepnv
+F 537 defproduce
+F 546 defhmin
+F 555 defhmax
+F 564 stockbal
+F 589 sum_bin
+F 598 disj_ineq
+F 1007 final_stock
+G 1012 produce
+G 1021 buy
+G 1046 store
+G 1071 cost
+G 1077 x
+G 1102 y
+B 1170 Equation Listing    SOLVE prob Using MIP From line 589
+D 1171 defobj
+D 1196 defusepv
+D 1207 defusepnv
+D 1218 defproduce
+D 1233 defhmin
+D 1250 defhmax
+D 1267 stockbal
+D 1278 sum_bin
+D 1298 disj_ineq
+D 1309 final_stock
+B 1322 Column Listing      SOLVE prob Using MIP From line 589
+E 1323 produce
+E 1349 buy
+E 1368 store
+E 1390 cost
+E 1397 x
+E 1481 y
+B 1514 Model Statistics    SOLVE prob Using MIP From line 589
+B 1530 Solution Report     SOLVE prob Using MIP From line 589
+F 1569 defobj
+F 1577 defusepv
+F 1586 defusepnv
+F 1595 defproduce
+F 1604 defhmin
+F 1613 defhmax
+F 1622 stockbal
+F 1647 sum_bin
+F 1656 disj_ineq
+F 2065 final_stock
+G 2070 produce
+G 2079 buy
+G 2104 store
+G 2129 cost
+G 2135 x
+G 2160 y
+B 2228 E x e c u t i o n
