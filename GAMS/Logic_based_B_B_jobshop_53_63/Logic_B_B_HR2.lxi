@@ -1,0 +1,254 @@
+B 2 C o m p i l a t i o n
+B 295 Equation Listing    SOLVE chull Using RMIP From line 143
+D 296 obj
+D 308 disag
+D 319 disj_ineq_hr
+D 330 bound_up
+D 341 bound_lo
+D 352 disj_fix
+D 357 sum_bin
+D 368 eq_useless_k
+B 381 Column Listing      SOLVE chull Using RMIP From line 143
+E 382 cost
+E 394 x
+E 491 ni
+E 516 y
+B 543 Model Statistics    SOLVE chull Using RMIP From line 143
+B 559 Solution Report     SOLVE chull Using RMIP From line 143
+F 591 obj
+F 601 disag
+F 741 disj_ineq_hr
+F 806 bound_up
+F 1081 bound_lo
+F 1356 disj_fix
+F 1361 sum_bin
+F 1396 eq_useless_k
+G 1421 cost
+G 1425 x
+G 1435 ni
+G 1710 y
+B 1782 Equation Listing    SOLVE chull Using RMIP From line 230
+D 1783 obj
+D 1795 disag
+D 1806 disj_ineq_hr
+D 1819 bound_up
+D 1830 bound_lo
+D 1841 disj_fix
+D 1846 sum_bin
+D 1859 eq_useless_k
+B 1872 Column Listing      SOLVE chull Using RMIP From line 230
+E 1873 cost
+E 1885 x
+E 1982 ni
+E 2007 y
+B 2028 Model Statistics    SOLVE chull Using RMIP From line 230
+B 2051 Solution Report     SOLVE chull Using RMIP From line 230
+F 2083 obj
+F 2093 disag
+F 2231 disj_ineq_hr
+F 2294 bound_up
+F 2565 bound_lo
+F 2836 disj_fix
+F 2842 sum_bin
+F 2877 eq_useless_k
+G 2902 cost
+G 2906 x
+G 2916 ni
+G 3187 y
+B 3259 Equation Listing    SOLVE chull Using RMIP From line 230
+D 3260 obj
+D 3272 disag
+D 3283 disj_ineq_hr
+D 3296 bound_up
+D 3307 bound_lo
+D 3318 disj_fix
+D 3323 sum_bin
+D 3334 eq_useless_k
+B 3347 Column Listing      SOLVE chull Using RMIP From line 230
+E 3348 cost
+E 3360 x
+E 3457 ni
+E 3482 y
+B 3503 Model Statistics    SOLVE chull Using RMIP From line 230
+B 3526 Solution Report     SOLVE chull Using RMIP From line 230
+F 3558 obj
+F 3568 disag
+F 3706 disj_ineq_hr
+F 3769 bound_up
+F 4040 bound_lo
+F 4311 disj_fix
+F 4317 sum_bin
+F 4352 eq_useless_k
+G 4377 cost
+G 4381 x
+G 4391 ni
+G 4662 y
+B 4734 Equation Listing    SOLVE chull Using RMIP From line 230
+D 4735 obj
+D 4747 disag
+D 4758 disj_ineq_hr
+D 4769 bound_up
+D 4780 bound_lo
+D 4791 disj_fix
+D 4798 sum_bin
+D 4809 eq_useless_k
+B 4822 Column Listing      SOLVE chull Using RMIP From line 230
+E 4823 cost
+E 4835 x
+E 4932 ni
+E 4957 y
+B 4975 Model Statistics    SOLVE chull Using RMIP From line 230
+B 4998 Solution Report     SOLVE chull Using RMIP From line 230
+F 5030 obj
+F 5040 disag
+F 5176 disj_ineq_hr
+F 5237 bound_up
+F 5504 bound_lo
+F 5771 disj_fix
+F 5778 sum_bin
+F 5813 eq_useless_k
+G 5838 cost
+G 5842 x
+G 5852 ni
+G 6119 y
+B 6191 Equation Listing    SOLVE chull Using RMIP From line 230
+D 6192 obj
+D 6204 disag
+D 6215 disj_ineq_hr
+D 6230 bound_up
+D 6241 bound_lo
+D 6252 disj_fix
+D 6259 sum_bin
+D 6270 eq_useless_k
+B 6283 Column Listing      SOLVE chull Using RMIP From line 230
+E 6284 cost
+E 6296 x
+E 6393 ni
+E 6418 y
+B 6436 Model Statistics    SOLVE chull Using RMIP From line 230
+B 6459 Solution Report     SOLVE chull Using RMIP From line 230
+F 6491 obj
+F 6501 disag
+F 6637 disj_ineq_hr
+F 6698 bound_up
+F 6965 bound_lo
+F 7232 disj_fix
+F 7239 sum_bin
+F 7274 eq_useless_k
+G 7299 cost
+G 7303 x
+G 7313 ni
+G 7580 y
+B 7652 Equation Listing    SOLVE chull Using RMIP From line 230
+D 7653 obj
+D 7665 disag
+D 7676 disj_ineq_hr
+D 7687 bound_up
+D 7698 bound_lo
+D 7709 disj_fix
+D 7718 sum_bin
+D 7731 eq_useless_k
+B 7744 Column Listing      SOLVE chull Using RMIP From line 230
+E 7745 cost
+E 7757 x
+E 7854 ni
+E 7879 y
+B 7897 Model Statistics    SOLVE chull Using RMIP From line 230
+B 7920 Solution Report     SOLVE chull Using RMIP From line 230
+F 7952 obj
+F 7962 disag
+F 8096 disj_ineq_hr
+F 8155 bound_up
+F 8418 bound_lo
+F 8681 disj_fix
+F 8689 sum_bin
+F 8724 eq_useless_k
+G 8749 cost
+G 8753 x
+G 8763 ni
+G 9026 y
+B 9098 Equation Listing    SOLVE chull Using RMIP From line 230
+D 9099 obj
+D 9111 disag
+D 9122 disj_ineq_hr
+D 9133 bound_up
+D 9144 bound_lo
+D 9155 disj_fix
+D 9164 sum_bin
+D 9175 eq_useless_k
+B 9188 Column Listing      SOLVE chull Using RMIP From line 230
+E 9189 cost
+E 9201 x
+E 9298 ni
+E 9323 y
+B 9341 Model Statistics    SOLVE chull Using RMIP From line 230
+B 9364 Solution Report     SOLVE chull Using RMIP From line 230
+F 9396 obj
+F 9406 disag
+F 9540 disj_ineq_hr
+F 9599 bound_up
+F 9862 bound_lo
+F 10125 disj_fix
+F 10133 sum_bin
+F 10168 eq_useless_k
+G 10193 cost
+G 10197 x
+G 10207 ni
+G 10470 y
+B 10542 Equation Listing    SOLVE chull Using RMIP From line 230
+D 10543 obj
+D 10555 disag
+D 10566 disj_ineq_hr
+D 10581 bound_up
+D 10592 bound_lo
+D 10603 disj_fix
+D 10612 sum_bin
+D 10623 eq_useless_k
+B 10636 Column Listing      SOLVE chull Using RMIP From line 230
+E 10637 cost
+E 10649 x
+E 10746 ni
+E 10771 y
+B 10789 Model Statistics    SOLVE chull Using RMIP From line 230
+B 10812 Solution Report     SOLVE chull Using RMIP From line 230
+F 10844 obj
+F 10854 disag
+F 10988 disj_ineq_hr
+F 11047 bound_up
+F 11310 bound_lo
+F 11573 disj_fix
+F 11581 sum_bin
+F 11616 eq_useless_k
+G 11641 cost
+G 11645 x
+G 11655 ni
+G 11918 y
+B 11990 Equation Listing    SOLVE chull Using RMIP From line 230
+D 11991 obj
+D 12003 disag
+D 12014 disj_ineq_hr
+D 12025 bound_up
+D 12036 bound_lo
+D 12047 disj_fix
+D 12056 sum_bin
+D 12067 eq_useless_k
+B 12080 Column Listing      SOLVE chull Using RMIP From line 230
+E 12081 cost
+E 12093 x
+E 12190 ni
+E 12215 y
+B 12233 Model Statistics    SOLVE chull Using RMIP From line 230
+B 12256 Solution Report     SOLVE chull Using RMIP From line 230
+F 12288 obj
+F 12298 disag
+F 12432 disj_ineq_hr
+F 12491 bound_up
+F 12754 bound_lo
+F 13017 disj_fix
+F 13025 sum_bin
+F 13060 eq_useless_k
+G 13085 cost
+G 13089 x
+G 13099 ni
+G 13362 y
+B 13434 E x e c u t i o n

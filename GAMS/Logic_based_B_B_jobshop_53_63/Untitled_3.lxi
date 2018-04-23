@@ -1,0 +1,27 @@
+B 2 C o m p i l a t i o n
+B 98 Equation Listing    SOLVE loc Using MIP From line 86
+D 99 deftotcost
+D 114 deffcost
+D 125 deftcost
+D 136 capnew
+D 147 defwcap
+D 161 onew
+B 180 Column Listing      SOLVE loc Using MIP From line 86
+E 181 totcost
+E 189 fcost
+E 220 tcost
+E 239 oa
+E 264 dd
+B 285 Model Statistics    SOLVE loc Using MIP From line 86
+B 301 Solution Report     SOLVE loc Using MIP From line 86
+F 339 deftotcost
+F 347 deffcost
+F 372 deftcost
+F 397 capnew
+F 422 defwcap
+F 431 onew
+G 436 totcost
+G 442 fcost
+G 451 tcost
+G 476 oa
+G 501 dd

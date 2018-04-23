@@ -1,0 +1,39 @@
+B 2 C o m p i l a t i o n
+B 133 Include File Summary
+B 152 Equation Listing    SOLVE prob Using RMIP From line 104
+D 153 obj
+D 163 sum_bin
+D 177 disj_ineq
+D 188 glob1
+B 201 Column Listing      SOLVE prob Using RMIP From line 104
+E 202 cost
+E 210 x
+E 232 y
+B 265 Model Statistics    SOLVE prob Using RMIP From line 104
+B 281 Solution Report     SOLVE prob Using RMIP From line 104
+F 310 obj
+F 318 sum_bin
+F 328 disj_ineq
+F 433 glob1
+G 437 cost
+G 441 x
+G 490 y
+B 522 Equation Listing    SOLVE prob Using MIP From line 108
+D 523 obj
+D 533 sum_bin
+D 544 disj_ineq
+D 555 glob1
+B 568 Column Listing      SOLVE prob Using MIP From line 108
+E 569 cost
+E 577 x
+E 599 y
+B 632 Model Statistics    SOLVE prob Using MIP From line 108
+B 648 Solution Report     SOLVE prob Using MIP From line 108
+F 686 obj
+F 694 sum_bin
+F 704 disj_ineq
+F 809 glob1
+G 813 cost
+G 817 x
+G 866 y
+B 898 E x e c u t i o n

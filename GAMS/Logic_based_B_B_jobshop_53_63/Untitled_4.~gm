@@ -1,0 +1,152 @@
+Set i    warehouses   / 1*4 /
+    k    regions      / 1*5 /
+    var  number of variables (2ki+i) /1*44/
+    e max equations in disjunction /1*5/
+    ki(k,i)  set that contains disjunctions and terms
+    kie(k,i,e) set that contains disjunctions terms and equations
+    kv(k,var) set that contains disjunctions and variables
+;
+
+Parameters
+    f(i) fixed costs
+    c(i) capacity
+    d(k) demand
+    t(k,i) transport costs
+    map_tcost(var,k,i) variable mapping
+    map_dd(var,k,i) variable mapping
+    map_fcost(var,i) variable mapping
+;
+map_tcost(var,k,i)=0;
+map_dd(var,k,i)=0;
+map_fcost(var,i)=0;
+
+parameter term(k), eq_term(k,i), A(k,i,e,var), b(k,i,e), ub(var), lb(var);
+scalar cnt1 /1/
+       tot_k;
+tot_k=card(k);
+ki(k,i)=yes;
+kie(k,i,e)=yes;
+
+f(i)=UniformInt(100,200);
+c(i)=UniformInt(80,150);
+d(k)=UniformInt(10,50);
+t(k,i)=UniformInt(10,100);
+
+loop((k,i),
+   map_tcost(var,k,i)$(ord(var)=cnt1)=1;
+   map_dd(var,k,i)$(ord(var)=(cnt1+card(k)*card(i)))=1;
+   cnt1=cnt1+1;
+);
+
+loop(i,
+   map_fcost(var,i)$(ord(var)=(cnt1+card(k)*card(i)))=1;
+   cnt1=cnt1+1;
+);
+
+loop((k,i),
+    A(k,i,'1',var)$map_tcost(var,k,i) = 1;
+    A(k,i,'2',var)$map_tcost(var,k,i) = -1;
+    b(k,i,'1') = t(k,i);
+    b(k,i,'2') = -t(k,i);
+    A(k,i,'3',var)$map_dd(var,k,i) = 1;
+    A(k,i,'4',var)$map_dd(var,k,i) = -1;
+    b(k,i,'3') = d(k);
+    b(k,i,'4') = -d(k);
+    A(k,i,'5',var)$map_fcost(var,i) = -1;
+    b(k,i,'5') = -f(i);
+);
+
+kv(k,var)$( sum((i,e)$(A(k,i,e,var)<>0),1)>=1 )=yes;
+lb(var) = 0;
+ub(var) = sum(i,f(i)+c(i))+sum(k,d(k))+sum((k,i),t(k,i));
+
+
+VARIABLE            cost  ;
+positive variables  x(var);
+Binary variable     y(k,i);
+
+
+EQUATIONS
+   obj           makespan greater than all processing times
+   sum_bin
+   disj_ineq
+   glob1
+;
+
+obj..                        cost =g= sum((var,i)$map_fcost(var,i),x(var)) + sum((var,k,i)$map_tcost(var,k,i),x(var));
+disj_ineq(kie(ki(k,i),e))..  sum(var$(A(k,i,e,var)<>0),A(kie,var)*x(var)) =l= b(kie) + SUM((var)$(A(k,i,e,var)<>0),ub(var))*(1-y(ki));
+sum_bin(k)..                 sum(ki(k,i),y(ki)) =e= 1;
+glob1(i)..                   sum(k,dd(k,i)) =l= c(i);
+
+
+model prob / obj,sum_bin,disj_ineq,glob1 /;
+
+option optcr = 0.001
+       reslim = 72000
+*       mip=BDMLP
+*       mip=CBC
+*       mip=SCIP
+*       rmip=CBC
+  ;
+*prob.nodlim=1000000;
+
+x.lo(var) = lb(var);
+x.up(var) = ub(var);
+
+*y.fx(k,'1')$(ord(k)<=10)=1;
+*y.fx(k,'1')=1;
+
+$include max_time_ref
+
+scalar rel,sol,nodes,time,LBL,const,vars,bin;
+
+solve prob using rmip min cost;
+rel = prob.objval;
+bin=sum(ki,1);
+
+solve prob using mip min cost;
+sol = prob.objval;
+time = prob.etsolve;
+nodes = prob.nodusd;
+LBL  = prob.objest;
+const = prob.numequ;
+vars = prob.numvar;
+
+*execute_unload "res_prob " rel,sol,nodes,time,LBL,const,vars,bin;
+
+
+
+
+
+$exit
+
+Variables
+    totcost     total cost
+    fcost(i)    fixed cost
+    tcost(k,i)  transportation cost
+    oa(k,i)    indicator for open shipment arc warehouse to region
+    dd(k,i)    demand of region k satisfied by warehouse i
+Binary variables oa;
+
+Equations
+    deftotcost definition total cost
+    deffcost   definition fixed cost
+    deftcost   definition transportation cost
+    capnew
+    defwcap(i) limit utilization of warehouse by its capacity
+    onew(k)    only one warehouse per region
+;
+
+deftotcost..  totcost =e= sum(i,fcost(i)) + sum((k,i),tcost(k,i));
+
+deffcost(k,i).. fcost(i) =g= f(i)*oa(k,i);
+deftcost(k,i).. tcost(k,i) =e= t(k,i)*oa(k,i);
+capnew(k,i)..  dd(k,i) =e= d(k)*oa(k,i);
+defwcap(i).. sum(k,dd(k,i)) =l= c(i);
+onew(k)..    sum(i, oa(k,i)) =e= 1;
+
+*defow(i,k).. ow(i) =g= oa(i,k);
+
+Model loc /all/ ;
+
+solve loc minimizing totcost using mip;

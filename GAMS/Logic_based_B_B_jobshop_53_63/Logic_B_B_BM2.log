@@ -1,0 +1,658 @@
+
+--- Job Logic_B_B_BM2.gms Start 07/22/15 21:21:55 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WIN244-244
+--- Logic_B_B_BM2.gms(243) 9 Mb
+--- Starting execution: elapsed 0:00:00.054
+--- Logic_B_B_BM2.gms(141) 10 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(143) 10 Mb
+---   120 rows  66 columns  425 non-zeroes
+---   60 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.067
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 100 rows and 50 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 15 rows, 11 columns, and 40 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             0.000000
+Iteration:     2   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.11 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(143) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.162
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 1
+---       numm = 1
+---   119 rows  66 columns  421 non-zeroes
+---   59 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.262
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 52 columns.
+Aggregator did 4 substitutions.
+Reduced LP has 14 rows, 10 columns, and 36 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.358
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 1
+---       numm = 2
+---   119 rows  66 columns  421 non-zeroes
+---   59 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.451
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 52 columns.
+Aggregator did 4 substitutions.
+Reduced LP has 14 rows, 10 columns, and 36 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            88.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Optimal solution found.
+Objective :          88.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.545
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 2
+---       numm = 1
+---   118 rows  66 columns  417 non-zeroes
+---   58 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.697
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 105 rows and 55 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 10 rows, 8 columns, and 26 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.793
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 2
+---       numm = 2
+---   118 rows  66 columns  417 non-zeroes
+---   58 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.882
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 103 rows and 54 columns.
+Aggregator did 4 substitutions.
+Reduced LP has 11 rows, 8 columns, and 28 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.17 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:00.984
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 2
+---       numm = 3
+---   118 rows  66 columns  417 non-zeroes
+---   58 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.076
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 103 rows and 54 columns.
+Aggregator did 4 substitutions.
+Reduced LP has 11 rows, 8 columns, and 28 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            92.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Optimal solution found.
+Objective :          92.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:01.174
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 2
+---       numm = 4
+---   118 rows  66 columns  417 non-zeroes
+---   58 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.261
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 102 rows and 54 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 13 rows, 9 columns, and 32 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             1.000000
+Iteration:     3   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.19 ticks)
+
+Optimal solution found.
+Objective :          88.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:01.359
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 1
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.528
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 106 rows and 57 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 9 rows, 7 columns, and 22 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:01.628
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 2
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.716
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 106 rows and 57 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 9 rows, 7 columns, and 22 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =           137.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.19 ticks)
+
+Optimal solution found.
+Objective :         137.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:01.814
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 3
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.906
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 104 rows and 56 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 10 rows, 7 columns, and 24 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            55.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.002
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 4
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.095
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 104 rows and 56 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 10 rows, 7 columns, and 24 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =           137.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :         137.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.197
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 5
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.285
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 104 rows and 56 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 10 rows, 7 columns, and 24 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             0.000000
+Iteration:     2   Dual objective     =            88.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.21 ticks)
+
+Optimal solution found.
+Objective :          92.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.388
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 6
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.476
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 104 rows and 56 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 10 rows, 7 columns, and 24 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =           174.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :         174.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.572
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 7
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.661
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 103 rows and 56 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 12 rows, 8 columns, and 28 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             4.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.21 ticks)
+
+Optimal solution found.
+Objective :          88.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.760
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 3
+---       numm = 8
+---   117 rows  66 columns  413 non-zeroes
+---   57 discrete-columns
+--- Executing CPLEX: elapsed 0:00:02.850
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 103 rows and 56 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 12 rows, 8 columns, and 28 nonzeros.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =           170.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.18 ticks)
+
+Optimal solution found.
+Objective :         170.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:02.951
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 4
+---       numm = 1
+---   116 rows  66 columns  409 non-zeroes
+---   56 discrete-columns
+--- Executing CPLEX: elapsed 0:00:03.168
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 111 rows and 61 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 4 rows, 4 columns, and 10 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:03.265
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 4
+---       numm = 2
+---   116 rows  66 columns  409 non-zeroes
+---   56 discrete-columns
+--- Executing CPLEX: elapsed 0:00:03.403
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 111 rows and 61 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 4 rows, 4 columns, and 10 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.19 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:03.504
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 4
+---       numm = 5
+---   116 rows  66 columns  409 non-zeroes
+---   56 discrete-columns
+--- Executing CPLEX: elapsed 0:00:03.598
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Constraints 'disj_fix(1.1.1)' and 'disj_fix(4.1.1)' are inconsistent.
+Presolve time = 0.00 sec. (0.05 ticks)
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.12 ticks)
+Rerunning with presolve turned off and solving with LPMETHOD=0
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(3): infeasible
+Cplex Time: 0.00sec (det. 0.07 ticks)
+
+Model has been proven infeasible.
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:03.699
+--- Logic_B_B_BM2.gms(167) 9 Mb
+--- Generating RMIP model bigM
+--- Logic_B_B_BM2.gms(230) 9 Mb
+--- LOOPS level2 = 4
+---       numm = 6
+---   116 rows  66 columns  409 non-zeroes
+---   56 discrete-columns
+--- Executing CPLEX: elapsed 0:00:03.786
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 111 rows and 61 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 4 rows, 4 columns, and 10 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.17 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- Logic_B_B_BM2.gms(230) 8 Mb
+--- Reading solution for model bigM
+--- Executing after solve: elapsed 0:00:03.881
+--- Logic_B_B_BM2.gms(292) 9 Mb
+*** Status: Normal completion
+--- Job Logic_B_B_BM2.gms Stop 07/22/15 21:21:59 elapsed 0:00:03.992

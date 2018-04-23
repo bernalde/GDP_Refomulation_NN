@@ -1,0 +1,97 @@
+$Title Cplex Solution Pool for a Simple Facility Location Problem (SOLNPOOL,SEQ=326)
+$Ontext
+
+A simple version of a facility location problem is used to show how the
+solution pool and the tools associated with it work. This example is taken
+from the Cplex 11 User's Manual (ILOG, Cplex 11 User's Manual, 2007)
+
+A company is considering opening as many as four warehouses in order to serve
+nine different regions. The goal is to minimize the sum of fixed costs
+associated with opening warehouses as well as the various transportation
+costs incurred to ship goods from the warehouses to the regions.
+
+Whether or not to open a warehouse is represented by binary variable ow.
+Whether or not to ship goods from warehouse i to region k is represented
+by binary variable oa.
+
+Each region needs a specified amount of goods, and each warehouse can store
+only a limited quantity of goods. In addition, each region must be served
+by exactly one warehouse.
+
+
+The following GAMS program demonstrates a number of different approaches to
+collecting solution pools. GAMS will store the individual solutions in GDX
+containers/files which can then be further used by other programs or the same
+GAMS run. Cplex will name these GDX containers 'soln_loc_pNN.gdx', where NN
+will be the serial number of the solution found. To manage the different
+solutions, the names of the GDX containers created by Cplex will be stored
+in solnpool.gdx in the set 'index' using the set elements file*.
+
+Eight examples are solved in this gams run.
+
+
+$offtext
+
+Set i    warehouses   / w1*w4 /
+    k    regions      / r1*r5 /
+Parameters
+    f(i) fixed costs  / w1 130, w2 150, w3 170, w4 180 /
+    c(i) capacity     / w1  90, w2 110, w3 130, w4 150 /
+    d(k) demand       / r1 10, r2 10, r3 12, r4 15, r5 15,
+                        r6 15, r7 20, r8 20, r9 30 /;
+
+f(i)=UniformInt(100,200);
+c(i)=UniformInt(80,150);
+d(k)=UniformInt(10,50);
+
+Table t(k,i) transport costs
+        w1   w2   w3   w4
+    r1  10   30   25   55
+    r2  10   25   25   45
+    r3  20   23   30   40
+    r4  25   10   26   40
+    r5  28   12   20   29
+    r6  36   19   16   22
+    r7  40   39   22   27
+    r8  75   65   55   35
+    r9  34   43   41   62;
+
+t(k,i)=UniformInt(10,100);
+
+Variables
+    totcost     total cost
+    fcost(i)    fixed cost
+    tcost(k,i)  transportation cost
+*    ow(i)      indicator for open warehouse
+    oa(k,i)    indicator for open shipment arc warehouse to region
+    dd(k,i)    demand of region k satisfied by warehouse i
+Binary variables oa;
+
+Equations
+    deftotcost definition total cost
+    deffcost   definition fixed cost
+    deftcost   definition transportation cost
+    capnew
+    defwcap(i) limit utilization of warehouse by its capacity
+    onew(k)    only one warehouse per region
+*    defow(i,k) warehouse open if shipment from i to k;
+;
+
+deftotcost..  totcost =e= sum(i,fcost(i)) + sum((k,i),tcost(k,i));
+
+deffcost(k,i).. fcost(i) =g= f(i)*oa(k,i);
+
+deftcost(k,i).. tcost(k,i) =e= t(k,i)*oa(k,i);
+
+capnew(k,i)..  dd(k,i) =e= d(k)*oa(k,i);
+
+*defwcap(i).. sum(k, d(k)*oa(k,i)) =l= c(i);
+defwcap(i).. sum(k,dd(k,i)) =l= c(i);
+
+onew(k)..    sum(i, oa(k,i)) =e= 1;
+
+*defow(i,k).. ow(i) =g= oa(i,k);
+
+Model loc /all/ ;
+
+solve loc minimizing totcost using mip;

@@ -1,0 +1,12 @@
+
+--- Job seed.gms Start 07/22/15 21:14:08 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- seed.gms(1) 2 Mb
+--- Starting execution: elapsed 0:00:00.003
+--- seed.gms(1) 3 Mb
+*** Status: Normal completion
+--- Job seed.gms Stop 07/22/15 21:14:08 elapsed 0:00:00.006

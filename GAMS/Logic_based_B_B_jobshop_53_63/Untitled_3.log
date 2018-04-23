@@ -1,0 +1,101 @@
+
+--- Job Untitled_3.gms Start 07/22/15 14:57:45 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- Untitled_3.gms(86) 3 Mb
+--- Starting execution: elapsed 0:00:00.003
+--- Untitled_3.gms(48) 4 Mb
+--- Generating MIP model loc
+--- Untitled_3.gms(86) 4 Mb
+---   70 rows  65 columns  185 non-zeroes
+---   20 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.019
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 2 times.
+MIP Presolve eliminated 21 rows and 21 columns.
+MIP Presolve modified 26 coefficients.
+Aggregator did 20 substitutions.
+Reduced MIP has 29 rows, 24 columns, and 80 nonzeros.
+Reduced MIP has 20 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.13 ticks)
+Found incumbent of value 498.000000 after 0.02 sec. (0.17 ticks)
+Probing time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 29 rows, 24 columns, and 80 nonzeros.
+Reduced MIP has 20 binaries, 4 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.04 ticks)
+Probing time = 0.00 sec. (0.01 ticks)
+Clique table members: 6.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            21.000000
+Root relaxation solution time = 0.00 sec. (0.07 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          498.0000        0.0000           100.00%
+Found incumbent of value 498.000000 after 0.02 sec. (0.35 ticks)
+      0     0      355.0588    12      498.0000      355.0588       22   28.70%
+*     0+    0                          484.0000      355.0588            26.64%
+Found incumbent of value 484.000000 after 0.02 sec. (0.41 ticks)
+      0     0      370.6563    12      484.0000       Cuts: 3       25   23.42%
+      0     0      392.0270    15      484.0000       Cuts: 3       31   19.00%
+      0     0      392.2000    13      484.0000     Covers: 1       32   18.97%
+*     0+    0                          448.0000      392.2000            12.46%
+Found incumbent of value 448.000000 after 0.02 sec. (1.00 ticks)
+      0     2      392.2000    13      448.0000      392.5000       32   12.39%
+Elapsed time = 0.02 sec. (1.17 ticks, tree = 0.00 MB, solutions = 3)
+*     1     1      integral     0      444.0000      392.5000       40   11.60%
+Found incumbent of value 444.000000 after 0.03 sec. (1.21 ticks)
+
+Cover cuts applied:  1
+Implied bound cuts applied:  1
+Gomory fractional cuts applied:  2
+
+Root node processing (before b&c):
+  Real time             =    0.02 sec. (1.17 ticks)
+Sequential b&c:
+  Real time             =    0.01 sec. (0.06 ticks)
+                          ------------
+Total (root+branch&cut) =    0.03 sec. (1.23 ticks)
+MIP status(102): integer optimal, tolerance
+Cplex Time: 0.03sec (det. 1.23 ticks)
+Fixing integer variables, and solving final LP...
+Tried aggregator 1 time.
+LP Presolve eliminated 70 rows and 65 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.02 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.05 ticks)
+
+Solution satisfies tolerances.
+
+MIP Solution:          444.000000    (42 iterations, 3 nodes)
+Final Solve:           444.000000    (0 iterations)
+
+Best possible:         404.637931
+Absolute gap:           39.362069
+Relative gap:            0.088653
+
+--- Restarting execution
+--- Untitled_3.gms(86) 2 Mb
+--- Reading solution for model loc
+*** Status: Normal completion
+--- Job Untitled_3.gms Stop 07/22/15 14:57:45 elapsed 0:00:00.124

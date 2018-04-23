@@ -1,0 +1,14 @@
+
+--- Job Random_gen_presolve.gms Start 07/22/15 21:18:03 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- Random_gen_presolve.gms(1) 2 Mb
+--- Random_gen_presolve.gms(50) 3 Mb
+--- Starting execution: elapsed 0:00:00.003
+--- Random_gen_presolve.gms(51) 4 Mb
+--- GDX File C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\zzz.gdx
+*** Status: Normal completion
+--- Job Random_gen_presolve.gms Stop 07/22/15 21:18:03 elapsed 0:00:00.012

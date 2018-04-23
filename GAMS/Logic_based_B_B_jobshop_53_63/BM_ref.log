@@ -1,0 +1,142 @@
+
+--- Job BM_ref.gms Start 07/22/15 21:19:56 24.4.5 r52258 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.5   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Ignacio E. Grossmann                           G150105/0001AO-GEN
+          Carnegie Mellon University, Dept. of Chemical Engineering  DC9476
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WIN244-244
+--- BM_ref.gms(36) 3 Mb
+--- .max_time_ref.gms(1) 3 Mb
+--- BM_ref.gms(55) 3 Mb
+--- Starting execution: elapsed 0:00:00.003
+--- BM_ref.gms(88) 4 Mb
+--- Generating RMIP model prob
+--- BM_ref.gms(92) 4 Mb
+---   120 rows  66 columns  425 non-zeroes
+---   60 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.015
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 100 rows and 50 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 15 rows, 11 columns, and 40 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =             0.000000
+Iteration:     2   Dual objective     =            82.000000
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.11 ticks)
+
+Optimal solution found.
+Objective :          82.000000
+
+--- Restarting execution
+--- BM_ref.gms(92) 2 Mb
+--- Reading solution for model prob
+--- Executing after solve: elapsed 0:00:00.095
+--- BM_ref.gms(94) 3 Mb
+--- Generating MIP model prob
+--- BM_ref.gms(96) 3 Mb
+---   120 rows  66 columns  425 non-zeroes
+---   60 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.111
+
+IBM ILOG CPLEX   24.4.5 r52258 Released May 26, 2015 VS8 x86 32bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Found incumbent of value 208.000000 after 0.00 sec. (0.01 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 100 rows and 50 columns.
+MIP Presolve modified 4 coefficients.
+Aggregator did 5 substitutions.
+Reduced MIP has 15 rows, 11 columns, and 40 nonzeros.
+Reduced MIP has 5 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.10 ticks)
+Probing time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 15 rows, 11 columns, and 40 nonzeros.
+Reduced MIP has 5 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.02 ticks)
+Probing time = 0.00 sec. (0.00 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            82.000000
+Root relaxation solution time = 0.00 sec. (0.02 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          208.0000       82.0000            60.58%
+Found incumbent of value 208.000000 after 0.05 sec. (0.18 ticks)
+      0     0       82.0000     3      208.0000       82.0000        4   60.58%
+*     0+    0                           94.0000       82.0000            12.77%
+Found incumbent of value 94.000000 after 0.05 sec. (0.21 ticks)
+      0     0       82.0000     1       94.0000       Cuts: 4        8   12.77%
+*     0+    0                           82.0000       82.0000             0.00%
+Found incumbent of value 82.000000 after 0.05 sec. (0.28 ticks)
+      0     0        cutoff             82.0000       82.0000        8    0.00%
+Elapsed time = 0.05 sec. (0.28 ticks, tree = 0.00 MB, solutions = 3)
+
+Implied bound cuts applied:  3
+Flow cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.05 sec. (0.28 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.05 sec. (0.28 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.05sec (det. 0.28 ticks)
+Fixing integer variables, and solving final LP...
+Tried aggregator 1 time.
+LP Presolve eliminated 107 rows and 60 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 5 columns, and 24 nonzeros.
+Presolve time = 0.02 sec. (0.05 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual infeasibility =             0.000000
+Iteration:     2   Dual objective     =            82.000000
+Fixed MIP status(1): optimal
+Cplex Time: 0.02sec (det. 0.11 ticks)
+
+Proven optimal solution.
+
+MIP Solution:           82.000000    (8 iterations, 0 nodes)
+Final Solve:            82.000000    (4 iterations)
+
+Best possible:          82.000000
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- BM_ref.gms(96) 2 Mb
+--- Reading solution for model prob
+--- Executing after solve: elapsed 0:00:00.225
+--- BM_ref.gms(104) 3 Mb
+*** Status: Normal completion
+--- Job BM_ref.gms Stop 07/22/15 21:19:57 elapsed 0:00:00.231
