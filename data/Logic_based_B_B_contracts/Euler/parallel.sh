@@ -10,10 +10,10 @@
 #PBS -l mem=1gb
 
 # Set name of job
-#PBS -N contracts_19
+#PBS -N contracts_11
 
 # Use submission environment
 #PBS -V
-cd /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/19
+cd /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler/11
 gams run_batch.gms
 

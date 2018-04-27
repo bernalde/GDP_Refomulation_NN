@@ -1,0 +1,29 @@
+Disk usage:  44G .
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job run_batch2.gms Start 04/17/18 21:48:20 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- run_batch2.gms(10) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- run_batch2.gms(76) 3 Mb
+--- Starting execution: elapsed 0:00:00.080
+--- run_batch2.gms(14) 4 Mb
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/solution_total_2.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/solution_total_2.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/solution_total_2.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/solution_total_2.gdx
+--- run_batch2.gms(75) 4 Mb
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_k7_i15_v50/Euler/9/seed.gms
+*** Status: Normal completion
+--- Job run_batch2.gms Stop 04/18/18 03:02:22 elapsed 5:14:02.085

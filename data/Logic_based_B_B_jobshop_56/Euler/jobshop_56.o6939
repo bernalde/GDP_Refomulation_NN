@@ -1,0 +1,3683 @@
+Disk usage:  47G .
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:50:05 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/0/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/0/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:50:05 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:50:05 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_1.gdx
+   OutputFile:prob_data_1.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(46 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:513
+   Elapsed:1.15 seconds
+   Inserts/second:444.93
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_2.gdx
+   OutputFile:prob_data_2.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(594 records)
+     b(2 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:601
+   Elapsed:1.28 seconds
+   Inserts/second:469.90
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_3.gdx
+   OutputFile:prob_data_3.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(20 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:565
+   Elapsed:1.11 seconds
+   Inserts/second:510.39
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_4.gdx
+   OutputFile:prob_data_4.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(29 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:544
+   Elapsed:1.23 seconds
+   Inserts/second:441.92
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_5.gdx
+   OutputFile:prob_data_5.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:1.11 seconds
+   Inserts/second:506.32
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_6.gdx
+   OutputFile:prob_data_6.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:1.12 seconds
+   Inserts/second:491.99
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_7.gdx
+   OutputFile:prob_data_7.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(552 records)
+     b(16 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:573
+   Elapsed:1.07 seconds
+   Inserts/second:537.02
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_8.gdx
+   OutputFile:prob_data_8.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:1.22 seconds
+   Inserts/second:423.08
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_9.gdx
+   OutputFile:prob_data_9.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:1.03 seconds
+   Inserts/second:566.28
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_10.gdx
+   OutputFile:prob_data_10.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:1.17 seconds
+   Inserts/second:480.72
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/0/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:50:17 elapsed 0:00:11.763
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:50:17 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/1/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/1/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:50:17 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:50:17 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_11.gdx
+   OutputFile:prob_data_11.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:1.15 seconds
+   Inserts/second:484.35
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_12.gdx
+   OutputFile:prob_data_12.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:1.16 seconds
+   Inserts/second:501.29
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_13.gdx
+   OutputFile:prob_data_13.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.23 seconds
+   Inserts/second:445.26
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_14.gdx
+   OutputFile:prob_data_14.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(558 records)
+     b(14 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:577
+   Elapsed:1.18 seconds
+   Inserts/second:490.65
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_15.gdx
+   OutputFile:prob_data_15.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:1.21 seconds
+   Inserts/second:448.59
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_16.gdx
+   OutputFile:prob_data_16.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(552 records)
+     b(16 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:573
+   Elapsed:1.15 seconds
+   Inserts/second:497.83
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_17.gdx
+   OutputFile:prob_data_17.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.22 seconds
+   Inserts/second:451.85
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_18.gdx
+   OutputFile:prob_data_18.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:1.07 seconds
+   Inserts/second:495.81
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_19.gdx
+   OutputFile:prob_data_19.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(582 records)
+     b(6 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:593
+   Elapsed:1.18 seconds
+   Inserts/second:503.40
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_20.gdx
+   OutputFile:prob_data_20.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:1.27 seconds
+   Inserts/second:439.62
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/1/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:50:29 elapsed 0:00:12.083
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:50:29 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/10/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/10/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:50:29 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:50:29 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_21.gdx
+   OutputFile:prob_data_21.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:1.19 seconds
+   Inserts/second:489.88
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_22.gdx
+   OutputFile:prob_data_22.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:1.16 seconds
+   Inserts/second:444.92
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_23.gdx
+   OutputFile:prob_data_23.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.55 seconds
+   Inserts/second:351.84
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_24.gdx
+   OutputFile:prob_data_24.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(20 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:565
+   Elapsed:1.22 seconds
+   Inserts/second:461.60
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_25.gdx
+   OutputFile:prob_data_25.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(480 records)
+     b(39 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:524
+   Elapsed:1.21 seconds
+   Inserts/second:434.85
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_26.gdx
+   OutputFile:prob_data_26.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.36 seconds
+   Inserts/second:401.92
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_27.gdx
+   OutputFile:prob_data_27.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(570 records)
+     b(10 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:585
+   Elapsed:1.23 seconds
+   Inserts/second:476.77
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_28.gdx
+   OutputFile:prob_data_28.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(546 records)
+     b(18 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:569
+   Elapsed:1.16 seconds
+   Inserts/second:491.36
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_29.gdx
+   OutputFile:prob_data_29.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(23 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:556
+   Elapsed:1.12 seconds
+   Inserts/second:497.76
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_30.gdx
+   OutputFile:prob_data_30.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.22 seconds
+   Inserts/second:451.85
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/10/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:50:41 elapsed 0:00:12.684
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:50:41 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/11/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/11/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:50:41 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:50:41 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_31.gdx
+   OutputFile:prob_data_31.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(576 records)
+     b(8 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:589
+   Elapsed:1.25 seconds
+   Inserts/second:473.09
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_32.gdx
+   OutputFile:prob_data_32.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.16 seconds
+   Inserts/second:468.21
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_33.gdx
+   OutputFile:prob_data_33.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:1.19 seconds
+   Inserts/second:468.86
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_34.gdx
+   OutputFile:prob_data_34.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:1.22 seconds
+   Inserts/second:460.97
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_35.gdx
+   OutputFile:prob_data_35.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:547
+   Elapsed:1.37 seconds
+   Inserts/second:398.11
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_36.gdx
+   OutputFile:prob_data_36.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:1.22 seconds
+   Inserts/second:436.17
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_37.gdx
+   OutputFile:prob_data_37.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:1.16 seconds
+   Inserts/second:458.69
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_38.gdx
+   OutputFile:prob_data_38.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.23 seconds
+   Inserts/second:442.37
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_39.gdx
+   OutputFile:prob_data_39.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.20 seconds
+   Inserts/second:458.26
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_40.gdx
+   OutputFile:prob_data_40.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.21 seconds
+   Inserts/second:455.22
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/11/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:50:54 elapsed 0:00:12.509
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:50:54 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/12/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/12/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:50:54 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:50:54 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_41.gdx
+   OutputFile:prob_data_41.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:1.22 seconds
+   Inserts/second:460.97
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_42.gdx
+   OutputFile:prob_data_42.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(432 records)
+     b(56 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:493
+   Elapsed:1.20 seconds
+   Inserts/second:410.83
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_43.gdx
+   OutputFile:prob_data_43.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:1.22 seconds
+   Inserts/second:423.42
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_44.gdx
+   OutputFile:prob_data_44.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(41 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:520
+   Elapsed:1.29 seconds
+   Inserts/second:403.73
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_45.gdx
+   OutputFile:prob_data_45.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:1.16 seconds
+   Inserts/second:481.83
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_46.gdx
+   OutputFile:prob_data_46.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:1.32 seconds
+   Inserts/second:407.74
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_47.gdx
+   OutputFile:prob_data_47.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:1.24 seconds
+   Inserts/second:417.95
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_48.gdx
+   OutputFile:prob_data_48.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.21 seconds
+   Inserts/second:451.53
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_49.gdx
+   OutputFile:prob_data_49.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(444 records)
+     b(51 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:500
+   Elapsed:1.19 seconds
+   Inserts/second:418.76
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_50.gdx
+   OutputFile:prob_data_50.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:1.22 seconds
+   Inserts/second:433.25
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/12/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:51:07 elapsed 0:00:12.578
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:51:07 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/13/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/13/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:51:07 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:51:07 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_51.gdx
+   OutputFile:prob_data_51.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(42 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:521
+   Elapsed:1.14 seconds
+   Inserts/second:457.42
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_52.gdx
+   OutputFile:prob_data_52.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(576 records)
+     b(8 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:589
+   Elapsed:1.17 seconds
+   Inserts/second:504.28
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_53.gdx
+   OutputFile:prob_data_53.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(20 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:565
+   Elapsed:1.23 seconds
+   Inserts/second:458.23
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_54.gdx
+   OutputFile:prob_data_54.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:1.22 seconds
+   Inserts/second:436.53
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_55.gdx
+   OutputFile:prob_data_55.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(438 records)
+     b(53 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:496
+   Elapsed:1.24 seconds
+   Inserts/second:399.03
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_56.gdx
+   OutputFile:prob_data_56.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(480 records)
+     b(40 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:525
+   Elapsed:1.14 seconds
+   Inserts/second:461.74
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_57.gdx
+   OutputFile:prob_data_57.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(444 records)
+     b(52 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:501
+   Elapsed:1.15 seconds
+   Inserts/second:435.27
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_58.gdx
+   OutputFile:prob_data_58.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:0.93 seconds
+   Inserts/second:578.66
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_59.gdx
+   OutputFile:prob_data_59.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(42 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:521
+   Elapsed:0.73 seconds
+   Inserts/second:712.72
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_60.gdx
+   OutputFile:prob_data_60.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:0.93 seconds
+   Inserts/second:579.91
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/13/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:51:18 elapsed 0:00:11.181
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:51:18 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/14/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/14/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:51:18 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:51:18 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_61.gdx
+   OutputFile:prob_data_61.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(444 records)
+     b(51 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:500
+   Elapsed:0.70 seconds
+   Inserts/second:716.33
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_62.gdx
+   OutputFile:prob_data_62.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:0.70 seconds
+   Inserts/second:755.71
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_63.gdx
+   OutputFile:prob_data_63.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:0.72 seconds
+   Inserts/second:780.25
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_64.gdx
+   OutputFile:prob_data_64.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(582 records)
+     b(6 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:593
+   Elapsed:0.77 seconds
+   Inserts/second:775.16
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_65.gdx
+   OutputFile:prob_data_65.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(33 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:536
+   Elapsed:0.69 seconds
+   Inserts/second:775.69
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_66.gdx
+   OutputFile:prob_data_66.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(444 records)
+     b(52 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:501
+   Elapsed:0.72 seconds
+   Inserts/second:692.95
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_67.gdx
+   OutputFile:prob_data_67.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:0.87 seconds
+   Inserts/second:629.33
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_68.gdx
+   OutputFile:prob_data_68.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:0.72 seconds
+   Inserts/second:769.12
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_69.gdx
+   OutputFile:prob_data_69.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:0.72 seconds
+   Inserts/second:730.66
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_70.gdx
+   OutputFile:prob_data_70.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:0.73 seconds
+   Inserts/second:745.18
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/14/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:51:25 elapsed 0:00:07.626
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:51:25 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/15/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/15/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:51:25 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:51:25 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_71.gdx
+   OutputFile:prob_data_71.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:0.78 seconds
+   Inserts/second:661.13
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_72.gdx
+   OutputFile:prob_data_72.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(41 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:520
+   Elapsed:0.67 seconds
+   Inserts/second:771.51
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_73.gdx
+   OutputFile:prob_data_73.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(456 records)
+     b(47 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:508
+   Elapsed:0.71 seconds
+   Inserts/second:711.48
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_74.gdx
+   OutputFile:prob_data_74.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(414 records)
+     b(62 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:481
+   Elapsed:0.67 seconds
+   Inserts/second:717.91
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_75.gdx
+   OutputFile:prob_data_75.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:0.71 seconds
+   Inserts/second:763.05
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_76.gdx
+   OutputFile:prob_data_76.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(576 records)
+     b(8 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:589
+   Elapsed:0.80 seconds
+   Inserts/second:739.02
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_77.gdx
+   OutputFile:prob_data_77.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:0.76 seconds
+   Inserts/second:704.72
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_78.gdx
+   OutputFile:prob_data_78.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:1.27 seconds
+   Inserts/second:417.19
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_79.gdx
+   OutputFile:prob_data_79.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.26 seconds
+   Inserts/second:433.92
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_80.gdx
+   OutputFile:prob_data_80.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.16 seconds
+   Inserts/second:474.09
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/15/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:51:35 elapsed 0:00:09.092
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:51:35 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/16/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/16/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:51:35 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:51:35 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_81.gdx
+   OutputFile:prob_data_81.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:1.24 seconds
+   Inserts/second:442.39
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_82.gdx
+   OutputFile:prob_data_82.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(552 records)
+     b(16 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:573
+   Elapsed:1.20 seconds
+   Inserts/second:477.10
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_83.gdx
+   OutputFile:prob_data_83.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:1.37 seconds
+   Inserts/second:404.83
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_84.gdx
+   OutputFile:prob_data_84.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:1.22 seconds
+   Inserts/second:433.25
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_85.gdx
+   OutputFile:prob_data_85.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:1.24 seconds
+   Inserts/second:445.97
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_86.gdx
+   OutputFile:prob_data_86.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(31 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:540
+   Elapsed:1.27 seconds
+   Inserts/second:424.19
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_87.gdx
+   OutputFile:prob_data_87.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:1.17 seconds
+   Inserts/second:467.81
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_88.gdx
+   OutputFile:prob_data_88.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(46 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:513
+   Elapsed:1.07 seconds
+   Inserts/second:480.34
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_89.gdx
+   OutputFile:prob_data_89.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(45 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:512
+   Elapsed:1.09 seconds
+   Inserts/second:471.45
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_90.gdx
+   OutputFile:prob_data_90.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(480 records)
+     b(39 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:524
+   Elapsed:2.17 seconds
+   Inserts/second:241.14
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/16/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:51:48 elapsed 0:00:13.329
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:51:48 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/17/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/17/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:51:48 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:51:48 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_91.gdx
+   OutputFile:prob_data_91.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:4.92 seconds
+   Inserts/second:112.51
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_92.gdx
+   OutputFile:prob_data_92.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:5.54 seconds
+   Inserts/second:100.47
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_93.gdx
+   OutputFile:prob_data_93.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(25 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:552
+   Elapsed:4.62 seconds
+   Inserts/second:119.51
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_94.gdx
+   OutputFile:prob_data_94.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:4.73 seconds
+   Inserts/second:118.53
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_95.gdx
+   OutputFile:prob_data_95.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:5.00 seconds
+   Inserts/second:116.13
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_96.gdx
+   OutputFile:prob_data_96.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:5.13 seconds
+   Inserts/second:106.93
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_97.gdx
+   OutputFile:prob_data_97.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:4.79 seconds
+   Inserts/second:116.33
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_98.gdx
+   OutputFile:prob_data_98.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(19 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:564
+   Elapsed:5.40 seconds
+   Inserts/second:104.44
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_99.gdx
+   OutputFile:prob_data_99.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:5.94 seconds
+   Inserts/second:97.86
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_100.gdx
+   OutputFile:prob_data_100.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(45 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:512
+   Elapsed:5.50 seconds
+   Inserts/second:93.16
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/17/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:52:40 elapsed 0:00:52.069
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:52:40 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/18/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/18/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:52:40 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:52:40 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_101.gdx
+   OutputFile:prob_data_101.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(480 records)
+     b(40 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:525
+   Elapsed:4.54 seconds
+   Inserts/second:115.61
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_102.gdx
+   OutputFile:prob_data_102.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:4.76 seconds
+   Inserts/second:116.08
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_103.gdx
+   OutputFile:prob_data_103.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(31 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:540
+   Elapsed:4.95 seconds
+   Inserts/second:109.05
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_104.gdx
+   OutputFile:prob_data_104.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(33 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:536
+   Elapsed:4.72 seconds
+   Inserts/second:113.61
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_105.gdx
+   OutputFile:prob_data_105.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(35 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:532
+   Elapsed:5.28 seconds
+   Inserts/second:100.81
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_106.gdx
+   OutputFile:prob_data_106.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(552 records)
+     b(16 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:573
+   Elapsed:5.40 seconds
+   Inserts/second:106.05
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_107.gdx
+   OutputFile:prob_data_107.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(546 records)
+     b(18 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:569
+   Elapsed:5.13 seconds
+   Inserts/second:110.87
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_108.gdx
+   OutputFile:prob_data_108.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(25 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:552
+   Elapsed:4.31 seconds
+   Inserts/second:127.96
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_109.gdx
+   OutputFile:prob_data_109.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(570 records)
+     b(10 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:585
+   Elapsed:4.70 seconds
+   Inserts/second:124.49
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_110.gdx
+   OutputFile:prob_data_110.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:5.54 seconds
+   Inserts/second:99.80
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/18/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:53:30 elapsed 0:00:49.928
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:53:30 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/19/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/19/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:53:30 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:53:30 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_111.gdx
+   OutputFile:prob_data_111.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(480 records)
+     b(40 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:525
+   Elapsed:4.91 seconds
+   Inserts/second:106.84
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_112.gdx
+   OutputFile:prob_data_112.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(42 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:521
+   Elapsed:5.29 seconds
+   Inserts/second:98.49
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_113.gdx
+   OutputFile:prob_data_113.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:5.06 seconds
+   Inserts/second:110.89
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_114.gdx
+   OutputFile:prob_data_114.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:4.99 seconds
+   Inserts/second:108.50
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_115.gdx
+   OutputFile:prob_data_115.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:4.54 seconds
+   Inserts/second:117.27
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_116.gdx
+   OutputFile:prob_data_116.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(20 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:565
+   Elapsed:4.80 seconds
+   Inserts/second:117.71
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_117.gdx
+   OutputFile:prob_data_117.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:5.67 seconds
+   Inserts/second:97.60
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_118.gdx
+   OutputFile:prob_data_118.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(540 records)
+     b(19 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:564
+   Elapsed:4.75 seconds
+   Inserts/second:118.69
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_119.gdx
+   OutputFile:prob_data_119.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(46 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:513
+   Elapsed:5.78 seconds
+   Inserts/second:88.79
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_120.gdx
+   OutputFile:prob_data_120.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:5.22 seconds
+   Inserts/second:105.94
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/19/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:54:22 elapsed 0:00:51.516
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:54:22 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/2/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/2/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:54:22 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:54:22 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_121.gdx
+   OutputFile:prob_data_121.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(558 records)
+     b(14 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:577
+   Elapsed:6.04 seconds
+   Inserts/second:95.56
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_122.gdx
+   OutputFile:prob_data_122.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:4.62 seconds
+   Inserts/second:117.99
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_123.gdx
+   OutputFile:prob_data_123.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(414 records)
+     b(61 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:480
+   Elapsed:5.21 seconds
+   Inserts/second:92.08
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_124.gdx
+   OutputFile:prob_data_124.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:4.61 seconds
+   Inserts/second:120.93
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_125.gdx
+   OutputFile:prob_data_125.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(41 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:520
+   Elapsed:5.55 seconds
+   Inserts/second:93.74
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_126.gdx
+   OutputFile:prob_data_126.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:5.71 seconds
+   Inserts/second:96.11
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_127.gdx
+   OutputFile:prob_data_127.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:5.94 seconds
+   Inserts/second:92.36
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_128.gdx
+   OutputFile:prob_data_128.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(564 records)
+     b(12 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:581
+   Elapsed:5.12 seconds
+   Inserts/second:113.45
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_129.gdx
+   OutputFile:prob_data_129.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:5.12 seconds
+   Inserts/second:106.53
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_130.gdx
+   OutputFile:prob_data_130.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(29 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:544
+   Elapsed:4.85 seconds
+   Inserts/second:112.07
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/2/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:55:15 elapsed 0:00:53.262
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:55:15 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/3/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/3/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:55:15 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:55:15 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.001
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_131.gdx
+   OutputFile:prob_data_131.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:5.10 seconds
+   Inserts/second:109.19
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_132.gdx
+   OutputFile:prob_data_132.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:5.67 seconds
+   Inserts/second:95.40
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_133.gdx
+   OutputFile:prob_data_133.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:5.50 seconds
+   Inserts/second:101.27
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_134.gdx
+   OutputFile:prob_data_134.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(28 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:549
+   Elapsed:5.15 seconds
+   Inserts/second:106.68
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_135.gdx
+   OutputFile:prob_data_135.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(486 records)
+     b(38 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:529
+   Elapsed:5.58 seconds
+   Inserts/second:94.75
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_136.gdx
+   OutputFile:prob_data_136.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(396 records)
+     b(67 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:468
+   Elapsed:5.60 seconds
+   Inserts/second:83.53
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_137.gdx
+   OutputFile:prob_data_137.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(35 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:532
+   Elapsed:5.41 seconds
+   Inserts/second:98.41
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_138.gdx
+   OutputFile:prob_data_138.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:4.12 seconds
+   Inserts/second:132.38
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_139.gdx
+   OutputFile:prob_data_139.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(492 records)
+     b(36 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:533
+   Elapsed:4.82 seconds
+   Inserts/second:110.63
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_140.gdx
+   OutputFile:prob_data_140.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:5.07 seconds
+   Inserts/second:109.88
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/3/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:56:08 elapsed 0:00:52.661
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:56:08 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/4/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/4/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:56:08 elapsed 0:00:00.003
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:56:08 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_141.gdx
+   OutputFile:prob_data_141.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:5.18 seconds
+   Inserts/second:105.23
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_142.gdx
+   OutputFile:prob_data_142.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(29 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:544
+   Elapsed:5.50 seconds
+   Inserts/second:98.87
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_143.gdx
+   OutputFile:prob_data_143.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(450 records)
+     b(49 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:504
+   Elapsed:4.52 seconds
+   Inserts/second:111.46
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_144.gdx
+   OutputFile:prob_data_144.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:561
+   Elapsed:5.51 seconds
+   Inserts/second:101.81
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_145.gdx
+   OutputFile:prob_data_145.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:4.88 seconds
+   Inserts/second:110.09
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_146.gdx
+   OutputFile:prob_data_146.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(474 records)
+     b(41 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:520
+   Elapsed:4.76 seconds
+   Inserts/second:109.17
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_147.gdx
+   OutputFile:prob_data_147.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(27 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:548
+   Elapsed:5.04 seconds
+   Inserts/second:108.75
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_148.gdx
+   OutputFile:prob_data_148.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(498 records)
+     b(34 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:537
+   Elapsed:5.20 seconds
+   Inserts/second:103.19
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_149.gdx
+   OutputFile:prob_data_149.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(528 records)
+     b(24 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:557
+   Elapsed:4.65 seconds
+   Inserts/second:119.86
+   Done
+
+--- instances.gms(30) 3 Mb--- instances.gms(31) 3 Mb
+--- instances.gms(32) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_150.gdx
+   OutputFile:prob_data_150.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(408 records)
+     b(64 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:477
+   Elapsed:5.29 seconds
+   Inserts/second:90.20
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/4/seed.gms
+*** Status: Normal completion
+--- Job instances.gms Stop 04/23/18 22:56:58 elapsed 0:00:50.897
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job generate_batch.gms Start 04/23/18 22:56:59 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- generate_batch.gms(4) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- generate_batch.gms(17) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- generate_batch.gms(17) 4 Mb
+--- Putfile frun /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/5/instances.gms
+--- Putfile frun2 /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler/5/dbs.gms
+*** Status: Normal completion
+--- Job generate_batch.gms Stop 04/23/18 22:56:59 elapsed 0:00:00.002
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job instances.gms Start 04/23/18 22:56:59 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- instances.gms(32) 2 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- instances.gms(4) 3 Mb
+--- instances.gms(5) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_151.gdx
+   OutputFile:prob_data_151.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(522 records)
+     b(26 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:553
+   Elapsed:5.22 seconds
+   Inserts/second:105.90
+   Done
+
+--- instances.gms(6) 3 Mb--- instances.gms(7) 3 Mb
+--- instances.gms(8) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_152.gdx
+   OutputFile:prob_data_152.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(30 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:545
+   Elapsed:5.57 seconds
+   Inserts/second:97.92
+   Done
+
+--- instances.gms(9) 3 Mb--- instances.gms(10) 3 Mb
+--- instances.gms(11) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_153.gdx
+   OutputFile:prob_data_153.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(450 records)
+     b(49 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:504
+   Elapsed:6.00 seconds
+   Inserts/second:83.94
+   Done
+
+--- instances.gms(12) 3 Mb--- instances.gms(13) 3 Mb
+--- instances.gms(14) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_154.gdx
+   OutputFile:prob_data_154.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(462 records)
+     b(46 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:513
+   Elapsed:4.37 seconds
+   Inserts/second:117.28
+   Done
+
+--- instances.gms(15) 3 Mb--- instances.gms(16) 3 Mb
+--- instances.gms(17) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_155.gdx
+   OutputFile:prob_data_155.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(516 records)
+     b(27 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:548
+   Elapsed:5.23 seconds
+   Inserts/second:104.84
+   Done
+
+--- instances.gms(18) 3 Mb--- instances.gms(19) 3 Mb
+--- instances.gms(20) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_156.gdx
+   OutputFile:prob_data_156.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(504 records)
+     b(32 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:541
+   Elapsed:5.61 seconds
+   Inserts/second:96.37
+   Done
+
+--- instances.gms(21) 3 Mb--- instances.gms(22) 3 Mb
+--- instances.gms(23) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_157.gdx
+   OutputFile:prob_data_157.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(510 records)
+     b(29 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:544
+   Elapsed:4.85 seconds
+   Inserts/second:112.26
+   Done
+
+--- instances.gms(24) 3 Mb--- instances.gms(25) 3 Mb
+--- instances.gms(26) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_158.gdx
+   OutputFile:prob_data_158.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(468 records)
+     b(44 records)
+     ub(5 records)
+     lb(0 records)
+   Inserts:517
+   Elapsed:5.60 seconds
+   Inserts/second:92.29
+   Done
+
+--- instances.gms(27) 3 Mb--- instances.gms(28) 3 Mb
+--- instances.gms(29) 3 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:prob_data_159.gdx
+   OutputFile:prob_data_159.db
+   Symbols:4
+   Uels:60
+   Loading Uels
+   Processing Symbols
+     A(534 records)
+     b(22 records)
