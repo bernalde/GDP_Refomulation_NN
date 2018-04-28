@@ -1,0 +1,13 @@
+import os, random
+positive = open("positive", "r").readlines()
+negative = open("negative", "r").readlines()
+random.shuffle(positive)
+random.shuffle(negative)
+train = open("training_set", "w")
+test = open("test_set", "w")
+plen = int(len(positive) * 0.7)
+nlen = int(len(negative)*0.7)
+train.write("".join(positive[:plen]))
+train.write("".join(negative[:nlen]))
+test.write("".join(positive[plen:]))
+test.write("".join(negative[nlen:]))

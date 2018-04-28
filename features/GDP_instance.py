@@ -32,7 +32,7 @@ class GDP:
 			if int(row['var']) > self.num_vars:
 				self.num_vars = int(row['var'])
 			if int(row['k']) != last_index_k:
-				index_k = int(row['k'])
+				index_k += 1
 				if last_index_k != 0:
 					eq_term.append(last_e_number)
 					self.num_disjuncts.append(index_i)
@@ -76,11 +76,13 @@ class GDP:
 		map_k_i = {}
 		for index,row in A.iterrows():
 			if int(row['k']) != last_index_k:
-				index_k = int(row['k'])
+				index_k += 1
 				index_i = 1
 			elif int(row['i']) != last_index_i:
 				index_i += 1
-			map_k_i[str(row['k']) + "_" + str(row['i'])] = index_i
+			map_k_i[str(row['k']) + "_" + str(row['i'])] = {}
+			map_k_i[str(row['k']) + "_" + str(row['i'])]['k'] = index_k
+			map_k_i[str(row['k']) + "_" + str(row['i'])]['i'] = index_i
 			# print index_k, index_i, row['e'], len(self.A[index_k-1]), len(self.A[index_k-1][index_i-1])
 			self.A[index_k-1][index_i-1][int(row['e'])-1, int(row['var'])-1] = row['value']
 			last_index_i = int(row['i'])
@@ -96,16 +98,18 @@ class GDP:
 		for index,row in b.iterrows():
 			# print row['k'], map_k_i[str(row['k']) + "_" + str(row['i'])], row['e']
 			# print  len(self.b),len(self.b[int(row['k'])-1]), len(self.b[int(row['k'])-1][map_k_i[str(row['k']) + "_" + str(row['i'])]-1])
-			if int(row['e']) > len(self.b[int(row['k'])-1][map_k_i[str(row['k']) + "_" + str(row['i'])]-1]):
+			# print map_k_i[str(row['k']) + "_" + str(row['i'])]['k'], map_k_i[str(row['k']) + "_" + str(row['i'])]['i']
+			# print len(self.b[map_k_i[str(row['k']) + "_" + str(row['i'])]['k']-1]), self.b[map_k_i[str(row['k']) + "_" + str(row['i'])]['k']-1][map_k_i[str(row['k']) + "_" + str(row['i'])]['i']-1]
+			if int(row['e']) > len(self.b[map_k_i[str(row['k']) + "_" + str(row['i'])]['k']-1][map_k_i[str(row['k']) + "_" + str(row['i'])]['i']-1]):
 				continue
-			self.b[int(row['k'])-1][map_k_i[str(row['k']) + "_" + str(row['i'])]-1][int(row['e'])-1] = row['value']
+			self.b[map_k_i[str(row['k']) + "_" + str(row['i'])]['k']-1][map_k_i[str(row['k']) + "_" + str(row['i'])]['i']-1][int(row['e'])-1] = row['value']
 
 
-		self.c = np.zeros(shape=(self.num_vars), dtype=float)
-		c = pd.read_sql_query("SELECT * FROM c", prob_tab)
+		# self.c = np.zeros(shape=(self.num_vars), dtype=float)
+		# c = pd.read_sql_query("SELECT * FROM c", prob_tab)
 		
-		for index, row in c.iterrows():
-			self.c[int(row['var'])-1] = row['value']
+		# for index, row in c.iterrows():
+		# 	self.c[int(row['var'])-1] = row['value']
 
 		#parse model stat
 		stat_matrix = pd.read_sql_query("SELECT * FROM stats", stat)
@@ -148,7 +152,8 @@ class GDP:
 		for key in self.stat:
 			for key2 in self.stat[key]:
 				self.features[key+"_"+key2] = self.stat[key][key2]
-		self.features['1_norm_c'] = np.linalg.norm(self.c, ord=1)
+		# self.features['1_norm_c'] = np.linalg.norm(self.c, ord=1)
+		self.features['1_norm_c'] = 0.0
 		self.features['average_nuclear_norm_over_nconstr_b'] = self.get_average_nuclear_norm_over_nconstr_b()
 		
 		self.Y = self.get_Y()
@@ -197,7 +202,16 @@ class GDP:
 			i +=1
 		output.write("\n")
 		output.close()
-		
+
+	def write_features_to_libsvm1(self):
+		output = open("/home/canl1/work/GDP_Refomulation_NN/features/map_features_for_libsvm", "a")
+		output.write(str(self.Y) + " ")
+		i = 1
+		for key in self.features:
+			output.write(str(i) + ":" + str(self.features[key]) + " ")
+			i +=1
+		output.write("\n")
+		output.close()	
 
 	def write_features(self):
 		f = open("/home/canl1/work/GDP_Refomulation_NN/features/features", "w")
