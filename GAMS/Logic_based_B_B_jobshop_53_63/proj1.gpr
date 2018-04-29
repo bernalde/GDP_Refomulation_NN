@@ -842,12 +842,6 @@ Decim=7
 PlaneRownr=-1
 SqTrail0=0
 
-[RP:MAX_TIME_REF]
-1=
-
-[RP:MAX_TIME]
-1=
-
 [GDXDISP: opt_y Par 2]
 PlaneDim=0
 RowDim=1
@@ -1279,33 +1273,14 @@ Order=1,2
 Decim=7
 PlaneRownr=-1
 
-[RP:BM_REF]
-1=r=0 
-2=r=0 o=nul lo=0
-3=r=0 o=nul lo=2 lf=nul
-4=r=0
-5=
-
 [RP:Z_BM_REF]
 1=
-
-[RP:HR_REF]
-1=r=0
-2=
 
 [RP:Z_HR_REF]
 1=
 
 [RP:Z_LOGIC_B_B_BM2]
 1=
-
-[RP:LOGIC_B_B_BM2]
-1=r=0
-2=
-
-[RP:LOGIC_B_B_HR2]
-1=r=0
-2=
 
 [RP:Z_LOGIC_B_B_HR2]
 1=
@@ -1318,38 +1293,64 @@ PlaneRownr=-1
 [RP:Z_LOGIC_B_B_LAG_K0]
 1=
 
-[RP:RANDOM_GEN_PRESOLVE]
-1=s=0 gdx=zzz
-2=s=0
-3=
-
 [RP:Z_RANDOM_GEN_PRESOLVE]
-1=
-
-[RP:RUN_BATCH]
 1=
 
 [RP:Z_RUN_BATCH]
 1=
 
+[RP:BM_REF]
+1=r=0 
+2=r=0 o=nul lo=0
+3=r=0 o=nul lo=2 lf=nul
+4=r=0
+5=
+
+[RP:HR_REF]
+1=r=0
+2=
+
+[RP:LOGIC_B_B_BM2]
+1=r=0
+2=
+
+[RP:LOGIC_B_B_HR2]
+1=r=0
+2=
+
+[RP:MAX_TIME]
+1=
+
+[RP:MAX_TIME_REF]
+1=
+
+[RP:RUN_BATCH]
+1=
+
+[RP:RANDOM_GEN_PRESOLVE]
+1=s=0 gdx=zzz
+2=s=0
+3=
+
 [MRUFILES]
-1=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\zzz.gdx
-2=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\res_B_B_HR2 .gdx
-3=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\z_Random_gen_presolve.gms
-4=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\Random_gen_presolve.gms
-5=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\z_Logic_B_B_LAG_k0.gms
-6=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\Logic_B_B_LAG_k0.gms
-7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\z_Logic_B_B_HR2.gms
+1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\max_time_ref.gms
+2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\max_time.gms
+3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\max_time_ref.gms
+4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_HR2.gms
+5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Logic_B_B_BM2.gms
+6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\HR_ref.gms
+7=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\BM_ref.gms
+8=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\run_batch.gms
+9=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_strip_4_5_newform\Random_gen_presolve.gms
 
 [OPENWINDOW_1]
-FILE0=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\run_batch.gms
-FILE1=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\run_batch.lst
-FILE2=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\seed.gms
-FILE3=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\solution_total .gdx
-FILE4=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\solution_total_2 .gdx
-FILE5=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\z_run_batch.gms
-FILE6=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\z_run_batch.lst
-FILE7=C:\Users\sterraza\Desktop\Documents\Research\Lagrangean_GDP\Logic_based_B_B_jobshop_53_63\solution_total_2 .gdx
+FILE0=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\BM_ref.gms
+FILE1=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\HR_ref.gms
+FILE2=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\Logic_B_B_BM2.gms
+FILE3=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\Logic_B_B_HR2.gms
+FILE4=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\Random_gen_presolve.gms
+FILE5=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\run_batch.gms
+FILE6=C:\Users\debernal\Dropbox\Ubuntu\GDP_NN\GDP_Refomulation_NN\GAMS\Logic_based_B_B_jobshop_53_63\run_batch.gms
 MAXIM=0
 TOP=16
 LEFT=6
