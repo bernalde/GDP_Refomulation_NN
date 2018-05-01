@@ -14,10 +14,12 @@ import pandas as pd
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+random_state = 12883823
+
 # Import Data
-df_train = pd.read_csv('scaled_training_set_data',
+df_train = pd.read_csv('../features/function_of_features/all_raw_features/training_set_data_withoutstrip52',
                        header = None, delimiter=' ', engine='python')
-df_test = pd.read_csv('scaled_test_set_data',
+df_test = pd.read_csv('../features/function_of_features/all_raw_features/test_set_data_withoutstrip52',
                        header = None, delimiter=' ', engine='python')
 
 #Clean the data
@@ -43,23 +45,21 @@ X_train = scaler.transform(features_train)
 X_test = scaler.transform(features_test)
 
 from sklearn.neural_network import MLPClassifier
-
-mlp = MLPClassifier(hidden_layer_sizes=(5,5,5),max_iter=10000)
-results = mlp.fit(X_train,labels_train.flatten())
-print(results)
-
-predictions = mlp.predict(X_test)
-print(predictions)
-
 from sklearn.metrics import classification_report,confusion_matrix
+from sklearn.model_selection import KFold
+kf = KFold(n_splits=10)
 
-print(confusion_matrix(labels_test.flatten(),predictions))
+mlp = MLPClassifier(hidden_layer_sizes=(5,5,5),max_iter=10000, random_state=random_state)
 
-print(classification_report(labels_test.flatten(),predictions))
+for train_indices, test_indices in kf.split(X_train):
+    results = mlp.fit(X_train[train_indices],labels_train[train_indices].flatten())
+    print(results)
+    print(mlp.score(X_train[test_indices], labels_train[test_indices].flatten()))
+    predictions = mlp.predict(X_test)
+    print(confusion_matrix(labels_test.flatten(),predictions))
+    print(classification_report(labels_test.flatten(),predictions))
 
-print(mlp.coefs_)
-print(labels_train.flatten())
-print(features_train[0,:])
 
-plt.scatter(X_train[:,2],X_train[:,1],c=labels_train.flatten())
-plt.show()
+
+# plt.scatter(X_train[:,2],X_train[:,1],c=labels_train.flatten())
+# plt.show()
