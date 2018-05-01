@@ -16,7 +16,7 @@ from subprocess import *
 
 is_win32 = (sys.platform == 'win32')
 if not is_win32:
-	gridpy_exe = "./grid.py -log2c -2,9,2 -log2g 1,-11,-2"
+	gridpy_exe = "~/work/GDP_Refomulation_NN/libsvm-3.22/tools/grid.py -log2c -2,9,2 -log2g 1,-11,-2"
 	svmtrain_exe="../svm-train"
 	svmpredict_exe="../../svm-predict"
 else:

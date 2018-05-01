@@ -105,11 +105,11 @@ class GDP:
 			self.b[map_k_i[str(row['k']) + "_" + str(row['i'])]['k']-1][map_k_i[str(row['k']) + "_" + str(row['i'])]['i']-1][int(row['e'])-1] = row['value']
 
 
-		# self.c = np.zeros(shape=(self.num_vars), dtype=float)
-		# c = pd.read_sql_query("SELECT * FROM c", prob_tab)
+		self.c = np.zeros(shape=(self.num_vars), dtype=float)
+		c = pd.read_sql_query("SELECT * FROM c", prob_tab)
 		
-		# for index, row in c.iterrows():
-		# 	self.c[int(row['var'])-1] = row['value']
+		for index, row in c.iterrows():
+			self.c[int(row['var'])-1] = row['value']
 
 		#parse model stat
 		stat_matrix = pd.read_sql_query("SELECT * FROM stats", stat)
@@ -121,7 +121,7 @@ class GDP:
 		for index, row in stat_matrix.iterrows():
 			if int(row['iter']) == problem_index:
 				self.stat[str(row['algo2'])][str(row['resu2'])] = row['value']
-		
+
 
 		#parse solution 
 		solution_matrix = pd.read_sql_query("SELECT * FROM solu", solution)
@@ -152,8 +152,10 @@ class GDP:
 		for key in self.stat:
 			for key2 in self.stat[key]:
 				self.features[key+"_"+key2] = self.stat[key][key2]
-		# self.features['1_norm_c'] = np.linalg.norm(self.c, ord=1)
-		self.features['1_norm_c'] = 0.0
+		if not self.stat['BM'].has_key('rel'):
+			self.features['BM_rel'] = 0.0 
+		self.features['1_norm_c'] = np.linalg.norm(self.c, ord=1)
+		# self.features['1_norm_c'] = 0.0
 		self.features['average_nuclear_norm_over_nconstr_b'] = self.get_average_nuclear_norm_over_nconstr_b()
 		
 		self.Y = self.get_Y()
@@ -208,6 +210,7 @@ class GDP:
 		output.write(str(self.Y) + " ")
 		i = 1
 		for key in self.features:
+			print i, key
 			output.write(str(i) + ":" + str(self.features[key]) + " ")
 			i +=1
 		output.write("\n")

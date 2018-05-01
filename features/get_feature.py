@@ -10,9 +10,7 @@ os.system(' echo "" > map_features_for_libsvm')
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_78/Euler',\
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_79/Euler',\
 
-# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler',\
-# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler',\
-# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_food_5/Euler',\
+
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v50/Euler',\
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_k10_i3_v80/Euler',\
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_k5_i30_v30/Euler',\
@@ -23,18 +21,21 @@ os.system(' echo "" > map_features_for_libsvm')
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_strip_42/Euler',\
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_strip_5/Euler',\
 # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_strip_52/Euler'
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_53/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_54/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_55/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_57/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_58/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_59/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_63/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_66/Euler',\
+# '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_67/Euler'
 
-
-data_directories = ['/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_53/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_54/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_55/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_56/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_57/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_58/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_59/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_63/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_66/Euler',\
-'/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_jobshop_67/Euler']
+ # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler',\
+ # '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_food_5/Euler'
+data_directories = [ '/home/canl1/work/GDP_Refomulation_NN/data/Logic_based_B_B_contracts/Euler'
+]
 
 for directory in data_directories:	
 	os.chdir(directory)
@@ -48,14 +49,18 @@ for directory in data_directories:
 			
 			for index, row in temp_solution.iterrows():
 				if int(row['iter']) == prob+1: 
-					if folder >=2 and folder<10:
-						prob_tab = sqlite3.connect("prob_data_" + str(100+prob+1 + folder*10) + ".db")
-					elif folder>=10:
-						prob_tab = sqlite3.connect("prob_data_" + str(prob+1 + folder*10-80) + ".db")
-					else:
-						prob_tab = sqlite3.connect("prob_data_" + str(prob+1 + folder*10) + ".db")
+					prob_tab = sqlite3.connect("prob_data_" + str(prob+1 + folder*10) + ".db")
+					# if folder >=2 and folder<10:
+					# 	prob_tab = sqlite3.connect("prob_data_" + str(100+prob+1 + folder*10) + ".db")
+					# elif folder>=10:
+					# 	prob_tab = sqlite3.connect("prob_data_" + str(prob+1 + folder*10-80) + ".db")
+					# else:
+						
 					new_GDP_instance = GDP(prob_tab=prob_tab, solution=solution, stat=stat, problem_index=prob+1)
 					new_GDP_instance.get_features()
+					print len(new_GDP_instance.features), new_GDP_instance.features
+					print new_GDP_instance.solution
+					print new_GDP_instance.stat
 					if len(new_GDP_instance.features) == 16:
 						new_GDP_instance.write_features_to_libsvm()
 						temp = open("/home/canl1/work/GDP_Refomulation_NN/features/map_features_for_libsvm", "a")
