@@ -17,24 +17,40 @@ import matplotlib.pyplot as plt
 random_state = 12883823
 
 # Import Data
-df_train = pd.read_csv('../features/function_of_features/all_raw_features/training_set_data_withoutstrip52',
+# df_train = pd.read_csv('../features/function_of_features/all_raw_features/training_set_data_withoutstrip52',
+#                        header = None, delimiter=' ', engine='python')
+# df_test = pd.read_csv('../features/function_of_features/all_raw_features/test_set_data_withoutstrip52',
+#                        header = None, delimiter=' ', engine='python')
+# df_train = pd.read_csv('../features/function_of_features/6features_withoutstrip52/training_set_data',
+#                        header = None, delimiter=' ', engine='python')
+# df_test = pd.read_csv('../features/function_of_features/6features_withoutstrip52/test_set_data',
+#                        header = None, delimiter=' ', engine='python')
+df_train = pd.read_csv('../features/function_of_features/6features_withstrip52/training_set_data',
                        header = None, delimiter=' ', engine='python')
-df_test = pd.read_csv('../features/function_of_features/all_raw_features/test_set_data_withoutstrip52',
+df_test = pd.read_csv('../features/function_of_features/6features_withstrip52/test_set_data',
                        header = None, delimiter=' ', engine='python')
+# print(df_train)
+# df_train = pd.read_csv('./scaled_training_set_data',
+#                        header = None, delimiter=' ', engine='python')
+# df_test = pd.read_csv('./scaled_test_set_data',
+#                        header = None, delimiter=' ', engine='python')
 
 #Clean the data
-for i in range(1, len(df_train.columns)):
+for i in range(1, min(len(df_train.columns),10)):
     df_train[i] = df_train[i].map(lambda x: str(x)[2:])
-#print(df_train)
-for i in range(1, len(df_train.columns)):
     df_test[i] = df_test[i].map(lambda x: str(x)[2:])
-#print(df_test)
+#Clean the data
+if len(df_train.columns) > 10:
+    for i in range(10, len(df_train.columns)):
+        df_train[i] = df_train[i].map(lambda x: str(x)[3:])
+        df_test[i] = df_test[i].map(lambda x: str(x)[3:])
+# print(df_train)
 
 #Get labels and features as nparray
 labels_train = df_train.as_matrix(columns=[0])
-features_train =df_train.as_matrix(columns=[1,2,3,4])
+features_train =df_train.as_matrix(columns=df_train.columns[1:len(df_train.columns)])
 labels_test = df_test.as_matrix(columns=[0])
-features_test =df_test.as_matrix(columns=[1,2,3,4])
+features_test =df_test.as_matrix(columns=df_test.columns[1:len(df_train.columns)])
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
@@ -55,6 +71,13 @@ for train_indices, test_indices in kf.split(X_train):
     results = mlp.fit(X_train[train_indices],labels_train[train_indices].flatten())
     print(results)
     print(mlp.score(X_train[test_indices], labels_train[test_indices].flatten()))
+    print("Training")
+    print(mlp.score(X_train, labels_train.flatten()))
+    training = mlp.predict(X_train)
+    print(confusion_matrix(labels_train.flatten(),training))
+    print(classification_report(labels_train.flatten(),training))
+    print("Testing")
+    print(mlp.score(X_test, labels_test.flatten()))
     predictions = mlp.predict(X_test)
     print(confusion_matrix(labels_test.flatten(),predictions))
     print(classification_report(labels_test.flatten(),predictions))
