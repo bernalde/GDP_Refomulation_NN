@@ -1,0 +1,123 @@
+# Tuning hyper-parameters for precision
+
+Best parameters set found on development set:
+
+{'hidden_layer_sizes': [3, 5, 6]}
+
+Grid scores on development set:
+
+0.742 (+/-0.091) for {'hidden_layer_sizes': [6, 6, 6]}
+0.743 (+/-0.092) for {'hidden_layer_sizes': [3, 3, 3]}
+0.745 (+/-0.098) for {'hidden_layer_sizes': [5, 5, 5]}
+0.740 (+/-0.089) for {'hidden_layer_sizes': [6, 6]}
+0.744 (+/-0.092) for {'hidden_layer_sizes': [5, 5]}
+0.450 (+/-0.256) for {'hidden_layer_sizes': [3, 3]}
+0.376 (+/-0.000) for {'hidden_layer_sizes': [6, 5, 3]}
+0.746 (+/-0.095) for {'hidden_layer_sizes': [3, 5, 6]}
+0.745 (+/-0.095) for {'hidden_layer_sizes': [6, 5]}
+0.745 (+/-0.095) for {'hidden_layer_sizes': [6, 3]}
+0.745 (+/-0.095) for {'hidden_layer_sizes': [5, 6]}
+0.745 (+/-0.095) for {'hidden_layer_sizes': [3, 5]}
+0.745 (+/-0.095) for {'hidden_layer_sizes': [3, 6]}
+0.550 (+/-0.357) for {'hidden_layer_sizes': [5, 3]}
+0.730 (+/-0.080) for {'hidden_layer_sizes': [4, 4, 4]}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2094   87]
+ [ 524  195]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
+# Tuning hyper-parameters for recall
+
+Best parameters set found on development set:
+
+{'hidden_layer_sizes': [4, 4, 4]}
+
+Grid scores on development set:
+
+0.615 (+/-0.047) for {'hidden_layer_sizes': [6, 6, 6]}
+0.615 (+/-0.046) for {'hidden_layer_sizes': [3, 3, 3]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [5, 5, 5]}
+0.611 (+/-0.041) for {'hidden_layer_sizes': [6, 6]}
+0.615 (+/-0.045) for {'hidden_layer_sizes': [5, 5]}
+0.520 (+/-0.069) for {'hidden_layer_sizes': [3, 3]}
+0.500 (+/-0.000) for {'hidden_layer_sizes': [6, 5, 3]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [3, 5, 6]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [6, 5]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [6, 3]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [5, 6]}
+0.613 (+/-0.047) for {'hidden_layer_sizes': [3, 5]}
+0.616 (+/-0.048) for {'hidden_layer_sizes': [3, 6]}
+0.563 (+/-0.127) for {'hidden_layer_sizes': [5, 3]}
+0.623 (+/-0.065) for {'hidden_layer_sizes': [4, 4, 4]}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2092   89]
+ [ 522  197]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
+# Tuning hyper-parameters for f1
+
+Best parameters set found on development set:
+
+{'hidden_layer_sizes': [4, 4, 4]}
+
+Grid scores on development set:
+
+0.630 (+/-0.061) for {'hidden_layer_sizes': [6, 6, 6]}
+0.630 (+/-0.060) for {'hidden_layer_sizes': [3, 3, 3]}
+0.632 (+/-0.063) for {'hidden_layer_sizes': [5, 5, 5]}
+0.625 (+/-0.053) for {'hidden_layer_sizes': [6, 6]}
+0.631 (+/-0.058) for {'hidden_layer_sizes': [5, 5]}
+0.468 (+/-0.134) for {'hidden_layer_sizes': [3, 3]}
+0.429 (+/-0.000) for {'hidden_layer_sizes': [6, 5, 3]}
+0.632 (+/-0.062) for {'hidden_layer_sizes': [3, 5, 6]}
+0.631 (+/-0.063) for {'hidden_layer_sizes': [6, 5]}
+0.631 (+/-0.063) for {'hidden_layer_sizes': [6, 3]}
+0.631 (+/-0.063) for {'hidden_layer_sizes': [5, 6]}
+0.628 (+/-0.061) for {'hidden_layer_sizes': [3, 5]}
+0.631 (+/-0.063) for {'hidden_layer_sizes': [3, 6]}
+0.536 (+/-0.214) for {'hidden_layer_sizes': [5, 3]}
+0.639 (+/-0.078) for {'hidden_layer_sizes': [4, 4, 4]}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2092   89]
+ [ 522  197]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
