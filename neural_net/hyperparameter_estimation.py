@@ -72,21 +72,14 @@ from sklearn.model_selection import GridSearchCV
 group_kfold = GroupKFold(n_splits=4)
 group_kfold.get_n_splits(X_train, y_train, groups_train)
 
-tuned_parameters = [{'hidden_layer_sizes': [[6,6,6]]},
-                    {'hidden_layer_sizes': [[3,3,3]]},
-                    {'hidden_layer_sizes': [[5,5,5]]},
-                    {'hidden_layer_sizes': [[6,6]]},
-                    {'hidden_layer_sizes': [[5,5]]},
-                    {'hidden_layer_sizes': [[3,3]]},
-                    {'hidden_layer_sizes': [[6,5,3]]},
-                    {'hidden_layer_sizes': [[3,5,6]]},
-                    {'hidden_layer_sizes': [[6,5]]},
-                    {'hidden_layer_sizes': [[6,3]]},
-                    {'hidden_layer_sizes': [[5,6]]},
-                    {'hidden_layer_sizes': [[3,5]]},
-                    {'hidden_layer_sizes': [[3,6]]},
-                    {'hidden_layer_sizes': [[5,3]]},
-                    {'hidden_layer_sizes': [[4,4,4]]}]
+tuned_parameters = [{'solver': ['sgd'], 'momentum': [0.3,0.6,0.9],
+           'learning_rate_init': [0.01,0.02,0.05,0.1,0.2,0.5],'nesterovs_momentum': [False,True],
+           'learning_rate': ['constant','invscaling','adaptive']},
+                    {'solver': ['sgd'], 'momentum': [0],
+           'learning_rate_init': [0.01,0.02,0.05,0.1,0.2,0.5]},
+                    {'solver': ['adam'],
+           'learning_rate_init': [0.01,0.02,0.05,0.1,0.2,0.5]},
+                    {'solver': ['lbfgs']}]
 
 scores = ['precision', 'recall', 'f1']
 
@@ -94,7 +87,7 @@ for score in scores:
     print("# Tuning hyper-parameters for %s" % score)
     print()
 
-    clf = GridSearchCV(MLPClassifier(max_iter=10000,random_state=random_state), tuned_parameters, cv=group_kfold.get_n_splits(X_train, y_train, groups_train),
+    clf = GridSearchCV(MLPClassifier(max_iter=10000,random_state=random_state, hidden_layer_sizes=(4,4,4)), tuned_parameters, cv=group_kfold.get_n_splits(X_train, y_train, groups_train),
                        scoring='%s_macro' % score)
     clf.fit(X_train, y_train)
 

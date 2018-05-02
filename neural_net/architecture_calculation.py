@@ -72,21 +72,22 @@ from sklearn.model_selection import GridSearchCV
 group_kfold = GroupKFold(n_splits=4)
 group_kfold.get_n_splits(X_train, y_train, groups_train)
 
-tuned_parameters = [{'hidden_layer_sizes': [[6,6,6]]},
-                    {'hidden_layer_sizes': [[3,3,3]]},
-                    {'hidden_layer_sizes': [[5,5,5]]},
-                    {'hidden_layer_sizes': [[6,6]]},
-                    {'hidden_layer_sizes': [[5,5]]},
-                    {'hidden_layer_sizes': [[3,3]]},
-                    {'hidden_layer_sizes': [[6,5,3]]},
-                    {'hidden_layer_sizes': [[3,5,6]]},
-                    {'hidden_layer_sizes': [[6,5]]},
-                    {'hidden_layer_sizes': [[6,3]]},
-                    {'hidden_layer_sizes': [[5,6]]},
-                    {'hidden_layer_sizes': [[3,5]]},
-                    {'hidden_layer_sizes': [[3,6]]},
-                    {'hidden_layer_sizes': [[5,3]]},
-                    {'hidden_layer_sizes': [[4,4,4]]}]
+tuned_parameters = [{'hidden_layer_sizes': [[6,6,6],
+                    [3,3,3],
+                    [5,5,5],
+                    [6,6],
+                    [5,5],
+                    [3,3],
+                    [6,5,3],
+                    [3,5,6],
+                    [6,5],
+                    [6,3],
+                    [5,6],
+                    [3,5],
+                    [3,6],
+                    [5,3],
+                    [4,4,4]],
+                    'activation':['logistic', 'tanh', 'relu']}]
 
 scores = ['precision', 'recall', 'f1']
 

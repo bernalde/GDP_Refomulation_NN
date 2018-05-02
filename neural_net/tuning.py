@@ -13,9 +13,13 @@ random_state = 12883823
 #                        header = None, delimiter=' ', engine='python')
 # df_test = pd.read_csv('../features/function_of_features/6features_withoutstrip52/test_set_data',
 #                        header = None, delimiter=' ', engine='python')
-df_train = pd.read_csv('training_set_data',
+# df_train = pd.read_csv('training_set_data',
+#                        header = None, delimiter=' ', engine='python')
+# df_test = pd.read_csv('test_set_data',
+#                        header = None, delimiter=' ', engine='python')
+df_train = pd.read_csv('../features/function_of_features/6features_alldata/training_set',
                        header = None, delimiter=' ', engine='python')
-df_test = pd.read_csv('test_set_data',
+df_test = pd.read_csv('../features/function_of_features/6features_alldata/test_set',
                        header = None, delimiter=' ', engine='python')
 # print(df_train)
 # df_train = pd.read_csv('./scaled_training_set_data',
@@ -23,6 +27,11 @@ df_test = pd.read_csv('test_set_data',
 # df_test = pd.read_csv('./scaled_test_set_data',
 #                        header = None, delimiter=' ', engine='python')
 
+#Clean the data
+groups_train = df_train[0].map(lambda x: str(x)[58:59])
+groups_test = df_test[0].map(lambda x: str(x)[58:59])
+df_train[0] = df_train[0].map(lambda x: str(x)[-1:])
+df_test[0] = df_test[0].map(lambda x: str(x)[-1:])
 #Clean the data
 for i in range(1, min(len(df_train.columns),10)):
     df_train[i] = df_train[i].map(lambda x: str(x)[2:])
@@ -47,6 +56,8 @@ scaler.fit(features_train)
 
 X_train = scaler.transform(features_train)
 X_test = scaler.transform(features_test)
+y_train = labels_train.flatten()
+y_test = labels_test.flatten()
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import MinMaxScaler
@@ -56,21 +67,33 @@ from sklearn import datasets
 params = [{'solver': 'sgd', 'learning_rate': 'constant', 'momentum': 0,
            'learning_rate_init': 0.2},
           {'solver': 'sgd', 'learning_rate': 'constant', 'momentum': .9,
-           'nesterovs_momentum': False, 'learning_rate_init': 0.2},
+           'nesterovs_momentum': False, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'constant', 'momentum': .9,
-           'nesterovs_momentum': True, 'learning_rate_init': 0.2},
+           'nesterovs_momentum': True, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'invscaling', 'momentum': 0,
-           'learning_rate_init': 0.2},
+           'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'invscaling', 'momentum': .9,
-           'nesterovs_momentum': True, 'learning_rate_init': 0.2},
+           'nesterovs_momentum': True, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'invscaling', 'momentum': .9,
-           'nesterovs_momentum': False, 'learning_rate_init': 0.2},
-          {'solver': 'adam', 'learning_rate_init': 0.01}]
+           'nesterovs_momentum': False, 'learning_rate_init': 0.1},
+          {'solver': 'sgd', 'learning_rate': 'adaptive', 'momentum': 0,
+           'learning_rate_init': 0.1},
+          {'solver': 'sgd', 'learning_rate': 'adaptive', 'momentum': .9,
+           'nesterovs_momentum': True, 'learning_rate_init': 0.1},
+          {'solver': 'sgd', 'learning_rate': 'adaptive', 'momentum': .9,
+           'nesterovs_momentum': False, 'learning_rate_init': 0.1},
+          {'solver': 'adam', 'learning_rate_init': 0.01},
+          {'solver': 'lbfgs'}
+          ]
 
 labels = ["constant learning-rate", "constant with momentum",
           "constant with Nesterov's momentum",
           "inv-scaling learning-rate", "inv-scaling with momentum",
-          "inv-scaling with Nesterov's momentum", "adam"]
+          "inv-scaling with Nesterov's momentum",
+          "adaptive learning-rate", "adaptive with momentum",
+          "adaptive with Nesterov's momentum", "adam"
+          , "lbfgs"
+          ]
 
 plot_args = [{'c': 'red', 'linestyle': '-'},
              {'c': 'green', 'linestyle': '-'},
@@ -78,7 +101,12 @@ plot_args = [{'c': 'red', 'linestyle': '-'},
              {'c': 'red', 'linestyle': '--'},
              {'c': 'green', 'linestyle': '--'},
              {'c': 'blue', 'linestyle': '--'},
-             {'c': 'black', 'linestyle': '-'}]
+             {'c': 'red', 'linestyle': '-.'},
+             {'c': 'green', 'linestyle': '-.'},
+             {'c': 'blue', 'linestyle': '-.'},
+             {'c': 'black', 'linestyle': '-'}
+             ,{'c': 'cyan', 'linestyle': '-'}
+             ]
 
 
 X_train = MinMaxScaler().fit_transform(X_train)
@@ -87,15 +115,34 @@ max_iter = 1000
 
 for label, param in zip(labels, params):
   print("training: %s" % label)
-  mlp = MLPClassifier(hidden_layer_sizes=(5,5,5), verbose=0, random_state=random_state,
+  mlp = MLPClassifier(hidden_layer_sizes=(4,4,4), verbose=0, random_state=random_state,
                             max_iter=max_iter, **param)
   mlp.fit(X_train,labels_train.flatten())
   mlps.append(mlp)
   print("Training set score: %f" % mlp.score(X_train,labels_train.flatten()))
   print("Training set loss: %f" % mlp.loss_)
-for mlp, label, args in zip(mlps, labels, plot_args):
-      plt.plot(mlp.loss_curve_, label=label, **args)
+  print("Training iterations: %f" % mlp.n_iter_)
 
-plt.legend(labels, loc="upper right")
+fig = plt.figure()
+ax = plt.subplot(111)
+for mlp, label, args in zip(mlps, labels, plot_args):
+      if label == "lbfgs":
+        continue
+      else:
+        ax.plot(mlp.loss_curve_, label=label, **args)
+
+
+# Shrink current axis by 20%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+
+# Put a legend to the right of the current axis
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=15)
 plt.ylabel('Loss curve')
+plt.xlabel('Iterations')
+
+
+for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+             ax.get_xticklabels() + ax.get_yticklabels()):
+    item.set_fontsize(18)
 plt.show()

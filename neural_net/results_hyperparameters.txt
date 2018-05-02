@@ -1,0 +1,441 @@
+# Tuning hyper-parameters for precision
+
+Best parameters set found on development set:
+
+{'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+
+Grid scores on development set:
+
+0.733 (+/-0.095) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.731 (+/-0.088) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.733 (+/-0.093) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.735 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.728 (+/-0.086) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.726 (+/-0.082) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.732 (+/-0.088) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.734 (+/-0.088) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.734 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.734 (+/-0.096) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.737 (+/-0.089) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.733 (+/-0.089) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.722 (+/-0.073) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.723 (+/-0.070) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.731 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.734 (+/-0.098) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.732 (+/-0.110) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.746 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.741 (+/-0.100) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.737 (+/-0.098) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.744 (+/-0.092) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.740 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.714 (+/-0.069) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.745 (+/-0.098) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.713 (+/-0.087) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.746 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.717 (+/-0.086) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.710 (+/-0.091) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.730 (+/-0.104) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.741 (+/-0.094) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.723 (+/-0.100) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.729 (+/-0.111) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.741 (+/-0.094) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.726 (+/-0.066) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.620 (+/-0.300) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.722 (+/-0.087) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.376 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.734 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.730 (+/-0.089) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.733 (+/-0.093) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.735 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.727 (+/-0.077) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.725 (+/-0.078) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.731 (+/-0.091) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.733 (+/-0.091) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.734 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.731 (+/-0.088) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.736 (+/-0.092) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.738 (+/-0.100) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.728 (+/-0.085) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.728 (+/-0.085) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.738 (+/-0.095) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.735 (+/-0.095) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.736 (+/-0.106) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.744 (+/-0.101) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.736 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.736 (+/-0.096) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.743 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.739 (+/-0.098) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.745 (+/-0.098) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.745 (+/-0.098) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.736 (+/-0.094) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.744 (+/-0.092) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.741 (+/-0.088) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.739 (+/-0.094) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.741 (+/-0.094) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.742 (+/-0.093) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.743 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.743 (+/-0.096) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.743 (+/-0.096) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.743 (+/-0.096) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.723 (+/-0.117) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.734 (+/-0.080) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.721 (+/-0.070) for {'momentum': 0, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.730 (+/-0.089) for {'momentum': 0, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.735 (+/-0.097) for {'momentum': 0, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.742 (+/-0.092) for {'momentum': 0, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.740 (+/-0.103) for {'momentum': 0, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.724 (+/-0.084) for {'momentum': 0, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.732 (+/-0.079) for {'learning_rate_init': 0.01, 'solver': 'adam'}
+0.714 (+/-0.094) for {'learning_rate_init': 0.02, 'solver': 'adam'}
+0.720 (+/-0.081) for {'learning_rate_init': 0.05, 'solver': 'adam'}
+0.736 (+/-0.086) for {'learning_rate_init': 0.1, 'solver': 'adam'}
+0.552 (+/-0.352) for {'learning_rate_init': 0.2, 'solver': 'adam'}
+0.376 (+/-0.000) for {'learning_rate_init': 0.5, 'solver': 'adam'}
+0.715 (+/-0.067) for {'solver': 'lbfgs'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2094   87]
+ [ 524  195]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
+# Tuning hyper-parameters for recall
+
+Best parameters set found on development set:
+
+{'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+
+Grid scores on development set:
+
+0.612 (+/-0.043) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.614 (+/-0.042) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.614 (+/-0.043) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.615 (+/-0.043) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.626 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.625 (+/-0.060) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.614 (+/-0.042) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.615 (+/-0.042) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.616 (+/-0.042) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.617 (+/-0.042) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.618 (+/-0.044) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.625 (+/-0.060) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.625 (+/-0.059) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.619 (+/-0.044) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.617 (+/-0.046) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.628 (+/-0.058) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.617 (+/-0.046) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.617 (+/-0.046) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.617 (+/-0.047) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.652 (+/-0.052) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.628 (+/-0.060) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.652 (+/-0.082) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.620 (+/-0.048) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.615 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.635 (+/-0.070) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.620 (+/-0.047) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.614 (+/-0.048) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.639 (+/-0.050) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.613 (+/-0.143) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.628 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.500 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.613 (+/-0.043) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.613 (+/-0.042) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.614 (+/-0.043) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.615 (+/-0.043) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.625 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.624 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.613 (+/-0.042) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.615 (+/-0.042) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.616 (+/-0.045) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.615 (+/-0.044) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.618 (+/-0.046) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.618 (+/-0.047) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.624 (+/-0.063) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.624 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.618 (+/-0.046) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.617 (+/-0.045) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.623 (+/-0.049) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.617 (+/-0.046) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.617 (+/-0.046) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.616 (+/-0.046) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.618 (+/-0.046) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.617 (+/-0.047) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.617 (+/-0.045) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.049) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.615 (+/-0.048) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.047) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.634 (+/-0.016) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.623 (+/-0.065) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.593 (+/-0.041) for {'momentum': 0, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.613 (+/-0.042) for {'momentum': 0, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.614 (+/-0.047) for {'momentum': 0, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.615 (+/-0.047) for {'momentum': 0, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.616 (+/-0.048) for {'momentum': 0, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.625 (+/-0.053) for {'momentum': 0, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.622 (+/-0.063) for {'learning_rate_init': 0.01, 'solver': 'adam'}
+0.626 (+/-0.063) for {'learning_rate_init': 0.02, 'solver': 'adam'}
+0.644 (+/-0.050) for {'learning_rate_init': 0.05, 'solver': 'adam'}
+0.619 (+/-0.052) for {'learning_rate_init': 0.1, 'solver': 'adam'}
+0.564 (+/-0.131) for {'learning_rate_init': 0.2, 'solver': 'adam'}
+0.500 (+/-0.000) for {'learning_rate_init': 0.5, 'solver': 'adam'}
+0.621 (+/-0.056) for {'solver': 'lbfgs'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2094   87]
+ [ 523  196]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
+# Tuning hyper-parameters for f1
+
+Best parameters set found on development set:
+
+{'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+
+Grid scores on development set:
+
+0.626 (+/-0.055) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.629 (+/-0.054) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.629 (+/-0.055) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.630 (+/-0.056) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.642 (+/-0.072) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.641 (+/-0.071) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.628 (+/-0.054) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.630 (+/-0.054) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.631 (+/-0.055) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.632 (+/-0.054) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.631 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.633 (+/-0.056) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.640 (+/-0.071) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.641 (+/-0.070) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.635 (+/-0.056) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.632 (+/-0.060) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.642 (+/-0.069) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.633 (+/-0.060) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.632 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.633 (+/-0.060) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.061) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.662 (+/-0.052) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.645 (+/-0.069) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.632 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.642 (+/-0.071) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.659 (+/-0.055) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.636 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.630 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.650 (+/-0.082) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.635 (+/-0.061) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.629 (+/-0.063) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.656 (+/-0.058) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.591 (+/-0.187) for {'nesterovs_momentum': False, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.644 (+/-0.076) for {'nesterovs_momentum': True, 'learning_rate': 'constant', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': False, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.429 (+/-0.000) for {'nesterovs_momentum': True, 'learning_rate': 'invscaling', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.628 (+/-0.056) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.628 (+/-0.054) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.629 (+/-0.055) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.630 (+/-0.056) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.640 (+/-0.075) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.640 (+/-0.075) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.628 (+/-0.055) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.630 (+/-0.055) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.631 (+/-0.058) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.630 (+/-0.056) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.634 (+/-0.059) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.633 (+/-0.061) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.640 (+/-0.075) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.640 (+/-0.075) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.633 (+/-0.059) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.632 (+/-0.059) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.639 (+/-0.063) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.632 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.633 (+/-0.059) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.633 (+/-0.059) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.060) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.634 (+/-0.060) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.633 (+/-0.059) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.632 (+/-0.061) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.631 (+/-0.061) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.631 (+/-0.063) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.630 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.3, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.631 (+/-0.062) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.6, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.650 (+/-0.021) for {'nesterovs_momentum': False, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.638 (+/-0.078) for {'nesterovs_momentum': True, 'learning_rate': 'adaptive', 'momentum': 0.9, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.600 (+/-0.058) for {'momentum': 0, 'learning_rate_init': 0.01, 'solver': 'sgd'}
+0.628 (+/-0.054) for {'momentum': 0, 'learning_rate_init': 0.02, 'solver': 'sgd'}
+0.629 (+/-0.061) for {'momentum': 0, 'learning_rate_init': 0.05, 'solver': 'sgd'}
+0.630 (+/-0.061) for {'momentum': 0, 'learning_rate_init': 0.1, 'solver': 'sgd'}
+0.632 (+/-0.062) for {'momentum': 0, 'learning_rate_init': 0.2, 'solver': 'sgd'}
+0.640 (+/-0.066) for {'momentum': 0, 'learning_rate_init': 0.5, 'solver': 'sgd'}
+0.637 (+/-0.076) for {'learning_rate_init': 0.01, 'solver': 'adam'}
+0.641 (+/-0.075) for {'learning_rate_init': 0.02, 'solver': 'adam'}
+0.660 (+/-0.046) for {'learning_rate_init': 0.05, 'solver': 'adam'}
+0.633 (+/-0.064) for {'learning_rate_init': 0.1, 'solver': 'adam'}
+0.536 (+/-0.216) for {'learning_rate_init': 0.2, 'solver': 'adam'}
+0.429 (+/-0.000) for {'learning_rate_init': 0.5, 'solver': 'adam'}
+0.636 (+/-0.071) for {'solver': 'lbfgs'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+[[2094   87]
+ [ 523  196]]
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.81      0.97      0.88       936
+          1       0.76      0.29      0.42       309
+
+avg / total       0.80      0.80      0.77      1245
+
+[[908  28]
+ [219  90]]
+
