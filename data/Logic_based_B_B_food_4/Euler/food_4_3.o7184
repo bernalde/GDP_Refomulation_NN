@@ -1,0 +1,154 @@
+Disk usage:  18G .
+*** Could not write to console: /dev/tty
+*** Logging to standard output
+--- Job run_batch.gms Start 05/01/18 17:59:24 24.8.4 r60966 LEX-LEG x86 64bit/Linux
+GAMS 24.8.4   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G180112/0001AS-GEN
+          Dept. of Chemical Engineering                              DC9476
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann                              
+--- Starting compilation
+--- run_batch.gms(10) 3 Mb
+--- .first_seed.gms(1) 3 Mb
+--- run_batch.gms(76) 3 Mb
+--- Starting execution: elapsed 0:00:00.002
+--- run_batch.gms(14) 4 Mb
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 1 Error--- run_batch.gms(14) 4 Mb 4 Errors
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- run_batch.gms(14) 4 Mb 8 Errors
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/stat_total.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- GDXin=/home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/res_prob.gdx
+--- GDX File /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/solution_total.gdx
+--- run_batch.gms(75) 4 Mb
+--- run_batch.gms(76) 4 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:solution_total.gdx
+   OutputFile:solution_total.db
+   Symbols:1
+   Uels:21
+   Loading Uels
+   Processing Symbols
+     solu(227 records)
+   Inserts:227
+   Elapsed:0.91 seconds
+   Inserts/second:249.72
+   Done
+
+--- run_batch.gms(77) 4 Mb
+GDX2SQLITE v 0.7
+GDX Library      24.8.4 r60966 Released Apr 10, 2017 LEG x86 64bit/Linux      
+
+   InputFile:stat_total.gdx
+   OutputFile:stat_total.db
+   Symbols:1
+   Uels:16
+   Loading Uels
+   Processing Symbols
+     stats(80 records)
+   Inserts:80
+   Elapsed:1.09 seconds
+   Inserts/second:73.39
+   Done
+
+--- Putfile seed_no /home/bernalde/IntroToMLProj/GDP_Refomulation_NN/data/Logic_based_B_B_food_4/Euler/3/seed.gms
+--- run_batch.gms(77) 4 Mb 8 Errors
+*** Status: Execution error(s)
+--- Job run_batch.gms Stop 05/01/18 19:07:04 elapsed 1:07:39.153

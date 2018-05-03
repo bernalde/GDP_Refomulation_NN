@@ -11,6 +11,7 @@ for D in ./*; do
 	cp ./Logic_B_B_BM2.gms "$D"
 	cp ./run_batch.gms "$D"
 	cp ./generate_batch.gms "$D"
+	cp ./max_time_ref.gms "$D"
 	iter=$(( $iter + 1))
     fi
 done
