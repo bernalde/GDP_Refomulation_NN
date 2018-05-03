@@ -1,0 +1,44 @@
+training: constant learning-rate
+Training set score: 0.752069
+Training set loss: 0.474912
+Training iterations: 26.000000
+training: constant with momentum
+Training set score: 0.789310
+Training set loss: 0.449016
+Training iterations: 28.000000
+training: constant with Nesterov's momentum
+Training set score: 0.784828
+Training set loss: 0.444860
+Training iterations: 28.000000
+training: adam
+Training set score: 0.789310
+Training set loss: 0.455648
+Training iterations: 28.000000
+training: inv-scaling learning-rate
+Training set score: 0.752069
+Training set loss: 0.567364
+Training iterations: 61.000000
+training: inv-scaling with momentum
+Training set score: 0.752069
+Training set loss: 0.565096
+Training iterations: 5.000000
+training: inv-scaling with Nesterov's momentum
+Training set score: 0.752069
+Training set loss: 0.592959
+Training iterations: 5.000000
+training: adaptive learning-rate
+Training set score: 0.789655
+Training set loss: 0.448423
+Training iterations: 80.000000
+training: adaptive with momentum
+Training set score: 0.789310
+Training set loss: 0.436940
+Training iterations: 61.000000
+training: adaptive with Nesterov's momentum
+Training set score: 0.789310
+Training set loss: 0.437823
+Training iterations: 56.000000
+training: lbfgs
+Training set score: 0.789655
+Training set loss: 0.426077
+Training iterations: 424.000000

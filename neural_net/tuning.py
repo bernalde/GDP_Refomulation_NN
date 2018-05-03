@@ -70,6 +70,7 @@ params = [{'solver': 'sgd', 'learning_rate': 'constant', 'momentum': 0,
            'nesterovs_momentum': False, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'constant', 'momentum': .9,
            'nesterovs_momentum': True, 'learning_rate_init': 0.1},
+          {'solver': 'adam', 'learning_rate_init': 0.01},
           {'solver': 'sgd', 'learning_rate': 'invscaling', 'momentum': 0,
            'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'invscaling', 'momentum': .9,
@@ -82,29 +83,28 @@ params = [{'solver': 'sgd', 'learning_rate': 'constant', 'momentum': 0,
            'nesterovs_momentum': True, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'adaptive', 'momentum': .9,
            'nesterovs_momentum': False, 'learning_rate_init': 0.1},
-          {'solver': 'adam', 'learning_rate_init': 0.01},
           {'solver': 'lbfgs'}
           ]
 
 labels = ["constant learning-rate", "constant with momentum",
-          "constant with Nesterov's momentum",
+          "constant with Nesterov's momentum", "adam",
           "inv-scaling learning-rate", "inv-scaling with momentum",
           "inv-scaling with Nesterov's momentum",
           "adaptive learning-rate", "adaptive with momentum",
-          "adaptive with Nesterov's momentum", "adam"
+          "adaptive with Nesterov's momentum"
           , "lbfgs"
           ]
 
-plot_args = [{'c': 'red', 'linestyle': '-'},
-             {'c': 'green', 'linestyle': '-'},
+plot_args = [{'c': 'green', 'linestyle': '-'},
+             {'c': 'red', 'linestyle': '-'},
              {'c': 'blue', 'linestyle': '-'},
-             {'c': 'red', 'linestyle': '--'},
+             {'c': 'black', 'linestyle': '-'},
+             {'c': 'green', 'linestyle': ':'},
+             {'c': 'red', 'linestyle': ':'},
+             {'c': 'blue', 'linestyle': ':'},
              {'c': 'green', 'linestyle': '--'},
-             {'c': 'blue', 'linestyle': '--'},
-             {'c': 'red', 'linestyle': '-.'},
-             {'c': 'green', 'linestyle': '-.'},
-             {'c': 'blue', 'linestyle': '-.'},
-             {'c': 'black', 'linestyle': '-'}
+             {'c': 'red', 'linestyle': '--'},
+             {'c': 'blue', 'linestyle': '--'}
              ,{'c': 'cyan', 'linestyle': '-'}
              ]
 
@@ -123,26 +123,27 @@ for label, param in zip(labels, params):
   print("Training set loss: %f" % mlp.loss_)
   print("Training iterations: %f" % mlp.n_iter_)
 
-fig = plt.figure()
+fig = plt.figure(figsize=(20,10))
 ax = plt.subplot(111)
 for mlp, label, args in zip(mlps, labels, plot_args):
       if label == "lbfgs":
         continue
       else:
-        ax.plot(mlp.loss_curve_, label=label, **args)
+        ax.plot(mlp.loss_curve_, label=label, lw=5, **args)
 
 
-# Shrink current axis by 20%
+# Shrink current axis's height by 10% on the bottom
 box = ax.get_position()
-ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.set_position([box.x0, box.y0 + box.height * 0.3,
+                 box.width, box.height * 0.8])
 
-# Put a legend to the right of the current axis
-ax.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=15)
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.2),
+          fancybox=True, shadow=True, ncol=3, fontsize=18, framealpha=0)
 plt.ylabel('Loss curve')
 plt.xlabel('Iterations')
 
 
 for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
              ax.get_xticklabels() + ax.get_yticklabels()):
-    item.set_fontsize(18)
-plt.show()
+    item.set_fontsize(30)
+fig.savefig('temp.png', transparent=True)
