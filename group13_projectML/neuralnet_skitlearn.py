@@ -5,10 +5,9 @@ Final Project
 Generalized Disjunctive Programming (GDP)
 Reformulation Classification using Neural Network
 
-Neural Network Implementation using TensorFlow
+Neural Network Implementation
 """
 
-from __future__ import print_function
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
