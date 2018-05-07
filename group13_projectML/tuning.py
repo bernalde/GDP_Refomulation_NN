@@ -65,7 +65,7 @@ from sklearn import datasets
 
 # different learning rate schedules and momentum parameters
 params = [{'solver': 'sgd', 'learning_rate': 'constant', 'momentum': 0,
-           'learning_rate_init': 0.2},
+           'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'constant', 'momentum': .9,
            'nesterovs_momentum': False, 'learning_rate_init': 0.1},
           {'solver': 'sgd', 'learning_rate': 'constant', 'momentum': .9,
